@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-09-30T13:28:26.663108+00:00",
+  "status": "passed",
+  "scope": "Isolated temporary SQLite operation-store persistence across two owned child Python processes. Metadata fixtures only; no weather recipe was computed.",
+  "live_services_restarted": false,
+  "existing_processes_stopped": false,
+  "scientific_execution_verified_by_this_check": false,
+  "python_version": "3.14.4",
+  "working_directory": "C:\\Users\\dell\\Desktop\\code\\sih_ps_2",
+  "command_bindings": {
+    "child_source": "import hashlib\nimport json\nimport os\nfrom pathlib import Path\nimport sys\nfrom nowcast.operation_store import OperationsStore\n\nstore = OperationsStore(Path(sys.argv[1]))\nphase = sys.argv[2]\nidentity = {\"recipe\": \"isolated-restart-proof-v1\", \"scope\": \"metadata_fixture_only\"}\ncompleted = store.enqueue(\"starter_audit\", {**identity, \"case\": \"completed\"}, {}, \"metadata_fixture_only\")\nif phase == \"create\":\n    claimed = store.claim()\n    assert claimed[\"id\"] == completed[\"id\"]\n    assert store.finish(claimed[\"id\"], claimed[\"attempt_token\"], {\n        \"summary\": {\"proof\": \"durable_metadata_only\", \"scientific_recipe_executed\": False}, \"artifacts\": []})\nqueued = store.enqueue(\"radar_replay\", {**identity, \"case\": \"queued\"}, {}, \"metadata_fixture_only\")\nrecords = {}\nfor label, identifier in ((\"completed\", completed[\"id\"]), (\"queued\", queued[\"id\"])):\n    row = store.get(identifier)\n    fields = (\"id\", \"kind\", \"status\", \"attempt\", \"created_at\", \"updated_at\", \"started_at\", \"finished_at\", \"summary\", \"artifacts\")\n    records[label] = {key: row[key] for key in fields}\n    records[label][\"full_record_sha256\"] = hashlib.sha256(json.dumps(row, sort_keys=True, separators=(\",\", \":\"), allow_nan=False).encode()).hexdigest()\nassert len(store.jobs()) == 2\nprint(json.dumps({\"pid\": os.getpid(), \"phase\": phase, \"records\": records}, sort_keys=True))",
+    "temporary_store": "C:\\Users\\dell\\AppData\\Local\\Temp\\vajra-restart-proof-97kd4ban\\operations"
+  },
+  "commands": [
+    {
+      "executable": "C:\\Users\\dell\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "arguments": [
+        "-c",
+        "$child_source",
+        "$temporary_store",
+        "create"
+      ],
+      "return_code": 0,
+      "stderr": ""
+    },
+    {
+      "executable": "C:\\Users\\dell\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "arguments": [
+        "-c",
+        "$child_source",
+        "$temporary_store",
+        "reopen"
+      ],
+      "return_code": 0,
+      "stderr": ""
+    }
+  ],
+  "child_processes": [
+    {
+      "phase": "create",
+      "pid": 2668
+    },
+    {
+      "phase": "reopen",
+      "pid": 14772
+    }
+  ],
+  "assertions": {
+    "distinct_child_processes": true,
+    "full_records_unchanged_after_process_reopen": true,
+    "completed_id_attempt_and_timestamps_unchanged": true,
+    "queued_id_attempt_and_timestamps_unchanged": true,
+    "repeated_enqueue_returns_existing_records": true,
+    "record_count_after_reopen": 2
+  },
+  "before": {
+    "completed": {
+      "artifacts": [],
+      "attempt": 1,
+      "created_at": "2026-09-30T13:28:26.341803Z",
+      "finished_at": "2026-09-30T13:28:26.391572Z",
+      "full_record_sha256": "07b65bfdfaf3be4853f94f7eb6faea8ae19f4213b6fb692c4e087565d9a81ec6",
+      "id": "193bbfcafa67ae6ba688e583e11976963a108a52d691caaeebe6a932651a22e8",
+      "kind": "starter_audit",
+      "started_at": "2026-09-30T13:28:26.369417Z",
+      "status": "succeeded",
+      "summary": {
+        "proof": "durable_metadata_only",
+        "scientific_recipe_executed": false
+      },
+      "updated_at": "2026-09-30T13:28:26.391572Z"
+    },
+    "queued": {
+      "artifacts": [],
+      "attempt": 0,
+      "created_at": "2026-09-30T13:28:26.422738Z",
+      "finished_at": null,
+      "full_record_sha256": "e8511ad37e2b8510c19cb96bad03f8786cf2fffc8f790e41eb565175b17fddb5",
+      "id": "e915600791f9dab82e19d8b49df7cf9f1241ba3a2b797f30bfc24d4765f6c9f0",
+      "kind": "radar_replay",
+      "started_at": null,
+      "status": "queued",
+      "summary": null,
+      "updated_at": "2026-09-30T13:28:26.422738Z"
+    }
+  },
+  "after": {
+    "completed": {
+      "artifacts": [],
+      "attempt": 1,
+      "created_at": "2026-09-30T13:28:26.341803Z",
+      "finished_at": "2026-09-30T13:28:26.391572Z",
+      "full_record_sha256": "07b65bfdfaf3be4853f94f7eb6faea8ae19f4213b6fb692c4e087565d9a81ec6",
+      "id": "193bbfcafa67ae6ba688e583e11976963a108a52d691caaeebe6a932651a22e8",
+      "kind": "starter_audit",
+      "started_at": "2026-09-30T13:28:26.369417Z",
+      "status": "succeeded",
+      "summary": {
+        "proof": "durable_metadata_only",
+        "scientific_recipe_executed": false
+      },
+      "updated_at": "2026-09-30T13:28:26.391572Z"
+    },
+    "queued": {
+      "artifacts": [],
+      "attempt": 0,
+      "created_at": "2026-09-30T13:28:26.422738Z",
+      "finished_at": null,
+      "full_record_sha256": "e8511ad37e2b8510c19cb96bad03f8786cf2fffc8f790e41eb565175b17fddb5",
+      "id": "e915600791f9dab82e19d8b49df7cf9f1241ba3a2b797f30bfc24d4765f6c9f0",
+      "kind": "radar_replay",
+      "started_at": null,
+      "status": "queued",
+      "summary": null,
+      "updated_at": "2026-09-30T13:28:26.422738Z"
+    }
+  },
+  "limitations": [
+    "This does not restart or exercise the lifetime of the currently running HTTP service or research worker.",
+    "It does not execute training, radar prediction or source auditing; job kinds are metadata fixtures here.",
+    "Actual worker-lock contention and crash release are covered separately by tests.test_operations_runtime."
+  ],
+  "temporary_store_removed": true
+}

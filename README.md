@@ -4,6 +4,8 @@ A SIH26072 research project with a React website, a separate Expo/React Native a
 
 The working weather demonstrations use synthetic fusion and historical French radar. The downloaded government starter pack is real, but it is not a matched Indian training corpus. No operational Indian lightning model or public warning dispatch is claimed.
 
+**New: a connected research operations workflow.** Open `/#/operations` to queue a source audit, observed radar evaluation or actual ConvLSTM training with calibration. SQLite saves the job; one separate worker runs it; the website and native operator monitor show the same recorded scores. Duplicate requests reuse the existing experiment, retries use fresh attempt folders, and daily checks can queue candidates from newly admitted observed events. No model is automatically promoted. Follow the **[architecture, setup and learning guide](docs/OPERATIONS_GUIDE.md)**.
+
 Start with **[regional decisions, continuous forecasts and resilient communication](REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md)** for the latest design: weather drivers, sparse-sensor regions, officer thresholds, local geographic matching, Bluetooth/SMS boundaries, daily evaluation and why Jev is optional. Numerical forecasts support decisions; neither an LLM nor Jev is required for the decision policy.
 
 The officer workbench now records probability and evidence checks separately, with configurable source age/count and clear reasons. The native app includes a manually entered, unverified citizen-report preview and an explicit SMS composer action. A standalone bounded forecast queue demonstrates coalescing and rejects superseded results; it is not connected to a live feed. [Implementation design](docs/CONTINUOUS_FORECAST_DESIGN.md).
@@ -17,6 +19,7 @@ The officer workbench now records probability and evidence checks separately, wi
 | Data collection | Provider/API links, access status, manifest-backed downloads and bounded local collection jobs |
 | Native app | Public/operator views, optional foreground device location or manual city selection, 12 Indian languages plus English, installed-voice text-to-speech and a user-reviewed SMS report draft |
 | Training | Validate episode files, train/evaluate a compact ConvLSTM, optionally calibrate on separate events and report reliability against a climatology baseline |
+| Research operations | Durable jobs, bounded immutable dataset registration, actual recipe execution, explicit retries, verified downloads and controlled daily candidate checks |
 
 Cloud animation is decorative. Selecting a city moves the geographic view; it does not create a local weather observation. The native app's operator view is a view preference, not authentication.
 
@@ -44,11 +47,13 @@ npm.cmd run build
 .\.venv\Scripts\python -m uvicorn nowcast.service:app --host 127.0.0.1 --port 8000
 ```
 
-Open **http://127.0.0.1:8000**. The trained model and verified radar sample are bundled, so normal startup does not need credentials or downloads. On macOS/Linux use `.venv/bin/python` and `npm` in the corresponding commands.
+Open **http://127.0.0.1:8000**. The synthetic simulator model and verified radar sample are bundled, so normal startup does not need credentials or downloads. New ConvLSTM candidate checkpoints are generated locally. On macOS/Linux use `.venv/bin/python` and `npm` in the corresponding commands.
 
 For frontend development, start the Python service and run `npm.cmd run dev` in another terminal. Vite proxies `/api` and `/research` to port 8000. The production service mounts `dist` at startup, so build before launching it.
 
 Open `/#/earth` for the globe, `/#/image-lab` for real image experiments and `/#/sources` for the collection catalogue. The existing `/#/workbench` remains available.
+
+To run the new operations page, set `$env:VAJRA_ENABLE_OPERATIONS = "1"` before starting the API. Install the optional `.venv-ml` environment below, then start `.\.venv-ml\Scripts\python.exe scripts/run_operations.py worker` in another terminal. Open `/#/operations`, prepare example episodes and queue an experiment. The [operations guide](docs/OPERATIONS_GUIDE.md) covers real dataset registration, restart recovery and the precise limits of daily learning.
 
 To enable the collection buttons on your own local server, set this before starting Uvicorn:
 
@@ -71,6 +76,8 @@ npm.cmd run build
 npx.cmd playwright install chromium
 npm.cmd run test:browser
 ```
+
+The full browser suite now also exercises operations: enable the operations API and run its numerical worker first. `python scripts/verify_operations_workflow.py` checks the three actual recipes, repeated requests, artifact hashes, research links and synthetic exclusion from daily learning against a demo-only local store.
 
 Training writes `data/model.json` and `data/evaluation.json`. It uses 24 training events, six validation events and six test events generated from disjoint seeds. Scores measure performance on the generator, not India. Downloading the sample is optional if bundled checksums already pass. Browser tests use the locally running service and save screenshots in `artifacts`.
 

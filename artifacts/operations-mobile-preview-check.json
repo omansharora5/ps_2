@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-09-30T13:20:08.398Z",
+  "status": "passed",
+  "checks": [
+    "Actual operations API loads into the native web export; research-only, read-only and warning-disconnection scope remain visible",
+    "Actual worker-completed candidate metrics and no-promotion result match the API response",
+    "Controlled completed-job fixture displays worse-than-baseline Brier scores, retained baseline and no promotion",
+    "Failed refresh marks the retained snapshot stale and preserves the last good candidate",
+    "An initial API outage displays an error without invented jobs or persisted old metrics",
+    "Explicit retry recovers to honest empty job, dataset and candidate states",
+    "Hindi operation labels and Urdu right-aligned read-only guidance render without document overflow"
+  ],
+  "pageErrors": [],
+  "operationsRequests": 7,
+  "observedCandidate": {
+    "id": "b931b86acd962819cc2ace19a36600bea236c10bb526f1826502464fcfadb0d3",
+    "scope": "synthetic_smoke_only",
+    "mode": "training_candidate",
+    "raw_brier": 0.2115840711869509,
+    "calibrated_brier": 0.08995875233904911,
+    "baseline_brier": 0.08968734741210938,
+    "test_event_count": 2,
+    "recommendation": "retain_baseline",
+    "promoted": false
+  },
+  "scope": "Chromium React Native web export: real backend initial read and completed worker candidate, then explicitly labelled controlled fixtures for quality/failure/empty states. No native installation, jobs submitted, automatic training or public dispatch."
+}

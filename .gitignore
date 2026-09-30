@@ -31,3 +31,4 @@ artifacts/image-smoke/
 artifacts/image-training-smoke/
 tools/gh/
 tools/stldm/
+data/operations/

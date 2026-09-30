@@ -2,6 +2,8 @@
 
 This describes the code delivered in this repository. The larger production proposal is in [the detailed architecture](../DETAILED_TECHNICAL_ARCHITECTURE.md). A connected research application is implemented; operational Indian warning services remain outside this release.
 
+The latest build adds [durable research operations](OPERATIONS_GUIDE.md): an immutable dataset registry, SQLite job/attempt records, one OS-locked numerical worker, actual source/radar/training recipes, controlled daily admission and a shared status API. The website queues work; the React Native operator screen monitors it. Candidate results do not change the existing public forecast or dispatch policy.
+
 The latest iteration adds [officer evidence gates and a standalone bounded revision queue](CONTINUOUS_FORECAST_DESIGN.md), a [native SMS report composer](MOBILE_GUIDE.md#citizen-observations-by-sms), and [pinned STLDM reference inference](STLDM_GUIDE.md). Saved simulation receipts contain separate probability/support checks and deterministic reasons, with public dispatch blocked. The queue is tested metadata infrastructure; no provider subscription drives it yet. STLDM executes through its isolated CLI and is not served by the app's forecast endpoint.
 
 ## How the parts connect
@@ -20,6 +22,11 @@ flowchart TD
     API --> Images[Observed radar image experiments]
     API --> Simulation[Synthetic fusion experiment and local receipts]
     API --> Catalog[Manifest-backed data catalogue]
+    API --> Ledger[Durable operations and dataset registry]
+    Ledger --> Worker[One dedicated numerical worker]
+    Worker --> Experiments[Source audit / radar replay / ConvLSTM candidate]
+    Experiments --> Evidence[Verified artifacts and held-out scores]
+    Evidence --> Ledger
     Catalog --> Files[Verified government source files]
     API --> Guard[Opt-in local collection guard]
     Guard --> Queue[One bounded registered collection job]

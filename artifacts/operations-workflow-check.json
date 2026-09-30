@@ -1,0 +1,279 @@
+{
+  "checked_at": "2026-09-30T13:19:23.798266+00:00",
+  "status": "passed",
+  "elapsed_seconds": 22.64,
+  "dataset_id": "623493506b594cc83e18f2792c737127213f23766fe9fe796e654f4bc037f8bc",
+  "scope": "Local API and actual CPU worker; generated training examples and historical radar only",
+  "jobs": [
+    {
+      "kind": "starter_audit",
+      "id": "6ce66f940e2488333c8160a9732be139cc68628cf27a32a83febdefc68b669d7",
+      "attempt": 1,
+      "status": "succeeded",
+      "duplicate_reused": true,
+      "summary": {
+        "checked": 18,
+        "mode": "starter_integrity_audit",
+        "notes": "Byte integrity does not establish matched events, live observations or training readiness.",
+        "problems": 0,
+        "public_dispatch_eligible": false,
+        "scope": "Historical unmatched government starter files",
+        "training_ready": false,
+        "verified": 18
+      },
+      "artifacts_verified": [
+        {
+          "name": "starter-audit.json",
+          "bytes": 7869,
+          "sha256": "633b9766bcfb569673c5742a82b8a12cfcbe99a27d8e9084132324c4d62237d4"
+        }
+      ]
+    },
+    {
+      "kind": "radar_replay",
+      "id": "e28756be34ffc2b66bf2d2a6a26679fda917aba88120df2425d520e11234c96c",
+      "attempt": 1,
+      "status": "succeeded",
+      "duplicate_reused": true,
+      "summary": {
+        "horizon_minutes": 10,
+        "method": "dense_optical_flow",
+        "metrics": {
+          "persistence": {
+            "base_rate": 0.11396011396011396,
+            "brier": 0.06481481481481481,
+            "correct_negatives": 37257,
+            "csi": 0.549864368916547,
+            "false_alarms": 1307,
+            "far": 0.27498422049232063,
+            "fss": 0.9020176662942995,
+            "hits": 3446,
+            "intensity_note": "dBZ errors require positive linear reflectivity in both forecasts and truth; valid weak echoes below -10 dBZ remain included. Binary echo scores retain no-echo pixels.",
+            "intensity_samples": 10494,
+            "mae_dbz": 5.864922813036021,
+            "misses": 1514,
+            "pod": 0.694758064516129,
+            "reliability": [
+              {
+                "bin": 0.05,
+                "count": 38771,
+                "forecast": 0.0,
+                "observed": 0.03904980526682314
+              },
+              {
+                "bin": 0.15,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.25,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.35,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.45,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.55,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.65,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.75,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.85,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.95,
+                "count": 4753,
+                "forecast": 1.0,
+                "observed": 0.7250157795076794
+              }
+            ],
+            "rmse_dbz": 7.839633793367092,
+            "samples": 43524,
+            "threshold": 0.5
+          },
+          "selected": {
+            "base_rate": 0.11396011396011396,
+            "brier": 0.055256869772998804,
+            "correct_negatives": 36955,
+            "csi": 0.633886436291673,
+            "false_alarms": 1609,
+            "far": 0.27871124198856745,
+            "fss": 0.9166995200040191,
+            "hits": 4164,
+            "intensity_note": "dBZ errors require positive linear reflectivity in both forecasts and truth; valid weak echoes below -10 dBZ remain included. Binary echo scores retain no-echo pixels.",
+            "intensity_samples": 10494,
+            "mae_dbz": 4.729468614189409,
+            "misses": 796,
+            "pod": 0.839516129032258,
+            "reliability": [
+              {
+                "bin": 0.05,
+                "count": 37751,
+                "forecast": 0.0,
+                "observed": 0.02108553415803555
+              },
+              {
+                "bin": 0.15,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.25,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.35,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.45,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.55,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.65,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.75,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.85,
+                "count": 0,
+                "forecast": null,
+                "observed": null
+              },
+              {
+                "bin": 0.95,
+                "count": 5773,
+                "forecast": 1.0,
+                "observed": 0.7212887580114326
+              }
+            ],
+            "rmse_dbz": 6.403163542655996,
+            "samples": 43524,
+            "threshold": 0.5
+          }
+        },
+        "mode": "observed_radar_replay",
+        "notes": [
+          "Small single-case image experiment; scores do not establish general forecast skill.",
+          "Despeckling is an image heuristic that can remove real small echoes; it is not instrument QC.",
+          "Dense flow assumes approximate brightness constancy and smooth motion; growth/decay violates these assumptions.",
+          "Binary echo metrics share a common valid mask; intensity errors also exclude no-echo sentinels."
+        ],
+        "public_dispatch_eligible": false,
+        "scope": "Two past French radar frames and one held-out future; not Indian or lightning validation",
+        "time_note": "Archive timestamps; source timezone remains unverified"
+      },
+      "artifacts_verified": [
+        {
+          "name": "observed-replay.json",
+          "bytes": 11218,
+          "sha256": "7d135a442d739b606549f10645cc14216438faa7ab6af26d030ca2807d3586fb"
+        }
+      ]
+    },
+    {
+      "kind": "train_candidate",
+      "id": "b931b86acd962819cc2ace19a36600bea236c10bb526f1826502464fcfadb0d3",
+      "attempt": 1,
+      "status": "succeeded",
+      "duplicate_reused": true,
+      "summary": {
+        "baseline_brier": 0.08968734741210938,
+        "calibrated_brier": 0.08995875233904911,
+        "dataset_id": "623493506b594cc83e18f2792c737127213f23766fe9fe796e654f4bc037f8bc",
+        "mode": "training_candidate",
+        "model": "compact-convlstm-12-v1",
+        "notes": [
+          "One-epoch CPU research candidate; no operational or Indian lightning skill established.",
+          "Frozen evaluation reproduced exactly; repeated inspection is development evidence.",
+          "A lower Brier score on this small held-out cohort does not authorize model promotion."
+        ],
+        "promoted": false,
+        "public_dispatch_eligible": false,
+        "raw_brier": 0.2115840711869509,
+        "recommendation": "retain_baseline",
+        "scope": "synthetic_smoke_only",
+        "test_event_count": 2
+      },
+      "artifacts_verified": [
+        {
+          "name": "model.pt",
+          "bytes": 29479,
+          "sha256": "e2e26a7f840444a604144d02b961809d620f3eb37eb96d2a6e9e09d27a8b932f"
+        },
+        {
+          "name": "report.json",
+          "bytes": 8939,
+          "sha256": "8d8754a9508f6deb0631191d4c5af5aabf24fcd5b3acb30d334293adc3dc250f"
+        },
+        {
+          "name": "calibration.json",
+          "bytes": 2111,
+          "sha256": "ef0a85ea9341882f1336e459738128506bd6c6980353f51b4ac3d3e11dd59d61"
+        },
+        {
+          "name": "frozen-evaluation.json",
+          "bytes": 4918,
+          "sha256": "ab69a8ccb8e16ce8edf2bb98043dd6272c880927ba5fddbaafb060adea5e2b5d"
+        }
+      ]
+    }
+  ],
+  "synthetic_excluded_from_daily_learning": {
+    "enabled": true,
+    "status": "waiting_for_labels",
+    "note": "No admitted observed dataset has mature covered labels. Synthetic examples are excluded.",
+    "last_checked_at": "2026-09-30T13:19:23.134532+00:00",
+    "last_job_id": null
+  },
+  "research_links_checked": 4,
+  "public_dispatch": false
+}

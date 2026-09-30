@@ -11,6 +11,7 @@ import { HowItWorks, OfflineNotice, Overview, pages, previewStorageKey, PublicPr
 const EarthExplorer = lazy(() => import('./earth'));
 const ImageLab = lazy(() => import('./image-lab'));
 const DataCatalog = lazy(() => import('./data-catalog'));
+const Operations = lazy(() => import('./operations'));
 
 const cn = (...values) => twMerge(clsx(values));
 const format = (value, digits = 3) => value == null ? '—' : value.toFixed(digits);
@@ -167,7 +168,7 @@ function App() {
   const activeMetrics = run?.metrics[currentLayer] ?? run?.metrics[observed ? 'advection' : 'fusion'];
   const finiteValues = run?.layers[currentLayer]?.flat().filter(value => value != null) ?? [];
   const peak = finiteValues.length ? Math.max(...finiteValues) : null;
-  const nav = [{ id: 'overview', icon: House }, { id: 'earth', icon: Globe2 }, { id: 'workbench', icon: Map }, { id: 'public', icon: Smartphone }, { id: 'flow', icon: BookOpen }, { id: 'verification', icon: FlaskConical }, { id: 'image-lab', icon: ScanLine }, { id: 'sources', icon: Database }, { id: 'receipts', icon: FileText }];
+  const nav = [{ id: 'overview', icon: House }, { id: 'earth', icon: Globe2 }, { id: 'workbench', icon: Map }, { id: 'public', icon: Smartphone }, { id: 'flow', icon: BookOpen }, { id: 'operations', icon: Activity }, { id: 'verification', icon: FlaskConical }, { id: 'image-lab', icon: ScanLine }, { id: 'sources', icon: Database }, { id: 'receipts', icon: FileText }];
   function openPreview() {
     try { localStorage.setItem(previewStorageKey, JSON.stringify(receipt)); }
     catch { setReceiptError('Browser storage is unavailable. The sample can be viewed now but will not survive a reload.'); }
@@ -202,6 +203,7 @@ function App() {
           {tab === 'earth' && <EarthExplorer />}
           {tab === 'image-lab' && <ImageLab />}
           {tab === 'sources' && <DataCatalog />}
+          {tab === 'operations' && <Operations />}
         </Suspense>
         {tab === 'flow' && <HowItWorks />}
         {tab === 'public' && <PublicPreview preview={preview} onClear={clearPreview} online={online} />}

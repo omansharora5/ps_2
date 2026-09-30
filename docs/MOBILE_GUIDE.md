@@ -4,6 +4,8 @@
 
 The app has a public information view and an operator research view. Both are demonstrations: the role switch is navigation, not authentication. Current official warnings are not connected. Spoken practice messages are labelled as practice; research model results stay labelled as simulations.
 
+The operator view now includes a **read-only operations monitor**. It shows recent worker contact, daily-learning state, registered datasets, recent jobs and the latest completed candidate's raw/calibrated/baseline Brier scores. It reads `/api/operations/state` from the same backend as the website, with explicit refresh and a stale-snapshot notice after failure. Requests are cancelled when the view loses focus or the app backgrounds. The monitor sends no GPS and exposes no training, policy or promotion controls. See the [connected architecture and worker setup](OPERATIONS_GUIDE.md).
+
 ## Start on this computer
 
 Start the Python service using the root README. Then:

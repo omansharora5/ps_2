@@ -30,7 +30,7 @@ export function safeExternalUrl(value: string): boolean {
   try { return new URL(value).protocol === 'https:'; } catch { return false; }
 }
 export const apiBase = (process.env.EXPO_PUBLIC_API_URL ?? '').trim().replace(/\/$/, '');
-export async function requestApi(path: '/api/data/catalog' | '/api/runs', signal: AbortSignal) {
+export async function requestApi(path: '/api/data/catalog' | '/api/runs' | '/api/operations/state', signal: AbortSignal) {
   if (!/^https?:\/\//i.test(apiBase)) throw new Error('API URL missing');
   const timeout = new AbortController();
   const abort = () => timeout.abort();

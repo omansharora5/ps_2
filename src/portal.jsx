@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowDownToLine, ArrowRight, BookOpen, Check, CloudLightning, Database, FileText, FlaskConical, Layers, MapPin, Radio, ShieldCheck, Smartphone, Timer, WifiOff, Zap } from 'lucide-react';
 
 export const pages = {
+  operations: { name: 'Research operations', title: 'From data to tested evidence.', description: 'Run durable experiments, inspect model candidates and manage controlled learning.' },
   overview: { name: 'Overview', title: 'Understand the storm. Prepare with evidence.', description: 'A research prototype for short-term thunderstorm and lightning forecasts.' },
   earth: { name: 'Earth explorer', title: 'A planet of perspective.', description: 'Find a place. Explore the observations. Follow the evidence.' },
   'image-lab': { name: 'Image processing lab', title: 'Every image has a story.', description: 'Prepare observed radar, estimate its motion, and measure what changed.' },

@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "tracked_files": 243,
-  "tracked_bytes": 34110674,
+  "tracked_files": 274,
+  "tracked_bytes": 35185208,
   "largest_files": [
     {
       "path": "artifacts/VAJRA_GOVERNMENT_DATA_STARTER_PACK.zip",
@@ -21,11 +21,11 @@
     },
     {
       "path": "artifacts/earth-patna-desktop.png",
-      "bytes": 746868
+      "bytes": 749605
     },
     {
       "path": "artifacts/earth-orbit-desktop.png",
-      "bytes": 592347
+      "bytes": 593597
     },
     {
       "path": "mobile/package-lock.json",
@@ -33,7 +33,7 @@
     },
     {
       "path": "artifacts/data-catalog-desktop.png",
-      "bytes": 408405
+      "bytes": 407438
     }
   ],
   "issues": [],

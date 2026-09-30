@@ -1,6 +1,8 @@
 # Radar image experiments and temporal-model training
 
-This repository now has two independent additions: a working image-processing laboratory using real French radar, and an optional PyTorch training CLI for an explicit episode format. Neither trains or validates Indian lightning prediction from the government starter pack. The existing `/api/runs` simulator and radar replay retain their behavior; experimental training weights are not loaded by that endpoint.
+This repository has a working image-processing laboratory using real French radar and an optional PyTorch training CLI for an explicit episode format. The new [operations workflow](OPERATIONS_GUIDE.md) connects that trainer to durable jobs, frozen datasets, the website and native monitor. Neither trains or validates Indian lightning prediction from the government starter pack. The existing `/api/runs` simulator and radar replay retain their behavior; experimental training weights are not loaded by that endpoint.
+
+For the connected path, register a bounded corpus with `scripts/run_operations.py register-dataset`, queue `train_candidate` and run its `.venv-ml` worker. Registration copies/hashes the episodes and protects event roles within a series. Daily checks consider new admitted observed events with mature labels; generated examples are excluded. The fixed worker recipe runs one CPU epoch with separate calibration and exact frozen re-evaluation. Use the CLI below for configurable longer research runs. Coverage declarations still require human verification, and model promotion is never automatic.
 
 ## 1. Run the observed image laboratory
 

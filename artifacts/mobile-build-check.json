@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-09-30T09:05:19.161882+00:00",
+  "verified_at_utc": "2026-09-30T13:18:23.492948+00:00",
   "status": "passed_with_dependency_audit_findings",
   "scope": "Expo React Native source checks and Android/iOS Hermes plus web export. Browser flow verification is recorded separately. No signed native binary, emulator, physical installation or audible device speech was tested.",
   "versions": {
@@ -17,23 +17,27 @@
   },
   "checks": {
     "typecheck": {
-      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "command": "npm.cmd run typecheck",
+      "working_directory": "mobile",
       "exit_code": 0
     },
     "lint": {
-      "command": "node node_modules/expo/bin/cli lint",
+      "command": "npm.cmd run lint",
+      "working_directory": "mobile",
       "exit_code": 0
     },
     "doctor": {
       "command": "npx --yes expo-doctor",
       "exit_code": 0,
       "passed": 21,
-      "total": 21
+      "total": 21,
+      "last_verified_at_utc": "2026-09-30T09:05:19.161882+00:00",
+      "rerun_this_build": false
     },
     "unit_tests": {
-      "command": "npm test",
+      "command": "npm.cmd run test",
       "exit_code": 0,
-      "passed": 28,
+      "passed": 37,
       "failed": 0,
       "coverage": [
         "13 complete UTF-8 dictionaries and English fallback",
@@ -58,13 +62,21 @@
         "Unavailable, cancelled, accepted-for-sending and unknown outcomes without receipt claims",
         "Duplicate-tap protection during lookup and active composer",
         "Pending lookup cancellation, bounded availability timeout and no late composer launch",
-        "Composer exception and explicit retry"
-      ]
+        "Composer exception and explicit retry",
+        "Research-only operations boundary and no mutation capability in parsed mobile state",
+        "Finite Brier scores, nonzero test-event counts and rejection of unexpected promotion",
+        "Completed candidate selection without treating execution success as model improvement",
+        "Coalesced concurrent refreshes and clean retry",
+        "Unreachable or malformed response yields error or retains marked stale snapshot",
+        "Pause, abort and old/new response ordering",
+        "All 13 operation locales include scope, status and stale-data copy"
+      ],
+      "working_directory": "mobile"
     },
     "export": {
       "command": "node node_modules/expo/bin/cli export --platform all --max-workers 2",
       "environment": {
-        "EXPO_PUBLIC_API_URL": "http://127.0.0.1:8000"
+        "EXPO_PUBLIC_API_URL": "http://localhost:8000"
       },
       "exit_code": 0,
       "output_directory": "mobile/dist",
@@ -72,24 +84,25 @@
         "android",
         "ios",
         "web"
-      ]
+      ],
+      "working_directory": "mobile"
     }
   },
   "bundles": [
     {
-      "path": "mobile/dist/_expo/static/js/android/entry-de819fd0c450154c7670e86ba9770c63.hbc",
-      "bytes": 3187424,
-      "sha256": "e496c5504744704e852d575c70e5dbd96c451bd64f9d9d49379f3c7c286c0646"
+      "path": "mobile/dist/_expo/static/js/android/entry-da9d6a2e78aac7d0b6ef1365aaa41f85.hbc",
+      "bytes": 3234435,
+      "sha256": "20328caef22ecd398e30f6c480814e5a87ee6b5413db8926182127b8892532dd"
     },
     {
-      "path": "mobile/dist/_expo/static/js/ios/entry-1d02cafe048528b75f2e95e0959c8be9.hbc",
-      "bytes": 2871460,
-      "sha256": "a367fe4520ddbc4b9cc3a5bb010b43b0761be38383ab225d4426739642e3fa51"
+      "path": "mobile/dist/_expo/static/js/ios/entry-1f69b32e90870461c0249411acc25c61.hbc",
+      "bytes": 2918485,
+      "sha256": "b3bb3c5ad47dbda3329881ca5caab432f7d5e2ddc1c90a5e1d25e1562b4b62ff"
     },
     {
-      "path": "mobile/dist/_expo/static/js/web/entry-994f7dc35762586eb4110e1bd1fee87c.js",
-      "bytes": 1503278,
-      "sha256": "5329e3c1e8cdde023c6755f91ccfdcda0d8932084637d474e8edb1b08d277b54"
+      "path": "mobile/dist/_expo/static/js/web/entry-bcbb2cefe20067e905781532279ac6c4.js",
+      "bytes": 1576215,
+      "sha256": "f7c5b59528d17400587df04845a45c99a4fcdbbbd19359bcf1856e299d731ed1"
     }
   ],
   "npm_audit": {
@@ -101,7 +114,9 @@
     "critical": 0,
     "status": "unresolved",
     "note": "Findings include the Expo/router dependency chains for uuid/xcode and decode-uri-component/query-string. npm proposes breaking downgrades to Expo 46 / Router 5; no forced downgrade or unverified override was applied. Reassess updated compatible dependencies before deployment.",
-    "exit_code": 1
+    "exit_code": 1,
+    "last_verified_at_utc": "2026-09-30T09:05:19.161882+00:00",
+    "rerun_this_build": false
   },
   "limitations": [
     "The loopback API URL in these verification bundles is for this computer; a physical phone requires a reachable configured host and a rebuilt bundle.",
@@ -142,5 +157,23 @@
     "actual_sms_sent": false,
     "scope": "OS messaging composer only; no report ingestion or emergency-service dispatch",
     "reference": "research/OFFLINE_DELIVERY_AND_REGIONAL_TARGETING.md"
+  },
+  "operations_followup": {
+    "read_only": true,
+    "endpoint": "GET /api/operations/state",
+    "automatic_polling": false,
+    "refresh_on_focus_or_explicit_action": true,
+    "background_or_blur_aborts_requests": true,
+    "retains_last_good_snapshot_on_failure": true,
+    "snapshot_persisted_to_device": false,
+    "public_dispatch_connected": false,
+    "training_actions_on_mobile": false,
+    "new_unit_tests": 9,
+    "supported_draft_locales": 13,
+    "browser_verification": "artifacts/operations-mobile-preview-check.json",
+    "browser_status": "passed",
+    "browser_checks": 7,
+    "browser_scope": "Real initial API read and actual completed worker candidate; later controlled quality, failure, empty and translation scenarios are explicitly fixtures.",
+    "visual_inspection": "Inspected 390px live monitor, actual completed candidate and stale fixture screenshots. Readable text, aligned scores, wrapped job identity, usable bottom navigation; no horizontal overflow."
   }
 }

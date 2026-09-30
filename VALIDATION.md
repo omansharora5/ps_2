@@ -2,6 +2,29 @@
 
 This record distinguishes software checks from real-weather and physical-device validation. The current delivery extends the original research prototype; the older benchmark results below retain their original scope.
 
+## 30 September extension: durable research operations
+
+The website, FastAPI service, SQLite ledger, separate numerical worker and native read-only monitor now share an executable research workflow. This adds real controlled candidate generation from registered datasets; it does not connect a national observation stream, promote models or dispatch warnings. [Architecture and commands](docs/OPERATIONS_GUIDE.md).
+
+| Check | Actual result and scope |
+|---|---|
+| Final regular-Python suite | **115 discovered: 113 passed, 2 skipped**, 52.381 seconds. Both skips require optional Torch |
+| New store/runtime boundaries | 21 store and 13 runtime tests included above: concurrent duplicate reuse, capacity, protected event roles/bytes, stale publication, conditional retry, API guards, artifact tampering and actual child-process lock contention/crash release |
+| Process restart persistence | Two separate owned Python processes created and reopened an isolated store. Queued/completed records, attempts, timestamps and full-record hashes remained identical. [Evidence](artifacts/operations-restart-check.json). This did not stop or restart the existing live services |
+| Optional scientific integration | Actual calibrated ConvLSTM and exact frozen checkpoint evaluation passed separately in `.venv-ml`; not just mocked recipe calls |
+| Real API and worker workflow | All three recipes completed in **22.64 seconds total** on this machine. Duplicate submissions reused their completed identities/attempts; six artifact downloads matched recorded SHA-256 and sizes. Four research links returned documents. [Evidence](artifacts/operations-workflow-check.json) |
+| Source audit | **18/18** downloaded source files matched manifests. These remain historical, unmatched samples |
+| Observed radar recipe | +10-minute dense-flow CSI **0.633886** versus persistence **0.549864**, one French radar case on common valid support; not a lightning or general superiority result |
+| Synthetic training candidate | Raw Brier **0.211584**, calibrated **0.089959**, climatology **0.089687**, **two** held-out event groups. The baseline wins; `promoted=false` |
+| Controlled learning | Demo-only live store recorded `waiting_for_labels`, then restored its previous paused setting. Unit tests cover mature observed admission, deduplication, unchanged events, failed/cancelled candidates, queue pressure and independent series |
+| Website build and journeys | Production build passed. **12/12** full-suite journeys passed in 1.8 minutes. After final selected-job/padding changes, **3/3** targeted operations journeys passed in 18.3 seconds, including a real old-job detail outside a controlled recent-history projection |
+| Native source/export | **37/37 tests**, typecheck, lint and Android/iOS/web exports passed. No packages changed. Doctor and dependency audit were carried forward, explicitly dated in [build evidence](artifacts/mobile-build-check.json) |
+| Native exported-web journeys | Catalog/simulation 5, location 5, SMS 3 and operations 7 checks passed with zero page errors. [Operations evidence](artifacts/operations-mobile-preview-check.json) separates the actual completed candidate from controlled failure/empty/quality fixtures |
+
+The final UI review checked [desktop operations](artifacts/operations-desktop.png), [phone width](artifacts/operations-mobile.png), stale snapshots and the native monitor. A selected experiment remains stable when it falls outside the latest 30 records. Keyboard refresh and phone overflow checks passed. A browser fixture initially left a response handler running during teardown; the fixture was corrected, then all three targeted checks passed.
+
+This release still has the existing Earth bundle-size advisory and 13 moderate native dependency audit findings; no new dependency was introduced. All-platform export is not a signed native installation. Physical phone speech/SMS, Bluetooth relay, live Indian lightning validation, remote operator authentication, automated provider-to-label ingestion and deployment-scale capacity remain unverified or unimplemented. The research store has explicit workload limits and no automatic disk-retention process. Historical sections below describe earlier releases rather than overriding these current results.
+
 ## 30 September extension: decision evidence, STLDM and reporting
 
 The website now saves explicit probability/support policy assessments. Source ages are recomputed from causal timestamps; an insufficient recent-source count holds the result for evidence review even when its score is high. The returned reasons distinguish a research support check from calibrated confidence. Synthetic results always have public dispatch blocked. A standalone single-owner queue coalesces regional updates and refuses superseded/expired completion; a live provider stream, durable recovery and atomic publication remain outside that queue.

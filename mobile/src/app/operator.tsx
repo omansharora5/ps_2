@@ -3,6 +3,7 @@ import { ActivityIndicator, Linking, View } from 'react-native';
 import { apiBase, parseCatalog, parseSimulation, requestApi, safeExternalUrl, type Catalog, type Simulation } from '../lib/api';
 import { Brand, Button, Card, Copy, Screen, colors, styles } from '../components/ui';
 import { SpeechButton } from '../components/speech-button';
+import { OperationsMonitor } from '../components/operations-monitor';
 import { usePreferences } from '../state/preferences';
 
 export default function OperatorScreen() {
@@ -34,6 +35,7 @@ export default function OperatorScreen() {
   const summary = run ? `${copy('synthetic')}. ${copy('simulationBody')}` : '';
   return <Screen><Brand /><View style={{ gap: 7 }}><Copy style={styles.eyebrow}>{copy('operatorView')}</Copy><Copy accessibilityRole="header" style={styles.title}>{copy('operatorTitle')}</Copy><Copy style={styles.subtitle}>{copy('operatorBody')}</Copy></View>
     {!apiBase && <Card><Copy style={styles.pill}>{copy('offline')}</Copy><Copy>{copy('connectHint')}</Copy></Card>}
+    <OperationsMonitor />
     <Card><Copy style={styles.pill}>{copy('synthetic')}</Copy><Copy>{copy('simulationBody')}</Copy><Button label={running ? copy('loading') : copy('runSimulation')} disabled={!apiBase || running} icon="lab" onPress={() => { void runExperiment(); }} />
       {runError && <Copy accessibilityLiveRegion="polite">{copy('apiError')}</Copy>}
       {run && <View style={{ gap: 14 }}><View style={styles.separator} /><Copy style={styles.small}>{run.time_note}</Copy><Copy style={styles.small}>{`Target: ${run.target}\nLead: +${run.horizon} min\nIssue: ${run.issued_at}\nValid: ${run.valid_at}`}</Copy>{run.sites.map(site => <View key={site.id} style={{ gap: 2 }}><Copy style={{ fontWeight: '700' }}>{site.name}</Copy><View style={[styles.row, { justifyContent: 'space-between' }]}><Copy style={styles.small}>{copy('probability')}</Copy><Copy style={styles.heading}>{site.probability === null ? '—' : `${Math.round(site.probability * 100)}%`}</Copy></View></View>)}<SpeechButton id={run.id} text={summary} /></View>}

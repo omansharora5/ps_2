@@ -23,12 +23,14 @@ from .verification import verify
 from . import data_catalog
 from .image_processing import METHODS, PREPROCESSING, image_run
 from .decision_policy import POLICY_VERSION, ResearchPolicy, assess_research_decision
+from .operations_api import router as operations_router
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "data" / "receipts.sqlite"
 CODE_SHA = hashlib.sha256(b"".join(path.read_bytes() for path in sorted((ROOT / "nowcast").glob("*.py")))).hexdigest()
 app = FastAPI(title="VAJRA research workbench", version="0.1.0")
+app.include_router(operations_router)
 CORS_ORIGINS = [origin.strip() for origin in os.environ.get("VAJRA_CORS_ORIGINS", "").split(",") if origin.strip()]
 if not CORS_ORIGINS:
     CORS_ORIGINS = [f"http://{host}:{port}" for host in ("localhost", "127.0.0.1") for port in (8000, 8081, 8082, 5173, 4173)]
@@ -322,6 +324,9 @@ def research_document(document: str):
                "FRIEND_NOTES_REVIEW.md": ROOT / "research" / "FRIEND_NOTES_REVIEW.md",
                "DETAILED_TECHNICAL_ARCHITECTURE.md": ROOT / "DETAILED_TECHNICAL_ARCHITECTURE.md",
                "TRAINING_GUIDE.md": ROOT / "docs" / "TRAINING_GUIDE.md",
+               "OPERATIONS_GUIDE.md": ROOT / "docs" / "OPERATIONS_GUIDE.md",
+               "CALIBRATION_AND_VERIFICATION.md": ROOT / "docs" / "CALIBRATION_AND_VERIFICATION.md",
+               "REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md": ROOT / "REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md",
                "MOBILE_GUIDE.md": ROOT / "docs" / "MOBILE_GUIDE.md"}
     if document not in allowed or not allowed[document].exists():
         raise HTTPException(404, "Research document not found")

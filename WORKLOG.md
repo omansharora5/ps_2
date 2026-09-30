@@ -1,5 +1,14 @@
 # Work plan
 
+## Connected operations build, 30 September 2026
+
+- Applied the requested architect and idempotent-operations skills. Traced the existing API, collector, trainer and clients; compared two independent designs; selected a SQLite ledger with immutable datasets/attempt artifacts and one OS-owned synchronous worker.
+- Built bounded dataset admission, protected event roles and bytes, actual source/radar/training recipes, local-write API guards, retries, cancellation fencing and controlled daily checks. Held candidate series no longer prevent another series from being considered.
+- Added a website operations page with actual stages/results, research links and failure recovery, plus a read-only native monitor with 13 draft locales. Selected details remain available beyond the recent-history list.
+- Executed all three recipes through the real API/worker. Verified source hashes, duplicate reuse, six artifact downloads, exact frozen evaluation and synthetic exclusion from daily learning. The climatology baseline beat the generated-data candidate, and both interfaces report that result.
+- Verified 113 regular-Python passes plus two optional skips, separate actual ML integration, the full 12-journey website run and final three targeted operations journeys. Native 37 tests, typecheck/lint, all-platform exports and 20 exported-web checks passed.
+- Added the [runnable architecture and recovery guide](docs/OPERATIONS_GUIDE.md), updated README/training/mobile/system documents and recorded [verification limits](VALIDATION.md). Runtime databases, copied datasets and checkpoint files stay local under ignored `data/operations/`.
+
 ## Regional decision support, reference diffusion and resilient delivery, 30 September 2026
 
 - Re-read the supplied proposals as research material and adopted useful published methods with explicit input/target and licence boundaries.
