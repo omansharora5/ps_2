@@ -10,6 +10,7 @@ import subprocess
 import sys
 from threading import Lock
 from uuid import uuid4
+from . import supplemental_data
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "data/government"
@@ -112,7 +113,27 @@ def catalog():
          "source_url": "https://www.tropmet.res.in/28-Thunderstorm%20Dynamics-project", "api_url": None, "local_file_count": 0,
          "notes": "Damini information does not establish access to training labels. No lightning labels collected for India."},
     ]
-    return {"schema_version": 1, "training_ready": False, "scope": "Historical, unmatched starter samples; not an Indian storm training corpus",
+    sources.extend(supplemental_data.provider_cards(Path(os.environ.get("VAJRA_SUPPLEMENTAL_ROOT", supplemental_data.DEFAULT_ROOT))))
+    sources.extend([
+        {"id": "ncr_gfs", "name": "NOAA GFS NCR numeric forecast fields", "provider": "NOAA/NCEP",
+         "access": "Public bucket; separate dated-cycle collector", "status": "inspect_local_api",
+         "format": "GRIB2 and CSV", "source_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/",
+         "api_url": "/api/ncr/gfs", "local_file_count": 0,
+         "notes": "NWP context with initialization and valid times. API checks the local snapshot; fields are not observations."},
+        {"id": "ncr_era5", "name": "ERA5 historical NCR environment", "provider": "Copernicus / ECMWF",
+         "access": "CDS account, personal token and accepted dataset terms", "status": "request_template_only",
+         "format": "GRIB", "source_url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels",
+         "api_url": "https://cds.climate.copernicus.eu/how-to-api", "local_file_count": 0,
+         "notes": "Bounded request template provided. No authenticated ERA5 download; reanalysis is delayed historical context."},
+    ])
+    try:
+        from scripts import collect_ncr_gfs
+        ncr_gfs = collect_ncr_gfs.read_latest(Path(os.environ.get("VAJRA_NCR_GFS_ROOT", ROOT / "data/ncr/gfs")))
+        sources[-2].update(status="saved_research_sample" if ncr_gfs else "not_collected",
+                           local_file_count=len(ncr_gfs["files"]) if ncr_gfs else 0)
+    except (OSError, ValueError, KeyError, TypeError):
+        sources[-2]["status"] = "invalid_local_evidence"
+    return {"schema_version": 1, "training_ready": False, "scope": "Unmatched research samples and forecast context; not an Indian storm training corpus",
             "collection_enabled": enabled(), "collection_policy": "Opt-in, direct loopback, JSON requests and trusted origin only; one fixed job at a time",
             "integrity_note": "Catalog checks local size; file downloads verify SHA-256 before serving", "collections": collections, "sources": sources}
 

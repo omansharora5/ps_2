@@ -32,3 +32,5 @@ artifacts/image-training-smoke/
 tools/gh/
 tools/stldm/
 data/operations/
+data/ncr/imerg/
+data/ncr/era5/

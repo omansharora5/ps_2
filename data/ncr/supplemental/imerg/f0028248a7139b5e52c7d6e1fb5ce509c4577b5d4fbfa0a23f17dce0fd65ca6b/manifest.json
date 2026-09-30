@@ -1,0 +1,33 @@
+{
+  "access": "public_catalogue_earthdata_download",
+  "credit": "NASA GPM / GES DISC",
+  "files": {
+    "raw.bin": "c34d622c1a8faba30c984da451b9176f95f13cf3c065b403a188784df331cf4c",
+    "rows.json": "028e33db1c5ded0bdceec02bc0de6b233eb1aeb51a0f351fd48805d49c4a407c"
+  },
+  "id": "f0028248a7139b5e52c7d6e1fb5ce509c4577b5d4fbfa0a23f17dce0fd65ca6b",
+  "metadata": {
+    "bounded_discovery_not_complete_archive": true,
+    "catalogue_is_rainfall_data": false,
+    "collection": "GPM_3IMERGHHE",
+    "download_requires": "NASA Earthdata account with GES DISC authorization",
+    "native_resolution_degrees": 0.1,
+    "run": "Early",
+    "scientific_payload_downloaded": false,
+    "version": "07"
+  },
+  "note": "Catalogue records only until authenticated files are downloaded. Native 0.1-degree estimates can be weak labels, not block-scale truth.",
+  "request": {
+    "end_exclusive": "2026-09-30",
+    "normalizer_version": 1,
+    "start_inclusive": "2026-09-23",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?short_name=GPM_3IMERGHHE&version=07&bounding_box=76.5%2C28.0%2C78.0%2C29.3&temporal=2026-09-23T00%3A00%3A00Z%2C2026-09-29T23%3A59%3A59.999000Z&page_size=48&sort_key=-start_date"
+  },
+  "retrieved_at_utc": "2026-09-30T15:55:06.064538Z",
+  "role": "satellite_precipitation_catalogue",
+  "row_count": 48,
+  "source": "imerg",
+  "status": "collected",
+  "training_ready_30_minutes": false,
+  "url": "https://www.earthdata.nasa.gov/data/catalog/ges-disc-gpm-3imerghh-07"
+}

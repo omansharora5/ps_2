@@ -1,0 +1,3362 @@
+[
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T00:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.35,
+      "RH2M": 94.14,
+      "T2M": 23.03,
+      "WD10M": 125.0,
+      "WS10M": 1.31
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T01:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.46,
+      "RH2M": 96.11,
+      "T2M": 23.05,
+      "WD10M": 116.7,
+      "WS10M": 1.94
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T02:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.57,
+      "RH2M": 89.2,
+      "T2M": 24.76,
+      "WD10M": 124.1,
+      "WS10M": 2.95
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T03:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.58,
+      "RH2M": 78.98,
+      "T2M": 27.33,
+      "WD10M": 141.2,
+      "WS10M": 2.97
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T04:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.57,
+      "RH2M": 71.21,
+      "T2M": 29.46,
+      "WD10M": 150.8,
+      "WS10M": 2.7
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T05:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.55,
+      "RH2M": 66.68,
+      "T2M": 30.87,
+      "WD10M": 151.8,
+      "WS10M": 1.91
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T06:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.49,
+      "RH2M": 62.47,
+      "T2M": 31.97,
+      "WD10M": 143.3,
+      "WS10M": 1.12
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T07:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.41,
+      "RH2M": 59.24,
+      "T2M": 32.73,
+      "WD10M": 115.0,
+      "WS10M": 0.83
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T08:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.33,
+      "RH2M": 57.46,
+      "T2M": 33.07,
+      "WD10M": 94.5,
+      "WS10M": 1.01
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T09:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.21,
+      "RH2M": 57.31,
+      "T2M": 32.97,
+      "WD10M": 89.0,
+      "WS10M": 1.19
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T10:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.12,
+      "RH2M": 58.76,
+      "T2M": 32.53,
+      "WD10M": 87.1,
+      "WS10M": 1.19
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T11:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.1,
+      "RH2M": 65.13,
+      "T2M": 31.68,
+      "WD10M": 78.1,
+      "WS10M": 1.02
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T12:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.1,
+      "RH2M": 73.81,
+      "T2M": 30.5,
+      "WD10M": 67.0,
+      "WS10M": 1.0
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T13:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.14,
+      "RH2M": 74.7,
+      "T2M": 29.14,
+      "WD10M": 73.7,
+      "WS10M": 1.53
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T14:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.26,
+      "RH2M": 77.59,
+      "T2M": 27.97,
+      "WD10M": 81.8,
+      "WS10M": 2.03
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T15:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.3,
+      "RH2M": 79.18,
+      "T2M": 27.22,
+      "WD10M": 89.5,
+      "WS10M": 2.3
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T16:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.04,
+      "PS": 98.33,
+      "RH2M": 80.51,
+      "T2M": 26.69,
+      "WD10M": 97.9,
+      "WS10M": 2.39
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T17:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.34,
+      "RH2M": 82.06,
+      "T2M": 26.21,
+      "WD10M": 104.8,
+      "WS10M": 2.54
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T18:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.35,
+      "RH2M": 83.87,
+      "T2M": 25.74,
+      "WD10M": 108.8,
+      "WS10M": 2.77
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T19:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.32,
+      "RH2M": 86.31,
+      "T2M": 25.28,
+      "WD10M": 110.9,
+      "WS10M": 2.98
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T20:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.3,
+      "RH2M": 89.09,
+      "T2M": 24.81,
+      "WD10M": 112.4,
+      "WS10M": 3.13
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T21:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.27,
+      "RH2M": 91.87,
+      "T2M": 24.32,
+      "WD10M": 112.5,
+      "WS10M": 2.85
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T22:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.23,
+      "RH2M": 94.56,
+      "T2M": 23.84,
+      "WD10M": 110.4,
+      "WS10M": 2.33
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-23T23:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.25,
+      "RH2M": 96.9,
+      "T2M": 23.43,
+      "WD10M": 109.0,
+      "WS10M": 2.08
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T00:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.3,
+      "RH2M": 98.49,
+      "T2M": 23.14,
+      "WD10M": 110.7,
+      "WS10M": 2.15
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T01:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.36,
+      "RH2M": 95.56,
+      "T2M": 23.77,
+      "WD10M": 115.4,
+      "WS10M": 2.96
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T02:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.45,
+      "RH2M": 88.78,
+      "T2M": 25.37,
+      "WD10M": 122.1,
+      "WS10M": 3.48
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T03:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.51,
+      "RH2M": 79.34,
+      "T2M": 27.65,
+      "WD10M": 133.2,
+      "WS10M": 3.96
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T04:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.49,
+      "RH2M": 71.69,
+      "T2M": 29.54,
+      "WD10M": 138.5,
+      "WS10M": 3.67
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T05:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.48,
+      "RH2M": 66.31,
+      "T2M": 30.88,
+      "WD10M": 132.0,
+      "WS10M": 3.21
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T06:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.42,
+      "RH2M": 63.16,
+      "T2M": 31.7,
+      "WD10M": 120.9,
+      "WS10M": 3.05
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T07:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.36,
+      "RH2M": 61.28,
+      "T2M": 32.1,
+      "WD10M": 111.5,
+      "WS10M": 2.87
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T08:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.03,
+      "PS": 98.27,
+      "RH2M": 59.99,
+      "T2M": 32.3,
+      "WD10M": 103.7,
+      "WS10M": 2.61
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T09:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.19,
+      "RH2M": 60.08,
+      "T2M": 32.07,
+      "WD10M": 97.7,
+      "WS10M": 2.4
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T10:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.1,
+      "RH2M": 62.32,
+      "T2M": 31.56,
+      "WD10M": 93.2,
+      "WS10M": 2.17
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T11:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.13,
+      "PS": 98.08,
+      "RH2M": 67.61,
+      "T2M": 30.75,
+      "WD10M": 91.8,
+      "WS10M": 1.86
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T12:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.17,
+      "PS": 98.09,
+      "RH2M": 77.19,
+      "T2M": 29.35,
+      "WD10M": 92.1,
+      "WS10M": 1.39
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T13:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.15,
+      "PS": 98.19,
+      "RH2M": 77.41,
+      "T2M": 27.98,
+      "WD10M": 95.2,
+      "WS10M": 1.88
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T14:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.04,
+      "PS": 98.28,
+      "RH2M": 79.18,
+      "T2M": 27.03,
+      "WD10M": 106.5,
+      "WS10M": 2.25
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T15:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.33,
+      "RH2M": 81.26,
+      "T2M": 26.31,
+      "WD10M": 120.9,
+      "WS10M": 2.61
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T16:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.35,
+      "RH2M": 83.87,
+      "T2M": 25.74,
+      "WD10M": 131.5,
+      "WS10M": 3.34
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T17:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.06,
+      "PS": 98.35,
+      "RH2M": 87.63,
+      "T2M": 25.16,
+      "WD10M": 135.8,
+      "WS10M": 4.03
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T18:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.06,
+      "PS": 98.38,
+      "RH2M": 91.19,
+      "T2M": 24.61,
+      "WD10M": 135.6,
+      "WS10M": 4.16
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T19:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.38,
+      "RH2M": 93.73,
+      "T2M": 24.16,
+      "WD10M": 133.5,
+      "WS10M": 3.71
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T20:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.32,
+      "RH2M": 96.13,
+      "T2M": 23.7,
+      "WD10M": 130.0,
+      "WS10M": 2.86
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T21:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.27,
+      "RH2M": 98.47,
+      "T2M": 23.23,
+      "WD10M": 124.5,
+      "WS10M": 2.05
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T22:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.23,
+      "RH2M": 100.0,
+      "T2M": 22.8,
+      "WD10M": 115.2,
+      "WS10M": 1.69
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-24T23:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.24,
+      "RH2M": 99.97,
+      "T2M": 22.83,
+      "WD10M": 107.7,
+      "WS10M": 1.77
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T00:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.03,
+      "PS": 98.28,
+      "RH2M": 97.42,
+      "T2M": 23.04,
+      "WD10M": 105.1,
+      "WS10M": 2.15
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T01:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.34,
+      "RH2M": 96.13,
+      "T2M": 23.14,
+      "WD10M": 105.5,
+      "WS10M": 2.02
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T02:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.41,
+      "RH2M": 91.92,
+      "T2M": 23.98,
+      "WD10M": 111.9,
+      "WS10M": 1.85
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T03:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.48,
+      "RH2M": 80.54,
+      "T2M": 26.2,
+      "WD10M": 117.0,
+      "WS10M": 1.9
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T04:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.48,
+      "RH2M": 70.64,
+      "T2M": 28.41,
+      "WD10M": 111.0,
+      "WS10M": 1.84
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T05:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.44,
+      "RH2M": 64.42,
+      "T2M": 30.05,
+      "WD10M": 94.4,
+      "WS10M": 1.69
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T06:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.37,
+      "RH2M": 60.83,
+      "T2M": 31.14,
+      "WD10M": 88.1,
+      "WS10M": 1.79
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T07:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.07,
+      "PS": 98.29,
+      "RH2M": 58.47,
+      "T2M": 31.79,
+      "WD10M": 87.0,
+      "WS10M": 1.88
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T08:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.07,
+      "PS": 98.21,
+      "RH2M": 56.8,
+      "T2M": 32.08,
+      "WD10M": 81.7,
+      "WS10M": 1.87
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T09:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.03,
+      "PS": 98.1,
+      "RH2M": 57.12,
+      "T2M": 31.84,
+      "WD10M": 77.0,
+      "WS10M": 1.78
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T10:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.04,
+      "PS": 98.04,
+      "RH2M": 59.81,
+      "T2M": 31.23,
+      "WD10M": 78.3,
+      "WS10M": 1.63
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T11:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.29,
+      "PS": 98.0,
+      "RH2M": 64.86,
+      "T2M": 30.26,
+      "WD10M": 93.3,
+      "WS10M": 1.72
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T12:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.24,
+      "PS": 98.01,
+      "RH2M": 75.35,
+      "T2M": 28.53,
+      "WD10M": 114.0,
+      "WS10M": 1.6
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T13:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.12,
+      "PS": 98.1,
+      "RH2M": 78.39,
+      "T2M": 27.02,
+      "WD10M": 129.2,
+      "WS10M": 2.17
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T14:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.19,
+      "RH2M": 81.33,
+      "T2M": 26.12,
+      "WD10M": 139.9,
+      "WS10M": 2.38
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T15:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.05,
+      "PS": 98.24,
+      "RH2M": 83.9,
+      "T2M": 25.48,
+      "WD10M": 146.7,
+      "WS10M": 2.26
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T16:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.24,
+      "RH2M": 86.5,
+      "T2M": 24.9,
+      "WD10M": 148.2,
+      "WS10M": 2.05
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T17:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.24,
+      "RH2M": 89.55,
+      "T2M": 24.32,
+      "WD10M": 146.3,
+      "WS10M": 1.66
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T18:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.24,
+      "RH2M": 92.39,
+      "T2M": 23.81,
+      "WD10M": 141.1,
+      "WS10M": 1.39
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T19:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.18,
+      "RH2M": 94.55,
+      "T2M": 23.36,
+      "WD10M": 131.9,
+      "WS10M": 1.32
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T20:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.13,
+      "RH2M": 96.36,
+      "T2M": 22.99,
+      "WD10M": 122.3,
+      "WS10M": 1.16
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T21:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.08,
+      "RH2M": 97.01,
+      "T2M": 22.86,
+      "WD10M": 97.9,
+      "WS10M": 0.8
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T22:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.05,
+      "PS": 98.03,
+      "RH2M": 97.03,
+      "T2M": 22.83,
+      "WD10M": 38.8,
+      "WS10M": 0.85
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-25T23:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.13,
+      "PS": 98.04,
+      "RH2M": 97.28,
+      "T2M": 22.77,
+      "WD10M": 19.8,
+      "WS10M": 1.45
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T00:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.21,
+      "PS": 98.04,
+      "RH2M": 97.48,
+      "T2M": 22.7,
+      "WD10M": 15.5,
+      "WS10M": 2.14
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T01:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.25,
+      "PS": 98.1,
+      "RH2M": 96.59,
+      "T2M": 22.85,
+      "WD10M": 15.4,
+      "WS10M": 2.59
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T02:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.3,
+      "PS": 98.16,
+      "RH2M": 93.87,
+      "T2M": 23.39,
+      "WD10M": 25.5,
+      "WS10M": 2.9
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T03:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.32,
+      "PS": 98.18,
+      "RH2M": 89.92,
+      "T2M": 24.26,
+      "WD10M": 35.5,
+      "WS10M": 3.56
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T04:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.57,
+      "PS": 98.18,
+      "RH2M": 86.68,
+      "T2M": 24.76,
+      "WD10M": 39.1,
+      "WS10M": 4.28
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T05:00:00Z",
+    "values": {
+      "PRECTOTCORR": 1.27,
+      "PS": 98.12,
+      "RH2M": 85.93,
+      "T2M": 24.74,
+      "WD10M": 39.3,
+      "WS10M": 5.0
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T06:00:00Z",
+    "values": {
+      "PRECTOTCORR": 1.95,
+      "PS": 98.07,
+      "RH2M": 87.77,
+      "T2M": 23.95,
+      "WD10M": 38.4,
+      "WS10M": 5.45
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T07:00:00Z",
+    "values": {
+      "PRECTOTCORR": 2.38,
+      "PS": 98.0,
+      "RH2M": 89.47,
+      "T2M": 23.52,
+      "WD10M": 35.5,
+      "WS10M": 5.76
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T08:00:00Z",
+    "values": {
+      "PRECTOTCORR": 2.27,
+      "PS": 97.97,
+      "RH2M": 89.89,
+      "T2M": 23.3,
+      "WD10M": 31.5,
+      "WS10M": 5.95
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T09:00:00Z",
+    "values": {
+      "PRECTOTCORR": 1.65,
+      "PS": 97.95,
+      "RH2M": 91.24,
+      "T2M": 22.77,
+      "WD10M": 26.6,
+      "WS10M": 5.95
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T10:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.72,
+      "PS": 97.9,
+      "RH2M": 91.7,
+      "T2M": 22.19,
+      "WD10M": 23.6,
+      "WS10M": 5.89
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T11:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.09,
+      "PS": 97.86,
+      "RH2M": 91.45,
+      "T2M": 21.51,
+      "WD10M": 23.8,
+      "WS10M": 5.4
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T12:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.84,
+      "RH2M": 91.95,
+      "T2M": 20.95,
+      "WD10M": 26.0,
+      "WS10M": 4.45
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T13:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.88,
+      "RH2M": 93.55,
+      "T2M": 20.49,
+      "WD10M": 28.4,
+      "WS10M": 3.34
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T14:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.94,
+      "RH2M": 95.26,
+      "T2M": 20.15,
+      "WD10M": 25.8,
+      "WS10M": 2.39
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T15:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.99,
+      "RH2M": 96.71,
+      "T2M": 19.88,
+      "WD10M": 18.1,
+      "WS10M": 1.8
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T16:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 97.96,
+      "RH2M": 97.37,
+      "T2M": 19.71,
+      "WD10M": 10.5,
+      "WS10M": 1.7
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T17:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 97.93,
+      "RH2M": 97.51,
+      "T2M": 19.65,
+      "WD10M": 7.7,
+      "WS10M": 1.79
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T18:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.9,
+      "RH2M": 97.61,
+      "T2M": 19.65,
+      "WD10M": 8.6,
+      "WS10M": 1.88
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T19:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.91,
+      "RH2M": 97.74,
+      "T2M": 19.63,
+      "WD10M": 8.9,
+      "WS10M": 1.74
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T20:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.89,
+      "RH2M": 98.33,
+      "T2M": 19.52,
+      "WD10M": 5.3,
+      "WS10M": 1.42
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T21:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.88,
+      "RH2M": 99.12,
+      "T2M": 19.31,
+      "WD10M": 357.1,
+      "WS10M": 1.18
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T22:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.88,
+      "RH2M": 99.67,
+      "T2M": 19.12,
+      "WD10M": 348.2,
+      "WS10M": 1.07
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-26T23:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 97.92,
+      "RH2M": 98.64,
+      "T2M": 19.16,
+      "WD10M": 325.6,
+      "WS10M": 0.96
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T00:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.0,
+      "RH2M": 97.59,
+      "T2M": 19.23,
+      "WD10M": 283.9,
+      "WS10M": 1.12
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T01:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.07,
+      "RH2M": 95.65,
+      "T2M": 19.96,
+      "WD10M": 260.8,
+      "WS10M": 1.56
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T02:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.15,
+      "RH2M": 86.84,
+      "T2M": 21.79,
+      "WD10M": 249.5,
+      "WS10M": 2.25
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T03:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.22,
+      "RH2M": 77.67,
+      "T2M": 24.19,
+      "WD10M": 240.4,
+      "WS10M": 1.52
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T04:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.28,
+      "RH2M": 70.28,
+      "T2M": 26.32,
+      "WD10M": 243.1,
+      "WS10M": 0.77
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T05:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.28,
+      "RH2M": 65.03,
+      "T2M": 27.96,
+      "WD10M": 10.9,
+      "WS10M": 0.74
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T06:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.27,
+      "RH2M": 64.49,
+      "T2M": 28.36,
+      "WD10M": 37.8,
+      "WS10M": 2.19
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T07:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.23,
+      "PS": 98.23,
+      "RH2M": 66.92,
+      "T2M": 27.94,
+      "WD10M": 52.8,
+      "WS10M": 3.38
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T08:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.23,
+      "RH2M": 68.45,
+      "T2M": 27.7,
+      "WD10M": 61.9,
+      "WS10M": 3.95
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T09:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.22,
+      "RH2M": 69.48,
+      "T2M": 27.46,
+      "WD10M": 68.7,
+      "WS10M": 4.12
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T10:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.21,
+      "RH2M": 72.25,
+      "T2M": 26.66,
+      "WD10M": 72.9,
+      "WS10M": 4.14
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T11:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.19,
+      "RH2M": 77.28,
+      "T2M": 25.3,
+      "WD10M": 74.0,
+      "WS10M": 3.91
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T12:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.19,
+      "RH2M": 84.29,
+      "T2M": 23.68,
+      "WD10M": 71.7,
+      "WS10M": 3.21
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T13:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.2,
+      "RH2M": 90.4,
+      "T2M": 22.4,
+      "WD10M": 71.2,
+      "WS10M": 2.73
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T14:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.28,
+      "RH2M": 93.52,
+      "T2M": 21.67,
+      "WD10M": 76.6,
+      "WS10M": 2.54
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T15:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.35,
+      "RH2M": 95.51,
+      "T2M": 21.18,
+      "WD10M": 85.3,
+      "WS10M": 2.33
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T16:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.38,
+      "RH2M": 96.98,
+      "T2M": 20.81,
+      "WD10M": 92.4,
+      "WS10M": 2.11
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T17:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.36,
+      "RH2M": 98.38,
+      "T2M": 20.49,
+      "WD10M": 94.3,
+      "WS10M": 1.71
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T18:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.37,
+      "RH2M": 99.46,
+      "T2M": 20.24,
+      "WD10M": 91.9,
+      "WS10M": 1.47
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T19:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.32,
+      "RH2M": 100.0,
+      "T2M": 20.06,
+      "WD10M": 87.1,
+      "WS10M": 1.4
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T20:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.29,
+      "RH2M": 100.0,
+      "T2M": 19.9,
+      "WD10M": 84.6,
+      "WS10M": 1.39
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T21:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.24,
+      "RH2M": 100.0,
+      "T2M": 19.73,
+      "WD10M": 84.7,
+      "WS10M": 1.4
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T22:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.23,
+      "RH2M": 100.0,
+      "T2M": 19.7,
+      "WD10M": 80.6,
+      "WS10M": 1.35
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-27T23:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.22,
+      "RH2M": 100.0,
+      "T2M": 19.94,
+      "WD10M": 70.6,
+      "WS10M": 1.18
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T00:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.27,
+      "RH2M": 100.0,
+      "T2M": 20.25,
+      "WD10M": 56.8,
+      "WS10M": 1.0
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T01:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.36,
+      "RH2M": 98.16,
+      "T2M": 20.77,
+      "WD10M": 62.4,
+      "WS10M": 1.02
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T02:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.44,
+      "RH2M": 94.7,
+      "T2M": 21.71,
+      "WD10M": 90.9,
+      "WS10M": 1.31
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T03:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.52,
+      "RH2M": 84.83,
+      "T2M": 23.93,
+      "WD10M": 99.9,
+      "WS10M": 1.57
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T04:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.53,
+      "RH2M": 76.11,
+      "T2M": 26.07,
+      "WD10M": 92.5,
+      "WS10M": 1.14
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T05:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.11,
+      "PS": 98.51,
+      "RH2M": 72.31,
+      "T2M": 27.1,
+      "WD10M": 71.9,
+      "WS10M": 0.55
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T06:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.3,
+      "PS": 98.47,
+      "RH2M": 69.46,
+      "T2M": 27.82,
+      "WD10M": 0.0,
+      "WS10M": 0.38
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T07:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.33,
+      "PS": 98.39,
+      "RH2M": 66.82,
+      "T2M": 28.43,
+      "WD10M": 344.7,
+      "WS10M": 0.68
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T08:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.26,
+      "PS": 98.35,
+      "RH2M": 65.08,
+      "T2M": 28.95,
+      "WD10M": 357.5,
+      "WS10M": 1.15
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T09:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.14,
+      "PS": 98.29,
+      "RH2M": 64.9,
+      "T2M": 29.07,
+      "WD10M": 12.4,
+      "WS10M": 1.68
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T10:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.08,
+      "PS": 98.28,
+      "RH2M": 67.44,
+      "T2M": 28.55,
+      "WD10M": 27.4,
+      "WS10M": 2.11
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T11:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.07,
+      "PS": 98.29,
+      "RH2M": 73.69,
+      "T2M": 27.2,
+      "WD10M": 37.1,
+      "WS10M": 2.31
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T12:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.35,
+      "RH2M": 84.19,
+      "T2M": 25.42,
+      "WD10M": 44.5,
+      "WS10M": 1.53
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T13:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.43,
+      "RH2M": 91.76,
+      "T2M": 24.18,
+      "WD10M": 49.3,
+      "WS10M": 1.04
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T14:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.01,
+      "PS": 98.53,
+      "RH2M": 92.37,
+      "T2M": 23.71,
+      "WD10M": 54.8,
+      "WS10M": 0.95
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T15:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.58,
+      "RH2M": 92.74,
+      "T2M": 23.53,
+      "WD10M": 62.9,
+      "WS10M": 0.9
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T16:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.6,
+      "RH2M": 94.09,
+      "T2M": 23.35,
+      "WD10M": 66.8,
+      "WS10M": 0.84
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T17:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.56,
+      "RH2M": 95.25,
+      "T2M": 23.14,
+      "WD10M": 63.4,
+      "WS10M": 0.78
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T18:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.54,
+      "RH2M": 95.54,
+      "T2M": 22.78,
+      "WD10M": 49.5,
+      "WS10M": 0.72
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T19:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.53,
+      "RH2M": 95.88,
+      "T2M": 22.3,
+      "WD10M": 7.7,
+      "WS10M": 0.82
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T20:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.53,
+      "RH2M": 98.62,
+      "T2M": 21.68,
+      "WD10M": 351.5,
+      "WS10M": 1.22
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T21:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.57,
+      "RH2M": 100.0,
+      "T2M": 21.28,
+      "WD10M": 355.1,
+      "WS10M": 1.54
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T22:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.0,
+      "PS": 98.57,
+      "RH2M": 100.0,
+      "T2M": 21.14,
+      "WD10M": 0.6,
+      "WS10M": 1.94
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-28T23:00:00Z",
+    "values": {
+      "PRECTOTCORR": 0.02,
+      "PS": 98.59,
+      "RH2M": 99.4,
+      "T2M": 21.36,
+      "WD10M": 358.4,
+      "WS10M": 2.51
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T00:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T01:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T02:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T03:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T04:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T05:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T06:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T07:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T08:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T09:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T10:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T11:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T12:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T13:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T14:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T15:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T16:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T17:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T18:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T19:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T20:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T21:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T22:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  },
+  {
+    "label_eligible": false,
+    "units": {
+      "PRECTOTCORR": "mm/hour",
+      "PS": "kPa",
+      "RH2M": "%",
+      "T2M": "C",
+      "WD10M": "Degrees",
+      "WS10M": "m/s"
+    },
+    "valid_at_utc": "2026-09-29T23:00:00Z",
+    "values": {
+      "PRECTOTCORR": null,
+      "PS": null,
+      "RH2M": null,
+      "T2M": null,
+      "WD10M": null,
+      "WS10M": null
+    }
+  }
+]

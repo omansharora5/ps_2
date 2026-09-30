@@ -1,0 +1,36 @@
+{
+  "access": "public_no_key_noncommercial",
+  "credit": "Open-Meteo / NOAA GFS",
+  "files": {
+    "raw.bin": "bc6ac57879f4822305143fdbfe30d057150d92b3120cc279f42157b3b5c4020d",
+    "rows.json": "9c966d0e783caf11d747d3868a831036157421bf0484de9f20f19fb3d0171fe1"
+  },
+  "id": "635f8dcfe5ace5a50940daa5332010acabe8b9e1806dd5f309d17d96829d4920",
+  "metadata": {
+    "availability_rule": "first retrieval of this snapshot",
+    "generationtime_ms_is_model_issue_time": false,
+    "model_initialization_known": false,
+    "requested_point": {
+      "latitude": 28.6139,
+      "longitude": 77.209
+    },
+    "returned_point": {
+      "latitude": 28.64302,
+      "longitude": 77.22656
+    }
+  },
+  "note": "Hourly model context; precipitation is not a measured rain label. Keep retrieval time for causal use.",
+  "request": {
+    "end_exclusive": "2026-09-30",
+    "normalizer_version": 1,
+    "start_inclusive": "2026-09-23",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=28.6139&longitude=77.209&hourly=temperature_2m%2Crelative_humidity_2m%2Cdew_point_2m%2Cpressure_msl%2Cwind_speed_10m%2Cwind_direction_10m%2Cprecipitation%2Ccape%2Cconvective_inhibition%2Ctotal_column_integrated_water_vapour&wind_speed_unit=ms&timezone=UTC&forecast_days=2&models=gfs_global"
+  },
+  "retrieved_at_utc": "2026-09-30T15:54:40.987446Z",
+  "role": "nwp_forecast_context",
+  "row_count": 48,
+  "source": "open_meteo",
+  "status": "collected",
+  "training_ready_30_minutes": false,
+  "url": "https://open-meteo.com/en/docs"
+}

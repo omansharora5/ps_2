@@ -1,0 +1,30 @@
+{
+  "access": "public_bulk_no_key",
+  "credit": "Meteostat and original data providers",
+  "files": {
+    "raw.bin": "ac88610e0ac831dcb7463fda4a4f973f27696ba56e5ec783c50329b648ada78a",
+    "rows.json": "309efd667ad7a5e85c9a33277a4dfbeac42e55e4441d7e9ce34d36c4d233768b"
+  },
+  "id": "a8e95baed654b2fed132f1de681fea2d0a451ace239d710bde8809dda9a5b06b",
+  "metadata": {
+    "historical_report_availability_known": false,
+    "independent_of_other_airport_archives": false,
+    "model_fill_must_be_preserved": true,
+    "name": "Delhi Palam",
+    "station": "42181"
+  },
+  "note": "Station/year CSV may contain model fill; preserve each variable's source. JSON API separately needs RapidAPI.",
+  "request": {
+    "end_exclusive": "2026-09-30",
+    "normalizer_version": 1,
+    "start_inclusive": "2026-09-23",
+    "url": "https://data.meteostat.net/hourly/2026/42181.csv.gz"
+  },
+  "retrieved_at_utc": "2026-09-30T15:54:53.453349Z",
+  "role": "mixed_station_archive",
+  "row_count": 168,
+  "source": "meteostat",
+  "status": "collected",
+  "training_ready_30_minutes": false,
+  "url": "https://dev.meteostat.net/data/timeseries/hourly"
+}

@@ -1,0 +1,31 @@
+{
+  "access": "public_limited_use",
+  "credit": "RainViewer and radar data providers",
+  "files": {
+    "raw.bin": "c0c2853567bb5d836a7413fdf54ad6be4b07a24c499f8f7abda7c321ee5eec9b",
+    "rows.json": "2179c7c9de25125704f73b0c4bc5bf0be8b8959ea38753deb94cf783cfeab073"
+  },
+  "id": "5cb1a982f89fd07abd2bb23f9f19236aa02e22082baf6df63ce897276690b2ff",
+  "metadata": {
+    "attribution_url": "https://www.rainviewer.com/",
+    "coverage_is_current_scan_evidence": false,
+    "future_frames_supported": false,
+    "individual_scan_freshness": "unknown",
+    "numeric_dbz_available": false,
+    "returned_future_frame_count": 0
+  },
+  "note": "Past rendered frames only. NCR coverage and individual scan freshness are unverified. Never interpret an empty tile as dry.",
+  "request": {
+    "end_exclusive": "2026-09-30",
+    "normalizer_version": 1,
+    "start_inclusive": "2026-09-23",
+    "url": "https://api.rainviewer.com/public/weather-maps.json"
+  },
+  "retrieved_at_utc": "2026-09-30T15:55:00.936660Z",
+  "role": "rendered_radar_display",
+  "row_count": 13,
+  "source": "rainviewer",
+  "status": "collected",
+  "training_ready_30_minutes": false,
+  "url": "https://www.rainviewer.com/api/weather-maps-api.html"
+}

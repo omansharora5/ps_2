@@ -31,6 +31,8 @@ Binary CSI/POD/FAR/FSS use the ≥20 dBZ echo target on the intersection of vali
 
 ## 2. Inspect and collect the government starter pack
 
+For the new NCR-specific Open-Meteo, airport archives, POWER, RainViewer, IMERG and GFS paths, use the [supplemental source and training guide](SUPPLEMENTAL_DATA_GUIDE.md). It separates forecast context from measured outcomes, gives the API and credential setup, and defines comparisons needed before claiming better accuracy.
+
 `GET /api/data/catalog` exposes provider links, exact file source URLs, available API/documentation URLs, local file counts, time ranges, units and unfulfilled Indian radar/INSAT/lightning access requirements. `GET /api/data/files/{file_id}` serves only manifest-listed files after size and SHA-256 verification. It cannot download arbitrary server paths or arbitrary remote URLs.
 
 The optional collection environment is separate from the app:

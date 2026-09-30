@@ -1,0 +1,119 @@
+[
+  {
+    "frame_generated_at_utc": "2026-09-30T13:50:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/4095c48580d8",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/4095c48580d8/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T14:00:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/f4bb7472c517",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/f4bb7472c517/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T14:10:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/c9117e481e1d",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/c9117e481e1d/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T14:20:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/1f5c9f3bf116",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/1f5c9f3bf116/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T14:30:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/ded19d21e1de",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/ded19d21e1de/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T14:40:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/d69e72c62c52",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/d69e72c62c52/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T14:50:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/307d2e9cb1ff",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/307d2e9cb1ff/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T15:00:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/6bc93df3ff6f",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/6bc93df3ff6f/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T15:10:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/6bf51918cbc6",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/6bf51918cbc6/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T15:20:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/887d6d90d607",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/887d6d90d607/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T15:30:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/c6b987360156",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/c6b987360156/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T15:40:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/8601e435cee1",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/8601e435cee1/256/{z}/{x}/{y}/2/0_0.png"
+  },
+  {
+    "frame_generated_at_utc": "2026-09-30T15:50:00Z",
+    "individual_radar_observed_at_utc": null,
+    "label_eligible": false,
+    "max_zoom": 7,
+    "ncr_coverage": "unverified",
+    "path": "/v2/radar/65f75825e339",
+    "tile_url_template": "https://tilecache.rainviewer.com/v2/radar/65f75825e339/256/{z}/{x}/{y}/2/0_0.png"
+  }
+]

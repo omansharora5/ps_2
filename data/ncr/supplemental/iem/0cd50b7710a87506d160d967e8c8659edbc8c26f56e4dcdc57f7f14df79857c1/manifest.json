@@ -1,0 +1,28 @@
+{
+  "access": "public_no_key",
+  "credit": "Iowa Environmental Mesonet",
+  "files": {
+    "raw.bin": "17c2348fd84b3084592f6fd4fb0f64f2bed48062c28c2a589ac55724b6245303",
+    "rows.json": "c1f682ee639f761e84cbdf3e1c8c8548be9359288353eccf094ac20140ea2065"
+  },
+  "id": "0cd50b7710a87506d160d967e8c8659edbc8c26f56e4dcdc57f7f14df79857c1",
+  "metadata": {
+    "historical_report_availability_known": false,
+    "independent_of_imd_airport_observations": false,
+    "precipitation_amounts_supported_for_india": false
+  },
+  "note": "Indian precipitation amounts are unavailable. Returned p01i zeroes are not dry labels; retain METAR weather evidence.",
+  "request": {
+    "end_exclusive": "2026-09-30",
+    "normalizer_version": 1,
+    "start_inclusive": "2026-09-23",
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=VIDP&station=VIDD&data=all&sts=2026-09-23T00%3A00%3A00Z&ets=2026-09-30T00%3A00%3A00Z&tz=UTC&format=onlycomma&missing=M&trace=T&latlon=yes"
+  },
+  "retrieved_at_utc": "2026-09-30T15:54:51.842814Z",
+  "role": "airport_observation",
+  "row_count": 554,
+  "source": "iem",
+  "status": "collected",
+  "training_ready_30_minutes": false,
+  "url": "https://mesonet.agron.iastate.edu/request/download.phtml?network=IN__ASOS"
+}

@@ -6,6 +6,7 @@ from typing import Literal
 
 from fastapi import APIRouter, HTTPException, Query
 from .ncr_data import DEFAULT_ROOT, REGION, instant, latest, read_rows
+from . import supplemental_data
 
 router = APIRouter(prefix="/api/ncr", tags=["NCR observations"])
 SOURCES = [
@@ -93,3 +94,69 @@ def forecast():
             "reason": "A current NCR model forecast cannot be issued from the collected station sample alone.",
             "blockers": BLOCKERS, "model_endpoint_connected": False,
             "next_step": "Use predict_images.py for a validated compatible checkpoint and causal image episode; it does not auto-publish public warnings."}
+
+
+def supplemental_root():
+    return Path(os.environ.get("VAJRA_SUPPLEMENTAL_ROOT", supplemental_data.DEFAULT_ROOT)).resolve()
+
+
+@router.get("/supplemental")
+def supplemental_status():
+    sources = []
+    for source, definition in supplemental_data.CATALOG.items():
+        item = {"id": source, **definition, "collection": None}
+        try:
+            manifest = supplemental_data.latest(supplemental_root(), source)
+            if manifest:
+                supplemental_data.read_rows(supplemental_root(), manifest)
+                age = (datetime.now(timezone.utc) - instant(manifest["retrieved_at_utc"])).total_seconds() / 60
+                item["collection"] = {key: manifest[key] for key in
+                                      ("id", "status", "row_count", "retrieved_at_utc", "metadata")}
+                item["collection"]["retrieval_age_minutes"] = round(age, 1)
+                item["collection"]["retrieval_age_is_observation_age"] = False
+        except (OSError, ValueError, KeyError, TypeError):
+            item["collection"] = {"status": "invalid", "reason": "Local integrity check failed"}
+        sources.append(item)
+    return {"region": REGION, "sources": sources, "automatic_collection_running": False,
+            "training_ready_30_minutes": False, "model_context_fusion_connected": False}
+
+
+@router.get("/supplemental/{source}")
+def supplemental_rows(source: str, offset: int = Query(default=0, ge=0),
+                      limit: int = Query(default=100, ge=1, le=500)):
+    if source not in supplemental_data.CATALOG:
+        raise HTTPException(404, "Unknown supplemental source")
+    try:
+        manifest = supplemental_data.latest(supplemental_root(), source)
+        rows = supplemental_data.read_rows(supplemental_root(), manifest) if manifest else []
+    except (OSError, ValueError, KeyError, TypeError):
+        raise HTTPException(503, "Supplemental evidence failed the local integrity check") from None
+    return {"source": source, "role": supplemental_data.CATALOG[source]["role"],
+            "collection_id": manifest["id"] if manifest else None,
+            "first_retrieved_at_utc": manifest["retrieved_at_utc"] if manifest else None,
+            "total": len(rows), "offset": offset, "limit": limit,
+            "next_offset": offset + limit if offset + limit < len(rows) else None,
+            "items": rows[offset:offset + limit]}
+
+
+@router.get("/gfs")
+def gfs_rows(offset: int = Query(default=0, ge=0), limit: int = Query(default=100, ge=1, le=500)):
+    from scripts import collect_ncr_gfs as gfs
+    root = Path(os.environ.get("VAJRA_NCR_GFS_ROOT", gfs.ROOT / "data/ncr/gfs"))
+    try:
+        manifest = gfs.read_latest(root)
+        rows = []
+        if manifest:
+            spec = manifest["forecast"]
+            payload = (root / spec["snapshot_id"] / "ncr.csv").read_bytes()
+            for values in gfs.validate_csv(payload, spec):
+                rows.append({"model_initialized_at_utc": spec["model_reference_time_utc"],
+                             "valid_at_utc": spec["valid_time_utc"], "variable": values[2], "level": values[3],
+                             "longitude": float(values[4]), "latitude": float(values[5]), "value": float(values[6]),
+                             "units": gfs.UNITS[values[2]], "label_eligible": False})
+    except (OSError, ValueError, KeyError, TypeError):
+        raise HTTPException(503, "GFS evidence failed the local integrity check") from None
+    return {"source": "noaa_gfs", "role": "nwp_context", "collection": manifest,
+            "automatic_collection_running": False, "total": len(rows), "offset": offset, "limit": limit,
+            "next_offset": offset + limit if offset + limit < len(rows) else None,
+            "items": rows[offset:offset + limit]}

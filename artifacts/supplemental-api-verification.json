@@ -1,0 +1,64 @@
+{
+  "checked_at_utc": "2026-09-30",
+  "checks": [
+    {
+      "path": "/api/ncr/supplemental",
+      "status": 200,
+      "total": null,
+      "source_count": 6
+    },
+    {
+      "path": "/api/ncr/gfs?limit=2",
+      "status": 200,
+      "total": 392,
+      "source_count": 0
+    },
+    {
+      "path": "/api/data/catalog",
+      "status": 200,
+      "total": null,
+      "source_count": 15
+    },
+    {
+      "path": "/api/ncr/supplemental/open_meteo?limit=2",
+      "status": 200,
+      "total": 48,
+      "source_count": 0
+    },
+    {
+      "path": "/api/ncr/supplemental/iem?limit=2",
+      "status": 200,
+      "total": 554,
+      "source_count": 0
+    },
+    {
+      "path": "/api/ncr/supplemental/meteostat?limit=2",
+      "status": 200,
+      "total": 168,
+      "source_count": 0
+    },
+    {
+      "path": "/api/ncr/supplemental/power?limit=2",
+      "status": 200,
+      "total": 168,
+      "source_count": 0
+    },
+    {
+      "path": "/api/ncr/supplemental/rainviewer?limit=2",
+      "status": 200,
+      "total": 13,
+      "source_count": 0
+    },
+    {
+      "path": "/api/ncr/supplemental/imerg?limit=2",
+      "status": 200,
+      "total": 48,
+      "source_count": 0
+    }
+  ],
+  "live_provider_downloads": true,
+  "authenticated_imerg_download": false,
+  "era5_download": false,
+  "browser_visual_check": "unavailable: no browser connected",
+  "scientific_accuracy_established": false
+}

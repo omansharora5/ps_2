@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "provider": "NOAA/NCEP",
+  "data_role": "nwp_context",
+  "is_observation_or_label": false,
+  "forecast": {
+    "date": "2026-09-30",
+    "cycle": 12,
+    "forecast_lead_hours": 3,
+    "model_reference_time_utc": "2026-09-30T12:00:00Z",
+    "valid_time_utc": "2026-09-30T15:00:00Z",
+    "snapshot_id": "gfs_20260930_12_f003_ncr",
+    "source_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20260930/12/atmos/gfs.t12z.pgrb2.0p25.f003"
+  },
+  "retrieved_at_utc": "2026-09-30T15:55:45.019849Z",
+  "historical_available_at_utc": null,
+  "geography": {
+    "west": 76.5,
+    "east": 78.25,
+    "south": 28.0,
+    "north": 29.5,
+    "grid_degrees": 0.25,
+    "scope": "Delhi metro pilot rectangle, not statutory NCR boundary"
+  },
+  "fields": [
+    {
+      "variable": "TMP",
+      "level": "2 m above ground",
+      "units": "K",
+      "byte_start": 418147142,
+      "byte_end_inclusive": 418660234,
+      "sha256": "564d074500a0f91e3ff05f706c05a0336988873c320ea368aaad0ca40a49cf98",
+      "bytes": 513093,
+      "archive_last_modified": "Wed, 30 Sep 2026 15:35:23 GMT",
+      "archive_etag": "\"8d7c7818a179c1491eded5e4399fc0bf\""
+    },
+    {
+      "variable": "RH",
+      "level": "2 m above ground",
+      "units": "%",
+      "byte_start": 420422982,
+      "byte_end_inclusive": 421219620,
+      "sha256": "2e0b079e54643b3021b535028b6f16c2f048bb58157ba8dc259f6f27c34af50e",
+      "bytes": 796639,
+      "archive_last_modified": "Wed, 30 Sep 2026 15:35:23 GMT",
+      "archive_etag": "\"8d7c7818a179c1491eded5e4399fc0bf\""
+    },
+    {
+      "variable": "UGRD",
+      "level": "10 m above ground",
+      "units": "m/s",
+      "byte_start": 422786851,
+      "byte_end_inclusive": 423768817,
+      "sha256": "85f29bd615e3c776bec4c97931726c015e140e5b13a5539614b60f3796729882",
+      "bytes": 981967,
+      "archive_last_modified": "Wed, 30 Sep 2026 15:35:23 GMT",
+      "archive_etag": "\"8d7c7818a179c1491eded5e4399fc0bf\""
+    },
+    {
+      "variable": "VGRD",
+      "level": "10 m above ground",
+      "units": "m/s",
+      "byte_start": 423768818,
+      "byte_end_inclusive": 424727870,
+      "sha256": "939a63170c35cf2486265a2204bd7364fc4d8f561ff83dac0d0a5cde1bbbf0cc",
+      "bytes": 959053,
+      "archive_last_modified": "Wed, 30 Sep 2026 15:35:23 GMT",
+      "archive_etag": "\"8d7c7818a179c1491eded5e4399fc0bf\""
+    },
+    {
+      "variable": "CAPE",
+      "level": "surface",
+      "units": "J/kg",
+      "byte_start": 437479745,
+      "byte_end_inclusive": 438071289,
+      "sha256": "c870f0588d2a4f1d438c7ad0b69564462432b19a594514ef39641d37999d9b8b",
+      "bytes": 591545,
+      "archive_last_modified": "Wed, 30 Sep 2026 15:35:23 GMT",
+      "archive_etag": "\"8d7c7818a179c1491eded5e4399fc0bf\""
+    },
+    {
+      "variable": "CIN",
+      "level": "surface",
+      "units": "J/kg",
+      "byte_start": 438071290,
+      "byte_end_inclusive": 438393959,
+      "sha256": "cdac295fee0a6b2cc5b6d78f6b446d2ebdb0be4466e70f0269dbc69e07cbb4ae",
+      "bytes": 322670,
+      "archive_last_modified": "Wed, 30 Sep 2026 15:35:23 GMT",
+      "archive_etag": "\"8d7c7818a179c1491eded5e4399fc0bf\""
+    },
+    {
+      "variable": "PWAT",
+      "level": "entire atmosphere (considered as a single layer)",
+      "units": "kg/m^2",
+      "byte_start": 438393960,
+      "byte_end_inclusive": 439614317,
+      "sha256": "111901516bdbec99529c52dc5b9f25ac5e55c27b9bfe1f75f1259147a3053ad1",
+      "bytes": 1220358,
+      "archive_last_modified": "Wed, 30 Sep 2026 15:35:23 GMT",
+      "archive_etag": "\"8d7c7818a179c1491eded5e4399fc0bf\""
+    }
+  ],
+  "files": [
+    {
+      "path": "provider.idx",
+      "bytes": 40478,
+      "sha256": "6e354dc1001d5babdeb85a9ba19fb42e27378dc55a8772a680a75440f7247509"
+    },
+    {
+      "path": "ncr.grib2",
+      "bytes": 1694,
+      "sha256": "4d4d96eb5db092885d81d0268dec8defaa79048175a760c68d424c310517c928"
+    },
+    {
+      "path": "ncr.csv",
+      "bytes": 34873,
+      "sha256": "324c145bb4a99eed0db8f751fd13a7042a9ffc00f94314095d3800409f124349"
+    }
+  ],
+  "csv_rows": 392,
+  "csv_has_header": false,
+  "csv_columns": [
+    "model_reference_time_utc",
+    "valid_time_utc",
+    "variable",
+    "level",
+    "longitude",
+    "latitude",
+    "value"
+  ],
+  "decoder": "wgrib2",
+  "transformation": "crop numeric GRIB fields; no unit conversion or interpolation",
+  "documentation_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/",
+  "notes": [
+    "Model output is environmental context, not observed rain or lightning.",
+    "Initialization and archive Last-Modified do not establish historical operational availability.",
+    "Only regional GRIB and CSV are retained; original global field checksums and ranges remain in this manifest."
+  ]
+}

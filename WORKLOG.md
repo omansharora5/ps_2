@@ -1,5 +1,13 @@
 # Work plan
 
+## Supplemental NCR sources, 30 September 2026
+
+Reviewed the supplied training explanation as reference material and verified provider claims against official documentation. Added source-specific public collectors, raw/normalized snapshots, checksum receipts and bounded backend routes. Collected actual Delhi environmental/airport samples and numeric NCR GFS fields. Added Earthdata-gated IMERG file access and an ERA5 request template, with no claim of authenticated downloads.
+
+Scientific safeguards preserve unknown precipitation, mixed model/observation provenance, native spatial support and separate initialization/valid/retrieval times. An independent review found metadata-integrity, raw-evidence, coordinate/time and boolean-quality gaps; fixed them and added regression checks. The source catalogue now links all eight additions. Documentation describes the ablation experiments still needed before integrating new inputs into a compatible model.
+
+Verification: full Python suite ran 181 tests with 10 optional skips; all six saved supplemental snapshots and the NCR GFS snapshot passed offline verification; nine real HTTP checks passed. No visual browser was available. Details are in `VALIDATION.md` and `docs/SUPPLEMENTAL_DATA_GUIDE.md`.
+
 ## NCR collection and model reuse, 30 September 2026
 
 - Collected September IMD station observations for a Delhi metro pilot: 11,479 variable records, 631 reports and four stations. Extracted 25 rain, 11 drizzle and five mixed thunderstorm precipitation descriptions separately from 195 explicit one-hour zero accumulations. Provider count disagreement keeps archive completeness partial.

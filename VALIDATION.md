@@ -2,6 +2,18 @@
 
 This record distinguishes software checks from real-weather and physical-device validation. The current delivery extends the original research prototype; the older benchmark results below retain their original scope.
 
+## Supplemental NCR sources, 30 September 2026
+
+Added public collectors for Open-Meteo, IEM, Meteostat, NASA POWER, RainViewer past-frame metadata and IMERG discovery; a separate numeric NCR GFS collector; an optional Earthdata downloader; and an ERA5 request template. The [guide](docs/SUPPLEMENTAL_DATA_GUIDE.md) records sample counts, exact roles, credential boundaries and the proposed training experiment.
+
+- Full Python suite: 181 tests ran successfully, with 10 optional environment-dependent tests skipped, in 38.648 seconds. New source tests cover missing versus dry, model fill, invalid units/coordinates/times, quality flags, metadata/raw-file corruption, partial publication and retry reuse. GFS tests also verify initialization/valid times and imports without optional `requests`.
+- Actual public downloads succeeded. Offline verification passed for all six supplemental snapshots and the GFS GRIB/CSV. Provider responses and checksums are committed; retrieved data are small starter samples.
+- Nine checks against a running Uvicorn server returned HTTP 200: status, six source routes, GFS and the combined source catalogue. All returned sample rows remained ineligible as automatic rain labels. Evidence is in [supplemental-api-verification.json](artifacts/supplemental-api-verification.json).
+- Earthdata absence returns an explicit unavailable result. Authenticated download failures, bounds and retry reuse passed mocked tests. No actual authenticated IMERG or ERA5 download was performed.
+- Website source data were checked through their actual catalogue API. Browser visual inspection was unavailable because no browser was connected; no frontend layout or native UI code changed.
+
+This verifies ingestion and access behavior. These source tables have not been fused into the ConvLSTM, and no improved weather accuracy, calibrated NCR probabilities or public alert delivery was demonstrated.
+
 ## NCR data and checkpoint reuse, 30 September 2026
 
 `python -m unittest discover -s tests -p 'test_*.py' -q` completed 155 tests with 10 optional-environment skips. `.venv-ml/Scripts/python.exe -m unittest tests.test_image_transfer tests.test_probability_evaluation -q` passed all 21 tests, including actual fine-tuning and causal inference. Synthetic fixtures verify software behavior only.

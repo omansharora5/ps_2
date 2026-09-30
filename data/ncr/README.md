@@ -1,5 +1,7 @@
 # Downloaded Delhi metro / NCR pilot observations
 
+The [supplemental collection guide](../../docs/SUPPLEMENTAL_DATA_GUIDE.md) adds actual Open-Meteo, IEM, Meteostat and POWER samples, RainViewer frame references, IMERG catalogue records and numeric GFS fields. These are context or separately qualified evidence; they do not change the original IMD observation meanings below.
+
 Collected 30 September 2026. The pilot rectangle is 76.5–78.0 degrees east and 28.0–29.3 degrees north. It includes Delhi-area station reports and is not the whole statutory NCR.
 
 ## Actual September station data

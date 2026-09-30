@@ -1,0 +1,39 @@
+{
+  "access": "public_no_key",
+  "credit": "NASA POWER",
+  "files": {
+    "raw.bin": "19ca1e1b05d3ad0eb2750fa21222f44b660397252783349fbcf9ba310e2ec677",
+    "rows.json": "9c3e766da1450b6dddd33a67ba7367e36fda3f133d1e485cf5b12adf25e9f6d3"
+  },
+  "id": "f3b0b20221924569c1c2798dfd68e70e2c96cc3a3b01447385a35f72fc46f378",
+  "metadata": {
+    "fill_value": -999.0,
+    "geometry": {
+      "coordinates": [
+        77.209,
+        28.614,
+        206.37
+      ],
+      "type": "Point"
+    },
+    "historical_operational_availability_known": false,
+    "requested_point": {
+      "latitude": 28.6139,
+      "longitude": 77.209
+    }
+  },
+  "note": "Delayed, coarse environmental estimates. PRECTOTCORR is not local gauge truth.",
+  "request": {
+    "end_exclusive": "2026-09-30",
+    "normalizer_version": 1,
+    "start_inclusive": "2026-09-23",
+    "url": "https://power.larc.nasa.gov/api/temporal/hourly/point?latitude=28.6139&longitude=77.209&parameters=T2M%2CRH2M%2CPS%2CWS10M%2CWD10M%2CPRECTOTCORR&community=AG&start=20260923&end=20260929&format=JSON&time-standard=UTC"
+  },
+  "retrieved_at_utc": "2026-09-30T15:54:56.636878Z",
+  "role": "coarse_historical_environment",
+  "row_count": 168,
+  "source": "power",
+  "status": "collected",
+  "training_ready_30_minutes": false,
+  "url": "https://power.larc.nasa.gov/docs/services/api/temporal/hourly/"
+}

@@ -15,8 +15,6 @@ import shutil
 import subprocess
 from datetime import datetime, timezone
 
-import requests
-
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data/government/gfs"
 URL = "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250512/06/atmos/gfs.t06z.pgrb2.0p25.f003"
@@ -46,6 +44,8 @@ def save(path, payload):
 
 
 def fetch(url, limit, byte_range=None):
+    import requests
+
     headers = {"User-Agent": "VAJRA-research-starter-pack/1.0"}
     if byte_range:
         headers["Range"] = f"bytes={byte_range[0]}-{byte_range[1]}"
