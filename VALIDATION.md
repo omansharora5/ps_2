@@ -25,6 +25,8 @@ Independent source reviews are recorded in [web/backend review](docs/reviews/web
 
 The [final release review](docs/reviews/release-review.md) found no material publication blocker. The [tracked-file scan](artifacts/release_scan.json) checked known credential patterns and local-state exclusions. [Git data verification](artifacts/staged-data-check.json) confirmed that all 38 data files retain their local bytes in Git and all 18 downloaded source hashes match their manifests. `.gitattributes` preserves dataset line endings so a clone does not silently invalidate these hashes.
 
+The project was pushed normally to the private [ps_2 repository](https://github.com/omansharora5/ps_2), branch `main`. The initial delivery's remote commit matched local HEAD; environments, credentials, local databases and generated native builds were excluded.
+
 The mobile dependency audit reports **13 moderate, zero high and zero critical findings**, recorded in the build evidence. They remain unresolved: npm's suggested forced fix would downgrade the Expo/Router stack across major versions. No such downgrade was applied. Reassess compatible dependency updates before deployment.
 
 Physical Android/iOS installation, actual device audio in all twelve languages, offline voices, signed native binaries, notification delivery and live Indian forecast skill are not established in this workspace. There is no Android SDK/emulator/adb or iOS build environment. Native JavaScript exports and browser-preview results must not be described as installed-device tests.
