@@ -1,0 +1,34 @@
+{
+  "credentials_used": false,
+  "id": "eeb9e6055e622e99aba107cc94ba975936db1084449381c3c2b8dabbdbc59753",
+  "limitations": [
+    "Public catalogue metadata only; approved MOSDAC credentials required for scientific downloads",
+    "Bounding-box search can return full-scene granules rather than cropped NCR files",
+    "Provider catalogue update time is not observation time or retrieval time",
+    "This query does not establish rain/no-rain labels"
+  ],
+  "observation_intervals": [
+    "2026-09-30T14:30:00Z/2026-09-30T15:00:00Z",
+    "2026-09-30T14:00:00Z/2026-09-30T14:30:00Z"
+  ],
+  "official_sdk_url": "https://www.mosdac.gov.in/software/mdapi.zip",
+  "provider": "ISRO MOSDAC",
+  "provider_response_updated_verbatim": "2026-09-30T20:54:53Z",
+  "provider_total_size_mb": 12972,
+  "request": {
+    "boundingBox": "76.5,28,78,29.3",
+    "count": 2,
+    "datasetId": "3SIMG_L1B_STD",
+    "endTime": "2026-09-30",
+    "startTime": "2026-09-30"
+  },
+  "response_bytes": 1547,
+  "response_sha256": "7cf9072b27fd165ccbf648ca72033141abf0b52128b7837da32f74f6a96a143a",
+  "retrieved_at_utc": "2026-09-30T15:24:54.143244+00:00",
+  "returned_entries": 2,
+  "scientific_payloads_downloaded": 0,
+  "source_url": "https://mosdac.gov.in/apios/datasets.json?datasetId=3SIMG_L1B_STD&startTime=2026-09-30&endTime=2026-09-30&count=2&boundingBox=76.5%2C28%2C78%2C29.3",
+  "status": "catalogue_preview_only",
+  "total_matches": 30,
+  "training_ready": false
+}

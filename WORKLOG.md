@@ -1,5 +1,12 @@
 # Work plan
 
+## NCR collection and model reuse, 30 September 2026
+
+- Collected September IMD station observations for a Delhi metro pilot: 11,479 variable records, 631 reports and four stations. Extracted 25 rain, 11 drizzle and five mixed thunderstorm precipitation descriptions separately from 195 explicit one-hour zero accumulations. Provider count disagreement keeps archive completeness partial.
+- Connected public IMD satellite-derived BUFR collection and public MOSDAC INSAT catalogue search. The BUFR sample has no verified NCR coordinate crop; MOSDAC image downloads, Delhi radar and lightning events still require provider access.
+- Added read-only NCR status/data API, compatibility-checked compact ConvLSTM fine-tuning and causal inference. Neither Google weights nor an operational NCR model is claimed. Wrote source/access, architecture and training guides and packaged verified observations.
+- Passed the full backend suite, 155 tests with 10 optional-environment skips, and all 21 ML transfer/probability tests separately. Verified actual local HTTP responses and downloaded hashes. Detailed evidence: `artifacts/ncr-implementation-check.json`.
+
 ## Connected operations build, 30 September 2026
 
 - Applied the requested architect and idempotent-operations skills. Traced the existing API, collector, trainer and clients; compared two independent designs; selected a SQLite ledger with immutable datasets/attempt artifacts and one OS-owned synchronous worker.

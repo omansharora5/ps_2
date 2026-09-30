@@ -1,0 +1,173 @@
+{
+  "provider": "India Meteorological Department",
+  "scope": "Satellite stream discovery; NCR relevance not spatially verified",
+  "records": [
+    {
+      "query_url": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=json&limit=1&metadata_id=urn:wmo:md:in-imd:satellite&sortby=-pubtime",
+      "retrieved_at_utc": "2026-09-30T15:17:59.537769+00:00",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "id": "2204192b-069f-403d-9076-dae7a5b33a24",
+            "type": "Feature",
+            "conformsTo": [
+              "http://wis.wmo.int/spec/wnm/1/conf/core"
+            ],
+            "geometry": null,
+            "properties": {
+              "data_id": "in-imd:satellite/3DR_20260930_10002144",
+              "datetime": "2026-09-30T00:00:00Z",
+              "pubtime": "2026-09-30T15:17:15Z",
+              "integrity": {
+                "method": "sha512",
+                "value": "aTfTWSbGa87wkf08IaSuukZY4zaOViOUslWHe/K//FPXKG7tvTRQjeEFSBB2K6eYYgs/79tLT54OO6O45bK18g=="
+              },
+              "metadata_id": "urn:wmo:md:in-imd:satellite",
+              "id": "2204192b-069f-403d-9076-dae7a5b33a24"
+            },
+            "links": [
+              {
+                "rel": "canonical",
+                "type": "application/octet-stream",
+                "href": "https://wis2box.imd.gov.in/data/2026-09-30/wis/urn:wmo:md:in-imd:satellite/3DR_20260930_10002144.b",
+                "length": 162462
+              }
+            ],
+            "generated_by": "wis2box 1.2.0"
+          }
+        ],
+        "numberMatched": 11006,
+        "numberReturned": 1,
+        "links": [
+          {
+            "type": "application/geo+json",
+            "rel": "self",
+            "title": "This document as GeoJSON",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=json&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite&sortby=-pubtime"
+          },
+          {
+            "rel": "alternate",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=jsonld&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite&sortby=-pubtime"
+          },
+          {
+            "type": "text/html",
+            "rel": "alternate",
+            "title": "This document as HTML",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=html&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite&sortby=-pubtime"
+          },
+          {
+            "type": "application/geo+json",
+            "rel": "next",
+            "title": "Items (next)",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?offset=1&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite&sortby=-pubtime"
+          },
+          {
+            "type": "application/json",
+            "title": "Data notifications",
+            "rel": "collection",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages"
+          }
+        ],
+        "timeStamp": "2026-09-30T15:17:59.030458Z"
+      }
+    },
+    {
+      "query_url": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=json&limit=1&metadata_id=urn:wmo:md:in-imd:satellite3ds&sortby=-pubtime",
+      "retrieved_at_utc": "2026-09-30T15:17:59.598870+00:00",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "id": "1457950e-18a6-4b68-be5f-e2d206dfc743",
+            "type": "Feature",
+            "conformsTo": [
+              "http://wis.wmo.int/spec/wnm/1/conf/core"
+            ],
+            "geometry": null,
+            "properties": {
+              "data_id": "in-imd:satellite3ds/DEMS_20260916_00010021",
+              "datetime": "2026-09-16T00:00:00Z",
+              "pubtime": "2026-09-16T05:10:01Z",
+              "integrity": {
+                "method": "sha512",
+                "value": "d7FGaXPov76k2NrBomA16VdE7M3PwJvur5rqNf5/nUhjU9UXd7abBpVossPTs661ujgFjPx111/b00vId8LNVw=="
+              },
+              "metadata_id": "urn:wmo:md:in-imd:satellite3ds",
+              "id": "1457950e-18a6-4b68-be5f-e2d206dfc743"
+            },
+            "links": [
+              {
+                "rel": "canonical",
+                "type": "application/octet-stream",
+                "href": "https://wis2box.imd.gov.in/data/2026-09-16/wis/urn:wmo:md:in-imd:satellite3ds/DEMS_20260916_00010021.b",
+                "length": 173965
+              }
+            ],
+            "generated_by": "wis2box 1.2.0"
+          }
+        ],
+        "numberMatched": 3257,
+        "numberReturned": 1,
+        "links": [
+          {
+            "type": "application/geo+json",
+            "rel": "self",
+            "title": "This document as GeoJSON",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=json&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite3ds&sortby=-pubtime"
+          },
+          {
+            "rel": "alternate",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=jsonld&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite3ds&sortby=-pubtime"
+          },
+          {
+            "type": "text/html",
+            "rel": "alternate",
+            "title": "This document as HTML",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=html&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite3ds&sortby=-pubtime"
+          },
+          {
+            "type": "application/geo+json",
+            "rel": "next",
+            "title": "Items (next)",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages/items?offset=1&limit=1&metadata_id=urn%3Awmo%3Amd%3Ain-imd%3Asatellite3ds&sortby=-pubtime"
+          },
+          {
+            "type": "application/json",
+            "title": "Data notifications",
+            "rel": "collection",
+            "href": "https://wis2box.imd.gov.in/oapi/collections/messages"
+          }
+        ],
+        "timeStamp": "2026-09-30T15:17:59.090458Z"
+      }
+    }
+  ],
+  "payload_probe": {
+    "source_url": "https://wis2box.imd.gov.in/data/2026-09-30/wis/urn:wmo:md:in-imd:satellite/DEMS_20260930_30143910.b",
+    "retrieved_at_utc": "2026-09-30T15:17:59.734427+00:00",
+    "bytes": 173528,
+    "sha256": "83d5abb3dbf02811499db3904a07b5316a1e57e147ca4ce717d51b46c3b3f3d7",
+    "sha512_base64": "J46NlYxL8El3NWdFJU1EE9rjm2LPMpMiIylTSLBn/XtHDGWn75LCSM3b/0pdRagVG3ynm5nrL0UvQYghGe6nmw==",
+    "bufr_offset": 40,
+    "first_bufr_message_length": 1697,
+    "header": {
+      "edition": 4,
+      "data_category": 5,
+      "master_table_version": 31,
+      "typical_time_utc": "2026-09-30T13:30:00Z"
+    },
+    "payload_saved": false,
+    "reason": "Scientific BUFR payload observed, but full decoder unavailable and NCR subset not verified; retain metadata only rather than an unrelated all-India sample."
+  },
+  "limitations": [
+    "The notification datetime has day-level midnight precision; inspect BUFR observation timestamps.",
+    "3DS most recent notification is stale in this endpoint.",
+    "This is not access to calibrated satellite image arrays.",
+    "No NCR satellite training rows are created by this metadata probe."
+  ]
+}

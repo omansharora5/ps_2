@@ -1,0 +1,34 @@
+{
+  "bufr_header": {
+    "data_category": 5,
+    "edition": 4,
+    "first_message_bytes": 1785,
+    "first_message_offset": 40,
+    "master_table_version": 31,
+    "number_of_subsets_first_message": 100,
+    "scope": "First message header only; individual observation times/coordinates not decoded",
+    "typical_at_utc": "2026-09-30T13:15:00+00:00",
+    "unexpanded_descriptors": [
+      310077
+    ]
+  },
+  "dataset": "urn:wmo:md:in-imd:satellite",
+  "imagery": false,
+  "kind": "satellite_derived_winds_bufr",
+  "limitations": [
+    "Full BUFR measurements not decoded",
+    "NCR coverage and individual observation timestamps unverified",
+    "Not calibrated satellite image arrays or rain/lightning training labels"
+  ],
+  "ncr_coverage": "unknown_pending_decode",
+  "notification_datetime": "2026-09-30T00:00:00Z",
+  "notification_sha256": "4f5323ba2c9d55155670c0271f7f381c1d8753538ee55cd0c202cda8ab1b954b",
+  "notifications_url": "https://wis2box.imd.gov.in/oapi/collections/messages/items?f=json&limit=1&metadata_id=urn:wmo:md:in-imd:satellite&sortby=-pubtime",
+  "payload_bytes": 162456,
+  "provider": "India Meteorological Department",
+  "published_at_utc": "2026-09-30T15:20:01Z",
+  "retrieved_at_utc": "2026-09-30T15:21:34.753227+00:00",
+  "sha256": "4c4980b3dbe4ef3aa8e6a216be0b12d7facaa2693fc53075998b66245d2493ae",
+  "source_url": "https://wis2box.imd.gov.in/data/2026-09-30/wis/urn:wmo:md:in-imd:satellite/DEMS_20260930_30152321.b",
+  "training_ready": false
+}

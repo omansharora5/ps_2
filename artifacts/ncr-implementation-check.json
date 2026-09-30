@@ -1,0 +1,40 @@
+{
+  "collection_id": "7e39147106ca7e0f0d9deb67f685c68967f4840987362657e0e916035bbc6947",
+  "surface_integrity": "passed",
+  "api_checks": [
+    {
+      "route": "/api/ncr/status",
+      "http_status": 200,
+      "status": null,
+      "total": null,
+      "items": 0
+    },
+    {
+      "route": "/api/ncr/observations?kind=present_weather&limit=2",
+      "http_status": 200,
+      "status": null,
+      "total": 631,
+      "items": 2
+    },
+    {
+      "route": "/api/ncr/observations?state=reported_zero&limit=2",
+      "http_status": 200,
+      "status": null,
+      "total": 195,
+      "items": 2
+    },
+    {
+      "route": "/api/ncr/forecast",
+      "http_status": 200,
+      "status": "unavailable",
+      "total": null,
+      "items": 0
+    }
+  ],
+  "archive": "artifacts\\NCR_2026-09_observations.zip",
+  "archive_files": 31,
+  "archive_bytes": 651987,
+  "archive_sha256": "6f07f8cc526cb53bac6be535aae08b8eb8f522d2142be0a4d06979baa155ef40",
+  "forecast_available": false,
+  "forecast_reason": "No validated current NCR checkpoint and matched input corpus"
+}

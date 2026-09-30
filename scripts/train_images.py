@@ -227,6 +227,71 @@ def final_evaluation(model, episodes, artifact, torch, device, batch_size):
     return {"test": scores.pop("raw"), "test_calibrated": scores.pop("calibrated"), "probability_verification": scores}
 
 
+def input_contract(episode):
+    return {"shape": list(episode["values"].shape[1:]),
+            "frame_interval_seconds": float(episode["times"][1] - episode["times"][0])}
+
+
+def checkpoint_normalizer(artifact, episode, history):
+    """Validate a compatible compact model before reusing its weights or scales."""
+    if artifact.get("architecture") != "compact-convlstm-12-v1":
+        raise ValueError("Checkpoint architecture is not compact-convlstm-12-v1")
+    if type(artifact.get("history")) is not int or artifact["history"] != history or history < 2:
+        raise ValueError("Checkpoint history differs from requested history")
+    channels = episode["values"].shape[1]
+    if type(artifact.get("channels")) is not int or artifact["channels"] != channels * 2:
+        raise ValueError("Checkpoint input channels do not match measurement and mask channels")
+    metadata = artifact.get("metadata", {})
+    for key in ("channels", "units", "grid", "target_definition", "horizon_minutes"):
+        if metadata.get(key) != episode["meta"][key]:
+            raise ValueError(f"Checkpoint {key} differs from episode; silent transfer is unsafe")
+    # Legacy artifacts have the full grid in metadata, but not a recorded cadence.
+    if "input_contract" in artifact and artifact["input_contract"] != input_contract(episode):
+        raise ValueError("Checkpoint input shape or frame cadence differs from episode")
+    mean, std = np.asarray(artifact.get("mean"), dtype=np.float32), np.asarray(artifact.get("std"), dtype=np.float32)
+    if mean.shape != (channels,) or std.shape != (channels,) or not np.isfinite(mean).all() or not np.isfinite(std).all() or (std <= 0).any():
+        raise ValueError("Checkpoint requires finite per-channel normalizer and positive scales")
+    return mean, std
+
+
+def exposure_ids(artifact):
+    """All prior splits count as exposure, including ancestral held-out events."""
+    splits = artifact.get("splits")
+    if not isinstance(splits, dict) or not {"train", "validation", "test"}.issubset(splits):
+        raise ValueError("Checkpoint has no complete event exposure manifest")
+    groups = list(splits.values()) + [artifact.get("exposure_event_ids", [])]
+    if any(not isinstance(ids, list) or any(not isinstance(value, str) or not value for value in ids) for ids in groups):
+        raise ValueError("Checkpoint exposure groups must contain nonempty event identifiers")
+    if any(not splits[key] for key in ("train", "validation", "test")):
+        raise ValueError("Checkpoint exposure splits cannot be empty")
+    return {value for ids in groups for value in ids}
+
+
+def initialize_model(model, checkpoint, episodes, splits, history, torch):
+    """Reuse weights and their normalizer; never reuse a fitted calibrator."""
+    path = Path(checkpoint)
+    artifact = torch.load(path, map_location="cpu", weights_only=True)
+    mean, std = checkpoint_normalizer(artifact, episodes[0], history)
+    exposed = exposure_ids(artifact)
+    held_out = {event_id for key, ids in splits.items() if key != "train" for event_id in ids}
+    overlap = sorted(exposed & held_out)
+    if overlap:
+        raise ValueError(f"Initializer exposure overlaps new validation/calibration/test events: {overlap}")
+    try:
+        model.load_state_dict(artifact["state_dict"], strict=True)
+    except (KeyError, RuntimeError) as error:
+        raise ValueError("Checkpoint weights do not match the declared compact architecture") from error
+    if any(not torch.isfinite(parameter).all() for parameter in model.parameters()):
+        raise ValueError("Checkpoint weights must be finite")
+    provenance = {"checkpoint_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                  "checkpoint_name": path.name, "architecture": artifact["architecture"],
+                  "corpus_sha256": artifact.get("corpus_sha256"), "exposure_event_ids": sorted(exposed),
+                  "source_scope": artifact["metadata"].get("scope"), "normalizer": "preserved_from_initializer",
+                  "cadence_verified": "input_contract" in artifact,
+                  "calibrator": "discarded; any calibration must be fitted on new held-out events"}
+    return mean, std, provenance
+
+
 def train(args):
     import torch
     calibrate = getattr(args, "calibrate", False)
@@ -235,14 +300,19 @@ def train(args):
     torch.set_num_threads(min(4, torch.get_num_threads()))
     if args.device == "cuda" and not torch.cuda.is_available():
         raise ValueError("CUDA requested but unavailable; choose cpu or install a compatible CUDA PyTorch build")
-    mean, std = normalizer(episodes, splits["train"], args.history)
+    model = make_model(episodes[0]["values"].shape[1] * 2)
+    initialization = None
+    if getattr(args, "initialize_from", None):
+        mean, std, initialization = initialize_model(model, args.initialize_from, episodes, splits, args.history, torch)
+    else:
+        mean, std = normalizer(episodes, splits["train"], args.history)
     datasets = {key: examples(episodes, ids, args.history, mean, std) for key, ids in splits.items()}
     covered = np.concatenate([y[m] for _, y, m in datasets["train"]])
     if len(np.unique(covered)) != 2:
         raise ValueError("Training requires covered positive and negative targets")
     training_rate = float(covered.astype(float).mean())
     manifest = split_hashes(episodes, splits)
-    model = make_model(episodes[0]["values"].shape[1] * 2).to(args.device)
+    model.to(args.device)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     output = Path(args.output); output.mkdir(parents=True, exist_ok=True)
     checkpoint_path = output / "model.pt"
@@ -266,7 +336,10 @@ def train(args):
                         "metadata": episodes[0]["meta"], **manifest, "training_climatology": training_rate,
                         "torch_version": str(torch.__version__), "calibrated": False, "architecture": "compact-convlstm-12-v1",
                         "calibration_requested": calibrate, "calibrator": None, "evaluation_version": "event-probability-v1",
-                        "evaluation_batch_size": args.batch_size}
+                        "evaluation_batch_size": args.batch_size, "input_contract": input_contract(episodes[0]),
+                        "initialization": initialization,
+                        "exposure_event_ids": sorted({event_id for ids in splits.values() for event_id in ids} |
+                                                     set(initialization["exposure_event_ids"] if initialization else []))}
             temporary = output / "model.pt.part"; torch.save(artifact, temporary); temporary.replace(checkpoint_path)
             model.to(args.device)
     artifact = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
@@ -282,6 +355,7 @@ def train(args):
     (output / "calibration.json").write_text(json.dumps(calibration_record, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     report = {"scope": episodes[0]["meta"]["scope"], "splits": splits,
               "examples": {k: len(v) for k, v in datasets.items()}, "history": history_log,
+              "initialization": initialization, "exposure_event_ids": artifact["exposure_event_ids"],
               **final_evaluation(model, episodes, artifact, torch, args.device, args.batch_size),
               "checkpoint_sha256": checkpoint_hash, "split_hashes": manifest["split_hashes"],
               "limitations": "Pipeline experiment only; no operational validation or India skill claim. Calibration may worsen held-out scores. Event minima are software checks, not sample-size guarantees."}
@@ -342,6 +416,7 @@ def main():
     fit.add_argument("--history", type=int, default=3); fit.add_argument("--epochs", type=int, default=5)
     fit.add_argument("--batch-size", type=int, default=4); fit.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
     fit.add_argument("--calibrate", action="store_true", help="Fit temperature only on a separate held-out calibration split")
+    fit.add_argument("--initialize-from", help="Fine-tune a compatible local compact ConvLSTM checkpoint; preserve its normalizer and exclude prior exposure from new held-out groups")
     test = sub.add_parser("evaluate"); test.add_argument("--data", required=True); test.add_argument("--checkpoint", required=True)
     smoke = sub.add_parser("smoke"); smoke.add_argument("--output", required=True)
     smoke.add_argument("--calibrate", action="store_true", help="Generate eight synthetic groups and exercise held-out calibration")

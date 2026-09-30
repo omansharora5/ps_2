@@ -1,0 +1,158 @@
+{
+  "attempted_at_utc": "2026-09-30T15:17:32.686815Z",
+  "completed_at_utc": "2026-09-30T15:17:48.800165Z",
+  "conflicting_feature_ids": [],
+  "counts": {
+    "accumulation_minutes": [
+      60.0
+    ],
+    "exact_30_minute_labels": 0,
+    "precipitation_states": {
+      "reported_zero": 195
+    },
+    "station_reports": 631,
+    "stations": 4,
+    "variable_records": 11479
+  },
+  "derivatives": [
+    {
+      "bytes": 6967562,
+      "path": "runs/057b3405068bfaa2a3cf3a6d19c3bb4fe1f5c9147db9a3a0171ed8fec2c7c414/observations.json",
+      "sha256": "d30454a4f68f78587be198668f474a9378399033759189b1d37ab0204b0f5fe5"
+    },
+    {
+      "bytes": 137783,
+      "path": "runs/057b3405068bfaa2a3cf3a6d19c3bb4fe1f5c9147db9a3a0171ed8fec2c7c414/precipitation_labels.json",
+      "sha256": "0153de286c7bf66e6fee60a00f805c18703e9ec98e83a1fe239b9895238dbe36"
+    },
+    {
+      "bytes": 3194093,
+      "path": "runs/057b3405068bfaa2a3cf3a6d19c3bb4fe1f5c9147db9a3a0171ed8fec2c7c414/observations.csv",
+      "sha256": "335eb4c39d43db41d3e76b811d4ddb2306f85a4293fe863ba20833ff1dcef4ee"
+    },
+    {
+      "bytes": 73624,
+      "path": "runs/057b3405068bfaa2a3cf3a6d19c3bb4fe1f5c9147db9a3a0171ed8fec2c7c414/precipitation_labels.csv",
+      "sha256": "07512d6dada040759336ef0740b54ffd0a612ac9209cc111e8aba9eccbc35a68"
+    }
+  ],
+  "earliest_observed_at_utc": "2026-09-01T00:00:00Z",
+  "failures": [],
+  "files": [
+    {
+      "bytes": 431508,
+      "path": "raw/43fb28d29524f3e0e067572e6a6807e3a7b7b251f1cf9557ef2c76adb14bc953.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?f=json&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime",
+      "retrieved_at_utc": "2026-09-30T15:17:36.458653Z",
+      "sha256": "43fb28d29524f3e0e067572e6a6807e3a7b7b251f1cf9557ef2c76adb14bc953"
+    },
+    {
+      "bytes": 431312,
+      "path": "raw/e0104886a1fd85f4ec310d829ed1d799b132d1a209ef0857a7f7c5a705469cc9.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=1000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:37.371673Z",
+      "sha256": "e0104886a1fd85f4ec310d829ed1d799b132d1a209ef0857a7f7c5a705469cc9"
+    },
+    {
+      "bytes": 429665,
+      "path": "raw/6f6c2ecf0c285ad0b4ca590a72dca725c478cb90535da1e1b1f96d252f33242a.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=2000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:38.283609Z",
+      "sha256": "6f6c2ecf0c285ad0b4ca590a72dca725c478cb90535da1e1b1f96d252f33242a"
+    },
+    {
+      "bytes": 430057,
+      "path": "raw/432f044ab3eb4fe82477bd916162f0b908016ea4c418ec4aa9bca9ab3932eceb.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=3000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:39.371562Z",
+      "sha256": "432f044ab3eb4fe82477bd916162f0b908016ea4c418ec4aa9bca9ab3932eceb"
+    },
+    {
+      "bytes": 431034,
+      "path": "raw/9b35e4dc9b75a9095b429a9489dafcab9041fb239f87e2ef483377f8f71ee984.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=4000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:40.405359Z",
+      "sha256": "9b35e4dc9b75a9095b429a9489dafcab9041fb239f87e2ef483377f8f71ee984"
+    },
+    {
+      "bytes": 431369,
+      "path": "raw/4e910070b5b8dca313864f3dffd830b0400fc2aa7a6d078f578f86832830eee8.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=5000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:41.528376Z",
+      "sha256": "4e910070b5b8dca313864f3dffd830b0400fc2aa7a6d078f578f86832830eee8"
+    },
+    {
+      "bytes": 430501,
+      "path": "raw/cf56ca5caf32da32b8d3f8b1ca2265035b7377978f0a02c4f3263e3cad1d6f30.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=6000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:42.609777Z",
+      "sha256": "cf56ca5caf32da32b8d3f8b1ca2265035b7377978f0a02c4f3263e3cad1d6f30"
+    },
+    {
+      "bytes": 429636,
+      "path": "raw/f1d26dc048931eb612e77469188ebf4a590a485d094560f5cca04bf9c97ba51d.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=7000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:43.429484Z",
+      "sha256": "f1d26dc048931eb612e77469188ebf4a590a485d094560f5cca04bf9c97ba51d"
+    },
+    {
+      "bytes": 429118,
+      "path": "raw/597998bf8d6b01bf2d31b50b542678724133bee2d617e07fddd26d0f4fba1130.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=8000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:44.553093Z",
+      "sha256": "597998bf8d6b01bf2d31b50b542678724133bee2d617e07fddd26d0f4fba1130"
+    },
+    {
+      "bytes": 431467,
+      "path": "raw/564c294a77b4b1bc7fe82d3e75c62df209f8766f5848d8bb3058aa32292a6ad3.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=9000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:45.285936Z",
+      "sha256": "564c294a77b4b1bc7fe82d3e75c62df209f8766f5848d8bb3058aa32292a6ad3"
+    },
+    {
+      "bytes": 430264,
+      "path": "raw/1134aa056a056b1d8b8aab2b000cd18afa18d15653a7b31db3810e3a92c7e04a.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=10000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:46.590844Z",
+      "sha256": "1134aa056a056b1d8b8aab2b000cd18afa18d15653a7b31db3810e3a92c7e04a"
+    },
+    {
+      "bytes": 206501,
+      "path": "raw/d2af208b5a1854f22c00869329d19ba48e6486752c51284b14f26aba56c5067a.json",
+      "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?offset=11000&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime&f=json",
+      "retrieved_at_utc": "2026-09-30T15:17:47.946192Z",
+      "sha256": "d2af208b5a1854f22c00869329d19ba48e6486752c51284b14f26aba56c5067a"
+    }
+  ],
+  "id": "057b3405068bfaa2a3cf3a6d19c3bb4fe1f5c9147db9a3a0171ed8fec2c7c414",
+  "latest_observed_at_utc": "2026-09-30T12:00:00Z",
+  "limitations": [
+    "Station points do not cover every grid cell.",
+    "Retrospective download does not establish historical delivery latency.",
+    "Positive total water equivalent is precipitation evidence, not independent precipitation-phase classification.",
+    "Missing values and conflicting revisions remain unknown.",
+    "No matched radar, satellite image and lightning corpus is established."
+  ],
+  "provider": "India Meteorological Department",
+  "provider_matched_counts": [
+    11000,
+    11479
+  ],
+  "region": {
+    "bbox_lon_lat": [
+      76.5,
+      28.0,
+      78.0,
+      29.3
+    ],
+    "description": "Delhi and nearby NCR locations; rectangle, not the statutory NCR boundary",
+    "id": "delhi_metro_pilot_v1"
+  },
+  "request_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?f=json&limit=1000&bbox=76.5%2C28.0%2C78.0%2C29.3&datetime=2026-09-01T00%3A00%3A00Z%2F2026-09-30T23%3A59%3A59Z&sortby=reportTime",
+  "requested_end": "2026-09-30",
+  "requested_start": "2026-09-01",
+  "schema_version": 1,
+  "status": "partial",
+  "terms_url": "https://wis2box.imd.gov.in/oapi/collections/discovery-metadata/items/urn:wmo:md:in-imd:surface-based-observations.synop?f=json",
+  "training_ready_30_minutes": false
+}

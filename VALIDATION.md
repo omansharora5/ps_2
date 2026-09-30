@@ -2,6 +2,14 @@
 
 This record distinguishes software checks from real-weather and physical-device validation. The current delivery extends the original research prototype; the older benchmark results below retain their original scope.
 
+## NCR data and checkpoint reuse, 30 September 2026
+
+`python -m unittest discover -s tests -p 'test_*.py' -q` completed 155 tests with 10 optional-environment skips. `.venv-ml/Scripts/python.exe -m unittest tests.test_image_transfer tests.test_probability_evaluation -q` passed all 21 tests, including actual fine-tuning and causal inference. Synthetic fixtures verify software behavior only.
+
+Successful live collection covered September IMD surface observations, one current satellite-derived wind BUFR payload and MOSDAC catalogue metadata. Local hashes and ZIP-extracted bytes were verified. A running Uvicorn process returned HTTP 200 for status and paginated observations, while the forecast endpoint explicitly returned unavailable. Evidence is saved in [the implementation check](artifacts/ncr-implementation-check.json).
+
+No calibrated INSAT image sequence, numeric NCR radar sequence, lightning event corpus or validated 30-minute NCR checkpoint has been obtained in this change. The surface collection remains partial because provider total-count metadata varied between pages. [Data inventory](data/ncr/README.md), [architecture and access](docs/NCR_BACKEND_GUIDE.md), [model commands](docs/NCR_MODEL_GUIDE.md).
+
 ## 30 September extension: durable research operations
 
 The website, FastAPI service, SQLite ledger, separate numerical worker and native read-only monitor now share an executable research workflow. This adds real controlled candidate generation from registered datasets; it does not connect a national observation stream, promote models or dispatch warnings. [Architecture and commands](docs/OPERATIONS_GUIDE.md).

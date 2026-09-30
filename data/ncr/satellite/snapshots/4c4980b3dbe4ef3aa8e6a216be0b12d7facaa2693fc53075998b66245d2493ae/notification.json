@@ -1,0 +1,28 @@
+{
+  "conformsTo": [
+    "http://wis.wmo.int/spec/wnm/1/conf/core"
+  ],
+  "generated_by": "wis2box 1.2.0",
+  "geometry": null,
+  "id": "5f85bb61-9c4e-495c-b2e0-9bf7de2b5bf7",
+  "links": [
+    {
+      "href": "https://wis2box.imd.gov.in/data/2026-09-30/wis/urn:wmo:md:in-imd:satellite/DEMS_20260930_30152321.b",
+      "length": 162456,
+      "rel": "canonical",
+      "type": "application/octet-stream"
+    }
+  ],
+  "properties": {
+    "data_id": "in-imd:satellite/DEMS_20260930_30152321",
+    "datetime": "2026-09-30T00:00:00Z",
+    "id": "5f85bb61-9c4e-495c-b2e0-9bf7de2b5bf7",
+    "integrity": {
+      "method": "sha512",
+      "value": "oFzBq0zddqG9gm5KC5/0XnSLhlqoqCwVsX3IZkHl7KuqAFtHoZLpl1PSOJgMwqWmmfa7WRg9pLxIwq3SBJtIZA=="
+    },
+    "metadata_id": "urn:wmo:md:in-imd:satellite",
+    "pubtime": "2026-09-30T15:20:01Z"
+  },
+  "type": "Feature"
+}

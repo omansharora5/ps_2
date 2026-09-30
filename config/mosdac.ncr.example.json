@@ -1,0 +1,21 @@
+{
+  "user_credentials": {
+    "username/email": "",
+    "password": ""
+  },
+  "search_parameters": {
+    "datasetId": "3SIMG_L1B_STD",
+    "startTime": "2026-09-30",
+    "endTime": "2026-09-30",
+    "count": "2",
+    "boundingBox": "76.5,28,78,29.3",
+    "gId": ""
+  },
+  "download_settings": {
+    "download_path": "data/ncr/mosdac/scientific",
+    "organize_by_date": true,
+    "skip_user_input": false,
+    "generate_error_logs": true,
+    "error_logs_dir": "data/ncr/mosdac/logs"
+  }
+}

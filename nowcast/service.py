@@ -24,6 +24,7 @@ from . import data_catalog
 from .image_processing import METHODS, PREPROCESSING, image_run
 from .decision_policy import POLICY_VERSION, ResearchPolicy, assess_research_decision
 from .operations_api import router as operations_router
+from .ncr_api import router as ncr_router
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +32,7 @@ DB_PATH = ROOT / "data" / "receipts.sqlite"
 CODE_SHA = hashlib.sha256(b"".join(path.read_bytes() for path in sorted((ROOT / "nowcast").glob("*.py")))).hexdigest()
 app = FastAPI(title="VAJRA research workbench", version="0.1.0")
 app.include_router(operations_router)
+app.include_router(ncr_router)
 CORS_ORIGINS = [origin.strip() for origin in os.environ.get("VAJRA_CORS_ORIGINS", "").split(",") if origin.strip()]
 if not CORS_ORIGINS:
     CORS_ORIGINS = [f"http://{host}:{port}" for host in ("localhost", "127.0.0.1") for port in (8000, 8081, 8082, 5173, 4173)]
