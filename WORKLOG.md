@@ -60,3 +60,16 @@ Architecture comparison: causal data contracts, Indian access realism, recoverab
 Deliverables: `DETAILED_TECHNICAL_ARCHITECTURE.md`, `data/government/README.md`, consolidated `inventory.json`, three provider manifests and collection notes, five collection/preparation/verification scripts, and `artifacts/VAJRA_GOVERNMENT_DATA_STARTER_PACK.zip`. New source content totals 18 files / 11,232,879 bytes, comprising eight weather-data payloads and ten metadata/documentation records. Four derived files add 507,683 bytes. The pack contains actual IMD, NASA and NOAA data with explicitly identified cloud mirrors. It is not a matched Indian training dataset and was not passed to the synthetic model.
 
 Validation evidence: `artifacts/government_data_validation.json` and `artifacts/architecture_document_check.json`. Full scientific parsing, raw/derived checksum verification and malformed/truncated GRIB rejection passed. All local links in the six new main evidence documents resolve and Markdown fences balance. No app behavior changed, so the earlier application tests were not rerun for these standalone acquisition scripts and documents.
+
+## Image methods, collection API and native delivery, 30 September 2026
+
+- Implemented the real-radar processing lab: raw/despeckled/smoothed images, persistence, global translation, Horn–Schunck dense flow, connected objects and held-out comparisons.
+- Connected the manifest catalogue, provider/API links, hash-checked downloads and bounded local collection jobs.
+- Added the optional compact ConvLSTM preparation/validation/training/evaluation path and documented the matched-observation requirements. CPU smoke and checkpoint evaluation ran on explicitly synthetic examples.
+- Built the Three.js Earth explorer with search/focus/zoom, static NASA texture, illustrative clouds, reduced motion, pause and WebGL fallback.
+- Built the separate Expo React Native client with public/operator views, shared geography, twelve Indian languages plus English, persisted preference, Urdu text alignment and bounded device-voice speech.
+- Cross-reviewed scientific and UI contracts. Fixed weak-reflectivity masking, separate intensity-score denominators, selected-city rotation, voice-discovery timeout, forecast context and tab-label spacing.
+- Verified 34 Python tests, the eight website browser journeys plus four affected final regressions, ten native tests, TypeScript/lint, Expo Doctor 21/21, all-platform exports and the exported-native browser flows.
+- Preserved exact dataset bytes through Git attributes; checked 38 staged data files against their local bytes and rechecked all 18 source-manifest hashes.
+
+Implementation and guides are committed locally. Release review and the authorized private `ps_2` push are the final delivery steps. Actual Indian training, signed native installation, physical-device speech, background notifications and operational warnings remain outside the evidence established here. The native audit retains thirteen moderate findings, with no forced major-version downgrade.

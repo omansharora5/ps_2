@@ -35,5 +35,5 @@ This checklist records the evidence required for the September 2026 implementati
 
 - [x] Only project code, docs, permitted sample data and useful verification artifacts are staged.
 - [x] Credentials, .env values, virtual environments, native-generated build directories and local databases are excluded.
-- [ ] Initial repository is private and named `ps_2` under the authenticated account.
+- [x] Initial repository is private and named `ps_2` under the authenticated account.
 - [ ] Push uses a normal branch update, without force, and the remote commit matches local HEAD.

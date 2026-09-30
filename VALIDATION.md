@@ -23,6 +23,8 @@ The real collection API check in [collection_api_check.json](artifacts/collectio
 
 Independent source reviews are recorded in [web/backend review](docs/reviews/web-backend-review.md), [backend/web review](docs/reviews/backend-web-review.md) and [native integration review](docs/reviews/native-integration-review.md). They identified and tracked scientific/UI edge cases before release; review is not a substitute for operational validation.
 
+The [final release review](docs/reviews/release-review.md) found no material publication blocker. The [tracked-file scan](artifacts/release_scan.json) checked known credential patterns and local-state exclusions. [Git data verification](artifacts/staged-data-check.json) confirmed that all 38 data files retain their local bytes in Git and all 18 downloaded source hashes match their manifests. `.gitattributes` preserves dataset line endings so a clone does not silently invalidate these hashes.
+
 The mobile dependency audit reports **13 moderate, zero high and zero critical findings**, recorded in the build evidence. They remain unresolved: npm's suggested forced fix would downgrade the Expo/Router stack across major versions. No such downgrade was applied. Reassess compatible dependency updates before deployment.
 
 Physical Android/iOS installation, actual device audio in all twelve languages, offline voices, signed native binaries, notification delivery and live Indian forecast skill are not established in this workspace. There is no Android SDK/emulator/adb or iOS build environment. Native JavaScript exports and browser-preview results must not be described as installed-device tests.
