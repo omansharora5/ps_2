@@ -4,7 +4,7 @@ The core deliverable is a local weather prediction model. The website and React 
 
 This design separates the intended regional service from the implemented research components. Numeric Indian radar, matched INSAT sequences and lightning network coverage are still required for reliable NCR evaluation. A map cell is an output support choice, not proof of accuracy at that resolution.
 
-The revised [SIH deck](VAJRA_SIH26072_v2.pptx) uses two loops. The forecast loop revises predictions from fresh evidence. The reviewed-learning loop trains candidates after outcomes mature and admits a new model only after independent evaluation. A forecast revision does not retrain the model.
+The revised [SIH deck](VAJRA_SIH26072_v3.pptx) uses two loops within the reference's icon-led architecture layout. The forecast loop revises predictions from fresh evidence. The reviewed-learning loop trains candidates after outcomes mature and admits a new model only after independent evaluation. A forecast revision does not retrain the model.
 
 ## Forecast architecture
 
