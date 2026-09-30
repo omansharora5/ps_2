@@ -2,6 +2,29 @@
 
 This record distinguishes software checks from real-weather and physical-device validation. The current delivery extends the original research prototype; the older benchmark results below retain their original scope.
 
+## 30 September extension: probability calibration, location and research
+
+The training CLI now supports four-way event separation with `--calibrate`, while preserving the default three-way path. It saves a bounded regularized temperature fit, training climatology and split hashes, then evaluates frozen predictions. Reports include Brier/log loss, average precision with tied-score handling, reliability bins, POD/FAR/CSI and whole-event bootstrap intervals. [Method and result details](docs/CALIBRATION_AND_VERIFICATION.md), [reproducible evidence](artifacts/calibration-smoke-summary.json).
+
+The independent review found and corrected a causal normalization bug: values unavailable to every training forecast could still affect training statistics. Normalization now uses the union of usable training-window measurements. A regression changes an unavailable frame to `1e6` and verifies unchanged normalization, input tensors and model outputs; a late but reachable measurement remains usable.
+
+| Extension check | Result and scope |
+|---|---|
+| Complete regular-Python suite | 47 discovered: **46 passed, 1 skipped**, 9.260 seconds. The skip is the opt-in Torch integration test |
+| Probability suite in `.venv-ml` | **13/13 passed**, 7.928 seconds, including the actual Torch integration skipped above |
+| Training/evaluation | Eight-group calibrated CPU smoke, six-group compatibility smoke and exact frozen evaluation passed; changing test labels leaves fitting/calibration unchanged and changed-corpus evaluation is rejected |
+| Synthetic calibration result | Brier **0.211584 → 0.089959**; training-climatology baseline **0.089687** remains better. All 306 positive test cells remain missed at threshold 0.5 |
+| Native source | **20/20 tests passed**; TypeScript/lint passed, Doctor **21/21** and all-platform export passed, recorded in [build evidence](artifacts/mobile-build-check.json) |
+| Existing native browser journeys | City/pause, absent-voice fallback, Hindi persistence, Urdu alignment, real research API and failure/retry passed again with no page errors |
+| New location browser journeys | Explicit-only request, overridden London coordinates, uncertainty, watcher cleanup, no coordinate-bearing request/localStorage, clearing, manual selection and denied-permission fallback passed with no page errors; [location evidence](artifacts/location-preview-check.json) |
+| Research | 14 primary-source evidence groups and 11 implementation repositories reviewed; model weight licences, operational data timing, source denominators and one official-table arithmetic discrepancy recorded |
+
+The browser checks use an exported React Native web client, a browser geolocation override and mocked denied permission. They do not verify native permission dialogs, GPS quality, device audio or warning delivery. Visual inspection covered the new location control and globe; the screen scrolls to coordinates, uncertainty and the explicit no-live-coverage message.
+
+The neural smoke contains generated moving blobs, not Indian observations. Its two test groups do not support dependable scientific confidence intervals. Calibration has not made it an operational forecast, and no model has been promoted into the app. The website prediction engine and government starter corpus remain unchanged in this extension.
+
+The [algorithm and differentiation decisions](ALGORITHM_DIFFERENTIATION_AND_VALIDATION.md), [model/API review](research/MODEL_AND_REPOSITORY_DECISIONS.md) and [Indian evidence register](research/LOCAL_WEATHER_IMPACT_EVIDENCE.md) separate implemented software, proposed experiments and unmeasured benefits. No new field survey, paired Indian corpus, mortality reduction, forecast superiority or procurement interest is claimed.
+
 ## 30 September delivery: image lab, data APIs and native app
 
 The website now includes the animated Earth explorer, observed-radar processing laboratory and manifest-backed collection interface. The separate Expo React Native client provides public/operator views, twelve Indian languages plus English, place search and installed-voice speech. The optional ConvLSTM training CLI is independent of the models served by the existing workbench.

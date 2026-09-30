@@ -73,3 +73,15 @@ Validation evidence: `artifacts/government_data_validation.json` and `artifacts/
 - Preserved exact dataset bytes through Git attributes; checked 38 staged data files against their local bytes and rechecked all 18 source-manifest hashes.
 
 Implementation, guides, sample data and verification evidence were published to the private [omansharora5/ps_2 repository](https://github.com/omansharora5/ps_2) on `main`, after release review. The initial delivery push used a normal branch update and its remote SHA matched local HEAD. Actual Indian training, signed native installation, physical-device speech, background notifications and operational warnings remain outside the evidence established here. The native audit retains thirteen moderate findings, with no forced major-version downgrade.
+
+## Algorithm decisions, calibration and optional location, 30 September 2026
+
+- Verified WeatherNext 3's actual model/access/delivery contract, TimesFM 3.0's separate weight restriction and Jev's hosted text interface. Recorded eleven useful primary implementation repositories and provider/API access boundaries.
+- Added fourteen primary-source evidence groups and a matching CSV. Preserved reporting periods, samples and denominators; flagged the official crop-table total discrepancy. Kept lives-saved and project ROI unknown.
+- Wrote `ALGORITHM_DIFFERENTIATION_AND_VALIDATION.md`, connecting sensor methods, model choices, public/operator geography, meaningful differentiation, data access, verification and controlled retraining.
+- Added optional four-partition calibration to the compact ConvLSTM CLI with reproducible split/checkpoint evidence. Independent review found a normalization leak from permanently unavailable training observations; corrected it and verified invariance.
+- Added explicit foreground device-location selection with cancellation, bounded failures, uncertainty/time display, manual fallback and no invented regional coverage. Coordinates are not sent to the research API.
+- Verified 46 regular-Python tests plus one environment-specific skip, all thirteen probability tests in the ML environment including that skipped integration, twenty native tests, two exported-native browser scripts, source checks and all-platform bundle export.
+- Recorded the synthetic negative result: calibrated Brier improves over raw output but remains worse than training climatology. No weights are promoted to the app and real Indian lightning reliability remains unestablished.
+
+Current evidence is in `VALIDATION.md`, `artifacts/calibration-smoke-summary.json`, `artifacts/location-preview-check.json` and `artifacts/mobile-build-check.json`. The default six-group training path remains available. Device tests, live authorized feeds and matched Indian training data are still required for an operational service.

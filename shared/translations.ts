@@ -1,3 +1,5 @@
+import { LOCATION_COPY_KEYS, locationDictionaries } from './location-translations.ts';
+
 export const LANGUAGES = [
   { code: 'en', name: 'English', locale: 'en-IN', rtl: false },
   { code: 'hi', name: 'हिन्दी', locale: 'hi-IN', rtl: false },
@@ -15,7 +17,7 @@ export const LANGUAGES = [
 ] as const;
 
 export type LanguageCode = typeof LANGUAGES[number]['code'];
-export const COPY_KEYS = [
+const BASE_COPY_KEYS = [
   'publicView','operatorView','language','homeTitle','homeSubtitle','search','searchPlaceholder','noResults',
   'offline','preview','currentUnavailable','practiceTitle','practiceBody','listen','stop','voiceUnavailable',
   'voiceFailed','speechReady','guideTitle','guideBody','officialWarnings','earthNote','pauseMotion','resumeMotion',
@@ -23,6 +25,7 @@ export const COPY_KEYS = [
   'synthetic','probability','readResult','openSource','available','pending','files','preferences','languageSaved',
   'storageFailed','motionReduced','simulationBody','dataScope','close',
 ] as const;
+export const COPY_KEYS = [...BASE_COPY_KEYS, ...LOCATION_COPY_KEYS] as const;
 export type CopyKey = typeof COPY_KEYS[number];
 
 // Complete draft translations. Native-speaker review is required before operational use.
@@ -135,8 +138,8 @@ ur: [
 
 export const dictionaries = Object.fromEntries(
   LANGUAGES.map(({ code }) => {
-    if (rows[code].length !== COPY_KEYS.length) throw new Error(`Incomplete locale: ${code}`);
-    return [code, Object.fromEntries(COPY_KEYS.map((key, index) => [key, rows[code][index]]))];
+    if (rows[code].length !== BASE_COPY_KEYS.length) throw new Error(`Incomplete locale: ${code}`);
+    return [code, { ...Object.fromEntries(BASE_COPY_KEYS.map((key, index) => [key, rows[code][index]])), ...locationDictionaries[code] }];
   }),
 ) as Record<LanguageCode, Record<CopyKey, string>>;
 

@@ -7,7 +7,16 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "scheme": "vajra-research",
-    "plugins": ["expo-router"],
+    "plugins": ["expo-router", ["expo-location", {
+      "locationWhenInUsePermission": "VAJRA uses your location only when you choose it, to show your place and available regional coverage. You can choose a city instead.",
+      "locationAlwaysAndWhenInUsePermission": false,
+      "locationAlwaysPermission": false,
+      "motionUsagePermission": false,
+      "isIosBackgroundLocationEnabled": false,
+      "isAndroidBackgroundLocationEnabled": false,
+      "isAndroidForegroundServiceEnabled": false,
+      "isAndroidMotionActivityEnabled": false
+    }]],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "in.vajra.research"

@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-09-30T06:48:56.138627+00:00",
+  "scope": "Synthetic software verification only; generated moving blobs, not observed lightning or Indian storms.",
+  "environment": {
+    "python": "3.14.4",
+    "torch": "2.14.0+cpu",
+    "device": "cpu"
+  },
+  "commands": [
+    ".venv-ml/Scripts/python.exe -m unittest tests.test_probability_evaluation -q",
+    "python -m unittest tests.test_image_data.TrainingContractTests -v",
+    ".venv-ml/Scripts/python.exe scripts/train_images.py smoke --output artifacts/image-training-smoke/calibration-v2 --calibrate",
+    ".venv-ml/Scripts/python.exe scripts/train_images.py evaluate --data artifacts/image-training-smoke/calibration-v2/episodes --checkpoint artifacts/image-training-smoke/calibration-v2/run/model.pt",
+    ".venv-ml/Scripts/python.exe scripts/train_images.py smoke --output artifacts/image-training-smoke/calibration-default-compat"
+  ],
+  "tests": {
+    "probability_suite": {
+      "passed": 13,
+      "seconds": 7.857,
+      "torch_integration_executed": true
+    },
+    "existing_training_contracts": {
+      "passed": 4,
+      "seconds": 0.401
+    },
+    "unavailable_training_values_leave_normalizer_and_predictions_unchanged": true,
+    "late_reachable_measurements_retained": true,
+    "changed_test_labels_leave_weights_normalization_validation_calibrator_unchanged": true,
+    "changed_corpus_rejected_by_frozen_evaluation": true
+  },
+  "calibrated_run": {
+    "path": "artifacts/image-training-smoke/calibration-v2/run",
+    "epochs": 1,
+    "splits": {
+      "train": [
+        "synthetic-0",
+        "synthetic-1"
+      ],
+      "validation": [
+        "synthetic-2",
+        "synthetic-3"
+      ],
+      "calibration": [
+        "synthetic-4",
+        "synthetic-5"
+      ],
+      "test": [
+        "synthetic-6",
+        "synthetic-7"
+      ]
+    },
+    "examples": {
+      "train": 12,
+      "validation": 12,
+      "calibration": 12,
+      "test": 12
+    },
+    "checkpoint_sha256": "e2e26a7f840444a604144d02b961809d620f3eb37eb96d2a6e9e09d27a8b932f",
+    "corpus_sha256": "0e4c3ab6bd5134afc4cfb3404021503a1a86c5764824cc26bbdfe4bf872b4085",
+    "split_hashes": {
+      "train": "7566223c11e6d4a139e109e8e1260e1d6f64c259a1365bc39e1fd19fcb952f9e",
+      "validation": "59caaa00e8dc42c1006175a5e884c738fc66ecf2ad80e7621d6fd68e57296e20",
+      "calibration": "99157311ea6dfe32995a7c5f970a2fd0bf57f2ed0b97cde93154599e3f14c9c4",
+      "test": "4baab99fcf245b1d54b5ff5061ed33b29d31aed3855922fc996b80b3d472dbff"
+    },
+    "calibrator": {
+      "method": "regularized_temperature_v1",
+      "temperature": 0.1109087448652778,
+      "fit_status": "fitted",
+      "fit_event_ids": [
+        "synthetic-4",
+        "synthetic-5"
+      ],
+      "covered_pixels": 3072,
+      "regularization": 0.001,
+      "inverse_temperature_bounds": [
+        0.05,
+        20.0
+      ],
+      "weighting": "covered pixel-example weighted; events are not equally weighted"
+    },
+    "raw_test": {
+      "covered_pixels": 3072,
+      "brier": 0.2115840711869509,
+      "log_loss": 0.6160474624499565,
+      "log_loss_probability_clip": [
+        1e-07,
+        0.9999999
+      ],
+      "observed_rate": 0.099609375,
+      "average_precision": 0.2217036478181896,
+      "average_precision_definition": "Non-interpolated precision-recall area: sum of recall increments times precision; tied scores share one threshold. Not ROC AUC or trapezoidal PR AUC. Null when no positives.",
+      "single_class": false,
+      "threshold": 0.5,
+      "hits": 0,
+      "misses": 306,
+      "false_alarms": 0,
+      "correct_negatives": 2766,
+      "pod": 0.0,
+      "far": null,
+      "csi": 0.0,
+      "reliability": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 3072,
+          "mean_probability": 0.4491842347949087,
+          "observed_frequency": 0.099609375
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        }
+      ],
+      "training_climatology": 0.099609375,
+      "training_climatology_brier": 0.08968734741210938,
+      "brier_skill": -1.3591295460521482,
+      "independence_note": "Covered pixels/windows are pooled and dependent; independent event count is reported separately."
+    },
+    "calibrated_test": {
+      "covered_pixels": 3072,
+      "brier": 0.08995875233904911,
+      "log_loss": 0.32726564782436496,
+      "log_loss_probability_clip": [
+        1e-07,
+        0.9999999
+      ],
+      "observed_rate": 0.099609375,
+      "average_precision": 0.2217036478181896,
+      "average_precision_definition": "Non-interpolated precision-recall area: sum of recall increments times precision; tied scores share one threshold. Not ROC AUC or trapezoidal PR AUC. Null when no positives.",
+      "single_class": false,
+      "threshold": 0.5,
+      "hits": 0,
+      "misses": 306,
+      "false_alarms": 0,
+      "correct_negatives": 2766,
+      "pod": 0.0,
+      "far": null,
+      "csi": 0.0,
+      "reliability": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 192,
+          "mean_probability": 0.09181841579567558,
+          "observed_frequency": 0.21875
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 2762,
+          "mean_probability": 0.13927022676428968,
+          "observed_frequency": 0.08037653874004344
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "count": 118,
+          "mean_probability": 0.21148795938913054,
+          "observed_frequency": 0.3559322033898305
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 0,
+          "mean_probability": null,
+          "observed_frequency": null
+        }
+      ],
+      "training_climatology": 0.099609375,
+      "training_climatology_brier": 0.08968734741210938,
+      "brier_skill": -0.003026122800718456,
+      "independence_note": "Covered pixels/windows are pooled and dependent; independent event count is reported separately."
+    },
+    "event_bootstrap": {
+      "status": "available",
+      "event_count": 2,
+      "replicates": 200,
+      "seed": 17,
+      "confidence_level": 0.95,
+      "method": "Percentile cluster bootstrap of whole event groups, with replacement; models and calibrator fixed",
+      "note": "At least two test event groups are required. Few groups give unstable intervals; these exclude training/calibrator-fit uncertainty.",
+      "intervals": {
+        "raw_brier": {
+          "lower": 0.21152908374243654,
+          "upper": 0.2116390586314653,
+          "valid_replicates": 200
+        },
+        "raw_log_loss": {
+          "lower": 0.6159358347523703,
+          "upper": 0.6161590901475426,
+          "valid_replicates": 200
+        },
+        "raw_brier_skill": {
+          "lower": -1.3597426475218763,
+          "upper": -1.3585164445824205,
+          "valid_replicates": 200
+        },
+        "calibrated_brier": {
+          "lower": 0.08995144542302806,
+          "upper": 0.08996605925507016,
+          "valid_replicates": 200
+        },
+        "calibrated_log_loss": {
+          "lower": 0.327251111447367,
+          "upper": 0.3272801842013629,
+          "valid_replicates": 200
+        },
+        "calibrated_brier_skill": {
+          "lower": -0.0031075937799800446,
+          "upper": -0.0029446518214566453,
+          "valid_replicates": 200
+        },
+        "calibrated_minus_raw_brier": {
+          "lower": -0.12168761320843723,
+          "upper": -0.12156302448736638,
+          "valid_replicates": 200
+        }
+      }
+    },
+    "frozen_evaluation_exact_match": true
+  },
+  "default_compatibility": {
+    "path": "artifacts/image-training-smoke/calibration-default-compat/run",
+    "event_groups": 6,
+    "calibration_requested": false,
+    "raw_test_brier": 0.1982323116479253,
+    "calibrated_test": null,
+    "event_bootstrap_status": "unavailable",
+    "test_event_count": 1
+  },
+  "implementation_sha256": {
+    "scripts/train_images.py": "69ed35991ddaaa6e01046e0467ddbe824612360ed42ffadf246e0e2237386aab",
+    "nowcast/probability_evaluation.py": "537aeaf143371ce0e8c58c8a3afc5d522306788c642cd376f059a403115a31fc",
+    "tests/test_probability_evaluation.py": "f8da730c698ef5bb4524d09ce609ffdbbd21ed5f4fe0e2d806fe799ec2bcf46f"
+  },
+  "interpretation": "Temperature adjustment improves this synthetic raw Brier score but still trails training-climatology Brier (negative Brier skill). AP and 0.5 decisions are unchanged. Two closely related synthetic test groups do not support weather-skill or dependable interval claims. No checkpoint is promoted to the app."
+}

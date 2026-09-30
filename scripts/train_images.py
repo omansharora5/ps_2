@@ -14,6 +14,12 @@ import zipfile
 
 import numpy as np
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from nowcast.probability_evaluation import EventPredictions, evaluate_events, fit_temperature
+
 
 def instant(value):
     dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
@@ -67,7 +73,7 @@ def load_episode(path, history=3):
             "times": times, "available": available, "ends": ends}
 
 
-def corpus(directory, history=3):
+def corpus(directory, history=3, calibrate=False):
     paths = sorted(Path(directory).glob("*.npz"))
     if not paths:
         raise ValueError("No episode NPZ files found")
@@ -81,11 +87,18 @@ def corpus(directory, history=3):
         groups.setdefault(e["meta"]["event_id"], []).append(e)
     if len(groups) < 6:
         raise ValueError("At least six independent event groups are required for this experimental split; a small single-event radar replay is not a training corpus")
+    if calibrate and len(groups) < 8:
+        raise ValueError("Calibration requires at least eight independent event groups for train/validation/calibration/test")
     ordered = sorted(groups, key=lambda key: min(e["times"][0] for e in groups[key]))
-    ntest = max(1, len(ordered) // 5)
-    splits = {"train": ordered[:-2 * ntest], "validation": ordered[-2 * ntest:-ntest], "test": ordered[-ntest:]}
+    if calibrate:
+        ntest = max(2, len(ordered) // 5)
+        splits = {"train": ordered[:-3 * ntest], "validation": ordered[-3 * ntest:-2 * ntest],
+                  "calibration": ordered[-2 * ntest:-ntest], "test": ordered[-ntest:]}
+    else:
+        ntest = max(1, len(ordered) // 5)
+        splits = {"train": ordered[:-2 * ntest], "validation": ordered[-2 * ntest:-ntest], "test": ordered[-ntest:]}
     # Conservative global temporal purge: adjacent splits cannot share acquisition or target windows.
-    for left, right in (("train", "validation"), ("validation", "test")):
+    for left, right in zip(list(splits), list(splits)[1:]):
         end = max(e["ends"][-1] for key in splits[left] for e in groups[key])
         start = min(e["times"][0] for key in splits[right] for e in groups[key])
         if end >= start:
@@ -93,17 +106,35 @@ def corpus(directory, history=3):
     return episodes, splits
 
 
-def normalizer(episodes, train_ids):
+def split_hashes(episodes, splits):
+    def digest(value):
+        return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    files = {Path(e["path"]).name: e["sha256"] for e in episodes}
+    hashes = {key: digest({"event_ids": ids, "files": {Path(e["path"]).name: e["sha256"]
+                         for e in episodes if e["meta"]["event_id"] in ids}}) for key, ids in splits.items()}
+    return {"files": files, "split_hashes": hashes, "corpus_sha256": digest(files)}
+
+
+def causal_input_mask(episode, index, history):
+    section = slice(index - history + 1, index + 1)
+    return episode["masks"][section] & (episode["available"][section] <= episode["times"][index])[:, :, None, None]
+
+
+def normalizer(episodes, train_ids, history=3):
     c = episodes[0]["values"].shape[1]
     sums, squares, counts = np.zeros(c), np.zeros(c), np.zeros(c)
     for e in episodes:
         if e["meta"]["event_id"] not in train_ids:
             continue
+        supported = np.zeros_like(e["masks"], dtype=bool)
+        for index in range(history - 1, len(e["times"])):
+            if e["coverage"][index].any():
+                supported[index - history + 1:index + 1] |= causal_input_mask(e, index, history)
         for channel in range(c):
-            values = e["values"][:, channel][e["masks"][:, channel]].astype(float)
+            values = e["values"][:, channel][supported[:, channel]].astype(float)
             sums[channel] += values.sum(); squares[channel] += (values ** 2).sum(); counts[channel] += values.size
     if (counts == 0).any():
-        raise ValueError("A training channel has no valid measurements")
+        raise ValueError("A training channel has no valid measurements in covered causal input windows")
     mean = sums / counts
     std = np.sqrt(np.maximum(squares / counts - mean ** 2, 1e-6))
     return mean.astype(np.float32), std.astype(np.float32)
@@ -116,7 +147,7 @@ def examples(episodes, event_ids, history, mean, std):
             continue
         for index in range(history - 1, len(e["times"])):
             section = slice(index - history + 1, index + 1)
-            mask = e["masks"][section] & (e["available"][section] <= e["times"][index])[:, :, None, None]
+            mask = causal_input_mask(e, index, history)
             if not mask.any() or not e["coverage"][index].any():
                 continue
             values = (e["values"][section] - mean[None, :, None, None]) / std[None, :, None, None]
@@ -174,18 +205,43 @@ def evaluate_model(model, data, torch, device, batch_size):
             "calibration": "Not calibrated; experimental sigmoid output", "independence_note": "Pixel counts are not independent event counts"}
 
 
+def predict_events(model, episodes, ids, history, mean, std, torch, device, batch_size):
+    model.eval()
+    predictions = []
+    with torch.no_grad():
+        for event_id in ids:
+            data = examples(episodes, [event_id], history, mean, std)
+            logits, targets, coverage = [], [], []
+            for x, y, mask in batches(data, batch_size, torch):
+                logits.append(model(x.to(device)).cpu().numpy())
+                targets.append(y.numpy()); coverage.append(mask.numpy())
+            predictions.append(EventPredictions(event_id, np.concatenate(logits), np.concatenate(targets), np.concatenate(coverage)))
+    return predictions
+
+
+def final_evaluation(model, episodes, artifact, torch, device, batch_size):
+    predictions = predict_events(model, episodes, artifact["splits"]["test"], artifact["history"],
+                                 np.array(artifact["mean"], dtype=np.float32), np.array(artifact["std"], dtype=np.float32),
+                                 torch, device, batch_size)
+    scores = evaluate_events(predictions, artifact["training_climatology"], artifact["calibrator"])
+    return {"test": scores.pop("raw"), "test_calibrated": scores.pop("calibrated"), "probability_verification": scores}
+
+
 def train(args):
     import torch
-    episodes, splits = corpus(args.data, args.history)
+    calibrate = getattr(args, "calibrate", False)
+    episodes, splits = corpus(args.data, args.history, calibrate=calibrate)
     torch.manual_seed(17)
     torch.set_num_threads(min(4, torch.get_num_threads()))
     if args.device == "cuda" and not torch.cuda.is_available():
         raise ValueError("CUDA requested but unavailable; choose cpu or install a compatible CUDA PyTorch build")
-    mean, std = normalizer(episodes, splits["train"])
+    mean, std = normalizer(episodes, splits["train"], args.history)
     datasets = {key: examples(episodes, ids, args.history, mean, std) for key, ids in splits.items()}
     covered = np.concatenate([y[m] for _, y, m in datasets["train"]])
     if len(np.unique(covered)) != 2:
         raise ValueError("Training requires covered positive and negative targets")
+    training_rate = float(covered.astype(float).mean())
+    manifest = split_hashes(episodes, splits)
     model = make_model(episodes[0]["values"].shape[1] * 2).to(args.device)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     output = Path(args.output); output.mkdir(parents=True, exist_ok=True)
@@ -207,38 +263,62 @@ def train(args):
             best = val["brier"]
             artifact = {"state_dict": model.cpu().state_dict(), "channels": episodes[0]["values"].shape[1] * 2,
                         "history": args.history, "mean": mean.tolist(), "std": std.tolist(), "splits": splits,
-                        "metadata": episodes[0]["meta"], "files": {Path(e["path"]).name: e["sha256"] for e in episodes},
-                        "torch_version": str(torch.__version__), "calibrated": False, "architecture": "compact-convlstm-12-v1"}
+                        "metadata": episodes[0]["meta"], **manifest, "training_climatology": training_rate,
+                        "torch_version": str(torch.__version__), "calibrated": False, "architecture": "compact-convlstm-12-v1",
+                        "calibration_requested": calibrate, "calibrator": None, "evaluation_version": "event-probability-v1",
+                        "evaluation_batch_size": args.batch_size}
             temporary = output / "model.pt.part"; torch.save(artifact, temporary); temporary.replace(checkpoint_path)
             model.to(args.device)
     artifact = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     model.load_state_dict(artifact["state_dict"]); model.to(args.device)
+    if calibrate:
+        calibration_events = predict_events(model, episodes, splits["calibration"], args.history, mean, std, torch, args.device, args.batch_size)
+        artifact["calibrator"] = fit_temperature(calibration_events)
+        artifact["calibrated"] = artifact["calibrator"]["fit_status"] == "fitted"
+        temporary = output / "model.pt.part"; torch.save(artifact, temporary); temporary.replace(checkpoint_path)
+    checkpoint_hash = hashlib.sha256(checkpoint_path.read_bytes()).hexdigest()
+    calibration_record = {"schema_version": 1, "checkpoint_sha256": checkpoint_hash, "calibration_requested": calibrate,
+                          "calibrator": artifact["calibrator"], "training_climatology": training_rate, "splits": splits, **manifest}
+    (output / "calibration.json").write_text(json.dumps(calibration_record, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     report = {"scope": episodes[0]["meta"]["scope"], "splits": splits,
               "examples": {k: len(v) for k, v in datasets.items()}, "history": history_log,
-              "test": evaluate_model(model, datasets["test"], torch, args.device, args.batch_size),
-              "checkpoint_sha256": hashlib.sha256(checkpoint_path.read_bytes()).hexdigest(),
-              "limitations": "Pipeline experiment only; no calibration, operational validation or India skill claim. Six groups is a software minimum, not a scientific sample-size guarantee."}
-    (output / "report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"checkpoint": str(checkpoint_path), "test": report["test"]}))
+              **final_evaluation(model, episodes, artifact, torch, args.device, args.batch_size),
+              "checkpoint_sha256": checkpoint_hash, "split_hashes": manifest["split_hashes"],
+              "limitations": "Pipeline experiment only; no operational validation or India skill claim. Calibration may worsen held-out scores. Event minima are software checks, not sample-size guarantees."}
+    (output / "report.json").write_text(json.dumps(report, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    print(json.dumps({"checkpoint": str(checkpoint_path), "test_brier": report["test"]["brier"],
+                      "calibrated_test_brier": report["test_calibrated"]["brier"] if report["test_calibrated"] else None}))
+    return report
 
 
 def evaluate(args):
     import torch
+    torch.set_num_threads(min(4, torch.get_num_threads()))
     artifact = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
-    episodes, _ = corpus(args.data, artifact["history"])
+    episodes, splits = corpus(args.data, artifact["history"], calibrate=artifact.get("calibration_requested", False))
     if {Path(e["path"]).name: e["sha256"] for e in episodes} != artifact["files"]:
         raise ValueError("Evaluation corpus differs from the frozen training split manifest")
-    data = examples(episodes, artifact["splits"]["test"], artifact["history"], np.array(artifact["mean"]), np.array(artifact["std"]))
     model = make_model(artifact["channels"]); model.load_state_dict(artifact["state_dict"])
-    print(json.dumps(evaluate_model(model, data, torch, "cpu", 4), indent=2))
+    if "evaluation_version" in artifact:
+        manifest = split_hashes(episodes, splits)
+        if splits != artifact["splits"] or manifest["split_hashes"] != artifact["split_hashes"] or manifest["corpus_sha256"] != artifact["corpus_sha256"]:
+            raise ValueError("Evaluation split hashes differ from the frozen training manifest")
+        if artifact["calibration_requested"] and artifact["calibrator"] is None:
+            raise ValueError("Calibration was requested but its frozen parameters are missing")
+        result = final_evaluation(model, episodes, artifact, torch, "cpu", artifact.get("evaluation_batch_size", 4))
+    else:
+        data = examples(episodes, artifact["splits"]["test"], artifact["history"], np.array(artifact["mean"]), np.array(artifact["std"]))
+        result = evaluate_model(model, data, torch, "cpu", 4)
+    print(json.dumps(result, indent=2, allow_nan=False))
+    return result
 
 
-def make_smoke(directory):
+def make_smoke(directory, event_count=6):
     directory = Path(directory); directory.mkdir(parents=True, exist_ok=True)
     if list(directory.glob("*.npz")):
         raise ValueError("Smoke output already has episodes; use a fresh directory")
     yy, xx = np.mgrid[:16, :16]
-    for event in range(6):
+    for event in range(event_count):
         start = datetime(2024, 1, 1, tzinfo=timezone.utc) + timedelta(days=event * 2)
         times = [start + timedelta(minutes=i * 5) for i in range(8)]
         values = np.array([np.exp(-((xx - (4 + i * .5)) ** 2 + (yy - (5 + event)) ** 2) / 8) * 40 for i in range(8)], dtype=np.float32)[:, None]
@@ -257,18 +337,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     validate = sub.add_parser("validate"); validate.add_argument("--data", required=True); validate.add_argument("--history", type=int, default=3)
+    validate.add_argument("--calibrate", action="store_true", help="Validate the four-way calibration split, requiring at least eight event groups")
     fit = sub.add_parser("train"); fit.add_argument("--data", required=True); fit.add_argument("--output", required=True)
     fit.add_argument("--history", type=int, default=3); fit.add_argument("--epochs", type=int, default=5)
     fit.add_argument("--batch-size", type=int, default=4); fit.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
+    fit.add_argument("--calibrate", action="store_true", help="Fit temperature only on a separate held-out calibration split")
     test = sub.add_parser("evaluate"); test.add_argument("--data", required=True); test.add_argument("--checkpoint", required=True)
     smoke = sub.add_parser("smoke"); smoke.add_argument("--output", required=True)
+    smoke.add_argument("--calibrate", action="store_true", help="Generate eight synthetic groups and exercise held-out calibration")
     args = parser.parse_args()
     try:
         if hasattr(args, "history") and args.history < 2 or hasattr(args, "epochs") and args.epochs < 1 or hasattr(args, "batch_size") and args.batch_size < 1:
             raise ValueError("History >=2, epochs >=1 and batch size >=1 are required")
         if args.command == "validate":
-            episodes, splits = corpus(args.data, args.history)
-            mean, std = normalizer(episodes, splits["train"])
+            episodes, splits = corpus(args.data, args.history, calibrate=args.calibrate)
+            mean, std = normalizer(episodes, splits["train"], args.history)
             sizes = {key: len(examples(episodes, ids, args.history, mean, std)) for key, ids in splits.items()}
             print(json.dumps({"episodes": len(episodes), "splits": splits, "examples": sizes, "scope": episodes[0]["meta"]["scope"]}, indent=2))
         elif args.command == "train":
@@ -276,7 +359,7 @@ def main():
         elif args.command == "evaluate":
             evaluate(args)
         else:
-            base = Path(args.output); make_smoke(base / "episodes")
+            base = Path(args.output); make_smoke(base / "episodes", event_count=8 if args.calibrate else 6)
             args.data, args.output, args.history, args.epochs, args.batch_size, args.device = str(base / "episodes"), str(base / "run"), 3, 1, 4, "cpu"
             train(args)
     except (ValueError, KeyError, ImportError, OSError, zipfile.BadZipFile) as error:

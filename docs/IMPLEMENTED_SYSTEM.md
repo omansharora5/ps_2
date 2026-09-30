@@ -10,6 +10,7 @@ flowchart TD
     Person --> Native[Expo React Native app]
     Places[Shared 19-city gazetteer and source credits] --> Web
     Places --> Native
+    GPS[Explicit foreground-location request] --> Native
     Locales[12 Indian languages + English] --> Native
     Native --> Speech[Matching installed device voice / expo-speech]
     Web --> API[FastAPI research service]
@@ -35,6 +36,8 @@ The website and native app use one Python service. The website adds the full ima
 5. Pause automatic motion when requested and honor the system's reduced-motion setting. On the website, failed WebGL falls back to a static map with place search.
 
 The web texture is a static NASA Blue Marble composite. The animated cloud layer is illustrative, not a satellite cloud observation. Details and hashes are in [image provenance](../public/earth/PROVENANCE.md) and [shared geography provenance](../shared/geography-provenance.json).
+
+The native app separately offers an opt-in foreground device fix. Coordinates stay in memory, display their accuracy/time and focus the globe. Manual selection, cancellation, leaving the public screen and backgrounding clear them. No reverse geocoder or automatic regional forecast matching is connected; unsupported live coverage remains explicit. [Location contract](LOCATION_DELIVERY_NOTES.md).
 
 ## The image pipeline
 
@@ -82,14 +85,18 @@ flowchart TD
     Validate --> Normalize[Fit normalization on training groups only]
     Normalize --> Train[Compact ConvLSTM + masked binary loss]
     Train --> Select[Select checkpoint using validation Brier score]
-    Select --> Test[Evaluate frozen held-out event groups]
+    Select --> Calibrate[Optional: fit temperature on separate calibration events]
+    Calibrate --> Test[Evaluate frozen held-out event groups]
+    Select --> Test
     Test --> Research[Research checkpoint + manifest + report]
-    Research --> Gate[Future: calibration, regional trials and operational review]
+    Research --> Gate[Future: independent Indian validation, regional trials and operational review]
 ```
 
 The trainable ConvLSTM is separate from both the observed-radar motion baselines and the existing synthetic logistic fusion model. Running training does not silently change the app's prediction engine. The checkpoint and corpus hashes remain explicit. The current release provides a research training CLI, not automatic model promotion or a live ConvLSTM inference service.
 
 Follow [the training guide](TRAINING_GUIDE.md) for the exact arrays, preparation command and train/evaluate commands. The generated smoke exercise proves that the training program runs; it does not establish weather prediction skill.
+
+`--calibrate` reserves four chronological partitions and fits a bounded regularized temperature only after checkpoint selection. The checkpoint stores calibration parameters, training-only climatology and split hashes. Evaluation produces raw/adjusted scores, reliability bins and whole-event bootstrap intervals when at least two test events exist. Permanently unavailable training measurements cannot affect normalization. The synthetic adjusted model still trails climatology; [exact results and methods](CALIBRATION_AND_VERIFICATION.md).
 
 ## Offline and online behavior
 

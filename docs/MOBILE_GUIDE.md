@@ -48,6 +48,8 @@ The translations are working drafts. Key-completeness tests establish software c
 
 The place search uses the bundled 19-city gazetteer and aliases shared with the website. It does not need geocoding or access to the user's location. Its animated geography and clouds are illustrative. Choosing a place does not make a simulation into a forecast for that city.
 
+The separate **Use my location** button requests optional foreground permission and accepts one recent fix. It displays coordinates, reported accuracy and capture time. Cancel, manual selection, leaving the public screen and backgrounding clear the active request/fix. Coordinates remain in memory and are not sent to the research API or a geocoder. The app does not infer a district or country from a device point. Live regional warnings remain unconnected for every selected location. See [location behavior and acceptance limits](LOCATION_DELIVERY_NOTES.md).
+
 ## Spoken messages
 
 The app uses `expo-speech`. It checks available device voices, prefers an exact language/locale match and otherwise accepts a voice of the same language. It does not silently choose an unrelated language. If a matching voice is absent, the app retains readable text and shows a voice-unavailable message.
@@ -72,6 +74,8 @@ npx.cmd expo export --platform all --max-workers 2
 
 For the exported web preview, run `python scripts/serve_mobile_preview.py` from the repository root and open `http://127.0.0.1:8081`. Export with `EXPO_PUBLIC_API_URL=http://127.0.0.1:8000` configured when checking against the local backend. With both services running, `node --experimental-strip-types scripts/verify-mobile-preview.mjs` exercises place selection, language persistence, absent-voice behavior, the research API and retry handling in Chromium.
 
+`node scripts/verify-location-preview.mjs` checks no startup location request, an explicit browser-overridden London fix, subscription cleanup, no coordinate-bearing requests or localStorage values, clearing/manual selection and denied-permission fallback. It does not test real GPS or native permission dialogs. Location plugin changes require a new native binary.
+
 Export creates web assets and native JavaScript bundles. It does not create a signed APK, AAB or iOS application. Native binaries require Android/iOS build tooling or an EAS build configured under the team's account. Follow the [Expo build guide](https://docs.expo.dev/build/introduction/) when that account and signing configuration are available. Do not commit signing credentials.
 
 The workspace used for delivery has no Android SDK, emulator or adb, and no iOS build environment. The exact checks completed here are recorded in [VALIDATION.md](../VALIDATION.md); no physical-device audio or native installation is certified.
@@ -87,6 +91,7 @@ The workspace used for delivery has no Android SDK, emulator or adb, and no iOS 
 | Cancellation | Stop, rapid language changes, leaving screen and backgrounding stop stale speech |
 | Accessibility | Screen reader labels, large font, Urdu layout and reduced motion on actual phones |
 | API failure | Loading terminates; useful error/retry; no stale result presented as current |
+| Foreground location | Allow once, approximate/precise, denied/permanently denied, GPS off, indoor timeout, cancel/background and stale fix; manual fallback remains usable |
 | Battery and animation | Low-end phone frame pacing, pause/background behavior and thermal impact |
 
 Future real-warning delivery additionally needs an authorized warning feed, issue/expiry and cancellation handling, notification permissions, authenticated operator access, delivery monitoring and user testing. Those integrations are separate from rendering a message or speaking text.
@@ -97,7 +102,9 @@ Future real-warning delivery additionally needs an authorized warning feed, issu
 - `mobile/src/state/preferences.tsx`: persisted locale and reduced-motion preference.
 - `mobile/src/lib/api.ts`: API boundary validation and bounded requests.
 - `mobile/src/lib/speech-controller.ts`: voice selection, cancellation and expiry logic.
+- `mobile/src/lib/foreground-location.ts` and `mobile/src/hooks/use-foreground-location.ts`: bounded, cancellable foreground location and screen lifecycle.
 - `shared/translations.ts`: language catalogue and text dictionaries.
+- `shared/location-translations.ts`: translated location controls and status messages.
 - `shared/locations.json`, `shared/earth-land.json`: shared geography.
 - [Geography provenance](../shared/geography-provenance.json): source links and transformations.
 

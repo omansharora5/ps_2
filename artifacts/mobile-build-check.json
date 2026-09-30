@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-09-30T03:54:38.873289+00:00",
+  "verified_at_utc": "2026-09-30T06:28:59.277127+00:00",
   "status": "passed_with_dependency_audit_findings",
   "scope": "Expo React Native source checks and Android/iOS Hermes plus web export. Browser flow verification is recorded separately. No signed native binary, emulator, physical installation or audible device speech was tested.",
   "versions": {
@@ -11,7 +11,8 @@
     "react-native-svg": "15.15.4",
     "typescript": "6.0.3",
     "node": "24.20.0",
-    "npm": "11.19.0"
+    "npm": "11.19.0",
+    "expo-location": "57.0.20"
   },
   "checks": {
     "typecheck": {
@@ -31,7 +32,7 @@
     "unit_tests": {
       "command": "npm test",
       "exit_code": 0,
-      "passed": 10,
+      "passed": 20,
       "failed": 0,
       "coverage": [
         "13 complete UTF-8 dictionaries and English fallback",
@@ -43,7 +44,13 @@
         "Superseding message race",
         "Speech expiry",
         "Speech engine failure",
-        "Never-resolving voice provider reaches translated audio failure after a bounded deadline"
+        "Never-resolving voice provider reaches translated audio failure after a bounded deadline",
+        "Explicit-only foreground location permission",
+        "Location denial and disabled services",
+        "Location cancellation and late permission/subscription races",
+        "Stale, inaccurate, invalid and future fixes",
+        "Exact coordinates outside India without region inference",
+        "Bounded location failures and coordinate clearing"
       ]
     },
     "export": {
@@ -62,19 +69,19 @@
   },
   "bundles": [
     {
-      "path": "mobile/dist/_expo/static/js/android/entry-7a3a18a2462ad526dd6937b970a7d0ee.hbc",
-      "bytes": 3096259,
-      "sha256": "ababbb216dc0f57e113f14dbbca8b2f071374f394e5067772d67e2de393698c0"
+      "path": "mobile/dist/_expo/static/js/android/entry-8637387fcf86100dffbda42177abce6b.hbc",
+      "bytes": 3156810,
+      "sha256": "5c1e7e0f8b87c8292b3d72dc0c4e06c846a93249d5a7221e85ab7d8fd127aaac"
     },
     {
-      "path": "mobile/dist/_expo/static/js/ios/entry-e92f28616639976ce5798d178809d204.hbc",
-      "bytes": 2780590,
-      "sha256": "ca42142605f8c0ef50ed4007edb459c98a2990c067db5c035441406bdc12ab3a"
+      "path": "mobile/dist/_expo/static/js/ios/entry-c87a2aa427ef7afda9a12ede94ff061b.hbc",
+      "bytes": 2840815,
+      "sha256": "28f45e25d7d04722e3bda4605d1df10be204e8ff65e10f4bfe59f7f0dfdb8996"
     },
     {
-      "path": "mobile/dist/_expo/static/js/web/entry-a5bbdac316bf24ee1ddc2192c1744671.js",
-      "bytes": 1373248,
-      "sha256": "a74fa1d8248b0ad30f71c8468fb53a9aa3ef852592fcd921d0737090a2d70cf5"
+      "path": "mobile/dist/_expo/static/js/web/entry-c9d734be5973f0dfcc2e17b3050c61a0.js",
+      "bytes": 1450332,
+      "sha256": "f53df34ddd160582326a245c219de3082c59fbcea7e844db36c62c77c4bfe609"
     }
   ],
   "npm_audit": {
@@ -96,5 +103,17 @@
   ],
   "tooling_note": "The local user npm allow-scripts setting was propagated by npx into a project install and caused EALLOWSCRIPTS. SDK-compatible additions used the installed Expo CLI directly. SDK57 navigation hooks import from expo-router, following its official SDK55-to56 migration guidance.",
   "speech_voice_lookup_timeout_ms": 3000,
-  "layout_followup": "Bottom navigation now reserves item/label space plus safe-area bottom padding, scaled for larger text. Typecheck and lint rerun with exit 0; Android/iOS/web export rerun with exit 0. Unit and dependency checks unchanged."
+  "layout_followup": "Bottom navigation now reserves item/label space plus safe-area bottom padding, scaled for larger text. Typecheck and lint rerun with exit 0; Android/iOS/web export rerun with exit 0. Unit and dependency checks unchanged.",
+  "location_followup": {
+    "foreground_only": true,
+    "stored_or_uploaded_by_app": false,
+    "geocoder_connected": false,
+    "live_warning_feed_connected": false,
+    "permission_timeout_ms": 45000,
+    "fix_timeout_ms": 15000,
+    "max_fix_age_ms": 120000,
+    "max_reported_accuracy_metres": 5000,
+    "configuration_introspection": "Passed: iOS when-in-use only; Android coarse/fine; no background location, location foreground-service or motion permissions added.",
+    "notes": "docs/LOCATION_DELIVERY_NOTES.md"
+  }
 }

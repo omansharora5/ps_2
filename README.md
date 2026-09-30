@@ -9,12 +9,16 @@ The working weather demonstrations use synthetic fusion and historical French ra
 | Earth explorer | Search 19 supported Indian cities, rotate and zoom to the selected coordinates, pause motion or use reduced motion |
 | Radar image lab | Compare raw/despeckled/smoothed inputs, persistence, global translation and dense optical flow against later observed radar |
 | Data collection | Provider/API links, access status, manifest-backed downloads and bounded local collection jobs |
-| Native app | Public/operator views, the shared place list, 12 Indian languages plus English, and installed-voice text-to-speech |
-| Training | Validate episode files, train/evaluate a compact ConvLSTM and run a clearly labelled synthetic smoke exercise |
+| Native app | Public/operator views, optional foreground device location or manual city selection, 12 Indian languages plus English, and installed-voice text-to-speech |
+| Training | Validate episode files, train/evaluate a compact ConvLSTM, optionally calibrate on separate events and report reliability against a climatology baseline |
 
 Cloud animation is decorative. Selecting a city moves the geographic view; it does not create a local weather observation. The native app's operator view is a view preference, not authentication.
 
 See [the implemented system and data-flow diagrams](docs/IMPLEMENTED_SYSTEM.md) for how the website, native app, image techniques, provider APIs and separate training program connect.
+
+For the current algorithm decisions, start with [what makes VAJRA different and how to verify it](ALGORITHM_DIFFERENTIATION_AND_VALIDATION.md). It explains why an LLM is unnecessary, when ConvLSTM/tracking/larger models help, public/operator roles and controlled retraining. The [model and repository review](research/MODEL_AND_REPOSITORY_DECISIONS.md) verifies WeatherNext 3, TimesFM 3.0, Jev, provider APIs and licences. The [Indian evidence register](research/LOCAL_WEATHER_IMPACT_EVIDENCE.md) contains 14 primary-source groups with dates, denominators and limitations.
+
+The [calibration guide](docs/CALIBRATION_AND_VERIFICATION.md) documents the new `train --calibrate` workflow: separate training, model-selection, calibration and test events; frozen evaluation; reliability bins; Brier/log loss/AP; and event-bootstrap intervals. The synthetic smoke's adjusted Brier score is 0.089959, compared with the stronger constant-climatology baseline at 0.089687. This verifies software behavior, not Indian lightning reliability. No trained checkpoint is automatically promoted into the app.
 
 Screenshots: [website Earth explorer](artifacts/earth-patna-desktop.png), [radar image lab](artifacts/image-lab-desktop.png), [native app](artifacts/native-earth-preview.png), [Hindi](artifacts/native-hindi-preview.png) and [Urdu](artifacts/native-urdu-preview.png).
 

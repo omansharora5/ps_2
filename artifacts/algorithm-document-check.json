@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "files": 10,
+  "local_links_checked": 93,
+  "issues": [],
+  "scope": "Local Markdown file links and balanced code fences; anchors and external URLs are outside this check"
+}

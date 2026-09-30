@@ -12,7 +12,7 @@ test('all 13 locales are complete UTF-8 and critical copy is translated', () => 
       assert.ok(dictionaries[code][key].length > 0, `${code}.${key}`);
       assert.doesNotMatch(dictionaries[code][key], /\uFFFD|\?{2,}/, `${code}.${key}`);
     }
-    if (code !== 'en') for (const key of ['practiceBody', 'simulationBody', 'voiceUnavailable', 'currentUnavailable'] as const) assert.notEqual(dictionaries[code][key], dictionaries.en[key]);
+    if (code !== 'en') for (const key of ['practiceBody', 'simulationBody', 'voiceUnavailable', 'currentUnavailable', 'useLocation', 'locationDenied', 'liveCoverageUnavailable', 'regionUnknown'] as const) assert.notEqual(dictionaries[code][key], dictionaries.en[key]);
   }
   assert.equal(t('unknown', 'practiceBody'), dictionaries.en.practiceBody);
   assert.equal(LANGUAGES.find(item => item.code === 'ur')?.rtl, true);

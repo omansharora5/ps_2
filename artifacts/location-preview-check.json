@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": [
+    "No location or permission query at public-screen startup",
+    "Explicit request uses overridden London coordinates, reports uncertainty, stops subscription and makes no coordinate-bearing request",
+    "Manual city selection clears the device fix",
+    "Clear-location control removes the fix",
+    "Denied permission keeps the manual city flow usable"
+  ],
+  "pageErrors": [],
+  "scope": "Chromium React Native web export; browser-overridden location and mocked denied permission, not physical-phone GPS or native permission-dialog verification"
+}
