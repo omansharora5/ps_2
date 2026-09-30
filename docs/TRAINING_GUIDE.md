@@ -4,6 +4,8 @@ This repository now has two independent additions: a working image-processing la
 
 ## 1. Run the observed image laboratory
 
+For the separate pretrained generative experiment, use the [STLDM guide](STLDM_GUIDE.md). It pins the official source and checkpoint and records a real CPU inference against the author example. It does not accept these dBZ episodes as pretrained inputs, train a lightning model, or replace this ConvLSTM workflow. [Continuous refresh versus controlled retraining](../REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md#continuous-correction-daily-learning-and-bounded-memory) explains how new scans, delayed truth, daily evaluation and model promotion differ.
+
 The standard application dependencies in `requirements.txt` are sufficient. Start the API as described in the root README, then use the Image Lab in the website or call:
 
 ```powershell

@@ -50,6 +50,14 @@ The place search uses the bundled 19-city gazetteer and aliases shared with the 
 
 The separate **Use my location** button requests optional foreground permission and accepts one recent fix. It displays coordinates, reported accuracy and capture time. Cancel, manual selection, leaving the public screen and backgrounding clear the active request/fix. Coordinates remain in memory and are not sent to the research API or a geocoder. The app does not infer a district or country from a device point. Live regional warnings remain unconnected for every selected location. See [location behavior and acceptance limits](LOCATION_DELIVERY_NOTES.md).
 
+## Citizen observations by SMS
+
+The public screen has a separate **Share an observation** form. Enter the locality and observation yourself, review the complete unverified-report preview, then choose **Open SMS draft**. The app passes that exact body and an empty recipient list to `expo-sms`; the operating-system messaging app owns recipient selection and final send. The selected city, precise GPS and practice warning are not automatically included. Report fields remain in component memory; the app does not submit or persist them to its backend.
+
+The composer result is shown honestly: cancelled, accepted for sending, unknown, unavailable or failed. None proves delivery. The lookup has a three-second deadline and duplicate taps cannot open multiple composers. Leaving/backgrounding during the lookup cancels that pending request; an already-open OS composer cannot be dismissed by this controller. SMS needs carrier messaging service even when mobile data is absent. These manual citizen reports do not implement an operator bulk-warning gateway.
+
+All thirteen language dictionaries include draft reporting copy. Source tests cover exact preview/body preservation, blank recipients, explicit-only action, timeout/cancellation races and platform outcomes. `node scripts/verify-sms-preview.mjs` checks the exported web client's real unavailable path, readable preview and absence of a report-bearing network request. Actual Android/iOS composer behavior, long/Unicode message segmentation, charging and delivery need physical-device checks. No SMS was sent during verification. Bluetooth relay remains a researched design in [offline delivery and regional targeting](../research/OFFLINE_DELIVERY_AND_REGIONAL_TARGETING.md).
+
 ## Spoken messages
 
 The app uses `expo-speech`. It checks available device voices, prefers an exact language/locale match and otherwise accepts a voice of the same language. It does not silently choose an unrelated language. If a matching voice is absent, the app retains readable text and shows a voice-unavailable message.

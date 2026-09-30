@@ -2,6 +2,31 @@
 
 This record distinguishes software checks from real-weather and physical-device validation. The current delivery extends the original research prototype; the older benchmark results below retain their original scope.
 
+## 30 September extension: decision evidence, STLDM and reporting
+
+The website now saves explicit probability/support policy assessments. Source ages are recomputed from causal timestamps; an insufficient recent-source count holds the result for evidence review even when its score is high. The returned reasons distinguish a research support check from calibrated confidence. Synthetic results always have public dispatch blocked. A standalone single-owner queue coalesces regional updates and refuses superseded/expired completion; a live provider stream, durable recovery and atomic publication remain outside that queue.
+
+| Check | Actual result and scope |
+|---|---|
+| Complete regular-Python suite | **64 discovered: 63 passed, 1 skipped**, 15.811 seconds. The skip is the optional Torch integration |
+| Probability suite in `.venv-ml` | **13/13 passed**, 20.562 seconds, including the skipped Torch integration; these overlap the complete suite and are not 13 additional unique tests |
+| Decision/update tests | Ten tests cover causal recency, threshold/evidence separation, receipt identity, preparation timing, bounded queue state, concurrent-region scheduling, supersession, duplicates/conflicts and expiry |
+| Independent policy review | All ten tests passed; additional causal-time cases and twelve simultaneous identical receipt requests passed. This does not establish a distributed scheduler or production authorization |
+| Official STLDM integration | One author-example inference completed on CPU with pinned source and checkpoint, strict safetensors loading and five past frames only. Model call **113.386315 s**; measured in-function pipeline **150.564177 s**, during other verification activity |
+| STLDM scientific result | On one normalized reference example, MSE **0.0081866016**, compared with persistence **0.0079289055**. Persistence wins this case. No physical-unit, calibrated probability, Indian or lightning-skill claim |
+| STLDM independent review | Seven boundary tests passed; separately recomputed sample preparation, input/truth separation, metrics and artifact/source hashes matched. CUDA and peak CPU memory were not tested |
+| Production web build | Passed; lazy Earth chunk retains its size advisory |
+| Website browser journeys | Initial nine-test suite passed. After adding the delayed-receipt fix, **9/10 passed** in the full run; the unchanged Earth-focus test timed out and then passed alone (**1/1**, 18.5 seconds). Both decision-policy tests passed, including the delayed-response race. The intermittent globe timeout's cause is unestablished |
+| Native source and exports | **28/28 tests passed**, typecheck/lint passed, Expo Doctor **21/21** and Android/iOS/web exports passed. [Build evidence](artifacts/mobile-build-check.json) records bundle hashes |
+| Native exported-web journeys | Existing language/TTS fallback, API failure/retry and explicit location journeys passed with no page errors |
+| SMS exported-web journey | Actual unavailable-on-web path retains the editable unverified draft; city selection does not fill its locality; report text was absent from network requests and localStorage. [Evidence](artifacts/sms-preview-check.json) |
+
+Visual review covered [operator evidence controls](artifacts/operator-evidence-mobile.png), the [SMS form](artifacts/native-sms-preview.png) and its [unavailable-service result](artifacts/native-sms-result.png). The first SMS browser attempt incorrectly tried to click the deliberately disabled empty-draft button; the verification was corrected to assert disabled state. No application change was needed for that failure. A separate real UI race was corrected: a late receipt response cannot describe changed controls or expose their public-preview action.
+
+The native report action uses an empty recipient list and lets the user send through the OS composer. No SMS was sent, and no physical composer, carrier delivery, Bluetooth radio, signed native installation or audible phone speech was tested. The existing dependency audit retains **13 moderate, zero high/critical** findings. Translation completeness is not native-speaker approval.
+
+The [current design and recommendations](REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md) link three new primary-source research notes. Daily outcome evaluation and reviewed retraining are specified, not deployed as unattended learning. No Jev service is required or connected. These additions do not change the simulator into a validated Indian weather service.
+
 ## 30 September extension: probability calibration, location and research
 
 The training CLI now supports four-way event separation with `--calibrate`, while preserving the default three-way path. It saves a bounded regularized temperature fit, training climatology and split hashes, then evaluates frozen predictions. Reports include Brier/log loss, average precision with tied-score handling, reliability bins, POD/FAR/CSI and whole-event bootstrap intervals. [Method and result details](docs/CALIBRATION_AND_VERIFICATION.md), [reproducible evidence](artifacts/calibration-smoke-summary.json).

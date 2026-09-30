@@ -1,0 +1,60 @@
+import { test, expect } from '@playwright/test';
+
+test('a delayed receipt cannot explain newly changed officer controls', async ({ page }) => {
+  await page.goto('/#/workbench');
+  await expect(page.getByRole('button', { name: 'Save decision receipt', exact: true })).toBeEnabled();
+  let release;
+  let intercepted;
+  const waiting = new Promise(resolve => { intercepted = resolve; });
+  const gate = new Promise(resolve => { release = resolve; });
+  await page.route('**/api/receipts', async route => {
+    if (route.request().method() !== 'POST') return route.continue();
+    const response = await route.fetch();
+    intercepted();
+    await gate;
+    await route.fulfill({ response });
+  });
+  await page.getByRole('button', { name: 'Save decision receipt', exact: true }).click();
+  await waiting;
+  await page.getByLabel('Required recent sources', { exact: true }).selectOption('3');
+  release();
+  await expect(page.getByRole('button', { name: 'Save decision receipt', exact: true })).toBeEnabled();
+  await expect(page.getByRole('region', { name: 'Why this decision?' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'View public preview', exact: true })).toHaveCount(0);
+  await page.unroute('**/api/receipts');
+  await page.getByRole('button', { name: 'Save decision receipt', exact: true }).click();
+  await expect(page.getByRole('region', { name: 'Why this decision?' })).toContainText('3 available; 3 required');
+});
+
+test('operator records separate probability and evidence gates with an explanation', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/#/workbench');
+  await expect(page.getByRole('heading', { name: 'Bihar study area · synthetic event' })).toBeVisible();
+  await page.getByLabel('Demo location', { exact: true }).selectOption('nalanda');
+  await page.getByLabel('Demo review threshold', { exact: true }).selectOption('0.1');
+  await page.getByLabel('Required recent sources', { exact: true }).selectOption('3');
+  await page.getByLabel('Maximum source age', { exact: true }).selectOption('5');
+  await page.getByRole('button', { name: 'Save decision receipt', exact: true }).click();
+  const explanation = page.getByRole('region', { name: 'Why this decision?' });
+  await expect(explanation).toContainText('Ready for research review');
+  await expect(explanation).toContainText('3 available; 3 required');
+  await expect(explanation).toContainText('Public dispatch blocked');
+  await page.getByLabel('Multi-radar availability').selectOption('missing');
+  await expect(explanation).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Save decision receipt', exact: true })).toBeEnabled();
+  const saved = page.waitForResponse(response => response.url().endsWith('/api/receipts') && response.request().method() === 'POST');
+  await page.getByRole('button', { name: 'Save decision receipt', exact: true }).click();
+  const body = await (await saved).json();
+  expect(body.assessment.public_dispatch_eligible).toBe(false);
+  expect(body.assessment.status).toBe('hold_for_evidence');
+  await expect(explanation).toContainText('Hold for evidence review');
+  await expect(explanation).toContainText('2 available; 3 required');
+  await expect(explanation).toContainText('no separate outage calibration');
+  await explanation.screenshot({ path: 'artifacts/operator-evidence-gates.png' });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await explanation.scrollIntoViewIfNeeded();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'artifacts/operator-evidence-mobile.png', fullPage: true });
+  expect(errors).toEqual([]);
+});

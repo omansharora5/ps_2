@@ -4,6 +4,7 @@ import places from '../../../shared/locations.json';
 import { Brand, Button, Card, Copy, Screen, colors, styles } from '../components/ui';
 import { Earth } from '../components/earth';
 import { SpeechButton } from '../components/speech-button';
+import { CitizenReport } from '../components/citizen-report';
 import { usePreferences } from '../state/preferences';
 import { useForegroundLocation } from '../hooks/use-foreground-location';
 import type { CopyKey } from '../../../shared/translations';
@@ -52,6 +53,7 @@ export default function PublicScreen() {
       <View style={styles.separator} /><Copy>{copy('liveCoverageUnavailable')}</Copy>
     </Card>
     <Card style={{ borderColor: '#E4D4AA', backgroundColor: '#FFF9EB' }}><Copy style={styles.pill}>{copy('preview')}</Copy><Copy style={styles.small}>{copy('currentUnavailable')}</Copy><Copy accessibilityRole="header" style={styles.heading}>{copy('practiceTitle')}</Copy><Copy>{copy('practiceBody')}</Copy><SpeechButton id="practice-v1" text={`${copy('preview')}. ${copy('practiceBody')}`} /></Card>
+    <CitizenReport />
     <Card><Copy accessibilityRole="header" style={styles.heading}>{copy('guideTitle')}</Copy><Copy>{copy('guideBody')}</Copy><Button secondary icon="arrow" label={copy('officialWarnings')} onPress={() => { setLinkError(false); void Linking.openURL('https://sachet.ndma.gov.in/').catch(() => setLinkError(true)); }} />{linkError && <Copy accessibilityLiveRegion="polite" style={styles.small}>{copy('apiError')}</Copy>}</Card>
   </Screen>;
 }

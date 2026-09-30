@@ -2,6 +2,8 @@
 
 This describes the code delivered in this repository. The larger production proposal is in [the detailed architecture](../DETAILED_TECHNICAL_ARCHITECTURE.md). A connected research application is implemented; operational Indian warning services remain outside this release.
 
+The latest iteration adds [officer evidence gates and a standalone bounded revision queue](CONTINUOUS_FORECAST_DESIGN.md), a [native SMS report composer](MOBILE_GUIDE.md#citizen-observations-by-sms), and [pinned STLDM reference inference](STLDM_GUIDE.md). Saved simulation receipts contain separate probability/support checks and deterministic reasons, with public dispatch blocked. The queue is tested metadata infrastructure; no provider subscription drives it yet. STLDM executes through its isolated CLI and is not served by the app's forecast endpoint.
+
 ## How the parts connect
 
 ```mermaid

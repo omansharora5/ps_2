@@ -22,6 +22,7 @@ from .real_data import replay
 from .verification import verify
 from . import data_catalog
 from .image_processing import METHODS, PREPROCESSING, image_run
+from .decision_policy import POLICY_VERSION, ResearchPolicy, assess_research_decision
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +54,8 @@ class ReceiptRequest(BaseModel):
     preparation_minutes: int = Field(default=20, ge=0, le=120)
     threshold: float = Field(default=0.5, ge=0.05, le=0.95)
     site_id: Literal["patna", "gaya", "nalanda"] = "patna"
+    min_recent_spatial_sources: int = Field(default=2, ge=1, le=3)
+    max_source_age_minutes: int = Field(default=10, ge=0, le=120)
 
 
 class ImageRequest(BaseModel):
@@ -280,21 +283,19 @@ def save_receipt(request: ReceiptRequest):
     if result["mode"] != "simulation":
         raise HTTPException(422, "The observed radar sample has no verified site lightning target")
     site = next(site for site in result["sites"] if site["id"] == request.site_id)
-    p = site["probability"]
-    actionable = p is not None and p >= request.threshold
-    window_start = result["horizon"] - 15 if result["request"]["hazard"] == "lightning" else result["horizon"]
-    deadline = window_start - request.preparation_minutes
-    identity = json.dumps(request.model_dump(), sort_keys=True)
+    assessment = assess_research_decision(result, site, ResearchPolicy(
+        request.threshold, request.preparation_minutes, request.min_recent_spatial_sources, request.max_source_age_minutes))
+    identity = json.dumps({**request.model_dump(), "policy_version": POLICY_VERSION}, sort_keys=True)
     record = {"id": hashlib.sha256(identity.encode()).hexdigest()[:20], "run_id": result["id"],
-              "type": "Simulation decision receipt", "site": site, "status": "unavailable" if p is None else "review" if actionable else "below_demo_threshold",
+              "type": "Simulation decision receipt", "site": site, "status": assessment["status"],
               "preparation_minutes": request.preparation_minutes, "threshold": request.threshold,
-              "decision_deadline_minutes": deadline if actionable else None,
+              "decision_deadline_minutes": assessment["decision_deadline_minutes"], "assessment": assessment,
               "decision_basis": "Forecast window start minus preparation time. Not a strike ETA or all-clear.",
               "issued_at": result["issued_at"], "valid_at": result["valid_at"], "model_version": result["model_version"],
               "model_sha256": result["model_sha256"], "sources": result["sources"], "target": result["target"],
               "calibration": result["calibration"], "code_sha256": result["code_sha256"],
               "data_provenance": result["data_provenance"], "request": result["request"],
-              "dispatch": "Not sent; local review record only", "policy_version": "demo-deadline-v1"}
+              "dispatch": "Not sent; local review record only", "policy_version": POLICY_VERSION}
     return persist("receipts", record)
 
 

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": [
+    "Manual locality starts empty and city selection does not add a location to the report",
+    "Actual web SMS-unavailable path retains the labelled unverified draft and editable fields",
+    "Report text was not sent to a network endpoint or saved in localStorage"
+  ],
+  "pageErrors": [],
+  "scope": "Exported React Native web client. No physical composer, SMS transmission, delivery or Bluetooth test."
+}

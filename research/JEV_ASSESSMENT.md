@@ -40,7 +40,7 @@ Local inference for the project's own trained weather model is a separate archit
 
 ## 3. Current constraints, price and latency
 
-The [official model reference](https://docs.typesafe.ai/models) currently lists `jev-1.13.0`, with `jev-latest` and `jev-preview` resolving to it. Inputs are text/JSON text representations, with no direct image, audio or video support. The stated limits are 64k tokens per request and 32k for state plus the longest question. Listed rate limits are 250,000 tokens/second and 1,200 requests/minute, explicitly subject to change. English is the strongest documented language; multilingual use needs testing. Customer-specific fine-tuning/LoRA is not offered in this documented workflow.
+The [official model reference](https://docs.typesafe.ai/models) currently lists `jev-1.13.0`, with `jev-latest` and `jev-preview` resolving to it. Inputs are text/JSON text representations, with no direct image, audio or video support. The stated limits are 64k tokens per request and 32k for state plus the longest question. The current recheck lists 100,000 tokens/second and 40 requests/second. These replace the earlier observation of 250,000 tokens/second and 1,200 requests/minute; the provider explicitly says limits can change dynamically. English is the strongest documented language; multilingual use needs testing. Customer-specific fine-tuning/LoRA is not offered in this documented workflow.
 
 This rules out treating Jev as an off-the-shelf radar/satellite sequence forecaster. Flattening large sensor arrays into JSON would not establish meteorological skill.
 

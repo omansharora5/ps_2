@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-09-30T06:28:59.277127+00:00",
+  "verified_at_utc": "2026-09-30T09:05:19.161882+00:00",
   "status": "passed_with_dependency_audit_findings",
   "scope": "Expo React Native source checks and Android/iOS Hermes plus web export. Browser flow verification is recorded separately. No signed native binary, emulator, physical installation or audible device speech was tested.",
   "versions": {
@@ -12,7 +12,8 @@
     "typescript": "6.0.3",
     "node": "24.20.0",
     "npm": "11.19.0",
-    "expo-location": "57.0.20"
+    "expo-location": "57.0.20",
+    "expo-sms": "57.0.2"
   },
   "checks": {
     "typecheck": {
@@ -32,7 +33,7 @@
     "unit_tests": {
       "command": "npm test",
       "exit_code": 0,
-      "passed": 20,
+      "passed": 28,
       "failed": 0,
       "coverage": [
         "13 complete UTF-8 dictionaries and English fallback",
@@ -50,7 +51,14 @@
         "Location cancellation and late permission/subscription races",
         "Stale, inaccurate, invalid and future fixes",
         "Exact coordinates outside India without region inference",
-        "Bounded location failures and coordinate clearing"
+        "Bounded location failures and coordinate clearing",
+        "Citizen observation preview is localized and has no implicit GPS or practice-warning context",
+        "No composer or availability calls before explicit action; invalid inputs do not dispatch",
+        "Exact reviewed body passed to OS composer with an empty recipient list",
+        "Unavailable, cancelled, accepted-for-sending and unknown outcomes without receipt claims",
+        "Duplicate-tap protection during lookup and active composer",
+        "Pending lookup cancellation, bounded availability timeout and no late composer launch",
+        "Composer exception and explicit retry"
       ]
     },
     "export": {
@@ -69,19 +77,19 @@
   },
   "bundles": [
     {
-      "path": "mobile/dist/_expo/static/js/android/entry-8637387fcf86100dffbda42177abce6b.hbc",
-      "bytes": 3156810,
-      "sha256": "5c1e7e0f8b87c8292b3d72dc0c4e06c846a93249d5a7221e85ab7d8fd127aaac"
+      "path": "mobile/dist/_expo/static/js/android/entry-de819fd0c450154c7670e86ba9770c63.hbc",
+      "bytes": 3187424,
+      "sha256": "e496c5504744704e852d575c70e5dbd96c451bd64f9d9d49379f3c7c286c0646"
     },
     {
-      "path": "mobile/dist/_expo/static/js/ios/entry-c87a2aa427ef7afda9a12ede94ff061b.hbc",
-      "bytes": 2840815,
-      "sha256": "28f45e25d7d04722e3bda4605d1df10be204e8ff65e10f4bfe59f7f0dfdb8996"
+      "path": "mobile/dist/_expo/static/js/ios/entry-1d02cafe048528b75f2e95e0959c8be9.hbc",
+      "bytes": 2871460,
+      "sha256": "a367fe4520ddbc4b9cc3a5bb010b43b0761be38383ab225d4426739642e3fa51"
     },
     {
-      "path": "mobile/dist/_expo/static/js/web/entry-c9d734be5973f0dfcc2e17b3050c61a0.js",
-      "bytes": 1450332,
-      "sha256": "f53df34ddd160582326a245c219de3082c59fbcea7e844db36c62c77c4bfe609"
+      "path": "mobile/dist/_expo/static/js/web/entry-994f7dc35762586eb4110e1bd1fee87c.js",
+      "bytes": 1503278,
+      "sha256": "5329e3c1e8cdde023c6755f91ccfdcda0d8932084637d474e8edb1b08d277b54"
     }
   ],
   "npm_audit": {
@@ -92,14 +100,16 @@
     "high": 0,
     "critical": 0,
     "status": "unresolved",
-    "note": "Findings include the Expo/router dependency chains for uuid/xcode and decode-uri-component/query-string. npm proposes breaking downgrades to Expo 46 / Router 5; no forced downgrade or unverified override was applied. Reassess updated compatible dependencies before deployment."
+    "note": "Findings include the Expo/router dependency chains for uuid/xcode and decode-uri-component/query-string. npm proposes breaking downgrades to Expo 46 / Router 5; no forced downgrade or unverified override was applied. Reassess updated compatible dependencies before deployment.",
+    "exit_code": 1
   },
   "limitations": [
     "The loopback API URL in these verification bundles is for this computer; a physical phone requires a reachable configured host and a rebuilt bundle.",
     "Translations are drafts requiring native-speaker review before public warning use.",
     "Voice presence does not guarantee offline availability or audible output. Physical iOS silent mode can suppress speech.",
     "The app exposes practice messages and synthetic research output; no live official alert feed or push dispatch is connected.",
-    "Android SDK, adb/emulator and an iOS build environment were unavailable. Native bundle export is not an APK/AAB/IPA build."
+    "Android SDK, adb/emulator and an iOS build environment were unavailable. Native bundle export is not an APK/AAB/IPA build.",
+    "No actual SMS message was sent. Native composer behavior, recipient selection, cellular coverage and carrier receipt were not tested on a physical device."
   ],
   "tooling_note": "The local user npm allow-scripts setting was propagated by npx into a project install and caused EALLOWSCRIPTS. SDK-compatible additions used the installed Expo CLI directly. SDK57 navigation hooks import from expo-router, following its official SDK55-to56 migration guidance.",
   "speech_voice_lookup_timeout_ms": 3000,
@@ -115,5 +125,22 @@
     "max_reported_accuracy_metres": 5000,
     "configuration_introspection": "Passed: iOS when-in-use only; Android coarse/fine; no background location, location foreground-service or motion permissions added.",
     "notes": "docs/LOCATION_DELIVERY_NOTES.md"
+  },
+  "sms_followup": {
+    "module": "expo-sms 57.0.2",
+    "manual_place_required": true,
+    "explicit_preview_then_action": true,
+    "recipient_prefilled": false,
+    "automatic_send": false,
+    "automatic_device_coordinates": false,
+    "practice_alert_forwarding": false,
+    "availability_timeout_ms": 3000,
+    "draft_storage": "App component memory only; OS messaging app may retain its own draft after opening",
+    "supported_draft_locales": 13,
+    "new_unit_tests": 8,
+    "native_composer_tested": false,
+    "actual_sms_sent": false,
+    "scope": "OS messaging composer only; no report ingestion or emergency-service dispatch",
+    "reference": "research/OFFLINE_DELIVERY_AND_REGIONAL_TARGETING.md"
   }
 }

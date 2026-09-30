@@ -231,7 +231,7 @@ The existing simulator uses fixed 15-minute windows ending at the selected horiz
 | Stage | First choice | Why and verification |
 |---|---|---|
 | Motion baseline | Pysteps optical flow and advection; retain current global translation as a simple comparator | Measure displacement skill and boundaries; movement alone misses growth/decay |
-| Development baseline | LINDA where the data meet its rain-rate requirements | Compare against an existing development model, not just persistence; do not apply rain-rate assumptions directly to flashes |
+| Development baseline | LINDA with declared rain-rate or linear-reflectivity inputs and compatible settings | Compare against an existing development model, not just persistence; do not apply precipitation assumptions directly to flashes |
 | Storm history | Causal DATing-style detection, optical-flow association and overlap | Store observed area/intensity/growth/age and association confidence; audit splits/merges |
 | Learned predictor | Small per-source encoders, temporal ConvLSTM or compact temporal encoder-decoder, dense lightning head | Test multisource benefit with manageable compute; preserve full-domain initiation detection |
 | Missing sources | Explicit value masks, ages and quality inputs; realistic source-dropout training | Test actual outage patterns and weather-dependent gaps; unknown sources cannot imply quiet weather |

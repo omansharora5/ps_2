@@ -4,12 +4,18 @@ A SIH26072 research project with a React website, a separate Expo/React Native a
 
 The working weather demonstrations use synthetic fusion and historical French radar. The downloaded government starter pack is real, but it is not a matched Indian training corpus. No operational Indian lightning model or public warning dispatch is claimed.
 
+Start with **[regional decisions, continuous forecasts and resilient communication](REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md)** for the latest design: weather drivers, sparse-sensor regions, officer thresholds, local geographic matching, Bluetooth/SMS boundaries, daily evaluation and why Jev is optional. Numerical forecasts support decisions; neither an LLM nor Jev is required for the decision policy.
+
+The officer workbench now records probability and evidence checks separately, with configurable source age/count and clear reasons. The native app includes a manually entered, unverified citizen-report preview and an explicit SMS composer action. A standalone bounded forecast queue demonstrates coalescing and rejects superseded results; it is not connected to a live feed. [Implementation design](docs/CONTINUOUS_FORECAST_DESIGN.md).
+
+**STLDM now executes as a separate reference experiment.** The pinned official checkpoint completed one CPU example in 113.39 seconds of model computation. Persistence had lower image error on that example. This is compatibility evidence, not forecast superiority or lightning calibration. Follow the [STLDM setup, commands and actual results](docs/STLDM_GUIDE.md); its five-frame normalized input contract differs from our observed-radar API.
+
 | Component | What you can use |
 |---|---|
 | Earth explorer | Search 19 supported Indian cities, rotate and zoom to the selected coordinates, pause motion or use reduced motion |
 | Radar image lab | Compare raw/despeckled/smoothed inputs, persistence, global translation and dense optical flow against later observed radar |
 | Data collection | Provider/API links, access status, manifest-backed downloads and bounded local collection jobs |
-| Native app | Public/operator views, optional foreground device location or manual city selection, 12 Indian languages plus English, and installed-voice text-to-speech |
+| Native app | Public/operator views, optional foreground device location or manual city selection, 12 Indian languages plus English, installed-voice text-to-speech and a user-reviewed SMS report draft |
 | Training | Validate episode files, train/evaluate a compact ConvLSTM, optionally calibrate on separate events and report reliability against a climatology baseline |
 
 Cloud animation is decorative. Selecting a city moves the geographic view; it does not create a local weather observation. The native app's operator view is a view preference, not authentication.
@@ -104,7 +110,7 @@ The homepage explains the problem and links to the officer workbench, public pre
 1. Inspect a synthetic event and switch lead time or target.
 2. Compare learned fusion, motion, persistence and the simulated outcome.
 3. Make a source stale or missing. Remove radar, satellite and lightning to see abstention even when NWP remains.
-4. Select a demo site and preparation time. Save and export a local decision receipt.
+4. Select a demo site, preparation time, probability threshold and minimum recent-source requirements. Save and export a local receipt; inspect the recorded reasons. High probability with insufficient evidence is held for review, and synthetic results never authorize public dispatch.
 5. Switch to France for actual observed radar and +5 to +20-minute echo verification.
 6. Open the verification lab and research documents.
 7. After saving a receipt, use **View public preview** to retain a labelled historical sample on this browser. Reload without a connection to inspect offline behavior. Use **Remove this saved sample** to clear it.

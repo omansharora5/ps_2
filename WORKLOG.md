@@ -1,5 +1,18 @@
 # Work plan
 
+## Regional decision support, reference diffusion and resilient delivery, 30 September 2026
+
+- Re-read the supplied proposals as research material and adopted useful published methods with explicit input/target and licence boundaries.
+- Added three primary-source research notes: weather drivers and sparse sensors; STLDM, rapid updates and learning; geographic targeting, Bluetooth and SMS delivery.
+- Added officer source-count/age policy controls, immutable assessments and clear reasons without inventing a trust percentage or authorizing synthetic public warnings.
+- Implemented and independently reviewed a bounded single-owner regional revision queue. It keeps metadata only and refuses old, contradictory, expired or superseded work; no live provider stream is connected.
+- Integrated the pinned official STLDM checkpoint through an isolated reference CLI. One CPU example ran successfully; persistence had lower image error. Independently verified hashes, past/future isolation and scores without repeating the expensive inference.
+- Added the native citizen-report preview and explicit OS SMS composer, manual locality, blank recipients, thirteen draft translations and bounded pending-request lifecycle. No actual message was sent.
+- Verified 63 regular-Python tests plus one optional skip, all thirteen probability tests in the ML environment, twenty-eight native tests, source checks, Doctor 21/21, all-platform exports and three native exported-web verification scripts. The initial nine website journeys passed; after fixing a delayed-receipt UI race, nine of ten passed together and the timed-out unchanged globe test passed separately. Its intermittent timeout remains recorded.
+- Updated README, architecture, training/mobile guides and validation with actual evidence and remaining operational/physical-device limits. The reviewed design uses ordinary code for decisions; Jev remains an optional measured note-routing hypothesis.
+
+Current deliverable: `REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md`. Supporting evidence: `artifacts/stldm-reference-summary.json`, `artifacts/sms-preview-check.json`, `artifacts/mobile-build-check.json` and `VALIDATION.md`. The following earlier work entries retain their historical scope.
+
 - [x] Read both supplied documents and workspace instructions.
 - [x] Ground the problem. This is an empty workspace, with no existing implementation to trace.
 - [x] Research the official requirement, impact, existing products, datasets, and forecasting methods.

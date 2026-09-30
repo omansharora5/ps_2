@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "execution": {
+    "status": "succeeded",
+    "recorded_at_utc": "2026-09-30T08:55:59.640917+00:00",
+    "scope": "Official supplied-example reference inference, not India/lightning validation",
+    "limitations": [
+      "One supplied example and one generated member cannot establish forecast skill or calibration.",
+      "Example timestamps, physical grid and observation coverage are not supplied.",
+      "Normalized pixel errors are not dBZ, rain-rate or lightning probability scores.",
+      "No checkpoint is loaded into the app or promoted into production."
+    ],
+    "source_commit": "49b23485734b5c00a2388febb657543afb12d6cf",
+    "model_revision": "cdb543e4f42ee754cb88f2c15abb74f0f987c98b",
+    "checkpoint_sha256": "ed003bc16f59ac7f88ea5b81de8809b0ad28ceb4b0f8bd28c47907e958eafbbd",
+    "cache_manifest": {
+      "source_commit": "49b23485734b5c00a2388febb657543afb12d6cf",
+      "model_revision": "cdb543e4f42ee754cb88f2c15abb74f0f987c98b",
+      "files": {
+        "config.json": "d14fa3e23cf183ea18b77220164474c72d624346f06e4db7ec585c795ada75cf",
+        "LICENSE": "cde0de39ebd25c1e130d1a88cfacb37c6bcce051e7314f252d0d15364495632f",
+        "model.safetensors": "ed003bc16f59ac7f88ea5b81de8809b0ad28ceb4b0f8bd28c47907e958eafbbd"
+      }
+    },
+    "input_sha256": "0b298f6d4adfd084653888891b8d32e8bbc84fd1226a6d206e92191abe57ba8f",
+    "source_shape": [
+      2,
+      25,
+      1,
+      480,
+      480
+    ],
+    "selected_example": 0,
+    "metadata": {
+      "scope": "official_reference_example_only",
+      "units": "normalized_hko_reference",
+      "source_url": "https://github.com/sqfoo/stldm_official/blob/49b23485734b5c00a2388febb657543afb12d6cf/data/sample_data.npy",
+      "timestamps_status": "not_supplied",
+      "coverage_status": "not_supplied",
+      "physical_grid_status": "not_supplied"
+    },
+    "sampling": {
+      "diffusion_steps": 50,
+      "sampling_steps": 20,
+      "cfg_strength": 1.0,
+      "members": 1,
+      "seed": 17
+    },
+    "environment": {
+      "python": "3.14.4",
+      "torch": "2.14.0+cpu",
+      "device": "cpu",
+      "threads": 4,
+      "packages": {
+        "numpy": "2.5.2",
+        "einops": "0.8.2",
+        "huggingface_hub": "2.0.0",
+        "safetensors": "0.8.0",
+        "tqdm": "4.70.1"
+      }
+    },
+    "output_shape": [
+      1,
+      20,
+      1,
+      128,
+      128
+    ],
+    "metrics": {
+      "scope": "Finite normalized image values only; meteorological coverage is unknown",
+      "samples": 327680,
+      "stldm_mae": 0.022624308704680622,
+      "stldm_mse": 0.008186601551172642,
+      "persistence_mae": 0.020010252405817486,
+      "persistence_mse": 0.007928905474492145
+    },
+    "model_inference_seconds": 113.386315,
+    "total_seconds": 150.564177,
+    "peak_cuda_allocated_bytes": null,
+    "cpu_peak_memory": "not_measured",
+    "predictions_sha256": "53d874a5d89d5fa613cb19693be1c04a931e053b8b28cd2d85119e50f40b5a75",
+    "model_parameter_count": 80980769
+  },
+  "measurement_context": "One local CPU run while browser/build/API checks also ran on the machine; not an isolated benchmark, throughput measurement or p95.",
+  "commands": [
+    ".venv-ml/Scripts/python.exe -m pip install einops huggingface_hub safetensors tqdm",
+    ".venv-ml/Scripts/python.exe scripts/run_stldm.py prepare",
+    ".venv-ml/Scripts/python.exe scripts/run_stldm.py infer --output data/training_runs/stldm-reference/cpu-example-v1 --device cpu --threads 4 --seed 17",
+    "python -m unittest tests.test_stldm_boundary -v"
+  ],
+  "boundary_tests": {
+    "passed": 7,
+    "real_inference_is_separate": true
+  },
+  "run_directory": "data/training_runs/stldm-reference/cpu-example-v1",
+  "interpretation": "The pinned official checkpoint runs on modern CPU Torch without source patches. On this one supplied example persistence has lower normalized MAE and MSE. No India, lightning, calibration or operational benefit is established.",
+  "implementation_sha256": {
+    "scripts/run_stldm.py": "ec7144854b2585c053ee1b84670df2ae57fdc601363c4b078d452ca6907e9651",
+    "tests/test_stldm_boundary.py": "5db63769be4753dbef217063d3ad1ae7b5f7d15f99a1362e1b858f8c5f574bde"
+  }
+}
