@@ -1,36 +1,40 @@
 # VAJRA architecture and data flow for SIH26072
 
-The core deliverable is a local weather prediction model. The website and React Native app let an operator inspect its evidence and help people understand approved guidance. The first scientific pilot targets NCR. The proposed forecast horizon is the next 30 minutes, updated when usable observations arrive.
+The core deliverable is a local weather prediction model. The website and React Native app let an operator inspect its evidence and help people understand approved guidance. The first scientific pilot targets NCR. The proposed forecast horizon is the next 30 minutes, revised as usable observations arrive.
 
 This design separates the intended regional service from the implemented research components. Numeric Indian radar, matched INSAT sequences and lightning network coverage are still required for reliable NCR evaluation. A map cell is an output support choice, not proof of accuracy at that resolution.
 
-## Architecture flow
+The revised [SIH deck](VAJRA_SIH26072_v2.pptx) uses two loops. The forecast loop revises predictions from fresh evidence. The reviewed-learning loop trains candidates after outcomes mature and admits a new model only after independent evaluation. A forecast revision does not retrain the model.
+
+## Forecast architecture
+
+The service targets source checks every five minutes and forecast revisions every ten minutes, with a rolling 30-minute horizon. These are integration targets. A provider may publish less often, and polling an old record does not make the observation fresh. All users of a region can read the same current forecast revision instead of triggering inference per phone.
 
 ```mermaid
 flowchart LR
-    Sensors[IMD radar and gauges\nINSAT satellite\nLightning detections and coverage\nNWP environment] --> Ingest[Source adapters\nUTC observation and arrival times\nImmutable raw files and hashes]
-    Ingest --> QC[Quality control\nUnits and geographic support\nMissing and age masks]
-    QC --> Motion[Optical-flow baseline\nEcho movement]
-    QC --> Model[Compact ConvLSTM\nSpatial and temporal features]
-    QC --> Environment[CAPE, humidity and wind\nPhase known at issue time]
-    Motion --> Compare[Baseline comparison]
-    Model --> Heads[Lightning event head\nRain and first-lightning onset heads]
-    Environment --> Heads
-    Heads --> Trust[Held-out calibration\nCoverage and age checks\nNo-event probability]
-    Trust --> API[Versioned FastAPI output\nIssue, target window and evidence]
-    API --> Officer[Officer website\nReview thresholds and evidence]
-    API --> Public[React Native app\nLocal view, 12 Indian languages\nDevice speech and SMS composer]
-    Officer --> Gate{Validation and\nauthorisation satisfied?}
-    Gate -->|No| Hold[Research record\nNo public model warning]
-    Gate -->|Yes, proposed service| Alert[Approved local guidance\nExpiry and update record]
-    Alert --> Public
+    Sensors[IMD radar and gauges\nINSAT cloud and moisture\nLightning events and coverage\nNWP environment] --> QC[Align and qualify\nUTC times, units, spatial support\nQuality, age and missing masks]
+    QC --> Model[Regional prediction\nMotion and persistence baselines\nCompact ConvLSTM and three heads\nRolling 30-minute outlook]
+    Model --> Trust[Evidence gate\nCoverage, source age and model support\nPhase calibration where validated\nOfficer threshold and preparation time]
+    Trust --> Officer[Officer dashboard\nLocal heatmap, path and evidence age\nReasons to review or withhold]
+    Officer --> Gate{Validated model and\nauthorised release?}
+    Gate -->|No| Hold[Hold and record reason]
+    Gate -->|Yes, proposed| Public[React Native app\nLocal guidance and expiry\n12 Indian languages plus English\nVoice and SMS delivery integrations]
+    Public -.-> Relay[Planned Bitchat-inspired relay\nSigned, unexpired alerts\nNearby compatible peers required]
+    QC --> Archive[(Immutable evidence\nRaw source hashes and availability\nForecast issue, revision and model version\nLater covered outcomes)]
+    Model --> Archive
+    Hold --> Archive
+    Trust -.-> Hypothesis[Decision classifier hypothesis\nShadow evaluation only\nNo alert authority]
 ```
 
-The software has executable optical-flow experiments and separate compact ConvLSTM research workflows. The regional model has a binary lightning head and two censored timing heads. It does not yet serve an operational NCR forecast. The diagram's unified live feed, model-context fusion and public alert publication are the proposed integration. No LLM or Jev is required.
+The software has executable optical-flow experiments and separate compact ConvLSTM research workflows. The regional model has a binary lightning head, a rain-onset head and a first-lightning-onset head. The timing heads use six five-minute bins. Phase calibration applies to the lightning probability where supported; the current onset hazards remain uncalibrated research outputs.
+
+The HTTP workbench runs synthetic forecasts or a historical French radar replay. It does not yet serve the regional ConvLSTM as an operational NCR forecast. The diagram's unified live feed, context fusion, durable revision publication and public alert release are proposed integrations. The central archive is a logical boundary over currently separate file and SQLite stores. It does not imply a new deployed event service. No LLM or Jev is required.
+
+The current policy evaluates explicit thresholds and evidence rules, then keeps public dispatch ineligible. A learned decision classifier remains an optional shadow experiment. It may later help rank ambiguous cases for review; it cannot bypass the evidence gate or officer authorisation.
 
 Storm tracking across splits/merges is a later experiment. The existing connected-object image lab must not be presented as a validated NCR storm tracker. Global WeatherNext concepts motivate temporal forecasting and uncertainty evaluation, but the project does not load Google weights or claim Google's performance.
 
-## Data flow and training loop
+## Data flow and reviewed learning
 
 ```mermaid
 flowchart TD
@@ -42,21 +46,41 @@ flowchart TD
     F --> G[Save prediction before outcome arrives]
     G --> H[Later independent observed outcome]
     H --> I[Match interval, location and coverage]
-    I --> J[Monthly POD, FAR, CSI and Brier\nReliability and event-bootstrap intervals]
+    I --> J[Public scorecard target\nPOD, FAR, CSI and Brier\nReliability and event-bootstrap intervals]
     I --> K[Versioned observed episodes]
-    Citizen[Neutral yes/no/unsure report\nExplicit presence and optional consent] --> Ledger[Deduplicate installations\nClose late-reporting window]
+    Citizen[Is it raining where you are now?\nYes, no or unsure\nExplicit presence and optional consent] --> Ledger[Deduplicate installation reports\nClose late-reporting window]
     Ledger --> Review[Operator checks independent corroboration]
     Review --> Weak[Reviewed weak rain-presence evidence]
     Weak --> Align[Separate label alignment and admission]
     Align --> K
     K --> Split[Separate storm events and time windows\nTrain / validation / calibration / test]
-    Split --> Candidate[Train candidate and fit calibrator]
+    Split --> Candidate[Bounded offline worker\nTrain candidate and fit calibrator]
     Candidate --> Evaluate[Compare frozen baselines\nCheck phase and outage performance]
-    Evaluate --> Approval[Explicit model promotion decision]
-    Approval --> F
+    Evaluate --> Approval[Review candidate\nPromote or retain current model]
+    Approval -.->|Admitted model version| F
 ```
 
-New observations can revise a future forecast. A completed forecast record remains immutable so later evaluation cannot quietly replace a failed prediction. Citizen agreement can support a research label. It cannot establish an instrument measurement, rain amount or lightning truth. The current ledger exports weak evidence for later preparation; it does not automatically retrain the model.
+New observations can revise a future forecast. A completed forecast record remains immutable so later evaluation cannot quietly replace a failed prediction. Citizen agreement can support a research label. It cannot establish an instrument measurement, rain amount or lightning truth. The prompt does not tell users the model's answer before they report.
+
+The citizen ledger exports reviewed weak evidence for later episode alignment. It does not turn votes into automatic training labels. Separately, `learning_tick` can queue a research candidate once a day from newly admitted observed dataset versions with new independent events. The offline worker uses frozen files and split identities. Neither path automatically promotes the resulting checkpoint, and more data does not guarantee improvement.
+
+## Implemented boundaries
+
+| Boundary | Code reference | Current scope |
+|---|---|---|
+| Research API | [`nowcast/service.py`](../nowcast/service.py) | Synthetic forecasts, historical replay, immutable runs and receipts. |
+| Observation contract | [`nowcast/observations.py`](../nowcast/observations.py) | Values, source state, acquisition and availability times. Missing data remains distinct from clear weather. |
+| Temporal image model | [`nowcast/regional_heads.py`](../nowcast/regional_heads.py), [`train_regional_heads.py`](../scripts/train_regional_heads.py) | Compact ConvLSTM, three heads, causal inference and event-separated research training. |
+| Forecast revision queue | [`nowcast/forecast_updates.py`](../nowcast/forecast_updates.py) | Bounded metadata tickets, expiry and stale-result rejection. Live provider scheduling and durable publication remain pending. |
+| Decision policy | [`nowcast/decision_policy.py`](../nowcast/decision_policy.py) | Research thresholds, source-age checks and reasons. Public dispatch stays disabled. |
+| Citizen evidence | [`nowcast/community_store.py`](../nowcast/community_store.py) | Consented reports, duplicate checks, review and weak-label export. Majority support is a review candidate. |
+| Candidate learning | [`run_operations.py`](../scripts/run_operations.py), [`operation_recipes.py`](../nowcast/operation_recipes.py) | Bounded worker, daily dataset reconciliation, frozen corpus and candidate artifacts. No automatic production promotion. |
+| Verification | [`nowcast/public_verification.py`](../nowcast/public_verification.py) | Immutable comparable cases, probability metrics and monthly scorecard preparation. No NCR comparative publication yet. |
+| Mobile delivery | [`mobile`](../mobile), [mobile guide](../docs/MOBILE_GUIDE.md) | React Native screens, installed-device speech and a user-initiated SMS composer. Automatic public alerts and BLE relay remain pending. |
+
+An alternative source can preserve context, but it cannot replace every sensor's information. A satellite-only model needs its own validated reduced-input regime. If required evidence is missing, the service must expose the gap and withhold unsupported output. An open stack reduces licensing dependence; compute cost and availability still need measurement.
+
+The planned offline relay carries signed approved messages with issue time, expiry, location, revision and cancellation status. A connected gateway must introduce fresh alerts into the mesh. Nearby compatible devices and a working relay path are still necessary. This is Bitchat-inspired design, not implemented Bitchat interoperability. See the [official Bitchat repository](https://github.com/permissionlesstech/bitchat) and [protocol whitepaper](https://github.com/permissionlesstech/bitchat/blob/main/WHITEPAPER.md).
 
 ## Inputs and accuracy checks
 
@@ -97,6 +121,8 @@ This is a public-service feasibility case. The deck contains no revenue model, s
 
 ## Presentation content plan
 
-The six reference layouts stay in order: title page, idea/problem and compact data flow, technical architecture and operator flow, feasibility and risk strategy, impact and measured evidence, references and evaluation. Keep the original theme, SIH branding, team label, page size, frame geometry and color hierarchy. Replace CCTV-specific media and labels with weather content inside the same frames. Preserve the supplied team name; the reference contains no assigned team ID.
+The six reference layouts stay in order: title page, idea/problem and compact data flow, technical architecture and operator flow, feasibility and risk strategy, impact and measured evidence, references and evaluation. The revision keeps the original theme, SIH branding, team label, page size and color hierarchy. Weather-specific topology replaces the old architecture rather than retaining its camera-oriented flow. The reference contains no assigned team ID.
+
+Slide 2 uses short key value propositions and a real NASA VIIRS image over Delhi NCR. The Dwarka sample cell, cloud path and rain-change overlay illustrate the intended display. They are not an observed track or a computed model result. [Asset provenance](assets/README.md) records the image date, exact request, bounds and checksum. [Revision 2 design](REVISION_2_DESIGN.md) maps each short label to its implementation status and claim limits.
 
 Source and evaluation details are in [regional evidence](../research/REGIONAL_FEATURE_EVIDENCE.md), [numerical methods](../docs/REGIONAL_SCIENCE_GUIDE.md), [public verification](../docs/PUBLIC_VERIFICATION_GUIDE.md), [source setup](../docs/SUPPLEMENTAL_DATA_GUIDE.md) and [recorded validation](../VALIDATION.md). The deck includes source URLs in speaker notes and its reference slide.

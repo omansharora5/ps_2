@@ -1,0 +1,51 @@
+{
+  "file": "presentations/assets/ncr-viirs-2024-06-27.png",
+  "sha256": "d9caab87b947ad94b4b74156ced24608b5f2376b76e3a5bc9e73f34d5d2c9927",
+  "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=VIIRS_SNPP_CorrectedReflectance_TrueColor&STYLES=&SRS=EPSG%3A3857&BBOX=8521507.02022509%2C3289378.7021610527%2C8649524.434637357%2C3348944.795309878&WIDTH=1518&HEIGHT=705&FORMAT=image%2Fpng&TIME=2024-06-27",
+  "image_date": "2024-06-27",
+  "date_caveat": "Daily imagery mosaic date, not a precise acquisition timestamp.",
+  "layer": "VIIRS_SNPP_CorrectedReflectance_TrueColor",
+  "projection": "EPSG:3857",
+  "bbox_wsen": [
+    76.55,
+    28.32,
+    77.7,
+    28.79
+  ],
+  "bbox_projected": [
+    8521507.02022509,
+    3289378.7021610527,
+    8649524.434637357,
+    3348944.795309878
+  ],
+  "pixel_dimensions": [
+    1518,
+    705
+  ],
+  "points": {
+    "Dwarka": {
+      "lon": 77.046,
+      "lat": 28.5921,
+      "x_fraction": 0.4313043478260987,
+      "y_fraction": 0.4216082801341908
+    },
+    "Delhi": {
+      "lon": 77.209,
+      "lat": 28.6139,
+      "x_fraction": 0.5730434782608752,
+      "y_fraction": 0.3752043358597097
+    },
+    "Gurugram": {
+      "lon": 77.0266,
+      "lat": 28.4595,
+      "x_fraction": 0.4144347826087057,
+      "y_fraction": 0.7036565926621395
+    },
+    "Noida": {
+      "lon": 77.391,
+      "lat": 28.5355,
+      "x_fraction": 0.7313043478260914,
+      "y_fraction": 0.5420433499609868
+    }
+  }
+}
