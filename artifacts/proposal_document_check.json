@@ -1,0 +1,31 @@
+{
+  "files": [
+    {
+      "file": "SIH26072_PROPOSAL_AND_EVIDENCE.md",
+      "words": 5025,
+      "sections": 13,
+      "balanced_code_fences": true
+    },
+    {
+      "file": "research\\SURVEYS_AND_NEWS_2026.md",
+      "words": 1678,
+      "sections": 5,
+      "balanced_code_fences": true
+    },
+    {
+      "file": "research\\PAPER_REFERENCE_LIBRARY.md",
+      "words": 2529,
+      "sections": 14,
+      "balanced_code_fences": true
+    },
+    {
+      "file": "research\\VIABILITY_AND_SUSTAINABILITY_EVIDENCE.md",
+      "words": 2862,
+      "sections": 8,
+      "balanced_code_fences": true
+    }
+  ],
+  "unique_external_references": 53,
+  "broken_local_links": [],
+  "paper_entries": 12
+}

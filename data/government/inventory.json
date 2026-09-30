@@ -1,0 +1,2407 @@
+{
+  "schema_version": 1,
+  "title": "VAJRA government data starter pack",
+  "collection_date": "2026-09-30",
+  "training_ready": false,
+  "scope": "Historical parser and environmental-context samples; different regions/dates, not a matched training corpus",
+  "raw_file_count": 18,
+  "raw_bytes": 11232879,
+  "raw_file_note": "8 weather-data payloads plus 10 source inventories, catalogs or documentation files; excludes manifests and derived outputs",
+  "derived_file_count": 4,
+  "derived_bytes": 507683,
+  "collections": [
+    {
+      "name": "india",
+      "manifest_path": "data/government/india/manifest.json",
+      "manifest_sha256": "5034ca73769a9029bf35987761e49874a55fb89bb282ebe95c83f08d6dcddf14",
+      "raw_files": 11,
+      "raw_bytes": 955042
+    },
+    {
+      "name": "noaa",
+      "manifest_path": "data/government/noaa/manifest.json",
+      "manifest_sha256": "4b11669dcddce4beecac620095b0e4d7e5b4b171611a36a5ed7fb9f1d9b7da10",
+      "raw_files": 5,
+      "raw_bytes": 4934674
+    },
+    {
+      "name": "gfs",
+      "manifest_path": "data/government/gfs/manifest.json",
+      "manifest_sha256": "110c76a6a3a761cb41984a9cd7e42f4888524342d06d167a9f8c97b98c23f20b",
+      "raw_files": 2,
+      "raw_bytes": 5343163
+    }
+  ],
+  "files": [
+    {
+      "id": "imd_collections",
+      "path": "data/government/india/imd_collections.json",
+      "source_url": "https://wis2box.imd.gov.in/oapi/collections?f=json",
+      "resolved_url": "https://wis2box.imd.gov.in/oapi/collections?f=json",
+      "provider": "India Meteorological Department (IMD)",
+      "retrieved_at_utc": "2026-09-30T02:38:48.006622Z",
+      "bytes": 11837,
+      "sha256": "c2e25d45ad24daad0485efacfb85989cac18454956de4a363c3cb3382b944236",
+      "media_type": "application/json",
+      "format": "JSON",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:46 GMT",
+      "etag": null,
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "unresolved_limits": "IMD SYNOP discovery metadata declares wmo:dataPolicy=core. No separate explicit licence URL was present in that dataset record. This classification does not grant blanket access to other IMD products or imply archive completeness/SLA.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "imd_synop_metadata",
+      "path": "data/government/india/imd_synop_metadata.json",
+      "source_url": "https://wis2box.imd.gov.in/oapi/collections/discovery-metadata/items/urn:wmo:md:in-imd:surface-based-observations.synop?f=json",
+      "resolved_url": "https://wis2box.imd.gov.in/oapi/collections/discovery-metadata/items/urn:wmo:md:in-imd:surface-based-observations.synop?f=json",
+      "provider": "India Meteorological Department (IMD)",
+      "retrieved_at_utc": "2026-09-30T02:38:48.066826Z",
+      "bytes": 4394,
+      "sha256": "396eeb9f452258b08c7786fe50acd7bc6e42ca0ea9295f0f11bec25ee43ae31e",
+      "media_type": "application/json",
+      "format": "GeoJSON",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:46 GMT",
+      "etag": null,
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "unresolved_limits": "IMD SYNOP discovery metadata declares wmo:dataPolicy=core. No separate explicit licence URL was present in that dataset record. This classification does not grant blanket access to other IMD products or imply archive completeness/SLA.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "imd_synop_queryables",
+      "path": "data/government/india/imd_synop_queryables.json",
+      "source_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/queryables?f=json",
+      "resolved_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/queryables?f=json",
+      "provider": "India Meteorological Department (IMD)",
+      "retrieved_at_utc": "2026-09-30T02:38:48.111003Z",
+      "bytes": 907,
+      "sha256": "7467092054bd029a9d561761bb632f1f0b941927c76217e9773f65ebbb866a82",
+      "media_type": "application/schema+json",
+      "format": "JSON",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:46 GMT",
+      "etag": null,
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "unresolved_limits": "IMD SYNOP discovery metadata declares wmo:dataPolicy=core. No separate explicit licence URL was present in that dataset record. This classification does not grant blanket access to other IMD products or imply archive completeness/SLA.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "imd_stations",
+      "path": "data/government/india/imd_stations.json",
+      "source_url": "https://wis2box.imd.gov.in/oapi/collections/stations/items?f=json&limit=1000",
+      "resolved_url": "https://wis2box.imd.gov.in/oapi/collections/stations/items?f=json&limit=1000",
+      "provider": "India Meteorological Department (IMD)",
+      "retrieved_at_utc": "2026-09-30T02:38:48.350943Z",
+      "bytes": 346192,
+      "sha256": "0d4d71b5062960631569e3ccb470076d161648faf1aa1427866af10ebc276c57",
+      "media_type": "application/json",
+      "format": "GeoJSON",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:46 GMT",
+      "etag": null,
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "unresolved_limits": "IMD SYNOP discovery metadata declares wmo:dataPolicy=core. No separate explicit licence URL was present in that dataset record. This classification does not grant blanket access to other IMD products or imply archive completeness/SLA.",
+      "data_role": "station reference metadata",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": {
+        "country": "India",
+        "crs": "OGC:CRS84",
+        "observed_point_bbox_lon_lat": [
+          67.222,
+          6.565,
+          95.3833333333,
+          34.0833333333
+        ]
+      },
+      "units": {},
+      "inspection": {
+        "feature_count": 432,
+        "number_matched": 432,
+        "number_returned": 432,
+        "has_next_page": false,
+        "station_names": [
+          "2300093_013",
+          "2300095_009",
+          "2300095_010",
+          "2300451_013",
+          "2300452_012",
+          "2300453_012",
+          "2300454_012",
+          "2300456_012",
+          "2300459_016",
+          "2300460_014",
+          "2300460_017",
+          "2300460_018",
+          "ADILABAD",
+          "AGARTALA",
+          "AGRA (42260-0)",
+          "AGRA (42261-0)",
+          "AGUMBE EMO",
+          "AHMADABAD",
+          "AHMADNAGAR",
+          "AIJAL",
+          "AJMER",
+          "AKOLA",
+          "ALAPUZHA",
+          "ALIBAG",
+          "ALIGARH",
+          "ALIRAJPUR",
+          "ALLAHABAD/GHOORPUR",
+          "ALONG",
+          "ALWAR",
+          "AMBALA",
+          "AMBIKAPUR",
+          "AMINIDIVI",
+          "AMRAOTI",
+          "AMRELI",
+          "AMRITSAR",
+          "ANGUL",
+          "AROGYAVARAM",
+          "ARRAH",
+          "ATIRAMAPATTINAM",
+          "AURANGABAD CHIKALTHANA AERODROME",
+          "BAGALKOTE",
+          "BAGATI",
+          "BAHRAICH",
+          "BALASORE",
+          "BALEHONUR",
+          "BALLIA",
+          "BALURGHAT",
+          "BANDA",
+          "BANGALORE/HINDUSTAN AIRPORT",
+          "BANIHAL",
+          "BANKURA",
+          "BANSWARA",
+          "BAPATLA",
+          "BARAMATI",
+          "BARAPANI",
+          "BAREILLY",
+          "BARIPADA",
+          "BARMER",
+          "BARODA AERODROME",
+          "BASIRHAT",
+          "BASTI",
+          "BELGAUM",
+          "BELGAUM/SAMBRE",
+          "BELLARY",
+          "BENGALURU",
+          "BERHAMPORE",
+          "BETUL",
+          "BHADRACHALAM",
+          "BHAGALPUR",
+          "BHARATPUR",
+          "BHAUNAGAR",
+          "BHAWANIPATNA",
+          "BHILWARA",
+          "BHIRA",
+          "BHOPAL/BAIRAGHAR",
+          "BHUBANESHWAR",
+          "BHUJ-RUDRAMATA",
+          "BHUNTAR",
+          "BIDAR",
+          "BIKANER",
+          "BILASPUR (42782-0)",
+          "BIR",
+          "BOLANGIR",
+          "BOMBAY / COLABA",
+          "BOMBAY / JUHU",
+          "BOMBAY / SANTACRUZ",
+          "BOMDILA",
+          "BRAMHAPURI",
+          "BROACH",
+          "BULANDSHAHR",
+          "BULDANA",
+          "BULSAR",
+          "BUNDI",
+          "BURDWAN",
+          "CANNING",
+          "CAR NICOBAR",
+          "CHAIBASA",
+          "CHAMARAJNAGAR",
+          "CHAMBAL/RAWAT BHATA",
+          "CHAMPA",
+          "CHANDBALI",
+          "CHANDIGARH",
+          "CHANDRAPUR",
+          "CHAPARMUKH",
+          "CHAPRA",
+          "CHENNAI/MINAMBAKKAM",
+          "CHERRAPUNJI",
+          "CHHINDWARA",
+          "CHICKMAGALUR",
+          "CHIKKANAHALLI",
+          "CHINTAMANI",
+          "CHITRADURGA",
+          "CHITTORGARH",
+          "CHURU",
+          "COCHIN INT. AIRPORT NEDUMBASSERY",
+          "COIMBATORE/PEELAMEDU",
+          "CONOOR",
+          "CONTAI",
+          "COOCH BEHAR",
+          "CUDDALORE",
+          "CUDDAPAH",
+          "CUTTACK",
+          "DAHANU",
+          "DALTONGANJ",
+          "DAMOH",
+          "DARBHANGA",
+          "DARJEELING",
+          "DATIA",
+          "DAVANGERE",
+          "DEESA",
+          "DEHRADUN",
+          "DEHRI",
+          "DHANBAD",
+          "DHAR",
+          "DHARMAPURI",
+          "DHARMPUR",
+          "DHARMSALA",
+          "DHARWAD",
+          "DHOLPUR",
+          "DHUBRI",
+          "DIAMOND HARBOUR",
+          "DIBRUGARH /MOHANBARI",
+          "DIGHA",
+          "DIU",
+          "DOHAD",
+          "DURG",
+          "DWARKA",
+          "ERINPURA /JAWAI DAM SITE",
+          "ERODE",
+          "ETAWAH",
+          "FORBESGANJ",
+          "FURSATGANJ",
+          "GADAG",
+          "GANDHINAGAR",
+          "GANGANAGAR",
+          "GANGTOK",
+          "GAYA (42591-0)",
+          "GHAZIPUR",
+          "GOA/DABOLIM AIRPORT",
+          "GOA/PANJIM",
+          "GOALPARA",
+          "GOHPUR",
+          "GOLAGHAT",
+          "GONDIA",
+          "GOPALPUR",
+          "GORAKHPUR",
+          "GULMARG",
+          "GUNA",
+          "GURGAON",
+          "GUWAHATI",
+          "GWALIOR",
+          "HAFLONG",
+          "HALDIA",
+          "HAMIRPUR",
+          "HANAMKONDA",
+          "HARDOI",
+          "HARNAI",
+          "HASSAN",
+          "HAVERI",
+          "HAZARIBAGH",
+          "HISSAR",
+          "HONAVAR",
+          "HOSHANGABAD",
+          "HUT BAY",
+          "HYDERABAD AIRPORT",
+          "IDAR",
+          "IMPHAL/TULIHAL",
+          "INDORE",
+          "JABALPUR",
+          "JAGDALPUR",
+          "JAIPUR / SANGANER",
+          "JAISALMER",
+          "JALGAON",
+          "JALNA",
+          "JALORE",
+          "JALPAIGURI",
+          "JAMMU",
+          "JAMNAGAR",
+          "JAMSHEDPUR (42798-0)",
+          "JAMSHEDPUR (42799-0)",
+          "JANGAMAHESWARA PURAM",
+          "JASHPURNAGAR",
+          "JEUR",
+          "JHALAWAR",
+          "JHANSI",
+          "JHARSIGUDA",
+          "JODHPUR",
+          "K. PARAMATHY",
+          "KAILASHAHAR",
+          "KAKINADA",
+          "KALABURAGI",
+          "KALIMPONG",
+          "KALINGAPATAM",
+          "KANDLA AERODROME",
+          "KANNIYAKUMARI",
+          "KANNUR",
+          "KANPUR",
+          "KANPUR/CHAKERI",
+          "KARAIKAL",
+          "KARNAL",
+          "KARWAR",
+          "KATHUA",
+          "KAVALI",
+          "KAVARATTI ISLAND",
+          "KEONGJHARGARH",
+          "KHAJURAHO",
+          "KHAMMAM",
+          "KHANDALA",
+          "KHANDWA",
+          "KHARGONE",
+          "KHERI",
+          "KODAIKANAL",
+          "KOHIMA",
+          "KOLHAPUR",
+          "KOLKATA/ALIPORE",
+          "KOLKATA/DUM DUM",
+          "KOPPAL",
+          "KORAPUT",
+          "KOTA AERODROME",
+          "KOTTAYAM",
+          "KOVILANGULAM",
+          "KOZHIKODE",
+          "KRISHNANAGAR",
+          "KURNOOL",
+          "LENGPUI",
+          "LONG ISLAND",
+          "LUCKNOW",
+          "LUCKNOW/AMAUSI",
+          "LUDHIANA",
+          "LUMDING",
+          "M.O. AGATHI AIRPORT",
+          "M.O. AKOLA",
+          "M.O. KARIPUR AIRPORT",
+          "M.O. PONDICHERRY",
+          "M.O. RANCHI",
+          "MACHILIPATNAM/FRANCHPET",
+          "MADIKERI",
+          "MADURAI (43360-0)",
+          "MAHABALESHWAR",
+          "MAHABUBNAGAR",
+          "MAHUVA",
+          "MAJBAT",
+          "MALANJKHAND",
+          "MALDA",
+          "MALEGAON",
+          "MANA",
+          "MANALI",
+          "MANDI",
+          "MANDLA",
+          "MANDVI",
+          "MANDYA",
+          "MANGALORE/BAJPE",
+          "MANGALORE/PANAMBUR",
+          "MATHERAN",
+          "MATHURA",
+          "MAYA BANDAR",
+          "MEDAK",
+          "MEERUT",
+          "MIDNAPORE",
+          "MINICOY",
+          "MORADABAD",
+          "MORMUGAO",
+          "MOTIHARI",
+          "MOUNT ABU",
+          "MUKTESHWAR KUMAON",
+          "MUZAFFARPUR",
+          "MYSURU",
+          "NAGAPPATTINAM",
+          "NAGPUR SONEGAON",
+          "NAHAN",
+          "NAJIBABAD",
+          "NALGONDA",
+          "NALIYA",
+          "NANCOWRY",
+          "NANDED",
+          "NANDIGAMA",
+          "NANDYAL",
+          "NARNAUL",
+          "NARSAPUR",
+          "NARSINGHPUR",
+          "NASIK CITY",
+          "NELLORE",
+          "NEW DELHI/PALAM",
+          "NEW DELHI/SAFDARJUNG",
+          "NEW KANDLA",
+          "NEW TEHRI",
+          "NIZAMABAD",
+          "NORTH LAKHIMPUR",
+          "NOWGONG",
+          "NUMGAMBAKKAM",
+          "OKHA",
+          "ONGOLE",
+          "ORAI",
+          "PACHMARHI",
+          "PALAKKAD",
+          "PALAYANKOTTAI",
+          "PAMBAN",
+          "PANTNAGAR",
+          "PARADIP (C.W.R.)",
+          "PARANGIPETTAI",
+          "PARBHANI",
+          "PASHAN CTI",
+          "PASIGHAT",
+          "PATIALA",
+          "PATNA",
+          "PBO ANANTAPUR",
+          "PBO RAIPUR",
+          "PENDRA ROAD",
+          "PERIAKULUM",
+          "PET JORHAT",
+          "PHALODI",
+          "PHULBANI",
+          "PILANI",
+          "PORBANDAR",
+          "PORT BLAIR",
+          "PUNALUR",
+          "PUNE",
+          "PUNE / LOHOGAON AERODROME",
+          "PURI",
+          "PURNEA",
+          "PURULIA",
+          "QAZI GUND",
+          "RAICHUR",
+          "RAIPUR",
+          "RAISEN",
+          "RAJGARH",
+          "RAJKOT",
+          "RAJNANDGAON",
+          "RAMGUNDAM",
+          "RANGIA",
+          "RATLAM",
+          "RATNAGIRI",
+          "REWA",
+          "ROHTAK",
+          "ROORKEE",
+          "SABAUR",
+          "SAGAR",
+          "SALEM",
+          "SAMBALPUR",
+          "SANGLI",
+          "SATARA",
+          "SATNA",
+          "SAWAI MADHOPUR",
+          "SEONI",
+          "SHAHJAHANPUR",
+          "SHAJAPUR",
+          "SHANTI NIKETAN",
+          "SHEOPUR",
+          "SHILLONG",
+          "SHIMLA",
+          "SHIRALI",
+          "SHIVAMOGGA",
+          "SHIVPURI",
+          "SHOLAPUR",
+          "SIDHI",
+          "SIKAR",
+          "SILCHAR",
+          "SILIGURI (42398-0)",
+          "SRINAGAR (42027-0)",
+          "SRINAGAR (42042-0)",
+          "SULTANPUR",
+          "SUNDARGARH",
+          "SUNDERNAGAR",
+          "SUPAUL (42353-0)",
+          "SUPAUL (42393-0)",
+          "SURAT (42840-0)",
+          "SURENDRANAGAR",
+          "T.B.I.A",
+          "TADONG",
+          "TANGLA",
+          "TEZPUR",
+          "TEZPUR/BINDUKURI",
+          "THANJAVUR",
+          "THIRUVANANTHAPURAM (43371-0)",
+          "THIRUVANANTHAPURAM (43372-0)",
+          "THRISSUR",
+          "TIKAMGARH",
+          "TIRUCHCHIRAPALLI",
+          "TIRUPATHI",
+          "TIRUPPATTUR",
+          "TIRUTTANI",
+          "TITLAGARH",
+          "TONDI",
+          "TONK",
+          "TRIVANDRUM MET.OBS./THUMBA",
+          "TUNI",
+          "TUTICORIN NEW PORT",
+          "UDAIPUR",
+          "UDAIPUR DABOK",
+          "UDGIR",
+          "UDHAGAMANDALAM",
+          "UJJAIN",
+          "ULUBERIA",
+          "UMARIA",
+          "UNA (42077-0)",
+          "VALLABH VIDYANAGAR",
+          "VALPARAI",
+          "VARANASI",
+          "VARANASI/BABATPUR",
+          "VEDARANNIYAM",
+          "VELLORE",
+          "VENGURLA",
+          "VERAVAL",
+          "VIDISHA",
+          "VIJAYAPURA",
+          "VIJAYAWADA /GANNAVARAM",
+          "VISHAKHAPATNAM",
+          "VISHAKHAPATNAM/WALTAIR",
+          "WARDHA",
+          "WASHIM",
+          "YEOTMAL",
+          "YERCAUD"
+        ]
+      }
+    },
+    {
+      "id": "imd_synop_bihar_region_20260929",
+      "path": "data/government/india/imd_synop_bihar_region_20260929.geojson",
+      "source_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?f=json&limit=1000&bbox=84,24,86,27&datetime=2026-09-29T00:00:00Z/2026-09-29T23:59:59Z",
+      "resolved_url": "https://wis2box.imd.gov.in/oapi/collections/urn:wmo:md:in-imd:surface-based-observations.synop/items?f=json&limit=1000&bbox=84,24,86,27&datetime=2026-09-29T00:00:00Z/2026-09-29T23:59:59Z",
+      "provider": "India Meteorological Department (IMD)",
+      "retrieved_at_utc": "2026-09-30T02:38:48.528371Z",
+      "bytes": 259266,
+      "sha256": "bc5324460c5461a7edbe642952f8dfc53d899a5e0bf5f7af76d5a1dbb374719b",
+      "media_type": "application/json",
+      "format": "GeoJSON",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:47 GMT",
+      "etag": null,
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "unresolved_limits": "IMD SYNOP discovery metadata declares wmo:dataPolicy=core. No separate explicit licence URL was present in that dataset record. This classification does not grant blanket access to other IMD products or imply archive completeness/SLA.",
+      "data_role": "sparse surface station observations for adapter/QC development",
+      "not_training_ready_reason": "Single bounded region/day; not radar or lightning labels; includes null/code-table values, heterogeneous phenomenon intervals, and unknown historical publication latency.",
+      "observed_time_range": {
+        "report_time_start": "2026-09-29T00:00:00Z",
+        "report_time_end": "2026-09-29T21:00:00Z",
+        "phenomenon_time_start": "2026-09-28T15:00:00Z",
+        "phenomenon_time_end": "2026-09-29T21:00:00Z",
+        "historical_available_at": null
+      },
+      "timezone": "UTC (source timestamps end in Z)",
+      "geography": {
+        "country": "India",
+        "crs": "OGC:CRS84",
+        "observed_point_bbox_lon_lat": [
+          84.06,
+          24.05,
+          85.4,
+          26.66667
+        ]
+      },
+      "units": {
+        "24hour_pressure_change": [
+          "hPa"
+        ],
+        "air_temperature": [
+          "Celsius"
+        ],
+        "cloud_amount": [
+          "CODE TABLE"
+        ],
+        "cloud_cover_total": [
+          "%"
+        ],
+        "cloud_type": [
+          "CODE TABLE"
+        ],
+        "dewpoint_temperature": [
+          "Celsius"
+        ],
+        "height_of_base_of_cloud": [
+          "m"
+        ],
+        "horizontal_visibility": [
+          "m"
+        ],
+        "maximum_temperature_at_height_and_over_period_specified": [
+          "Celsius"
+        ],
+        "minimum_temperature_at_height_and_over_period_specified": [
+          "Celsius"
+        ],
+        "past_weather1": [
+          "CODE TABLE"
+        ],
+        "past_weather2": [
+          "CODE TABLE"
+        ],
+        "present_weather": [
+          "CODE TABLE"
+        ],
+        "pressure_reduced_to_mean_sea_level": [
+          "hPa"
+        ],
+        "total_precipitation_or_total_water_equivalent": [
+          "kg m-2"
+        ],
+        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": [
+          "deg"
+        ],
+        "wind_direction": [
+          "deg"
+        ],
+        "wind_speed": [
+          "m/s"
+        ]
+      },
+      "inspection": {
+        "feature_count": 607,
+        "number_matched": 607,
+        "number_returned": 607,
+        "has_next_page": false,
+        "unique_feature_ids": 607,
+        "numeric_value_count": 353,
+        "null_value_count": 254,
+        "station_count": 7,
+        "station_ids": [
+          "0-20000-0-42383",
+          "0-20000-0-42387",
+          "0-20000-0-42488",
+          "0-20000-0-42492",
+          "0-20000-0-42587",
+          "0-20000-0-42588",
+          "0-20000-0-42591"
+        ],
+        "report_count": 32,
+        "report_times": [
+          "2026-09-29T00:00:00Z",
+          "2026-09-29T03:00:00Z",
+          "2026-09-29T06:00:00Z",
+          "2026-09-29T09:00:00Z",
+          "2026-09-29T12:00:00Z",
+          "2026-09-29T15:00:00Z",
+          "2026-09-29T18:00:00Z",
+          "2026-09-29T21:00:00Z"
+        ],
+        "field_counts": {
+          "24hour_pressure_change": 32,
+          "air_temperature": 32,
+          "cloud_amount": 48,
+          "cloud_cover_total": 32,
+          "cloud_type": 109,
+          "dewpoint_temperature": 32,
+          "height_of_base_of_cloud": 43,
+          "horizontal_visibility": 32,
+          "maximum_temperature_at_height_and_over_period_specified": 15,
+          "minimum_temperature_at_height_and_over_period_specified": 12,
+          "past_weather1": 32,
+          "past_weather2": 33,
+          "present_weather": 32,
+          "pressure_reduced_to_mean_sea_level": 32,
+          "total_precipitation_or_total_water_equivalent": 5,
+          "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": 1,
+          "wind_direction": 37,
+          "wind_speed": 48
+        },
+        "source_response_timestamp": "2026-09-30T02:38:47.022823Z"
+      }
+    },
+    {
+      "id": "nasa_power_patna_20240601_20240607",
+      "path": "data/government/india/nasa_power_patna_20240601_20240607.json",
+      "source_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M,RH2M,PS,WS10M,WD10M,PRECTOTCORR&community=AG&longitude=85.1376&latitude=25.5941&start=20240601&end=20240607&format=JSON&time-standard=UTC",
+      "resolved_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M,RH2M,PS,WS10M,WD10M,PRECTOTCORR&community=AG&longitude=85.1376&latitude=25.5941&start=20240601&end=20240607&format=JSON&time-standard=UTC",
+      "provider": "NASA Langley Research Center POWER / NASA GMAO MERRA-2",
+      "retrieved_at_utc": "2026-09-30T02:38:50.691109Z",
+      "bytes": 19351,
+      "sha256": "6f24db098b5aa2da895ed9bda352ce55f4fbc35e16d2c73a1a8e4d2f1f4763ec",
+      "media_type": "application/json",
+      "format": "GeoJSON",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:48 GMT",
+      "etag": null,
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://power.larc.nasa.gov/docs/referencing/",
+      "unresolved_limits": "NASA POWER requests project/service/version/access-date attribution and publication/redistribution notification. The JSON response does not include a standalone licence. No notification has been sent; no service SLA or historical forecast availability is established.",
+      "data_role": "historical coarse-grid meteorological context; reanalysis-derived",
+      "not_training_ready_reason": "One grid location and seven days at hourly cadence; no lightning/radar labels; retrospective values do not prove operational availability and do not align in date with the IMD sample.",
+      "observed_time_range": {
+        "valid_time_start": "2024-06-01T00:00:00Z",
+        "valid_time_end": "2024-06-07T23:00:00Z",
+        "historical_available_at": null
+      },
+      "timezone": "UTC",
+      "geography": {
+        "country": "India",
+        "requested_place": "Patna, Bihar",
+        "requested_longitude": 85.1376,
+        "requested_latitude": 25.5941,
+        "response_geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.138,
+            25.594,
+            59.4
+          ]
+        },
+        "spatial_support": "Source grid-box average, not an in-situ Patna station"
+      },
+      "units": {
+        "T2M": "C",
+        "RH2M": "%",
+        "PS": "kPa",
+        "WS10M": "m/s",
+        "WD10M": "Degrees",
+        "PRECTOTCORR": "mm/hour"
+      },
+      "inspection": {
+        "hour_count": 168,
+        "parameter_count": 6,
+        "scalar_count": 1008,
+        "fill_value": -999.0,
+        "missing_value_count": 0,
+        "per_parameter_count": {
+          "T2M": 168,
+          "RH2M": 168,
+          "PS": 168,
+          "WS10M": 168,
+          "WD10M": 168,
+          "PRECTOTCORR": 168
+        },
+        "source_header": {
+          "title": "NASA/POWER Source Native Resolution Hourly Data",
+          "api": {
+            "version": "v2.10.2",
+            "name": "POWER Hourly API"
+          },
+          "sources": [
+            "MERRA2",
+            "POWER"
+          ],
+          "fill_value": -999.0,
+          "time_standard": "UTC",
+          "start": "20240601",
+          "end": "20240607"
+        },
+        "source_parameters": {
+          "T2M": {
+            "units": "C",
+            "longname": "Temperature at 2 Meters"
+          },
+          "RH2M": {
+            "units": "%",
+            "longname": "Relative Humidity at 2 Meters"
+          },
+          "PS": {
+            "units": "kPa",
+            "longname": "Surface Pressure"
+          },
+          "WS10M": {
+            "units": "m/s",
+            "longname": "Wind Speed at 10 Meters"
+          },
+          "WD10M": {
+            "units": "Degrees",
+            "longname": "Wind Direction at 10 Meters"
+          },
+          "PRECTOTCORR": {
+            "units": "mm/hour",
+            "longname": "Precipitation Corrected"
+          }
+        },
+        "response_messages": []
+      }
+    },
+    {
+      "id": "nasa_power_hourly_docs",
+      "path": "data/government/india/nasa_power_hourly_docs.html",
+      "source_url": "https://power.larc.nasa.gov/docs/services/api/temporal/hourly/",
+      "resolved_url": "https://power.larc.nasa.gov/docs/services/api/temporal/hourly/",
+      "provider": "NASA Langley Research Center POWER / NASA GMAO MERRA-2",
+      "retrieved_at_utc": "2026-09-30T02:38:51.769487Z",
+      "bytes": 32713,
+      "sha256": "4e8d9ea3fd82436ecaa531081dc176f7b360e94afea38c63ef38b1f14c4c6536",
+      "media_type": "text/html",
+      "format": "HTML",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:50 GMT",
+      "etag": "\"f30f33c592bd3b54dba81e57eb1127e7\"",
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://power.larc.nasa.gov/docs/referencing/",
+      "unresolved_limits": "NASA POWER requests project/service/version/access-date attribution and publication/redistribution notification. The JSON response does not include a standalone licence. No notification has been sent; no service SLA or historical forecast availability is established.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "nasa_power_meteorology_docs",
+      "path": "data/government/india/nasa_power_meteorology_docs.html",
+      "source_url": "https://power.larc.nasa.gov/docs/methodology/meteorology/",
+      "resolved_url": "https://power.larc.nasa.gov/docs/methodology/meteorology/",
+      "provider": "NASA Langley Research Center POWER / NASA GMAO MERRA-2",
+      "retrieved_at_utc": "2026-09-30T02:38:53.067508Z",
+      "bytes": 25236,
+      "sha256": "cdd5ca11ef652d3cda60889d3d3c735c39663f9126d3487b2eebb867265ff3bb",
+      "media_type": "text/html",
+      "format": "HTML",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:52 GMT",
+      "etag": "\"2ea8d067e0fa44488cfa1a242b1f1a77\"",
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://power.larc.nasa.gov/docs/referencing/",
+      "unresolved_limits": "NASA POWER requests project/service/version/access-date attribution and publication/redistribution notification. The JSON response does not include a standalone licence. No notification has been sent; no service SLA or historical forecast availability is established.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "nasa_power_acknowledgements",
+      "path": "data/government/india/nasa_power_acknowledgements.html",
+      "source_url": "https://power.larc.nasa.gov/docs/acknowledgements/",
+      "resolved_url": "https://power.larc.nasa.gov/docs/acknowledgements/",
+      "provider": "NASA Langley Research Center POWER / NASA GMAO MERRA-2",
+      "retrieved_at_utc": "2026-09-30T02:38:53.898439Z",
+      "bytes": 16756,
+      "sha256": "eaff9ef628a9fbb2379c14a059900719da088f63e6866bece15314414d74355f",
+      "media_type": "text/html",
+      "format": "HTML",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:52 GMT",
+      "etag": "\"342e5807bfff697832f9ab1748c14e2c\"",
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://power.larc.nasa.gov/docs/referencing/",
+      "unresolved_limits": "NASA POWER requests project/service/version/access-date attribution and publication/redistribution notification. The JSON response does not include a standalone licence. No notification has been sent; no service SLA or historical forecast availability is established.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "wmo_wis2_guide",
+      "path": "data/government/india/wmo_wis2_guide.html",
+      "source_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "resolved_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "provider": "World Meteorological Organization",
+      "retrieved_at_utc": "2026-09-30T02:38:55.531275Z",
+      "bytes": 219954,
+      "sha256": "99e17279f5e69e74ad9b7830e1c5b1fe2a05c6d7d0e78c4ba74e27dfae044623",
+      "media_type": "text/html; charset=utf-8",
+      "format": "HTML",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:38:53 GMT",
+      "etag": "\"6abab5dc-35b32\"",
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html",
+      "unresolved_limits": "Retain provider attribution; this policy guide does not establish any particular dataset completeness or operational SLA.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "nasa_power_referencing",
+      "path": "data/government/india/nasa_power_referencing.html",
+      "source_url": "https://power.larc.nasa.gov/docs/referencing/",
+      "resolved_url": "https://power.larc.nasa.gov/docs/referencing/",
+      "provider": "NASA Langley Research Center POWER / NASA GMAO MERRA-2",
+      "retrieved_at_utc": "2026-09-30T02:39:45.583620Z",
+      "bytes": 18436,
+      "sha256": "97f49593dd0878b38a1d134e5c2e41df1cd192f08668d3dfa81d37fcaef2059b",
+      "media_type": "text/html",
+      "format": "HTML",
+      "http_status": 200,
+      "http_date": "Wed, 30 Sep 2026 02:39:45 GMT",
+      "etag": "\"edbc27535fdfe727bb4c7911bfeed241\"",
+      "tls_verification": "OS trust store via truststore; hostname and certificate verification enabled",
+      "licence_terms_url": "https://power.larc.nasa.gov/docs/referencing/",
+      "unresolved_limits": "NASA POWER requests project/service/version/access-date attribution and publication/redistribution notification. The JSON response does not include a standalone licence. No notification has been sent; no service SLA or historical forecast availability is established.",
+      "data_role": "provenance and source documentation",
+      "not_training_ready_reason": "Metadata/documentation only, not model examples or outcome labels.",
+      "observed_time_range": null,
+      "timezone": null,
+      "geography": null,
+      "units": {},
+      "inspection": {}
+    },
+    {
+      "id": "abi_c13",
+      "path": "data/government/noaa/raw/OR_ABI-L2-CMIPC-M6C13_G16_s20241671801178_e20241671803563_c20241671804099.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/ABI-L2-CMIPC/2024/167/18/OR_ABI-L2-CMIPC-M6C13_G16_s20241671801178_e20241671803563_c20241671804099.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C01502",
+      "retrieved_at_utc": "2026-09-30T02:40:27.616055Z",
+      "bytes": 4089488,
+      "sha256": "1edd2c976c83a64635a6ff4a7374e1a8e1354696714dfadd965f9cc9716d5752",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C01502",
+      "units": {
+        "CMI": "K",
+        "DQF": "1",
+        "x": "rad",
+        "y": "rad",
+        "band_id": "1",
+        "band_wavelength": "um",
+        "t": "seconds since 2000-01-01 12:00:00"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:01:17.8Z",
+      "observation_time_end_utc": "2024-06-15T18:03:56.3Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:04:09.9Z",
+      "dimensions": {
+        "y": 1500,
+        "x": 2500,
+        "number_of_time_bounds": 2,
+        "band": 1,
+        "number_of_image_bounds": 2
+      },
+      "variables": {
+        "CMI": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "y",
+            "x"
+          ],
+          "units": "K",
+          "shape": [
+            1500,
+            2500
+          ],
+          "finite_unmasked_count": 3702838,
+          "min": 187.76095581054688,
+          "max": 327.87451171875,
+          "scale_factor": 0.06145332008600235,
+          "add_offset": 89.62000274658203,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "DQF": {
+          "stored_dtype": "int8",
+          "dimensions": [
+            "y",
+            "x"
+          ],
+          "units": "1",
+          "shape": [
+            1500,
+            2500
+          ],
+          "finite_unmasked_count": 3702838,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "flag_meanings": "good_pixel_qf conditionally_usable_pixel_qf out_of_range_pixel_qf no_value_pixel_qf focal_plane_temperature_threshold_exceeded_qf"
+        },
+        "x": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "x"
+          ],
+          "units": "rad",
+          "shape": [
+            2500
+          ],
+          "finite_unmasked_count": 2500,
+          "min": -0.10133200138807297,
+          "max": 0.038612000644207,
+          "scale_factor": 5.6000000768108293e-05,
+          "add_offset": -0.10133200138807297
+        },
+        "y": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "y"
+          ],
+          "units": "rad",
+          "shape": [
+            1500
+          ],
+          "finite_unmasked_count": 1500,
+          "min": 0.04426800459623337,
+          "max": 0.12821200489997864,
+          "scale_factor": -5.6000000768108293e-05,
+          "add_offset": 0.12821200489997864
+        },
+        "band_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "band"
+          ],
+          "units": "1",
+          "shape": [
+            1
+          ],
+          "finite_unmasked_count": 1,
+          "min": 13.0,
+          "max": 13.0
+        },
+        "band_wavelength": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "band"
+          ],
+          "units": "um",
+          "shape": [
+            1
+          ],
+          "finite_unmasked_count": 1,
+          "min": 10.329999923706055,
+          "max": 10.329999923706055
+        },
+        "t": {
+          "stored_dtype": "float64",
+          "dimensions": [],
+          "units": "seconds since 2000-01-01 12:00:00",
+          "shape": [],
+          "finite_unmasked_count": 1,
+          "min": 771746557.10824,
+          "max": 771746557.10824
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "projection": {
+        "long_name": "GOES-R ABI fixed grid projection",
+        "grid_mapping_name": "geostationary",
+        "perspective_point_height": 35786023.0,
+        "semi_major_axis": 6378137.0,
+        "semi_minor_axis": 6356752.31414,
+        "inverse_flattening": 298.2572221,
+        "latitude_of_projection_origin": 0.0,
+        "longitude_of_projection_origin": -75.0,
+        "sweep_angle_axis": "x"
+      },
+      "geography": {
+        "region": "GOES-16 ABI CONUS scene; United States and surrounding area, not India",
+        "grid": "geostationary fixed grid; x/y scanning angles in radians"
+      },
+      "quality_counts": {
+        "0": 3702838
+      }
+    },
+    {
+      "id": "glm_180200",
+      "path": "data/government/noaa/raw/OR_GLM-L2-LCFA_G16_s20241671802000_e20241671802200_c20241671802222.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/GLM-L2-LCFA/2024/167/18/OR_GLM-L2-LCFA_G16_s20241671802000_e20241671802200_c20241671802222.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "retrieved_at_utc": "2026-09-30T02:40:29.488260Z",
+      "bytes": 188220,
+      "sha256": "0638d2efbf87c28880e9e84bdc1e52fa692cce822242db500d9354bf9e027086",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "units": {
+        "event_lat": "degrees_north",
+        "event_lon": "degrees_east",
+        "event_energy": "J",
+        "event_time_offset": "seconds since 2024-06-15 18:02:00.000",
+        "event_parent_group_id": "1",
+        "group_id": "1",
+        "group_parent_flash_id": "1",
+        "group_quality_flag": "1",
+        "group_energy": "J",
+        "flash_id": "1",
+        "flash_lat": "degrees_north",
+        "flash_lon": "degrees_east",
+        "flash_energy": "J",
+        "flash_area": "m2",
+        "flash_time_offset_of_first_event": "seconds since 2024-06-15 18:02:00.000",
+        "flash_time_offset_of_last_event": "seconds since 2024-06-15 18:02:00.000",
+        "flash_quality_flag": "1"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:02:00.0Z",
+      "observation_time_end_utc": "2024-06-15T18:02:20.0Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:02:22.2Z",
+      "dimensions": {
+        "number_of_flashes": 87,
+        "number_of_groups": 967,
+        "number_of_events": 2182,
+        "number_of_time_bounds": 2,
+        "number_of_field_of_view_bounds": 2,
+        "number_of_wavelength_bounds": 2
+      },
+      "variables": {
+        "event_lat": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": -29.543983459472656,
+          "max": 52.98895263671875,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -66.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_lon": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": -118.33637237548828,
+          "max": -42.697601318359375,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -141.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "J",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": 1.141229936208821e-15,
+          "max": 3.41385448555942e-13,
+          "scale_factor": 1.9023999344584512e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "event_time_offset": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "seconds since 2024-06-15 18:02:00.000",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": -0.869382381439209,
+          "max": 19.534603118896484,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "event_parent_group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "1",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": 647529074.0,
+          "max": 647530158.0,
+          "_Unsigned": "true"
+        },
+        "group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 647529074.0,
+          "max": 647530158.0,
+          "_Unsigned": "true"
+        },
+        "group_parent_flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 10427.0,
+          "max": 10548.0,
+          "_Unsigned": "true"
+        },
+        "group_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_group_constituent_events_out_of_time_order_or_parent_flash_abnormal_qf degraded_due_to_group_constituent_event_count_exceeds_threshold_qf degraded_due_to_group_duration_exceeds_threshold_qf"
+        },
+        "group_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "J",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 1.085053969993087e-15,
+          "max": 1.103052761977641e-12,
+          "scale_factor": 9.998799764118898e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 10427.0,
+          "max": 10548.0,
+          "_Unsigned": "true"
+        },
+        "flash_lat": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -29.445608139038086,
+          "max": 52.936927795410156
+        },
+        "flash_lon": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -118.16453552246094,
+          "max": -42.697635650634766
+        },
+        "flash_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "J",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 3.2851378765869988e-15,
+          "max": 2.9642731411844148e-12,
+          "scale_factor": 9.999959802209943e-16,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_area": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "m2",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 65618800.0,
+          "max": 2030672896.0,
+          "scale_factor": 152601.859375,
+          "add_offset": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_time_offset_of_first_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:00.000",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -0.869382381439209,
+          "max": 19.38773536682129,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_time_offset_of_last_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:00.000",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -0.42610740661621094,
+          "max": 19.534603118896484,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_flash_constituent_events_out_of_time_order_qf degraded_due_to_flash_constituent_event_count_exceeds_threshold_qf degraded_due_to_flash_duration_exceeds_threshold_qf"
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "parent_relationships_valid": true,
+      "counts": {
+        "events": 2182,
+        "groups": 967,
+        "flashes": 87
+      },
+      "geography": {
+        "region": "GOES-16 GLM hemispheric field of view; Americas and adjacent oceans, not India",
+        "actual_event_latitude_range_degrees_north": [
+          -29.543983459472656,
+          52.98895263671875
+        ],
+        "actual_event_longitude_range_degrees_east": [
+          -118.33637237548828,
+          -42.697601318359375
+        ]
+      }
+    },
+    {
+      "id": "glm_180220",
+      "path": "data/government/noaa/raw/OR_GLM-L2-LCFA_G16_s20241671802200_e20241671802400_c20241671802416.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/GLM-L2-LCFA/2024/167/18/OR_GLM-L2-LCFA_G16_s20241671802200_e20241671802400_c20241671802416.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "retrieved_at_utc": "2026-09-30T02:40:31.686249Z",
+      "bytes": 202556,
+      "sha256": "2f7b7194f5581c9499a103f5959d1545d27615a316ca43035a11bd09a91561f5",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "units": {
+        "event_lat": "degrees_north",
+        "event_lon": "degrees_east",
+        "event_energy": "J",
+        "event_time_offset": "seconds since 2024-06-15 18:02:20.000",
+        "event_parent_group_id": "1",
+        "group_id": "1",
+        "group_parent_flash_id": "1",
+        "group_quality_flag": "1",
+        "group_energy": "J",
+        "flash_id": "1",
+        "flash_lat": "degrees_north",
+        "flash_lon": "degrees_east",
+        "flash_energy": "J",
+        "flash_area": "m2",
+        "flash_time_offset_of_first_event": "seconds since 2024-06-15 18:02:20.000",
+        "flash_time_offset_of_last_event": "seconds since 2024-06-15 18:02:20.000",
+        "flash_quality_flag": "1"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:02:20.0Z",
+      "observation_time_end_utc": "2024-06-15T18:02:40.0Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:02:41.6Z",
+      "dimensions": {
+        "number_of_flashes": 94,
+        "number_of_groups": 1222,
+        "number_of_events": 2800,
+        "number_of_time_bounds": 2,
+        "number_of_field_of_view_bounds": 2,
+        "number_of_wavelength_bounds": 2
+      },
+      "variables": {
+        "event_lat": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": -29.55007553100586,
+          "max": 49.27983856201172,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -66.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_lon": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": -118.03777313232422,
+          "max": -46.94500732421875,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -141.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "J",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2799,
+          "min": 1.1031819573719868e-15,
+          "max": 1.1262585915966516e-12,
+          "scale_factor": 1.9023999344584512e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "event_time_offset": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "seconds since 2024-06-15 18:02:20.000",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": -0.5306320190429688,
+          "max": 19.21569061279297,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "event_parent_group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "1",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": 647530138.0,
+          "max": 647531446.0,
+          "_Unsigned": "true"
+        },
+        "group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 647530138.0,
+          "max": 647531446.0,
+          "_Unsigned": "true"
+        },
+        "group_parent_flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 10549.0,
+          "max": 10661.0,
+          "_Unsigned": "true"
+        },
+        "group_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_group_constituent_events_out_of_time_order_or_parent_flash_abnormal_qf degraded_due_to_group_constituent_event_count_exceeds_threshold_qf degraded_due_to_group_duration_exceeds_threshold_qf"
+        },
+        "group_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "J",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 1.085053969993087e-15,
+          "max": 3.935813047001302e-12,
+          "scale_factor": 9.998799764118898e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 10549.0,
+          "max": 10661.0,
+          "_Unsigned": "true"
+        },
+        "flash_lat": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -29.474498748779297,
+          "max": 49.177616119384766
+        },
+        "flash_lon": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -117.79268646240234,
+          "max": -47.07597732543945
+        },
+        "flash_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "J",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 3.2851378765869988e-15,
+          "max": 4.3562679505337876e-12,
+          "scale_factor": 9.999959802209943e-16,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_area": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "m2",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 67755224.0,
+          "max": 2149397248.0,
+          "scale_factor": 152601.859375,
+          "add_offset": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_time_offset_of_first_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:20.000",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -0.5306320190429688,
+          "max": 18.999011993408203,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_time_offset_of_last_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:20.000",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -0.34981250762939453,
+          "max": 19.21569061279297,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_flash_constituent_events_out_of_time_order_qf degraded_due_to_flash_constituent_event_count_exceeds_threshold_qf degraded_due_to_flash_duration_exceeds_threshold_qf"
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "parent_relationships_valid": true,
+      "counts": {
+        "events": 2800,
+        "groups": 1222,
+        "flashes": 94
+      },
+      "geography": {
+        "region": "GOES-16 GLM hemispheric field of view; Americas and adjacent oceans, not India",
+        "actual_event_latitude_range_degrees_north": [
+          -29.55007553100586,
+          49.27983856201172
+        ],
+        "actual_event_longitude_range_degrees_east": [
+          -118.03777313232422,
+          -46.94500732421875
+        ]
+      }
+    },
+    {
+      "id": "glm_180240",
+      "path": "data/government/noaa/raw/OR_GLM-L2-LCFA_G16_s20241671802400_e20241671803000_c20241671803014.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/GLM-L2-LCFA/2024/167/18/OR_GLM-L2-LCFA_G16_s20241671802400_e20241671803000_c20241671803014.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "retrieved_at_utc": "2026-09-30T02:40:33.617042Z",
+      "bytes": 198460,
+      "sha256": "d3794a3c37203d2355f6e70f1b6777686ce9b0550cae8f84cfdd943e674c9705",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "units": {
+        "event_lat": "degrees_north",
+        "event_lon": "degrees_east",
+        "event_energy": "J",
+        "event_time_offset": "seconds since 2024-06-15 18:02:40.000",
+        "event_parent_group_id": "1",
+        "group_id": "1",
+        "group_parent_flash_id": "1",
+        "group_quality_flag": "1",
+        "group_energy": "J",
+        "flash_id": "1",
+        "flash_lat": "degrees_north",
+        "flash_lon": "degrees_east",
+        "flash_energy": "J",
+        "flash_area": "m2",
+        "flash_time_offset_of_first_event": "seconds since 2024-06-15 18:02:40.000",
+        "flash_time_offset_of_last_event": "seconds since 2024-06-15 18:02:40.000",
+        "flash_quality_flag": "1"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:02:40.0Z",
+      "observation_time_end_utc": "2024-06-15T18:03:00.0Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:03:01.4Z",
+      "dimensions": {
+        "number_of_flashes": 93,
+        "number_of_groups": 1119,
+        "number_of_events": 2407,
+        "number_of_time_bounds": 2,
+        "number_of_field_of_view_bounds": 2,
+        "number_of_wavelength_bounds": 2
+      },
+      "variables": {
+        "event_lat": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": -29.39773178100586,
+          "max": 53.37286376953125,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -66.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_lon": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": -111.9378433227539,
+          "max": -42.697601318359375,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -141.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "J",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": 1.1031819573719868e-15,
+          "max": 2.6635480930223276e-13,
+          "scale_factor": 1.9023999344584512e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "event_time_offset": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "seconds since 2024-06-15 18:02:40.000",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": -0.6069269180297852,
+          "max": 18.965824127197266,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "event_parent_group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "1",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": 647531447.0,
+          "max": 647532647.0,
+          "_Unsigned": "true"
+        },
+        "group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 647531447.0,
+          "max": 647532647.0,
+          "_Unsigned": "true"
+        },
+        "group_parent_flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 10662.0,
+          "max": 10778.0,
+          "_Unsigned": "true"
+        },
+        "group_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 0.0,
+          "max": 1.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_group_constituent_events_out_of_time_order_or_parent_flash_abnormal_qf degraded_due_to_group_constituent_event_count_exceeds_threshold_qf degraded_due_to_group_duration_exceeds_threshold_qf"
+        },
+        "group_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "J",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 1.085053969993087e-15,
+          "max": 5.110238404312795e-13,
+          "scale_factor": 9.998799764118898e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 10662.0,
+          "max": 10778.0,
+          "_Unsigned": "true"
+        },
+        "flash_lat": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -29.330989837646484,
+          "max": 53.37220001220703
+        },
+        "flash_lon": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -111.90338897705078,
+          "max": -42.697166442871094
+        },
+        "flash_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "J",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 3.2851378765869988e-15,
+          "max": 3.2822720236191927e-12,
+          "scale_factor": 9.999959802209943e-16,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_area": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "m2",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 64703188.0,
+          "max": 2111094144.0,
+          "scale_factor": 152601.859375,
+          "add_offset": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_time_offset_of_first_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:40.000",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -0.6069269180297852,
+          "max": 18.963916778564453,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_time_offset_of_last_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:40.000",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -0.44022226333618164,
+          "max": 18.965824127197266,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 0.0,
+          "max": 3.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_flash_constituent_events_out_of_time_order_qf degraded_due_to_flash_constituent_event_count_exceeds_threshold_qf degraded_due_to_flash_duration_exceeds_threshold_qf"
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "parent_relationships_valid": true,
+      "counts": {
+        "events": 2407,
+        "groups": 1119,
+        "flashes": 93
+      },
+      "geography": {
+        "region": "GOES-16 GLM hemispheric field of view; Americas and adjacent oceans, not India",
+        "actual_event_latitude_range_degrees_north": [
+          -29.39773178100586,
+          53.37286376953125
+        ],
+        "actual_event_longitude_range_degrees_east": [
+          -111.9378433227539,
+          -42.697601318359375
+        ]
+      }
+    },
+    {
+      "id": "radar_ktlx_n0b",
+      "path": "data/government/noaa/raw/TLX_N0B_2024_06_15_18_05_28",
+      "source_url": "https://unidata-nexrad-level3.s3.amazonaws.com/TLX_N0B_2024_06_15_18_05_28",
+      "provider": "NOAA/NWS",
+      "distribution": "UCAR Unidata AWS mirror of NOAA NEXRAD",
+      "official_catalog_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00708",
+      "retrieved_at_utc": "2026-09-30T02:40:58.458287Z",
+      "bytes": 255950,
+      "sha256": "9ee062530322b3cee3b974b36a1d0e39ed5d3895ec4c742625bc1875df05b9ea",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00708",
+      "units": {
+        "reflectivity": "dBZ",
+        "start_az": "degrees",
+        "end_az": "degrees"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NEXRAD Level III binary NIDS, product 153 N0B",
+      "observation_time_start_utc": "2024-06-15T18:05:28Z",
+      "observation_time_end_utc": null,
+      "time_note": "Header volume start; complete scan end not asserted",
+      "historical_available_at_utc": null,
+      "product_time_utc": "2024-06-15T18:06:40Z",
+      "geography": {
+        "region": "KTLX radar around Oklahoma City, Oklahoma, United States; not India",
+        "station_latitude_degrees_north": 35.333,
+        "station_longitude_degrees_east": -97.278,
+        "maximum_range_km": 460.0
+      },
+      "variables": {
+        "reflectivity": {
+          "units": "dBZ",
+          "stored_dtype": "uint8",
+          "shape": [
+            720,
+            1840
+          ],
+          "finite_unmasked_count": 375181,
+          "min": -17.0,
+          "max": 47.5
+        },
+        "start_az": {
+          "units": "degrees",
+          "shape": [
+            720
+          ],
+          "finite_unmasked_count": 720,
+          "min": 0.0,
+          "max": 359.5
+        },
+        "end_az": {
+          "units": "degrees",
+          "shape": [
+            720
+          ],
+          "finite_unmasked_count": 720,
+          "min": 0.5,
+          "max": 360.0
+        }
+      },
+      "decoding": "MetPy Level3File.map_data converts encoded levels; finite min/max exclude missing/range-fold values"
+    },
+    {
+      "id": "gfs-gfs_20250512_06_f003",
+      "path": "data/government/gfs/gfs_20250512_06_f003.idx",
+      "source_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250512/06/atmos/gfs.t06z.pgrb2.0p25.f003.idx",
+      "provider": "NOAA/NCEP",
+      "documentation_url": "https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast",
+      "retrieved_at_utc": "2026-09-30T02:39:31.726581+00:00",
+      "bytes": 40472,
+      "sha256": "929835d35edf1997171cbe9631bc1d504ba3988a3070386e591607229a021c3c",
+      "format": "idx",
+      "data_role": "provider_inventory",
+      "licence_terms_url": "https://www.weather.gov/disclaimer",
+      "licence_note": "NOAA/NWS government information; acknowledge provider, no endorsement. See source disclaimer.",
+      "model_reference_time_utc": "2025-05-12T06:00:00Z",
+      "forecast_lead_hours": 3,
+      "valid_time_utc": "2025-05-12T09:00:00Z",
+      "historical_available_at_utc": null,
+      "not_training_ready_reason": "One forecast time, no matched Indian storm/flash labels; historic operational availability not established.",
+      "archive_last_modified_header": "Mon, 12 May 2025 09:37:31 GMT"
+    },
+    {
+      "id": "gfs-gfs_20250512_06_f003_selected",
+      "path": "data/government/gfs/gfs_20250512_06_f003_selected.grib2",
+      "source_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250512/06/atmos/gfs.t06z.pgrb2.0p25.f003",
+      "provider": "NOAA/NCEP",
+      "documentation_url": "https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast",
+      "retrieved_at_utc": "2026-09-30T02:39:31.726581+00:00",
+      "bytes": 5302691,
+      "sha256": "cc2d392ec412531ac14487cdffb56f08752e5980ea6970c06f7dab730f8cd0f8",
+      "format": "grib2",
+      "data_role": "raw_nwp_forecast",
+      "licence_terms_url": "https://www.weather.gov/disclaimer",
+      "licence_note": "NOAA/NWS government information; acknowledge provider, no endorsement. See source disclaimer.",
+      "model_reference_time_utc": "2025-05-12T06:00:00Z",
+      "forecast_lead_hours": 3,
+      "valid_time_utc": "2025-05-12T09:00:00Z",
+      "historical_available_at_utc": null,
+      "not_training_ready_reason": "One forecast time, no matched Indian storm/flash labels; historic operational availability not established.",
+      "fields": [
+        {
+          "variable": "TMP",
+          "level": "2 m above ground",
+          "units": "K",
+          "byte_start": 421261889,
+          "byte_end_inclusive": 421775549,
+          "sha256": "ac9a6e5e6d48c27554c7f25f92dd23f8b484ee44acedd96a8d8df4fdcb1e7907",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "RH",
+          "level": "2 m above ground",
+          "units": "%",
+          "byte_start": 423541777,
+          "byte_end_inclusive": 424334502,
+          "sha256": "3bff47677a7cc2ebd686bda83a13d4a24d69ffbace4f133b5836b920b7398d40",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "UGRD",
+          "level": "10 m above ground",
+          "units": "m/s",
+          "byte_start": 425900909,
+          "byte_end_inclusive": 426875006,
+          "sha256": "9c220fe6696e7248883a18ea2838ac7a2a1e1fbfebeaac201222c1a2ab59eaad",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "VGRD",
+          "level": "10 m above ground",
+          "units": "m/s",
+          "byte_start": 426875007,
+          "byte_end_inclusive": 427826626,
+          "sha256": "510b18c12c0bfcdb0f1248c0f7be6ce0129c6d465202f5ddab883a79e9046ff1",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "CAPE",
+          "level": "surface",
+          "units": "J/kg",
+          "byte_start": 440474609,
+          "byte_end_inclusive": 441042987,
+          "sha256": "3b87e2772c5632023faa24e8780b70330ea5077697e740aa272e0393c16dc7a0",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "CIN",
+          "level": "surface",
+          "units": "J/kg",
+          "byte_start": 441042988,
+          "byte_end_inclusive": 441329845,
+          "sha256": "7514307367849682dd5bb69f49ddee14e07e34c7345f9e9ece1b619f53c669ae",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "PWAT",
+          "level": "entire atmosphere (considered as a single layer)",
+          "units": "kg/m^2",
+          "byte_start": 441329846,
+          "byte_end_inclusive": 442545194,
+          "sha256": "37668dfa284ec0310c4774ed8bf36b2b988dea419c3e0d25f138a2fabf8ab54e",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        }
+      ],
+      "geography": {
+        "coverage": "global including India",
+        "grid_degrees": 0.25
+      },
+      "acquisition": "HTTP byte ranges specified by provider inventory"
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "data/government/gfs/gfs_20250512_06_f003_bihar.grib2",
+      "bytes": 6814,
+      "sha256": "56d8f514b9cddec414021c7c4451d5d3713e82ea416ad52baf8e729a07b8560a",
+      "derived_from": "data/government/gfs/gfs_20250512_06_f003_selected.grib2",
+      "transformation": "wgrib2 -small_grib 82:89 23:28, then -csv; no unit conversion",
+      "generated_at_utc": "2026-09-30T02:42:46.971466+00:00"
+    },
+    {
+      "path": "data/government/gfs/gfs_20250512_06_f003_bihar.csv",
+      "bytes": 378380,
+      "sha256": "5ecd731dac86301f2da6b49499643986a55ee95d2f3c14e4aff57ac98599edd3",
+      "derived_from": "data/government/gfs/gfs_20250512_06_f003_selected.grib2",
+      "transformation": "wgrib2 -small_grib 82:89 23:28, then -csv; no unit conversion",
+      "generated_at_utc": "2026-09-30T02:42:46.974251+00:00"
+    },
+    {
+      "path": "data/government/derived/imd_synop_bihar_region_20260929.csv",
+      "bytes": 112669,
+      "sha256": "9fed343b1ad9e3aa38bf265bbcf96d1b8b8bc9ca7bede16d02e488ee7c190b51",
+      "rows": 607,
+      "columns": [
+        "feature_id",
+        "longitude",
+        "latitude",
+        "wigos_station_identifier",
+        "reportId",
+        "reportTime",
+        "phenomenonTime",
+        "name",
+        "units",
+        "value",
+        "description",
+        "numeric_value_missing"
+      ],
+      "derived_from": "data/government/india/imd_synop_bihar_region_20260929.geojson",
+      "source_sha256": "bc5324460c5461a7edbe642952f8dfc53d899a5e0bf5f7af76d5a1dbb374719b",
+      "transformation": "One row per original feature, sorted by feature ID; null remains blank plus explicit missing flag; no unit conversion or deduplication.",
+      "units": "Per-row units column, exactly from IMD",
+      "historical_available_at_utc": null,
+      "training_ready": false
+    },
+    {
+      "path": "data/government/derived/nasa_power_patna_20240601_20240607.csv",
+      "bytes": 9820,
+      "sha256": "9139f256b01ad37a942a4c7aa2c9792cd2d3269b78d8d19062cde72d3b50d0af",
+      "rows": 168,
+      "columns": [
+        "time_utc",
+        "T2M",
+        "RH2M",
+        "PS",
+        "WS10M",
+        "WD10M",
+        "PRECTOTCORR"
+      ],
+      "derived_from": "data/government/india/nasa_power_patna_20240601_20240607.json",
+      "source_sha256": "6f24db098b5aa2da895ed9bda352ce55f4fbc35e16d2c73a1a8e4d2f1f4763ec",
+      "transformation": "One row per hourly timestamp; time key rendered ISO8601 UTC; all values and units retained unchanged.",
+      "units": {
+        "T2M": "C",
+        "RH2M": "%",
+        "PS": "kPa",
+        "WS10M": "m/s",
+        "WD10M": "Degrees",
+        "PRECTOTCORR": "mm/hour"
+      },
+      "historical_available_at_utc": null,
+      "training_ready": false
+    }
+  ]
+}

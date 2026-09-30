@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "tracked_files": 197,
+  "tracked_bytes": 33177713,
+  "largest_files": [
+    {
+      "path": "artifacts/VAJRA_GOVERNMENT_DATA_STARTER_PACK.zip",
+      "bytes": 10026008
+    },
+    {
+      "path": "data/government/gfs/gfs_20250512_06_f003_selected.grib2",
+      "bytes": 5302691
+    },
+    {
+      "path": "data/external/reflectivity_new_SE_2018_12.2.npz",
+      "bytes": 4693593
+    },
+    {
+      "path": "data/government/noaa/raw/OR_ABI-L2-CMIPC-M6C13_G16_s20241671801178_e20241671803563_c20241671804099.nc",
+      "bytes": 4089488
+    },
+    {
+      "path": "artifacts/earth-patna-desktop.png",
+      "bytes": 746927
+    },
+    {
+      "path": "artifacts/earth-orbit-desktop.png",
+      "bytes": 596492
+    },
+    {
+      "path": "mobile/package-lock.json",
+      "bytes": 435739
+    },
+    {
+      "path": "artifacts/data-catalog-desktop.png",
+      "bytes": 405556
+    }
+  ],
+  "issues": [],
+  "scope": "Known token/key patterns, tracked local state and per-file size; no matched values retained"
+}

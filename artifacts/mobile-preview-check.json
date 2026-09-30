@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": [
+    "Public screen, city selection and motion pause",
+    "Unresolved browser voice discovery times out to readable fallback",
+    "13 language choices, persisted Hindi preference and Urdu text alignment",
+    "Real backend catalogue and labelled simulation, no document overflow",
+    "API outage shows failure; retry restores catalogue"
+  ],
+  "pageErrors": [],
+  "scope": "Chromium preview of React Native web export; no native audio or installation claim"
+}

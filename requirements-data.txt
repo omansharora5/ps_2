@@ -1,0 +1,6 @@
+# Optional fixed-snapshot collection and decoding environment.
+numpy==2.5.2
+requests==2.34.2
+truststore==0.10.4
+netCDF4==1.7.4
+metpy==1.7.1

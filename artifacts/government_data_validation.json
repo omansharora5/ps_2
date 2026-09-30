@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "verified_data_files": 22,
+  "raw_files": 18,
+  "raw_bytes": 11232879,
+  "derived_files": 4,
+  "imd": {
+    "features": 607,
+    "numeric_values": 353,
+    "null_or_coded": 254,
+    "reports": 32,
+    "stations": 7
+  },
+  "nasa": {
+    "hours": 168,
+    "variables": 6,
+    "values": 1008
+  },
+  "gfs": {
+    "fields": 7,
+    "regional_csv_rows": 4263
+  },
+  "grib_invalid_inputs_rejected": 3,
+  "deep_scientific_parsers": true,
+  "commands": [
+    {
+      "command": "scripts/collect_gfs_data.py --verify-only",
+      "exit_code": 0,
+      "stdout": "Verified GFS raw/derived hashes, 7 complete messages and 4,263 decoded rows"
+    },
+    {
+      "command": "scripts/collect_india_data.py --verify-only",
+      "exit_code": 0,
+      "stdout": "{\"verified_files\": 11, \"raw_bytes\": 955042, \"directory_bytes\": 989885, \"within_budget\": true}"
+    },
+    {
+      "command": "scripts/collect_noaa_data.py --verify-only",
+      "exit_code": 0,
+      "stdout": "Verified existing abi_c13\nVerified existing glm_180200\nVerified existing glm_180220\nVerified existing glm_180240\nVerified existing radar_ktlx_n0b\nPASS: 5 authentic numeric files, 4,934,674 bytes; training_ready=false"
+    }
+  ],
+  "limitations": [
+    "Not a training or calibration corpus",
+    "New files are not integrated into the simulator-trained model",
+    "Historic operational availability remains unknown"
+  ]
+}

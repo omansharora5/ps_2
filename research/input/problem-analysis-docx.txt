@@ -1,0 +1,34 @@
+﻿Rank #3 — SIH26072AIML based Nowcasting of thunderstorm and lightning using atmospheric observation including multiple radars, satellite, lightning and model data.
+Current low-submission rank
+3
+Submitted ideas — 28 Sep snapshot
+22/500
+Deadline
+30 September 2026
+Executive understanding
+The problem in plain language
+Thunderstorm and lightning nowcasting requires combining radar, satellite, lightning and atmospheric/model observations to recognize initiation, growth, movement and decay. Each stream sees a different part of the storm, so the challenge is a unified AI/ML system rather than a model trained on a single convenient dataset.
+Why this is an important problem
+Lightning and severe convection threaten life, agriculture, aviation, outdoor work and power infrastructure. Localized warnings with useful lead time can trigger targeted action; broad warnings create fatigue and missed events cause direct harm.
+Official problem description
+Verbatim source content from the published dataset; visible encoding artifacts have been cleaned where possible.
+AIML based Nowcasting of thunderstorm and lightning using atmospheric observation including multiple radars, satellite, lightning and model data.
+
+Deep problem analysis
+Why it has not been solved well yet
+Data differ in grid, cadence, coverage and uncertainty. Convective initiation has weak and short-lived precursors, labels can be ambiguous, and rare severe events create class imbalance. Models trained in one radar/climate region may not transfer to another.
+What they actually need
+A time-synchronized fusion pipeline, quality control, learned or physics-guided features, storm detection/tracking, probabilistic lightning/thunderstorm forecasts by lead time, confidence and an operational visualization/alert layer.
+Expected output and user experience
+Frequently refreshed maps of storm probability, lightning risk, cell tracks and severity with location/lead-time confidence, alerts and API access. Forecasters should be able to inspect the observations and drivers behind a prediction.
+What a strong prototype should prove
+Use event-based train/test splits, compare single-source and fused models, evaluate POD/FAR/CSI, spatial displacement and lead time, and replay several cases. Demonstrate missing-stream resilience and inference latency.
+Key risks and evaluation questions
+Avoid random pixel splits, future-frame leakage and accuracy metrics dominated by non-event pixels. Evaluators will ask whether fusion adds measurable value, how uncertainty is calibrated, how regional gaps are handled and whether the output can run in real time.
+Practical team guidance
+Confirm data access and evaluation criteria before committing.
+Build an end-to-end baseline before adding AI or interface complexity.
+Use measurable comparisons, independent test cases and honest failure analysis.
+Recheck the live submission count before final selection.
+Interpretation note
+The analysis is a reasoned interpretation, not an official clarification. The published description remains authoritative. Official source: https://www.sih.gov.in/sih2026PS

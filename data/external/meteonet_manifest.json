@@ -1,0 +1,297 @@
+{
+  "dataset": "MeteoNet new reflectivity SE sample",
+  "provider": "METEO FRANCE",
+  "retrieval_date": "2026-09-29",
+  "license": "Etalab Open Licence 2.0",
+  "license_url": "https://github.com/meteofrance/meteonet/blob/master/LICENCE.md",
+  "documentation_url": "https://meteofrance.github.io/meteonet/english/data/rain-radar/",
+  "files": [
+    {
+      "file": "reflectivity_new_SE_2018_12.2.npz",
+      "source_url": "https://raw.githubusercontent.com/meteofrance/meteonet/master/data_samples/radar/reflectivity_new_SE_2018_12.2.npz",
+      "bytes": 4693593,
+      "sha256": "ed83a05b302dbd13b1ee6872bdb10e7a2da5940151c0f33fb393431997be5719"
+    },
+    {
+      "file": "radar_coords_SE.npz",
+      "source_url": "https://raw.githubusercontent.com/meteofrance/meteonet/master/data_samples/radar/radar_coords_SE.npz",
+      "bytes": 30660,
+      "sha256": "311531ff06b0fffbd970eba1360c916c49c86afbcb70c77839668976d9a31287"
+    },
+    {
+      "file": "METEONET_LICENCE.md",
+      "source_url": "https://raw.githubusercontent.com/meteofrance/meteonet/master/LICENCE.md",
+      "bytes": 6720,
+      "sha256": "8cfe0ca1246eb6043211add2a0ce7ac344c3fd95a958e2c894493b5fa69efb68"
+    }
+  ],
+  "arrays": {
+    "data": {
+      "shape": [
+        27,
+        515,
+        784
+      ],
+      "dtype": "int16"
+    },
+    "prob": {
+      "shape": [
+        27,
+        515,
+        784
+      ],
+      "dtype": "int16"
+    },
+    "height": {
+      "shape": [
+        27,
+        515,
+        784
+      ],
+      "dtype": "int16"
+    },
+    "dates": {
+      "shape": [
+        27
+      ],
+      "dtype": "object"
+    },
+    "miss_dates": {
+      "shape": [
+        2853
+      ],
+      "dtype": "object"
+    }
+  },
+  "decode": {
+    "data": {
+      "units": "dBZ",
+      "scale": 0.1,
+      "missing_raw": -200,
+      "non_detection_raw": -100,
+      "non_detection_semantics": "Observed below detection threshold; valid no-echo, not missing. Do not interpret as a measured -10 dBZ value.",
+      "detection_threshold_dbz": -9
+    },
+    "prob": {
+      "units": "percent",
+      "semantics": "Observed rain probability from radar processing; not future thunderstorm or lightning probability.",
+      "special_values": {
+        "-200": "missing",
+        "-100": "non-detection"
+      }
+    },
+    "height": {
+      "units": "m",
+      "semantics": "Selected radar measurement height; not directly storm echo-top height.",
+      "special_values": {
+        "-200": "missing",
+        "-100": "non-detection"
+      }
+    },
+    "dates": {
+      "semantics": "Naive Python datetime objects in source NPZ. Preserve exact values; UTC timezone not independently established by this sample."
+    },
+    "coordinates": {
+      "crs": "EPSG:4326",
+      "grid_spacing_degrees": 0.01,
+      "units": "degrees",
+      "pixel_centres": true
+    }
+  },
+  "coordinate_arrays": {
+    "lats": {
+      "shape": [
+        515,
+        784
+      ],
+      "min": 41.105,
+      "max": 46.245
+    },
+    "lons": {
+      "shape": [
+        515,
+        784
+      ],
+      "min": 2.005,
+      "max": 9.835
+    }
+  },
+  "contiguous_runs_5minutes": [
+    {
+      "start_index": 0,
+      "end_index_inclusive": 2,
+      "frames": 3,
+      "timestamps": [
+        "2018-12-11 00:00:00",
+        "2018-12-11 00:05:00",
+        "2018-12-11 00:10:00"
+      ]
+    },
+    {
+      "start_index": 3,
+      "end_index_inclusive": 4,
+      "frames": 2,
+      "timestamps": [
+        "2018-12-11 00:35:00",
+        "2018-12-11 00:40:00"
+      ]
+    },
+    {
+      "start_index": 5,
+      "end_index_inclusive": 5,
+      "frames": 1,
+      "timestamps": [
+        "2018-12-11 01:05:00"
+      ]
+    },
+    {
+      "start_index": 6,
+      "end_index_inclusive": 6,
+      "frames": 1,
+      "timestamps": [
+        "2018-12-11 01:15:00"
+      ]
+    },
+    {
+      "start_index": 7,
+      "end_index_inclusive": 8,
+      "frames": 2,
+      "timestamps": [
+        "2018-12-11 01:25:00",
+        "2018-12-11 01:30:00"
+      ]
+    },
+    {
+      "start_index": 9,
+      "end_index_inclusive": 9,
+      "frames": 1,
+      "timestamps": [
+        "2018-12-17 05:50:00"
+      ]
+    },
+    {
+      "start_index": 10,
+      "end_index_inclusive": 10,
+      "frames": 1,
+      "timestamps": [
+        "2018-12-17 06:05:00"
+      ]
+    },
+    {
+      "start_index": 11,
+      "end_index_inclusive": 13,
+      "frames": 3,
+      "timestamps": [
+        "2018-12-17 06:40:00",
+        "2018-12-17 06:45:00",
+        "2018-12-17 06:50:00"
+      ]
+    },
+    {
+      "start_index": 14,
+      "end_index_inclusive": 19,
+      "frames": 6,
+      "timestamps": [
+        "2018-12-19 10:10:00",
+        "2018-12-19 10:15:00",
+        "2018-12-19 10:20:00",
+        "2018-12-19 10:25:00",
+        "2018-12-19 10:30:00",
+        "2018-12-19 10:35:00"
+      ]
+    },
+    {
+      "start_index": 20,
+      "end_index_inclusive": 20,
+      "frames": 1,
+      "timestamps": [
+        "2018-12-19 10:45:00"
+      ]
+    },
+    {
+      "start_index": 21,
+      "end_index_inclusive": 22,
+      "frames": 2,
+      "timestamps": [
+        "2018-12-20 22:45:00",
+        "2018-12-20 22:50:00"
+      ]
+    },
+    {
+      "start_index": 23,
+      "end_index_inclusive": 26,
+      "frames": 4,
+      "timestamps": [
+        "2018-12-20 23:05:00",
+        "2018-12-20 23:10:00",
+        "2018-12-20 23:15:00",
+        "2018-12-20 23:20:00"
+      ]
+    }
+  ],
+  "recommended_run": {
+    "start_index": 14,
+    "end_index_inclusive": 19,
+    "frames": 6,
+    "timestamps": [
+      "2018-12-19 10:10:00",
+      "2018-12-19 10:15:00",
+      "2018-12-19 10:20:00",
+      "2018-12-19 10:25:00",
+      "2018-12-19 10:30:00",
+      "2018-12-19 10:35:00"
+    ],
+    "observed_statistics": [
+      {
+        "index": 14,
+        "timestamp": "2018-12-19 10:10:00",
+        "valid_fraction": 0.9882900733108777,
+        "echo_ge20_dbz_pixels": 42497,
+        "echo_ge35_dbz_pixels": 5908,
+        "max_dbz": 61.0
+      },
+      {
+        "index": 15,
+        "timestamp": "2018-12-19 10:15:00",
+        "valid_fraction": 0.988245492371706,
+        "echo_ge20_dbz_pixels": 43093,
+        "echo_ge35_dbz_pixels": 6033,
+        "max_dbz": 56.0
+      },
+      {
+        "index": 16,
+        "timestamp": "2018-12-19 10:20:00",
+        "valid_fraction": 0.9881860511194769,
+        "echo_ge20_dbz_pixels": 43411,
+        "echo_ge35_dbz_pixels": 6081,
+        "max_dbz": 53.5
+      },
+      {
+        "index": 17,
+        "timestamp": "2018-12-19 10:25:00",
+        "valid_fraction": 0.9883123637804636,
+        "echo_ge20_dbz_pixels": 44514,
+        "echo_ge35_dbz_pixels": 6293,
+        "max_dbz": 59.5
+      },
+      {
+        "index": 18,
+        "timestamp": "2018-12-19 10:30:00",
+        "valid_fraction": 0.9882355854963345,
+        "echo_ge20_dbz_pixels": 45655,
+        "echo_ge35_dbz_pixels": 6735,
+        "max_dbz": 55.5
+      },
+      {
+        "index": 19,
+        "timestamp": "2018-12-19 10:35:00",
+        "valid_fraction": 0.9880622151773331,
+        "echo_ge20_dbz_pixels": 46545,
+        "echo_ge35_dbz_pixels": 7271,
+        "max_dbz": 55.5
+      }
+    ]
+  },
+  "scope": "Historical French radar replay and algorithm smoke-test only. Sparse sample is unsuitable for training a validated model or supporting Indian thunderstorm/lightning performance claims.",
+  "decode_verification_url": "https://github.com/meteofrance/meteonet/blob/master/notebooks/radar/open_reflectivity_new_product.ipynb"
+}

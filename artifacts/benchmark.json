@@ -1,0 +1,1345 @@
+{
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.2",
+    "platform": "Windows"
+  },
+  "observed": [
+    {
+      "horizon": 5,
+      "latency_ms": 3757.1,
+      "metrics": {
+        "advection": {
+          "samples": 43981,
+          "hits": 3840,
+          "misses": 963,
+          "false_alarms": 600,
+          "correct_negatives": 38578,
+          "csi": 0.7107162687395892,
+          "pod": 0.7995003123048094,
+          "far": 0.13513513513513514,
+          "brier": 0.03553807325890725,
+          "base_rate": 0.10920624815261136,
+          "fss": 0.9648373476917615,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 39541,
+              "forecast": 0.0,
+              "observed": 0.024354467514731543
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4440,
+              "forecast": 1.0,
+              "observed": 0.8648648648648649
+            }
+          ]
+        },
+        "persistence": {
+          "samples": 43981,
+          "hits": 3736,
+          "misses": 1067,
+          "false_alarms": 1056,
+          "correct_negatives": 38122,
+          "csi": 0.6376514763611538,
+          "pod": 0.7778471788465542,
+          "far": 0.22036727879799667,
+          "brier": 0.04827084422818945,
+          "base_rate": 0.10920624815261136,
+          "fss": 0.9566011294883736,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 39189,
+              "forecast": 0.0,
+              "observed": 0.02722702799254893
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4792,
+              "forecast": 1.0,
+              "observed": 0.7796327212020033
+            }
+          ]
+        }
+      }
+    },
+    {
+      "horizon": 10,
+      "latency_ms": 6231.7,
+      "metrics": {
+        "advection": {
+          "samples": 44032,
+          "hits": 3602,
+          "misses": 1397,
+          "false_alarms": 1162,
+          "correct_negatives": 37871,
+          "csi": 0.5846453497808797,
+          "pod": 0.7205441088217643,
+          "far": 0.24391267842149456,
+          "brier": 0.058116824127906974,
+          "base_rate": 0.11353106831395349,
+          "fss": 0.9338592087964623,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 39268,
+              "forecast": 0.0,
+              "observed": 0.035576041560558214
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4764,
+              "forecast": 1.0,
+              "observed": 0.7560873215785054
+            }
+          ]
+        },
+        "persistence": {
+          "samples": 44032,
+          "hits": 3477,
+          "misses": 1522,
+          "false_alarms": 1315,
+          "correct_negatives": 37718,
+          "csi": 0.5506810262907824,
+          "pod": 0.6955391078215644,
+          "far": 0.27441569282136896,
+          "brier": 0.06443041424418605,
+          "base_rate": 0.11353106831395349,
+          "fss": 0.9024820132067413,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 39240,
+              "forecast": 0.0,
+              "observed": 0.03878695208970438
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4792,
+              "forecast": 1.0,
+              "observed": 0.7255843071786311
+            }
+          ]
+        }
+      }
+    },
+    {
+      "horizon": 15,
+      "latency_ms": 3294.9,
+      "metrics": {
+        "advection": {
+          "samples": 43529,
+          "hits": 3385,
+          "misses": 1690,
+          "false_alarms": 1020,
+          "correct_negatives": 37434,
+          "csi": 0.5553732567678425,
+          "pod": 0.6669950738916256,
+          "far": 0.23155505107832008,
+          "brier": 0.06225734567759425,
+          "base_rate": 0.11658894070619587,
+          "fss": 0.8907888302917133,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 39124,
+              "forecast": 0.0,
+              "observed": 0.04319599222983335
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4405,
+              "forecast": 1.0,
+              "observed": 0.7684449489216799
+            }
+          ]
+        },
+        "persistence": {
+          "samples": 43529,
+          "hits": 3315,
+          "misses": 1760,
+          "false_alarms": 1469,
+          "correct_negatives": 36985,
+          "csi": 0.5065709046454768,
+          "pod": 0.6532019704433497,
+          "far": 0.3070652173913043,
+          "brier": 0.0741804314365136,
+          "base_rate": 0.11658894070619587,
+          "fss": 0.864168962440251,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 38745,
+              "forecast": 0.0,
+              "observed": 0.04542521615692347
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4784,
+              "forecast": 1.0,
+              "observed": 0.6929347826086957
+            }
+          ]
+        }
+      }
+    },
+    {
+      "horizon": 20,
+      "latency_ms": 2896.8,
+      "metrics": {
+        "advection": {
+          "samples": 43590,
+          "hits": 3341,
+          "misses": 1843,
+          "false_alarms": 1389,
+          "correct_negatives": 37017,
+          "csi": 0.5082914955119427,
+          "pod": 0.644483024691358,
+          "far": 0.29365750528541223,
+          "brier": 0.07414544620325762,
+          "base_rate": 0.11892635925671026,
+          "fss": 0.8722401133582378,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 38860,
+              "forecast": 0.0,
+              "observed": 0.04742665980442615
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4730,
+              "forecast": 1.0,
+              "observed": 0.7063424947145878
+            }
+          ]
+        },
+        "persistence": {
+          "samples": 43590,
+          "hits": 3271,
+          "misses": 1913,
+          "false_alarms": 1513,
+          "correct_negatives": 36893,
+          "csi": 0.48842765417351053,
+          "pod": 0.6309799382716049,
+          "far": 0.3162625418060201,
+          "brier": 0.07859600825877495,
+          "base_rate": 0.11892635925671026,
+          "fss": 0.8395155881395998,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 38806,
+              "forecast": 0.0,
+              "observed": 0.04929650054115343
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 4784,
+              "forecast": 1.0,
+              "observed": 0.6837374581939799
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "simulation": [
+    {
+      "horizon": 15,
+      "latency_ms": 273.8,
+      "metrics": {
+        "fusion": {
+          "samples": 2208,
+          "hits": 111,
+          "misses": 31,
+          "false_alarms": 11,
+          "correct_negatives": 2055,
+          "csi": 0.7254901960784313,
+          "pod": 0.7816901408450704,
+          "far": 0.09016393442622951,
+          "brier": 0.011739591353221375,
+          "base_rate": 0.06431159420289854,
+          "fss": 0.9508216676810712,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 1995,
+              "forecast": 0.01266933039471543,
+              "observed": 0.0
+            },
+            {
+              "bin": 0.15,
+              "count": 46,
+              "forecast": 0.13991524120641372,
+              "observed": 0.08695652173913043
+            },
+            {
+              "bin": 0.25,
+              "count": 23,
+              "forecast": 0.2476123518602185,
+              "observed": 0.4782608695652174
+            },
+            {
+              "bin": 0.35,
+              "count": 12,
+              "forecast": 0.342287534455434,
+              "observed": 0.75
+            },
+            {
+              "bin": 0.45,
+              "count": 10,
+              "forecast": 0.44044972881745004,
+              "observed": 0.7
+            },
+            {
+              "bin": 0.55,
+              "count": 12,
+              "forecast": 0.542938275673862,
+              "observed": 0.6666666666666666
+            },
+            {
+              "bin": 0.65,
+              "count": 6,
+              "forecast": 0.649412257503302,
+              "observed": 0.3333333333333333
+            },
+            {
+              "bin": 0.75,
+              "count": 11,
+              "forecast": 0.7470695894933751,
+              "observed": 0.8181818181818182
+            },
+            {
+              "bin": 0.85,
+              "count": 15,
+              "forecast": 0.8516662259105129,
+              "observed": 0.9333333333333333
+            },
+            {
+              "bin": 0.95,
+              "count": 78,
+              "forecast": 0.981176933454278,
+              "observed": 1.0
+            }
+          ]
+        },
+        "advection": {
+          "samples": 2208,
+          "hits": 105,
+          "misses": 37,
+          "false_alarms": 6,
+          "correct_negatives": 2060,
+          "csi": 0.7094594594594594,
+          "pod": 0.7394366197183099,
+          "far": 0.05405405405405406,
+          "brier": 0.021286231884057972,
+          "base_rate": 0.06431159420289854,
+          "fss": 0.935230586802551,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 2097,
+              "forecast": 0.0,
+              "observed": 0.01764425369575584
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 36,
+              "forecast": 0.5,
+              "observed": 0.8611111111111112
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 75,
+              "forecast": 1.0,
+              "observed": 0.9866666666666667
+            }
+          ]
+        },
+        "persistence": {
+          "samples": 2208,
+          "hits": 80,
+          "misses": 62,
+          "false_alarms": 13,
+          "correct_negatives": 2053,
+          "csi": 0.5161290322580645,
+          "pod": 0.5633802816901409,
+          "far": 0.13978494623655913,
+          "brier": 0.033967391304347824,
+          "base_rate": 0.06431159420289854,
+          "fss": 0.8228383622950246,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 2115,
+              "forecast": 0.0,
+              "observed": 0.029314420803782507
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 93,
+              "forecast": 1.0,
+              "observed": 0.8602150537634409
+            }
+          ]
+        }
+      }
+    },
+    {
+      "horizon": 30,
+      "latency_ms": 280.3,
+      "metrics": {
+        "fusion": {
+          "samples": 2160,
+          "hits": 138,
+          "misses": 35,
+          "false_alarms": 11,
+          "correct_negatives": 1976,
+          "csi": 0.75,
+          "pod": 0.7976878612716763,
+          "far": 0.0738255033557047,
+          "brier": 0.016461840698115116,
+          "base_rate": 0.08009259259259259,
+          "fss": 0.9570478210566911,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 1861,
+              "forecast": 0.017097325167346154,
+              "observed": 0.0
+            },
+            {
+              "bin": 0.15,
+              "count": 67,
+              "forecast": 0.1381432860903452,
+              "observed": 0.029850746268656716
+            },
+            {
+              "bin": 0.25,
+              "count": 40,
+              "forecast": 0.244177740497955,
+              "observed": 0.35
+            },
+            {
+              "bin": 0.35,
+              "count": 18,
+              "forecast": 0.34004686876381185,
+              "observed": 0.4444444444444444
+            },
+            {
+              "bin": 0.45,
+              "count": 25,
+              "forecast": 0.4422293335317331,
+              "observed": 0.44
+            },
+            {
+              "bin": 0.55,
+              "count": 23,
+              "forecast": 0.5494837768054311,
+              "observed": 0.782608695652174
+            },
+            {
+              "bin": 0.65,
+              "count": 15,
+              "forecast": 0.6564687506437247,
+              "observed": 0.9333333333333333
+            },
+            {
+              "bin": 0.75,
+              "count": 5,
+              "forecast": 0.7409948492176082,
+              "observed": 1.0
+            },
+            {
+              "bin": 0.85,
+              "count": 16,
+              "forecast": 0.8457556583272977,
+              "observed": 0.8125
+            },
+            {
+              "bin": 0.95,
+              "count": 90,
+              "forecast": 0.9797486679147798,
+              "observed": 0.9777777777777777
+            }
+          ]
+        },
+        "advection": {
+          "samples": 2160,
+          "hits": 89,
+          "misses": 84,
+          "false_alarms": 4,
+          "correct_negatives": 1983,
+          "csi": 0.5028248587570622,
+          "pod": 0.5144508670520231,
+          "far": 0.043010752688172046,
+          "brier": 0.040740740740740744,
+          "base_rate": 0.08009259259259259,
+          "fss": 0.816925111191249,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 2067,
+              "forecast": 0.0,
+              "observed": 0.040638606676342524
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 93,
+              "forecast": 1.0,
+              "observed": 0.956989247311828
+            }
+          ]
+        },
+        "persistence": {
+          "samples": 2160,
+          "hits": 64,
+          "misses": 109,
+          "false_alarms": 29,
+          "correct_negatives": 1958,
+          "csi": 0.31683168316831684,
+          "pod": 0.3699421965317919,
+          "far": 0.3118279569892473,
+          "brier": 0.06388888888888888,
+          "base_rate": 0.08009259259259259,
+          "fss": 0.6026565692991945,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 2067,
+              "forecast": 0.0,
+              "observed": 0.052733430091920656
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 93,
+              "forecast": 1.0,
+              "observed": 0.6881720430107527
+            }
+          ]
+        }
+      }
+    },
+    {
+      "horizon": 60,
+      "latency_ms": 138.7,
+      "metrics": {
+        "fusion": {
+          "samples": 2016,
+          "hits": 67,
+          "misses": 69,
+          "false_alarms": 52,
+          "correct_negatives": 1828,
+          "csi": 0.35638297872340424,
+          "pod": 0.49264705882352944,
+          "far": 0.4369747899159664,
+          "brier": 0.04498098299037458,
+          "base_rate": 0.06746031746031746,
+          "fss": 0.6421369404026929,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 1694,
+              "forecast": 0.028398880191897808,
+              "observed": 0.006493506493506494
+            },
+            {
+              "bin": 0.15,
+              "count": 100,
+              "forecast": 0.13930333486013044,
+              "observed": 0.22
+            },
+            {
+              "bin": 0.25,
+              "count": 53,
+              "forecast": 0.24685786752129557,
+              "observed": 0.2830188679245283
+            },
+            {
+              "bin": 0.35,
+              "count": 29,
+              "forecast": 0.3508370835539568,
+              "observed": 0.41379310344827586
+            },
+            {
+              "bin": 0.45,
+              "count": 21,
+              "forecast": 0.4366326215093877,
+              "observed": 0.42857142857142855
+            },
+            {
+              "bin": 0.55,
+              "count": 16,
+              "forecast": 0.5484288775628923,
+              "observed": 0.375
+            },
+            {
+              "bin": 0.65,
+              "count": 19,
+              "forecast": 0.6450310031408609,
+              "observed": 0.7368421052631579
+            },
+            {
+              "bin": 0.75,
+              "count": 23,
+              "forecast": 0.758972472404241,
+              "observed": 0.6521739130434783
+            },
+            {
+              "bin": 0.85,
+              "count": 27,
+              "forecast": 0.8602953079460754,
+              "observed": 0.6296296296296297
+            },
+            {
+              "bin": 0.95,
+              "count": 34,
+              "forecast": 0.939735799076012,
+              "observed": 0.4411764705882353
+            }
+          ]
+        },
+        "advection": {
+          "samples": 2016,
+          "hits": 54,
+          "misses": 82,
+          "false_alarms": 39,
+          "correct_negatives": 1841,
+          "csi": 0.30857142857142855,
+          "pod": 0.39705882352941174,
+          "far": 0.41935483870967744,
+          "brier": 0.06001984126984127,
+          "base_rate": 0.06746031746031746,
+          "fss": 0.5961883960968049,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 1923,
+              "forecast": 0.0,
+              "observed": 0.042641705668226726
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 93,
+              "forecast": 1.0,
+              "observed": 0.5806451612903226
+            }
+          ]
+        },
+        "persistence": {
+          "samples": 2016,
+          "hits": 12,
+          "misses": 124,
+          "false_alarms": 81,
+          "correct_negatives": 1799,
+          "csi": 0.055299539170506916,
+          "pod": 0.08823529411764706,
+          "far": 0.8709677419354839,
+          "brier": 0.10168650793650794,
+          "base_rate": 0.06746031746031746,
+          "fss": 0.14647549934829318,
+          "threshold": 0.5,
+          "reliability": [
+            {
+              "bin": 0.05,
+              "count": 1923,
+              "forecast": 0.0,
+              "observed": 0.06448257930317212
+            },
+            {
+              "bin": 0.15,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.25,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.35,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.45,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.55,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.65,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.75,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.85,
+              "count": 0,
+              "forecast": null,
+              "observed": null
+            },
+            {
+              "bin": 0.95,
+              "count": 93,
+              "forecast": 1.0,
+              "observed": 0.12903225806451613
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

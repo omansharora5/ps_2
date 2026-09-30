@@ -1,0 +1,13 @@
+{
+  "verified_at_utc": "2026-09-30T02:42:07.185365+00:00",
+  "checks": {
+    "all_five_files_decoded": true,
+    "pinned_sha256_and_exact_sizes": true,
+    "offline_verify_only_command_passed": true,
+    "repeat_collection_manifest_byte_identical": true,
+    "repeat_collection_raw_hashes_and_mtimes_unchanged": true,
+    "no_remaining_part_files": true
+  },
+  "repeat_command_output": "Verified existing abi_c13\nVerified existing glm_180200\nVerified existing glm_180220\nVerified existing glm_180240\nVerified existing radar_ktlx_n0b\nPASS: 5 authentic numeric files, 4,934,674 bytes; training_ready=false",
+  "manifest_sha256": "4b11669dcddce4beecac620095b0e4d7e5b4b171611a36a5ed7fb9f1d9b7da10"
+}

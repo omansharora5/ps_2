@@ -1,0 +1,19 @@
+{
+  "retrieved_at_utc": "2026-09-30T02:54:30.655087+00:00",
+  "licence_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "scope": "Rounded city points for search and low-resolution land outlines for illustration. No administrative borders or shelters. Not a geocoder or navigation product.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places_simple.geojson",
+      "sha256": "fd3fa867a320cbd5c5b6bb5bc550afeec2939fb2cef688e508007282a55ac42f",
+      "derived_file": "locations.json",
+      "derivation": "selected Indian city points, renamed Bengaluru/Bhubaneswar where needed, rounded to four decimal places; search aliases added"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson",
+      "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+      "derived_file": "earth-land.json",
+      "derivation": "exterior land rings longer than eight vertices; rounded to two decimal places"
+    }
+  ]
+}

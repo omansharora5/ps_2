@@ -1,0 +1,60 @@
+{
+  "scope": "synthetic_smoke_only",
+  "splits": {
+    "train": [
+      "synthetic-0",
+      "synthetic-1",
+      "synthetic-2",
+      "synthetic-3"
+    ],
+    "validation": [
+      "synthetic-4"
+    ],
+    "test": [
+      "synthetic-5"
+    ]
+  },
+  "examples": {
+    "train": 24,
+    "validation": 6,
+    "test": 6
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "validation": {
+        "covered_pixels": 1536,
+        "brier": 0.19823853174845377,
+        "observed_rate": 0.099609375,
+        "hits": 0,
+        "misses": 153,
+        "false_alarms": 0,
+        "csi": 0.0,
+        "calibration": "Not calibrated; experimental sigmoid output",
+        "independence_note": "Pixel counts are not independent event counts"
+      }
+    }
+  ],
+  "test": {
+    "covered_pixels": 1536,
+    "brier": 0.19823230803012848,
+    "observed_rate": 0.099609375,
+    "hits": 0,
+    "misses": 153,
+    "false_alarms": 0,
+    "csi": 0.0,
+    "calibration": "Not calibrated; experimental sigmoid output",
+    "independence_note": "Pixel counts are not independent event counts"
+  },
+  "checkpoint_sha256": "977dd49935da047bdd50047106de70ddc126db7e099df5ef6878eefe2d5a0b1d",
+  "limitations": "Pipeline experiment only; no calibration, operational validation or India skill claim. Six groups is a software minimum, not a scientific sample-size guarantee.",
+  "verification": {
+    "cpu_smoke_train": "passed",
+    "standalone_evaluate": "passed; reproduced saved test metrics",
+    "matched_array_preparation": "passed; six episodes",
+    "starter_radar_rejected": true,
+    "torch_version": "2.14.0+cpu",
+    "numpy_version": "2.5.2",
+    "note": "Synthetic software-path verification only; no observed Indian training."
+  }
+}

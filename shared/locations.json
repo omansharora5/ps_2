@@ -1,0 +1,236 @@
+[
+  {
+    "id": "patna",
+    "name": "Patna",
+    "state": "Bihar",
+    "country": "IN",
+    "lat": 25.6269,
+    "lon": 85.1281,
+    "aliases": [
+      "पटना"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "gaya",
+    "name": "Gaya",
+    "state": "Bihar",
+    "country": "IN",
+    "lat": 24.8,
+    "lon": 85.0,
+    "aliases": [
+      "गया"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "new-delhi",
+    "name": "New Delhi",
+    "state": "Delhi",
+    "country": "IN",
+    "lat": 28.6,
+    "lon": 77.2,
+    "aliases": [
+      "Delhi",
+      "दिल्ली"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "state": "Maharashtra",
+    "country": "IN",
+    "lat": 19.0684,
+    "lon": 72.8758,
+    "aliases": [
+      "Bombay",
+      "मुंबई"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "kolkata",
+    "name": "Kolkata",
+    "state": "West Bengal",
+    "country": "IN",
+    "lat": 22.5696,
+    "lon": 88.3691,
+    "aliases": [
+      "Calcutta",
+      "কলকাতা"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "chennai",
+    "name": "Chennai",
+    "state": "Tamil Nadu",
+    "country": "IN",
+    "lat": 13.0919,
+    "lon": 80.2781,
+    "aliases": [
+      "Madras",
+      "சென்னை"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "bengaluru",
+    "name": "Bengaluru",
+    "state": "Karnataka",
+    "country": "IN",
+    "lat": 12.9719,
+    "lon": 77.5581,
+    "aliases": [
+      "Bangalore",
+      "ಬೆಂಗಳೂರು"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "hyderabad",
+    "name": "Hyderabad",
+    "state": "Telangana",
+    "country": "IN",
+    "lat": 17.4019,
+    "lon": 78.478,
+    "aliases": [
+      "హైదరాబాద్"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "ahmedabad",
+    "name": "Ahmedabad",
+    "state": "Gujarat",
+    "country": "IN",
+    "lat": 23.032,
+    "lon": 72.5781,
+    "aliases": [
+      "અમદાવાદ"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "pune",
+    "name": "Pune",
+    "state": "Maharashtra",
+    "country": "IN",
+    "lat": 18.5164,
+    "lon": 73.8519,
+    "aliases": [
+      "पुणे"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "state": "Rajasthan",
+    "country": "IN",
+    "lat": 26.9231,
+    "lon": 75.808,
+    "aliases": [
+      "जयपुर"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "lucknow",
+    "name": "Lucknow",
+    "state": "Uttar Pradesh",
+    "country": "IN",
+    "lat": 26.857,
+    "lon": 80.9131,
+    "aliases": [
+      "लखनऊ"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "bhopal",
+    "name": "Bhopal",
+    "state": "Madhya Pradesh",
+    "country": "IN",
+    "lat": 23.2519,
+    "lon": 77.408,
+    "aliases": [
+      "भोपाल"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "guwahati",
+    "name": "Guwahati",
+    "state": "Assam",
+    "country": "IN",
+    "lat": 26.162,
+    "lon": 91.768,
+    "aliases": [
+      "গুৱাহাটী"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "kochi",
+    "name": "Kochi",
+    "state": "Kerala",
+    "country": "IN",
+    "lat": 10.017,
+    "lon": 76.222,
+    "aliases": [
+      "Cochin",
+      "കൊച്ചി"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "state": "Chandigarh",
+    "country": "IN",
+    "lat": 30.7219,
+    "lon": 76.7781,
+    "aliases": [
+      "ਚੰਡੀਗੜ੍ਹ"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "srinagar",
+    "name": "Srinagar",
+    "state": "Jammu and Kashmir",
+    "country": "IN",
+    "lat": 34.0695,
+    "lon": 74.8283,
+    "aliases": [
+      "سرینگر"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "ranchi",
+    "name": "Ranchi",
+    "state": "Jharkhand",
+    "country": "IN",
+    "lat": 23.372,
+    "lon": 85.3281,
+    "aliases": [
+      "राँची"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  },
+  {
+    "id": "nagpur",
+    "name": "Nagpur",
+    "state": "Maharashtra",
+    "country": "IN",
+    "lat": 21.1719,
+    "lon": 79.088,
+    "aliases": [
+      "नागपुर"
+    ],
+    "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+  }
+]

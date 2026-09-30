@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "file": "DETAILED_TECHNICAL_ARCHITECTURE.md",
+      "words": 4733,
+      "fences": 12
+    },
+    {
+      "file": "data\\government\\README.md",
+      "words": 1380,
+      "fences": 4
+    },
+    {
+      "file": "research\\GOVERNMENT_INDIA_COLLECTION.md",
+      "words": 1626,
+      "fences": 2
+    },
+    {
+      "file": "research\\GOVERNMENT_NOAA_COLLECTION.md",
+      "words": 1140,
+      "fences": 2
+    },
+    {
+      "file": "research\\GOVERNMENT_GFS_COLLECTION.md",
+      "words": 441,
+      "fences": 0
+    },
+    {
+      "file": "research\\design\\DETAILED_SYNTHESIS.md",
+      "words": 442,
+      "fences": 0
+    }
+  ],
+  "broken_links": []
+}

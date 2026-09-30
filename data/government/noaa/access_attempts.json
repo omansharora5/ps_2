@@ -1,0 +1,45 @@
+{
+  "recorded_at_utc": "2026-09-30T02:43:13.678101+00:00",
+  "raw_download_failures": 0,
+  "tls_verification_disabled": false,
+  "account_required": false,
+  "attempts": [
+    {
+      "source_url": "https://storage.googleapis.com/gcp-public-data-nexrad-l3?prefix=2024%2F06%2F15%2FKTLX%2F&delimiter=%2F&max-keys=100",
+      "access_method": "anonymous HTTPS XML listing",
+      "outcome": "success_listing_payload_skipped",
+      "object_size_bytes": 439598712,
+      "reason": "Day archive exceeds 40000000-byte task budget; no archive payload downloaded"
+    },
+    {
+      "source_url": "https://unidata-nexrad-level3.s3.amazonaws.com/?list-type=2&prefix=TLX_N0Q_2024_06_15_18&max-keys=10",
+      "access_method": "anonymous HTTPS XML listing",
+      "outcome": "empty_prefix",
+      "key_count": 0
+    },
+    {
+      "source_url": "https://unidata-nexrad-level3.s3.amazonaws.com/?list-type=2&prefix=TLX_N0B_2024_06_15_18&max-keys=10",
+      "access_method": "anonymous HTTPS XML listing",
+      "outcome": "success",
+      "key_count": 8
+    },
+    {
+      "source_url": "https://www.ncei.noaa.gov/products/ncei-data-noaa-open-dissemination-program",
+      "access_method": "browser extraction followed by direct Python urllib HTTPS",
+      "outcome": "browser_restricted_direct_https_succeeded",
+      "reason": "Direct official page verified GOES and radar cloud access links"
+    },
+    {
+      "source_url": "https://www.ncei.noaa.gov/sites/default/files/2021-08/GOES16_GLM_FullValidation_ProductPerformanceGuide.pdf",
+      "access_method": "browser extraction",
+      "outcome": "tool_internal_error",
+      "reason": "Not required for payload access; primary catalog and file metadata used instead"
+    },
+    {
+      "source_url": "https://www.roc.noaa.gov/level-three-data-types.php",
+      "access_method": "browser extraction",
+      "outcome": "tool_internal_error",
+      "reason": "Used official NWS product cross-reference and NCEI catalog instead"
+    }
+  ]
+}

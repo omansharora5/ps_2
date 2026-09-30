@@ -1,0 +1,132 @@
+{
+  "checked_date": "2026-09-29",
+  "checks": [
+    {
+      "name": "sevir_catalog",
+      "url": "https://sevir.s3.us-west-2.amazonaws.com/CATALOG.csv",
+      "status": 200,
+      "bytes_header": "33838047",
+      "content_type": "text/csv"
+    },
+    {
+      "name": "sevir_listing",
+      "url": "https://sevir.s3.us-west-2.amazonaws.com/?list-type=2&prefix=data/lght/&max-keys=5",
+      "status": 200,
+      "bytes_header": null,
+      "content_type": "application/xml",
+      "objects": [
+        {
+          "key": "data/lght/2018/SEVIR_LGHT_ALLEVENTS_2018_0201_0301.h5",
+          "bytes": 278026
+        },
+        {
+          "key": "data/lght/2018/SEVIR_LGHT_ALLEVENTS_2018_0301_0401.h5",
+          "bytes": 4721808
+        },
+        {
+          "key": "data/lght/2018/SEVIR_LGHT_ALLEVENTS_2018_0401_0501.h5",
+          "bytes": 28409540
+        },
+        {
+          "key": "data/lght/2018/SEVIR_LGHT_ALLEVENTS_2018_0501_0601.h5",
+          "bytes": 65228624
+        },
+        {
+          "key": "data/lght/2018/SEVIR_LGHT_ALLEVENTS_2018_0601_0701.h5",
+          "bytes": 132226570
+        }
+      ],
+      "prefixes": []
+    },
+    {
+      "name": "mrms_listing",
+      "url": "https://noaa-mrms-pds.s3.amazonaws.com/?list-type=2&prefix=CONUS/&delimiter=/&max-keys=3",
+      "status": 200,
+      "bytes_header": null,
+      "content_type": "application/xml",
+      "objects": [],
+      "prefixes": [
+        "CONUS/ANC_ConvectiveLikelihood_00.00/",
+        "CONUS/ANC_FinalForecast_00.00/",
+        "CONUS/BREF_1HR_MAX_00.50/"
+      ]
+    },
+    {
+      "name": "nexrad_listing",
+      "url": "https://unidata-nexrad-level2.s3.amazonaws.com/?list-type=2&prefix=2019/05/20/KTLX/&max-keys=2",
+      "status": 200,
+      "bytes_header": null,
+      "content_type": "application/xml",
+      "objects": [
+        {
+          "key": "2019/05/20/KTLX/KTLX20190520_000034_V06",
+          "bytes": 2954248
+        },
+        {
+          "key": "2019/05/20/KTLX/KTLX20190520_001013_V06",
+          "bytes": 2907701
+        }
+      ],
+      "prefixes": []
+    },
+    {
+      "name": "goes_glm_listing",
+      "url": "https://noaa-goes19.s3.amazonaws.com/?list-type=2&prefix=GLM-L2-LCFA/2025/120/00/&max-keys=2",
+      "status": 200,
+      "bytes_header": null,
+      "content_type": "application/xml",
+      "objects": [
+        {
+          "key": "GLM-L2-LCFA/2025/120/00/OR_GLM-L2-LCFA_G19_s20251200000000_e20251200000200_c20251200000220.nc",
+          "bytes": 543975
+        },
+        {
+          "key": "GLM-L2-LCFA/2025/120/00/OR_GLM-L2-LCFA_G19_s20251200000200_e20251200000400_c20251200000422.nc",
+          "bytes": 531687
+        }
+      ],
+      "prefixes": []
+    },
+    {
+      "name": "gfs_index",
+      "url": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/",
+      "status": 200,
+      "bytes_header": "3801        ",
+      "content_type": "text/html;charset=ISO-8859-1",
+      "observed_directories": [
+        "gfs.20260919/",
+        "gfs.20260928/"
+      ]
+    },
+    {
+      "name": "imd_radar_guide",
+      "url": "https://radarapi.imd.gov.in/Received_data/dsp_userguide.pdf",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>"
+    },
+    {
+      "name": "imd_district_nowcast",
+      "url": "https://api.imd.gov.in/api/v1/districtnowcast",
+      "status": 401,
+      "authenticated": false,
+      "result": "Unauthorized"
+    },
+    {
+      "name": "iitm_las",
+      "url": "https://ardc.tropmet.res.in/las/UI.vm",
+      "result": "TLS certificate expired; no bypass used"
+    },
+    {
+      "name": "meteonet_samples",
+      "result": "Downloaded with no credentials; NumPy parsed; SHA256 verified",
+      "manifest": "../data/external/meteonet_manifest.json"
+    },
+    {
+      "name": "iss_lis_v3_cmr",
+      "url": "https://cmr.earthdata.nasa.gov/search/collections.json?keyword=isslis_v3_fin&page_size=5",
+      "status": 200,
+      "collection_id": "C3838944284-GHRC_DAAC",
+      "time_start": "2017-03-01T01:16:28.000Z",
+      "time_end": "2023-11-16T21:17:10.000Z"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "catalogue_status": 200,
+  "source_count": 7,
+  "file_count": 18,
+  "download_hash_matches": true,
+  "collection_enabled": true,
+  "job": {
+    "id": "c50caf2d4f7b4e9e9be2de9e23642b82",
+    "collection_id": "gfs",
+    "status": "succeeded",
+    "created_at": "2026-09-30T03:00:37.457366Z",
+    "started_at": "2026-09-30T03:00:37.458524Z",
+    "finished_at": "2026-09-30T03:00:54.721875Z",
+    "log": "Verified existing GFS snapshot\n\n",
+    "error": null
+  }
+}

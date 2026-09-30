@@ -1,0 +1,100 @@
+{
+  "verified_at_utc": "2026-09-30T03:54:38.873289+00:00",
+  "status": "passed_with_dependency_audit_findings",
+  "scope": "Expo React Native source checks and Android/iOS Hermes plus web export. Browser flow verification is recorded separately. No signed native binary, emulator, physical installation or audible device speech was tested.",
+  "versions": {
+    "expo": "57.0.26",
+    "expo-router": "57.0.24",
+    "expo-speech": "57.0.3",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-svg": "15.15.4",
+    "typescript": "6.0.3",
+    "node": "24.20.0",
+    "npm": "11.19.0"
+  },
+  "checks": {
+    "typecheck": {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exit_code": 0
+    },
+    "lint": {
+      "command": "node node_modules/expo/bin/cli lint",
+      "exit_code": 0
+    },
+    "doctor": {
+      "command": "npx --yes expo-doctor",
+      "exit_code": 0,
+      "passed": 21,
+      "total": 21
+    },
+    "unit_tests": {
+      "command": "npm test",
+      "exit_code": 0,
+      "passed": 10,
+      "failed": 0,
+      "coverage": [
+        "13 complete UTF-8 dictionaries and English fallback",
+        "Native city aliases and coordinates",
+        "Earth focus and dateline interpolation",
+        "API boundary and probability validation",
+        "Matching device voice and no-voice fallback",
+        "Stop during pending voice enumeration",
+        "Superseding message race",
+        "Speech expiry",
+        "Speech engine failure",
+        "Never-resolving voice provider reaches translated audio failure after a bounded deadline"
+      ]
+    },
+    "export": {
+      "command": "node node_modules/expo/bin/cli export --platform all --max-workers 2",
+      "environment": {
+        "EXPO_PUBLIC_API_URL": "http://127.0.0.1:8000"
+      },
+      "exit_code": 0,
+      "output_directory": "mobile/dist",
+      "platforms": [
+        "android",
+        "ios",
+        "web"
+      ]
+    }
+  },
+  "bundles": [
+    {
+      "path": "mobile/dist/_expo/static/js/android/entry-7a3a18a2462ad526dd6937b970a7d0ee.hbc",
+      "bytes": 3096259,
+      "sha256": "ababbb216dc0f57e113f14dbbca8b2f071374f394e5067772d67e2de393698c0"
+    },
+    {
+      "path": "mobile/dist/_expo/static/js/ios/entry-e92f28616639976ce5798d178809d204.hbc",
+      "bytes": 2780590,
+      "sha256": "ca42142605f8c0ef50ed4007edb459c98a2990c067db5c035441406bdc12ab3a"
+    },
+    {
+      "path": "mobile/dist/_expo/static/js/web/entry-a5bbdac316bf24ee1ddc2192c1744671.js",
+      "bytes": 1373248,
+      "sha256": "a74fa1d8248b0ad30f71c8468fb53a9aa3ef852592fcd921d0737090a2d70cf5"
+    }
+  ],
+  "npm_audit": {
+    "command": "npm audit --json",
+    "info": 0,
+    "low": 0,
+    "moderate": 13,
+    "high": 0,
+    "critical": 0,
+    "status": "unresolved",
+    "note": "Findings include the Expo/router dependency chains for uuid/xcode and decode-uri-component/query-string. npm proposes breaking downgrades to Expo 46 / Router 5; no forced downgrade or unverified override was applied. Reassess updated compatible dependencies before deployment."
+  },
+  "limitations": [
+    "The loopback API URL in these verification bundles is for this computer; a physical phone requires a reachable configured host and a rebuilt bundle.",
+    "Translations are drafts requiring native-speaker review before public warning use.",
+    "Voice presence does not guarantee offline availability or audible output. Physical iOS silent mode can suppress speech.",
+    "The app exposes practice messages and synthetic research output; no live official alert feed or push dispatch is connected.",
+    "Android SDK, adb/emulator and an iOS build environment were unavailable. Native bundle export is not an APK/AAB/IPA build."
+  ],
+  "tooling_note": "The local user npm allow-scripts setting was propagated by npx into a project install and caused EALLOWSCRIPTS. SDK-compatible additions used the installed Expo CLI directly. SDK57 navigation hooks import from expo-router, following its official SDK55-to56 migration guidance.",
+  "speech_voice_lookup_timeout_ms": 3000,
+  "layout_followup": "Bottom navigation now reserves item/label space plus safe-area bottom padding, scaled for larger text. Typecheck and lint rerun with exit 0; Android/iOS/web export rerun with exit 0. Unit and dependency checks unchanged."
+}

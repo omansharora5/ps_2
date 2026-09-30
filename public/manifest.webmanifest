@@ -1,0 +1,14 @@
+{
+  "id": "/",
+  "name": "VAJRA Nowcast Research",
+  "short_name": "VAJRA",
+  "description": "Storm research, historical replay, and clearly labelled sample briefs.",
+  "start_url": "/#/overview",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f172a",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

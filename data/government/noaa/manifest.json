@@ -1,0 +1,1270 @@
+{
+  "schema_version": 1,
+  "collection_id": "noaa_20240615_parser_reference",
+  "created_at_utc": "2026-09-30T02:40:21.123174Z",
+  "status": "complete",
+  "max_raw_bytes": 40000000,
+  "total_raw_bytes": 4934674,
+  "training_ready": false,
+  "historical_availability_note": "Retrieval time and product creation time are not proof of original operational availability",
+  "files": [
+    {
+      "id": "abi_c13",
+      "path": "data/government/noaa/raw/OR_ABI-L2-CMIPC-M6C13_G16_s20241671801178_e20241671803563_c20241671804099.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/ABI-L2-CMIPC/2024/167/18/OR_ABI-L2-CMIPC-M6C13_G16_s20241671801178_e20241671803563_c20241671804099.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C01502",
+      "retrieved_at_utc": "2026-09-30T02:40:27.616055Z",
+      "bytes": 4089488,
+      "sha256": "1edd2c976c83a64635a6ff4a7374e1a8e1354696714dfadd965f9cc9716d5752",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C01502",
+      "units": {
+        "CMI": "K",
+        "DQF": "1",
+        "x": "rad",
+        "y": "rad",
+        "band_id": "1",
+        "band_wavelength": "um",
+        "t": "seconds since 2000-01-01 12:00:00"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:01:17.8Z",
+      "observation_time_end_utc": "2024-06-15T18:03:56.3Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:04:09.9Z",
+      "dimensions": {
+        "y": 1500,
+        "x": 2500,
+        "number_of_time_bounds": 2,
+        "band": 1,
+        "number_of_image_bounds": 2
+      },
+      "variables": {
+        "CMI": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "y",
+            "x"
+          ],
+          "units": "K",
+          "shape": [
+            1500,
+            2500
+          ],
+          "finite_unmasked_count": 3702838,
+          "min": 187.76095581054688,
+          "max": 327.87451171875,
+          "scale_factor": 0.06145332008600235,
+          "add_offset": 89.62000274658203,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "DQF": {
+          "stored_dtype": "int8",
+          "dimensions": [
+            "y",
+            "x"
+          ],
+          "units": "1",
+          "shape": [
+            1500,
+            2500
+          ],
+          "finite_unmasked_count": 3702838,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "flag_meanings": "good_pixel_qf conditionally_usable_pixel_qf out_of_range_pixel_qf no_value_pixel_qf focal_plane_temperature_threshold_exceeded_qf"
+        },
+        "x": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "x"
+          ],
+          "units": "rad",
+          "shape": [
+            2500
+          ],
+          "finite_unmasked_count": 2500,
+          "min": -0.10133200138807297,
+          "max": 0.038612000644207,
+          "scale_factor": 5.6000000768108293e-05,
+          "add_offset": -0.10133200138807297
+        },
+        "y": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "y"
+          ],
+          "units": "rad",
+          "shape": [
+            1500
+          ],
+          "finite_unmasked_count": 1500,
+          "min": 0.04426800459623337,
+          "max": 0.12821200489997864,
+          "scale_factor": -5.6000000768108293e-05,
+          "add_offset": 0.12821200489997864
+        },
+        "band_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "band"
+          ],
+          "units": "1",
+          "shape": [
+            1
+          ],
+          "finite_unmasked_count": 1,
+          "min": 13.0,
+          "max": 13.0
+        },
+        "band_wavelength": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "band"
+          ],
+          "units": "um",
+          "shape": [
+            1
+          ],
+          "finite_unmasked_count": 1,
+          "min": 10.329999923706055,
+          "max": 10.329999923706055
+        },
+        "t": {
+          "stored_dtype": "float64",
+          "dimensions": [],
+          "units": "seconds since 2000-01-01 12:00:00",
+          "shape": [],
+          "finite_unmasked_count": 1,
+          "min": 771746557.10824,
+          "max": 771746557.10824
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "projection": {
+        "long_name": "GOES-R ABI fixed grid projection",
+        "grid_mapping_name": "geostationary",
+        "perspective_point_height": 35786023.0,
+        "semi_major_axis": 6378137.0,
+        "semi_minor_axis": 6356752.31414,
+        "inverse_flattening": 298.2572221,
+        "latitude_of_projection_origin": 0.0,
+        "longitude_of_projection_origin": -75.0,
+        "sweep_angle_axis": "x"
+      },
+      "geography": {
+        "region": "GOES-16 ABI CONUS scene; United States and surrounding area, not India",
+        "grid": "geostationary fixed grid; x/y scanning angles in radians"
+      },
+      "quality_counts": {
+        "0": 3702838
+      }
+    },
+    {
+      "id": "glm_180200",
+      "path": "data/government/noaa/raw/OR_GLM-L2-LCFA_G16_s20241671802000_e20241671802200_c20241671802222.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/GLM-L2-LCFA/2024/167/18/OR_GLM-L2-LCFA_G16_s20241671802000_e20241671802200_c20241671802222.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "retrieved_at_utc": "2026-09-30T02:40:29.488260Z",
+      "bytes": 188220,
+      "sha256": "0638d2efbf87c28880e9e84bdc1e52fa692cce822242db500d9354bf9e027086",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "units": {
+        "event_lat": "degrees_north",
+        "event_lon": "degrees_east",
+        "event_energy": "J",
+        "event_time_offset": "seconds since 2024-06-15 18:02:00.000",
+        "event_parent_group_id": "1",
+        "group_id": "1",
+        "group_parent_flash_id": "1",
+        "group_quality_flag": "1",
+        "group_energy": "J",
+        "flash_id": "1",
+        "flash_lat": "degrees_north",
+        "flash_lon": "degrees_east",
+        "flash_energy": "J",
+        "flash_area": "m2",
+        "flash_time_offset_of_first_event": "seconds since 2024-06-15 18:02:00.000",
+        "flash_time_offset_of_last_event": "seconds since 2024-06-15 18:02:00.000",
+        "flash_quality_flag": "1"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:02:00.0Z",
+      "observation_time_end_utc": "2024-06-15T18:02:20.0Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:02:22.2Z",
+      "dimensions": {
+        "number_of_flashes": 87,
+        "number_of_groups": 967,
+        "number_of_events": 2182,
+        "number_of_time_bounds": 2,
+        "number_of_field_of_view_bounds": 2,
+        "number_of_wavelength_bounds": 2
+      },
+      "variables": {
+        "event_lat": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": -29.543983459472656,
+          "max": 52.98895263671875,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -66.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_lon": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": -118.33637237548828,
+          "max": -42.697601318359375,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -141.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "J",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": 1.141229936208821e-15,
+          "max": 3.41385448555942e-13,
+          "scale_factor": 1.9023999344584512e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "event_time_offset": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "seconds since 2024-06-15 18:02:00.000",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": -0.869382381439209,
+          "max": 19.534603118896484,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "event_parent_group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "1",
+          "shape": [
+            2182
+          ],
+          "finite_unmasked_count": 2182,
+          "min": 647529074.0,
+          "max": 647530158.0,
+          "_Unsigned": "true"
+        },
+        "group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 647529074.0,
+          "max": 647530158.0,
+          "_Unsigned": "true"
+        },
+        "group_parent_flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 10427.0,
+          "max": 10548.0,
+          "_Unsigned": "true"
+        },
+        "group_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_group_constituent_events_out_of_time_order_or_parent_flash_abnormal_qf degraded_due_to_group_constituent_event_count_exceeds_threshold_qf degraded_due_to_group_duration_exceeds_threshold_qf"
+        },
+        "group_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "J",
+          "shape": [
+            967
+          ],
+          "finite_unmasked_count": 967,
+          "min": 1.085053969993087e-15,
+          "max": 1.103052761977641e-12,
+          "scale_factor": 9.998799764118898e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 10427.0,
+          "max": 10548.0,
+          "_Unsigned": "true"
+        },
+        "flash_lat": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -29.445608139038086,
+          "max": 52.936927795410156
+        },
+        "flash_lon": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -118.16453552246094,
+          "max": -42.697635650634766
+        },
+        "flash_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "J",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 3.2851378765869988e-15,
+          "max": 2.9642731411844148e-12,
+          "scale_factor": 9.999959802209943e-16,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_area": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "m2",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 65618800.0,
+          "max": 2030672896.0,
+          "scale_factor": 152601.859375,
+          "add_offset": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_time_offset_of_first_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:00.000",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -0.869382381439209,
+          "max": 19.38773536682129,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_time_offset_of_last_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:00.000",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": -0.42610740661621094,
+          "max": 19.534603118896484,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            87
+          ],
+          "finite_unmasked_count": 87,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_flash_constituent_events_out_of_time_order_qf degraded_due_to_flash_constituent_event_count_exceeds_threshold_qf degraded_due_to_flash_duration_exceeds_threshold_qf"
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "parent_relationships_valid": true,
+      "counts": {
+        "events": 2182,
+        "groups": 967,
+        "flashes": 87
+      },
+      "geography": {
+        "region": "GOES-16 GLM hemispheric field of view; Americas and adjacent oceans, not India",
+        "actual_event_latitude_range_degrees_north": [
+          -29.543983459472656,
+          52.98895263671875
+        ],
+        "actual_event_longitude_range_degrees_east": [
+          -118.33637237548828,
+          -42.697601318359375
+        ]
+      }
+    },
+    {
+      "id": "glm_180220",
+      "path": "data/government/noaa/raw/OR_GLM-L2-LCFA_G16_s20241671802200_e20241671802400_c20241671802416.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/GLM-L2-LCFA/2024/167/18/OR_GLM-L2-LCFA_G16_s20241671802200_e20241671802400_c20241671802416.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "retrieved_at_utc": "2026-09-30T02:40:31.686249Z",
+      "bytes": 202556,
+      "sha256": "2f7b7194f5581c9499a103f5959d1545d27615a316ca43035a11bd09a91561f5",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "units": {
+        "event_lat": "degrees_north",
+        "event_lon": "degrees_east",
+        "event_energy": "J",
+        "event_time_offset": "seconds since 2024-06-15 18:02:20.000",
+        "event_parent_group_id": "1",
+        "group_id": "1",
+        "group_parent_flash_id": "1",
+        "group_quality_flag": "1",
+        "group_energy": "J",
+        "flash_id": "1",
+        "flash_lat": "degrees_north",
+        "flash_lon": "degrees_east",
+        "flash_energy": "J",
+        "flash_area": "m2",
+        "flash_time_offset_of_first_event": "seconds since 2024-06-15 18:02:20.000",
+        "flash_time_offset_of_last_event": "seconds since 2024-06-15 18:02:20.000",
+        "flash_quality_flag": "1"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:02:20.0Z",
+      "observation_time_end_utc": "2024-06-15T18:02:40.0Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:02:41.6Z",
+      "dimensions": {
+        "number_of_flashes": 94,
+        "number_of_groups": 1222,
+        "number_of_events": 2800,
+        "number_of_time_bounds": 2,
+        "number_of_field_of_view_bounds": 2,
+        "number_of_wavelength_bounds": 2
+      },
+      "variables": {
+        "event_lat": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": -29.55007553100586,
+          "max": 49.27983856201172,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -66.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_lon": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": -118.03777313232422,
+          "max": -46.94500732421875,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -141.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "J",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2799,
+          "min": 1.1031819573719868e-15,
+          "max": 1.1262585915966516e-12,
+          "scale_factor": 1.9023999344584512e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "event_time_offset": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "seconds since 2024-06-15 18:02:20.000",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": -0.5306320190429688,
+          "max": 19.21569061279297,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "event_parent_group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "1",
+          "shape": [
+            2800
+          ],
+          "finite_unmasked_count": 2800,
+          "min": 647530138.0,
+          "max": 647531446.0,
+          "_Unsigned": "true"
+        },
+        "group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 647530138.0,
+          "max": 647531446.0,
+          "_Unsigned": "true"
+        },
+        "group_parent_flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 10549.0,
+          "max": 10661.0,
+          "_Unsigned": "true"
+        },
+        "group_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_group_constituent_events_out_of_time_order_or_parent_flash_abnormal_qf degraded_due_to_group_constituent_event_count_exceeds_threshold_qf degraded_due_to_group_duration_exceeds_threshold_qf"
+        },
+        "group_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "J",
+          "shape": [
+            1222
+          ],
+          "finite_unmasked_count": 1222,
+          "min": 1.085053969993087e-15,
+          "max": 3.935813047001302e-12,
+          "scale_factor": 9.998799764118898e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 10549.0,
+          "max": 10661.0,
+          "_Unsigned": "true"
+        },
+        "flash_lat": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -29.474498748779297,
+          "max": 49.177616119384766
+        },
+        "flash_lon": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -117.79268646240234,
+          "max": -47.07597732543945
+        },
+        "flash_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "J",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 3.2851378765869988e-15,
+          "max": 4.3562679505337876e-12,
+          "scale_factor": 9.999959802209943e-16,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_area": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "m2",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 67755224.0,
+          "max": 2149397248.0,
+          "scale_factor": 152601.859375,
+          "add_offset": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_time_offset_of_first_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:20.000",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -0.5306320190429688,
+          "max": 18.999011993408203,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_time_offset_of_last_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:20.000",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": -0.34981250762939453,
+          "max": 19.21569061279297,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            94
+          ],
+          "finite_unmasked_count": 94,
+          "min": 0.0,
+          "max": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_flash_constituent_events_out_of_time_order_qf degraded_due_to_flash_constituent_event_count_exceeds_threshold_qf degraded_due_to_flash_duration_exceeds_threshold_qf"
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "parent_relationships_valid": true,
+      "counts": {
+        "events": 2800,
+        "groups": 1222,
+        "flashes": 94
+      },
+      "geography": {
+        "region": "GOES-16 GLM hemispheric field of view; Americas and adjacent oceans, not India",
+        "actual_event_latitude_range_degrees_north": [
+          -29.55007553100586,
+          49.27983856201172
+        ],
+        "actual_event_longitude_range_degrees_east": [
+          -118.03777313232422,
+          -46.94500732421875
+        ]
+      }
+    },
+    {
+      "id": "glm_180240",
+      "path": "data/government/noaa/raw/OR_GLM-L2-LCFA_G16_s20241671802400_e20241671803000_c20241671803014.nc",
+      "source_url": "https://noaa-goes16.s3.amazonaws.com/GLM-L2-LCFA/2024/167/18/OR_GLM-L2-LCFA_G16_s20241671802400_e20241671803000_c20241671803014.nc",
+      "provider": "NOAA/NESDIS/OSPO",
+      "distribution": "NOAA GOES-16 AWS public archive",
+      "official_catalog_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "retrieved_at_utc": "2026-09-30T02:40:33.617042Z",
+      "bytes": 198460,
+      "sha256": "d3794a3c37203d2355f6e70f1b6777686ce9b0550cae8f84cfdd943e674c9705",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01527/html",
+      "units": {
+        "event_lat": "degrees_north",
+        "event_lon": "degrees_east",
+        "event_energy": "J",
+        "event_time_offset": "seconds since 2024-06-15 18:02:40.000",
+        "event_parent_group_id": "1",
+        "group_id": "1",
+        "group_parent_flash_id": "1",
+        "group_quality_flag": "1",
+        "group_energy": "J",
+        "flash_id": "1",
+        "flash_lat": "degrees_north",
+        "flash_lon": "degrees_east",
+        "flash_energy": "J",
+        "flash_area": "m2",
+        "flash_time_offset_of_first_event": "seconds since 2024-06-15 18:02:40.000",
+        "flash_time_offset_of_last_event": "seconds since 2024-06-15 18:02:40.000",
+        "flash_quality_flag": "1"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NETCDF4",
+      "observation_time_start_utc": "2024-06-15T18:02:40.0Z",
+      "observation_time_end_utc": "2024-06-15T18:03:00.0Z",
+      "historical_available_at_utc": null,
+      "creation_time_utc": "2024-06-15T18:03:01.4Z",
+      "dimensions": {
+        "number_of_flashes": 93,
+        "number_of_groups": 1119,
+        "number_of_events": 2407,
+        "number_of_time_bounds": 2,
+        "number_of_field_of_view_bounds": 2,
+        "number_of_wavelength_bounds": 2
+      },
+      "variables": {
+        "event_lat": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": -29.39773178100586,
+          "max": 53.37286376953125,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -66.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_lon": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": -111.9378433227539,
+          "max": -42.697601318359375,
+          "scale_factor": 0.0020312799606472254,
+          "add_offset": -141.55999755859375,
+          "_Unsigned": "true"
+        },
+        "event_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "J",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": 1.1031819573719868e-15,
+          "max": 2.6635480930223276e-13,
+          "scale_factor": 1.9023999344584512e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "event_time_offset": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "seconds since 2024-06-15 18:02:40.000",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": -0.6069269180297852,
+          "max": 18.965824127197266,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "event_parent_group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_events"
+          ],
+          "units": "1",
+          "shape": [
+            2407
+          ],
+          "finite_unmasked_count": 2407,
+          "min": 647531447.0,
+          "max": 647532647.0,
+          "_Unsigned": "true"
+        },
+        "group_id": {
+          "stored_dtype": "int32",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 647531447.0,
+          "max": 647532647.0,
+          "_Unsigned": "true"
+        },
+        "group_parent_flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 10662.0,
+          "max": 10778.0,
+          "_Unsigned": "true"
+        },
+        "group_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "1",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 0.0,
+          "max": 1.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_group_constituent_events_out_of_time_order_or_parent_flash_abnormal_qf degraded_due_to_group_constituent_event_count_exceeds_threshold_qf degraded_due_to_group_duration_exceeds_threshold_qf"
+        },
+        "group_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_groups"
+          ],
+          "units": "J",
+          "shape": [
+            1119
+          ],
+          "finite_unmasked_count": 1119,
+          "min": 1.085053969993087e-15,
+          "max": 5.110238404312795e-13,
+          "scale_factor": 9.998799764118898e-17,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_id": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 10662.0,
+          "max": 10778.0,
+          "_Unsigned": "true"
+        },
+        "flash_lat": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_north",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -29.330989837646484,
+          "max": 53.37220001220703
+        },
+        "flash_lon": {
+          "stored_dtype": "float32",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "degrees_east",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -111.90338897705078,
+          "max": -42.697166442871094
+        },
+        "flash_energy": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "J",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 3.2851378765869988e-15,
+          "max": 3.2822720236191927e-12,
+          "scale_factor": 9.999959802209943e-16,
+          "add_offset": 2.8514998886357517e-16,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_area": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "m2",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 64703188.0,
+          "max": 2111094144.0,
+          "scale_factor": 152601.859375,
+          "add_offset": 0.0,
+          "_Unsigned": "true",
+          "_FillValue": -1
+        },
+        "flash_time_offset_of_first_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:40.000",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -0.6069269180297852,
+          "max": 18.963916778564453,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_time_offset_of_last_event": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "seconds since 2024-06-15 18:02:40.000",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": -0.44022226333618164,
+          "max": 18.965824127197266,
+          "scale_factor": 0.00038147560553625226,
+          "add_offset": -5.0,
+          "_Unsigned": "true"
+        },
+        "flash_quality_flag": {
+          "stored_dtype": "int16",
+          "dimensions": [
+            "number_of_flashes"
+          ],
+          "units": "1",
+          "shape": [
+            93
+          ],
+          "finite_unmasked_count": 93,
+          "min": 0.0,
+          "max": 3.0,
+          "_Unsigned": "true",
+          "_FillValue": -1,
+          "flag_values": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "flag_meanings": "good_quality_qf degraded_due_to_flash_constituent_events_out_of_time_order_qf degraded_due_to_flash_constituent_event_count_exceeds_threshold_qf degraded_due_to_flash_duration_exceeds_threshold_qf"
+        }
+      },
+      "decoding": "netCDF4 automatic masking and scale/offset enabled; raw files unchanged",
+      "parent_relationships_valid": true,
+      "counts": {
+        "events": 2407,
+        "groups": 1119,
+        "flashes": 93
+      },
+      "geography": {
+        "region": "GOES-16 GLM hemispheric field of view; Americas and adjacent oceans, not India",
+        "actual_event_latitude_range_degrees_north": [
+          -29.39773178100586,
+          53.37286376953125
+        ],
+        "actual_event_longitude_range_degrees_east": [
+          -111.9378433227539,
+          -42.697601318359375
+        ]
+      }
+    },
+    {
+      "id": "radar_ktlx_n0b",
+      "path": "data/government/noaa/raw/TLX_N0B_2024_06_15_18_05_28",
+      "source_url": "https://unidata-nexrad-level3.s3.amazonaws.com/TLX_N0B_2024_06_15_18_05_28",
+      "provider": "NOAA/NWS",
+      "distribution": "UCAR Unidata AWS mirror of NOAA NEXRAD",
+      "official_catalog_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00708",
+      "retrieved_at_utc": "2026-09-30T02:40:58.458287Z",
+      "bytes": 255950,
+      "sha256": "9ee062530322b3cee3b974b36a1d0e39ed5d3895ec4c742625bc1875df05b9ea",
+      "licence_terms_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "licence_note": "NOAA-produced data public domain in the United States; retain attribution and dataset-specific use constraints; no NOAA endorsement",
+      "dataset_use_constraints_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00708",
+      "units": {
+        "reflectivity": "dBZ",
+        "start_az": "degrees",
+        "end_az": "degrees"
+      },
+      "data_role": "parser_reference_only",
+      "not_training_ready_reason": "Tiny historical non-Indian sample; missing continuous causal inputs, future labels, regional alignment, storm splits and operational availability history",
+      "format": "NEXRAD Level III binary NIDS, product 153 N0B",
+      "observation_time_start_utc": "2024-06-15T18:05:28Z",
+      "observation_time_end_utc": null,
+      "time_note": "Header volume start; complete scan end not asserted",
+      "historical_available_at_utc": null,
+      "product_time_utc": "2024-06-15T18:06:40Z",
+      "geography": {
+        "region": "KTLX radar around Oklahoma City, Oklahoma, United States; not India",
+        "station_latitude_degrees_north": 35.333,
+        "station_longitude_degrees_east": -97.278,
+        "maximum_range_km": 460.0
+      },
+      "variables": {
+        "reflectivity": {
+          "units": "dBZ",
+          "stored_dtype": "uint8",
+          "shape": [
+            720,
+            1840
+          ],
+          "finite_unmasked_count": 375181,
+          "min": -17.0,
+          "max": 47.5
+        },
+        "start_az": {
+          "units": "degrees",
+          "shape": [
+            720
+          ],
+          "finite_unmasked_count": 720,
+          "min": 0.0,
+          "max": 359.5
+        },
+        "end_az": {
+          "units": "degrees",
+          "shape": [
+            720
+          ],
+          "finite_unmasked_count": 720,
+          "min": 0.5,
+          "max": 360.0
+        }
+      },
+      "decoding": "MetPy Level3File.map_data converts encoded levels; finite min/max exclude missing/range-fold values"
+    }
+  ]
+}

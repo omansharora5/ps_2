@@ -1,0 +1,20 @@
+{
+  "manifestErrors": [],
+  "installability": [],
+  "documents": {
+    "PRODUCT_FLOW_AND_ALGORITHMS.md": {
+      "status": 200,
+      "length": 25853
+    },
+    "JEV_ASSESSMENT.md": {
+      "status": 200,
+      "length": 13637
+    },
+    "FRIEND_NOTES_REVIEW.md": {
+      "status": 200,
+      "length": 16372
+    }
+  },
+  "skipLink": true,
+  "skipTarget": true
+}

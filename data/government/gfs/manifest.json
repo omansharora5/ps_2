@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "collection": "NOAA GFS selected-field starter sample",
+  "created_at_utc": "2026-09-30T02:39:31.726581+00:00",
+  "notes": [
+    "Seven original GRIB messages concatenated in listed order; no values changed.",
+    "HTTP Last-Modified is archive-object metadata, not proof of historical real-time availability.",
+    "GFS forecast values are model output, not direct surface observations."
+  ],
+  "files": [
+    {
+      "id": "gfs-gfs_20250512_06_f003",
+      "path": "data/government/gfs/gfs_20250512_06_f003.idx",
+      "source_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250512/06/atmos/gfs.t06z.pgrb2.0p25.f003.idx",
+      "provider": "NOAA/NCEP",
+      "documentation_url": "https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast",
+      "retrieved_at_utc": "2026-09-30T02:39:31.726581+00:00",
+      "bytes": 40472,
+      "sha256": "929835d35edf1997171cbe9631bc1d504ba3988a3070386e591607229a021c3c",
+      "format": "idx",
+      "data_role": "provider_inventory",
+      "licence_terms_url": "https://www.weather.gov/disclaimer",
+      "licence_note": "NOAA/NWS government information; acknowledge provider, no endorsement. See source disclaimer.",
+      "model_reference_time_utc": "2025-05-12T06:00:00Z",
+      "forecast_lead_hours": 3,
+      "valid_time_utc": "2025-05-12T09:00:00Z",
+      "historical_available_at_utc": null,
+      "not_training_ready_reason": "One forecast time, no matched Indian storm/flash labels; historic operational availability not established.",
+      "archive_last_modified_header": "Mon, 12 May 2025 09:37:31 GMT"
+    },
+    {
+      "id": "gfs-gfs_20250512_06_f003_selected",
+      "path": "data/government/gfs/gfs_20250512_06_f003_selected.grib2",
+      "source_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250512/06/atmos/gfs.t06z.pgrb2.0p25.f003",
+      "provider": "NOAA/NCEP",
+      "documentation_url": "https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast",
+      "retrieved_at_utc": "2026-09-30T02:39:31.726581+00:00",
+      "bytes": 5302691,
+      "sha256": "cc2d392ec412531ac14487cdffb56f08752e5980ea6970c06f7dab730f8cd0f8",
+      "format": "grib2",
+      "data_role": "raw_nwp_forecast",
+      "licence_terms_url": "https://www.weather.gov/disclaimer",
+      "licence_note": "NOAA/NWS government information; acknowledge provider, no endorsement. See source disclaimer.",
+      "model_reference_time_utc": "2025-05-12T06:00:00Z",
+      "forecast_lead_hours": 3,
+      "valid_time_utc": "2025-05-12T09:00:00Z",
+      "historical_available_at_utc": null,
+      "not_training_ready_reason": "One forecast time, no matched Indian storm/flash labels; historic operational availability not established.",
+      "fields": [
+        {
+          "variable": "TMP",
+          "level": "2 m above ground",
+          "units": "K",
+          "byte_start": 421261889,
+          "byte_end_inclusive": 421775549,
+          "sha256": "ac9a6e5e6d48c27554c7f25f92dd23f8b484ee44acedd96a8d8df4fdcb1e7907",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "RH",
+          "level": "2 m above ground",
+          "units": "%",
+          "byte_start": 423541777,
+          "byte_end_inclusive": 424334502,
+          "sha256": "3bff47677a7cc2ebd686bda83a13d4a24d69ffbace4f133b5836b920b7398d40",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "UGRD",
+          "level": "10 m above ground",
+          "units": "m/s",
+          "byte_start": 425900909,
+          "byte_end_inclusive": 426875006,
+          "sha256": "9c220fe6696e7248883a18ea2838ac7a2a1e1fbfebeaac201222c1a2ab59eaad",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "VGRD",
+          "level": "10 m above ground",
+          "units": "m/s",
+          "byte_start": 426875007,
+          "byte_end_inclusive": 427826626,
+          "sha256": "510b18c12c0bfcdb0f1248c0f7be6ce0129c6d465202f5ddab883a79e9046ff1",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "CAPE",
+          "level": "surface",
+          "units": "J/kg",
+          "byte_start": 440474609,
+          "byte_end_inclusive": 441042987,
+          "sha256": "3b87e2772c5632023faa24e8780b70330ea5077697e740aa272e0393c16dc7a0",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "CIN",
+          "level": "surface",
+          "units": "J/kg",
+          "byte_start": 441042988,
+          "byte_end_inclusive": 441329845,
+          "sha256": "7514307367849682dd5bb69f49ddee14e07e34c7345f9e9ece1b619f53c669ae",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        },
+        {
+          "variable": "PWAT",
+          "level": "entire atmosphere (considered as a single layer)",
+          "units": "kg/m^2",
+          "byte_start": 441329846,
+          "byte_end_inclusive": 442545194,
+          "sha256": "37668dfa284ec0310c4774ed8bf36b2b988dea419c3e0d25f138a2fabf8ab54e",
+          "archive_last_modified_header": "Mon, 12 May 2025 09:37:05 GMT",
+          "etag": "\"8f890c9fef76cebe71ff8ba97910d90d\""
+        }
+      ],
+      "geography": {
+        "coverage": "global including India",
+        "grid_degrees": 0.25
+      },
+      "acquisition": "HTTP byte ranges specified by provider inventory"
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "data/government/gfs/gfs_20250512_06_f003_bihar.grib2",
+      "bytes": 6814,
+      "sha256": "56d8f514b9cddec414021c7c4451d5d3713e82ea416ad52baf8e729a07b8560a",
+      "derived_from": "data/government/gfs/gfs_20250512_06_f003_selected.grib2",
+      "transformation": "wgrib2 -small_grib 82:89 23:28, then -csv; no unit conversion",
+      "generated_at_utc": "2026-09-30T02:42:46.971466+00:00"
+    },
+    {
+      "path": "data/government/gfs/gfs_20250512_06_f003_bihar.csv",
+      "bytes": 378380,
+      "sha256": "5ecd731dac86301f2da6b49499643986a55ee95d2f3c14e4aff57ac98599edd3",
+      "derived_from": "data/government/gfs/gfs_20250512_06_f003_selected.grib2",
+      "transformation": "wgrib2 -small_grib 82:89 23:28, then -csv; no unit conversion",
+      "generated_at_utc": "2026-09-30T02:42:46.974251+00:00"
+    }
+  ]
+}

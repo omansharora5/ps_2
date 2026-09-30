@@ -1,0 +1,133 @@
+import { test, expect } from '@playwright/test';
+
+test('Earth search rotates the geographic point to the front and zooms, with motion controls', async ({ page }) => {
+  test.setTimeout(60000);
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/#/earth');
+  const globe = page.getByTestId('earth-scene');
+  await expect(globe).toHaveAttribute('data-render-state', 'ready');
+  await expect(globe).toHaveAttribute('data-texture', 'ready');
+  await expect(globe).toHaveAttribute('data-camera-distance', '3.400');
+  await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+  await page.screenshot({ path: 'artifacts/earth-orbit-desktop.png', fullPage: true });
+  await page.getByLabel('Find a supported Indian city').fill('Patna');
+  await page.getByRole('button', { name: /^Patna/ }).click();
+  await expect(page.getByRole('heading', { name: 'Patna', exact: true })).toBeVisible();
+  await expect(globe).toHaveAttribute('data-focus-state', 'settled');
+  await expect.poll(async () => Number(await globe.getAttribute('data-focus-error'))).toBeLessThan(0.002);
+  await expect.poll(async () => Number(await globe.getAttribute('data-camera-distance'))).toBeLessThan(2.8);
+  await expect(globe).toHaveAttribute('data-focus-lat', /25\./);
+  await expect(globe).toHaveAttribute('data-focus-lon', /85\./);
+  await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+  await page.screenshot({ path: 'artifacts/earth-patna-desktop.png', fullPage: true });
+  const selectedLongitude = Number(await globe.getAttribute('data-center-longitude'));
+  await page.getByRole('button', { name: 'Rotate Earth west' }).click();
+  await expect(globe).toHaveAttribute('data-focus-state', 'orbit');
+  expect(Math.abs(Number(await globe.getAttribute('data-center-longitude')) - selectedLongitude)).toBeGreaterThan(5);
+  await page.getByRole('button', { name: 'Rotate Earth east' }).click();
+  await expect(globe).toHaveAttribute('data-focus-state', 'orbit');
+  expect(Math.abs(Number(await globe.getAttribute('data-center-longitude')) - selectedLongitude)).toBeLessThan(0.01);
+  await page.getByRole('button', { name: 'Pause motion' }).click();
+  await expect(globe).toHaveAttribute('data-motion', 'paused');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(globe).toHaveAttribute('data-motion', 'reduced');
+  await page.getByLabel('Find a supported Indian city').fill('Mumbai');
+  await page.getByLabel('Find a supported Indian city').press('Enter');
+  await expect(page.getByRole('heading', { name: 'Mumbai', exact: true })).toBeVisible();
+  await expect(globe).toHaveAttribute('data-focus-state', 'settled');
+  await expect.poll(async () => Number(await globe.getAttribute('data-focus-error'))).toBeLessThan(0.002);
+  await page.getByLabel('Find a supported Indian city').fill('Unlisted city');
+  await expect(page.getByRole('status')).toContainText('No city in the bundled gazetteer');
+  await page.getByLabel('Find a supported Indian city').fill('');
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+  await page.screenshot({ path: 'artifacts/earth-mobile.png', fullPage: true });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await globe.scrollIntoViewIfNeeded();
+  await expect(globe).toHaveAttribute('data-motion', 'reduced');
+  await page.evaluate(() => { document.documentElement.style.fontSize = '24px'; });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect(errors).toEqual([]);
+});
+
+test('WebGL failure preserves the location search and a static map', async ({ page }) => {
+  await page.addInitScript(() => {
+    const original = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = function (type, ...args) {
+      return type.startsWith('webgl') ? null : original.call(this, type, ...args);
+    };
+  });
+  await page.goto('/#/earth');
+  await expect(page.getByTestId('earth-fallback')).toContainText('3D is unavailable');
+  await page.getByLabel('Find a supported Indian city').fill('Chennai');
+  await page.getByRole('button', { name: /^Chennai/ }).click();
+  await expect(page.getByRole('heading', { name: 'Chennai', exact: true })).toBeVisible();
+  await expect(page.getByText('Selecting this place does not load a local forecast.', { exact: false })).toBeVisible();
+  await expect(page.getByRole('img', { name: 'Static NASA Blue Marble world map' })).toBeVisible();
+});
+
+test('image preparation changes observed pixels and exports traceable metrics', async ({ page }) => {
+  test.setTimeout(90000);
+  const errors = [];
+  const runs = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('response', response => { if (response.url().endsWith('/api/image-runs')) runs.push(response.status()); });
+  await page.goto('/#/image-lab');
+  await expect(page.getByTestId('image-result')).toBeVisible({ timeout: 30000 });
+  const first = await page.getByRole('img', { name: '02 / Prepared image' }).evaluate(canvas => canvas.toDataURL());
+  const resultId = await page.getByTestId('image-result').getAttribute('data-run-id');
+  await page.getByLabel('Image preparation', { exact: true }).selectOption('raw');
+  await expect(page.getByTestId('image-result')).toBeVisible({ timeout: 30000 });
+  await expect(page.getByTestId('image-result')).not.toHaveAttribute('data-run-id', resultId);
+  const raw = await page.getByRole('img', { name: '02 / Prepared image' }).evaluate(canvas => canvas.toDataURL());
+  expect(raw).not.toEqual(first);
+  const original = await page.getByRole('img', { name: '01 / Original observation' }).evaluate(canvas => canvas.toDataURL());
+  expect(raw).toEqual(original);
+  await page.getByLabel('Motion method', { exact: true }).selectOption('dense_optical_flow');
+  await expect(page.getByTestId('image-result')).toBeVisible({ timeout: 30000 });
+  await expect(page.getByRole('row', { name: /Selected method/ })).not.toContainText('NaN');
+  await page.getByRole('button', { name: 'Show echo objects' }).click();
+  await expect(page.getByRole('img', { name: '03 / Observed echo objects' })).toBeVisible();
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+  await page.screenshot({ path: 'artifacts/image-lab-desktop.png', fullPage: true });
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export images, metrics & provenance' }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toMatch(/^vajra-image-.*\.json$/);
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+  await page.screenshot({ path: 'artifacts/image-lab-mobile.png', fullPage: true });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect(runs.length).toBeGreaterThanOrEqual(3);
+  expect(runs.every(status => status === 200)).toBe(true);
+  expect(errors).toEqual([]);
+});
+
+test('source catalogue reflects actual inventory and retains research links', async ({ page }) => {
+  test.setTimeout(60000);
+  await page.goto('/#/sources');
+  await expect(page.getByRole('heading', { name: 'The data collection desk' })).toBeVisible();
+  await expect(page.getByTestId('collection-india')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Training data atlas' })).toBeVisible();
+  await page.getByTestId('collection-india').getByText('Inspect source files').click();
+  await expect(page.getByTestId('collection-india').getByRole('link', { name: 'Source', exact: true }).first()).toHaveAttribute('href', /^https:/);
+  const fileDownload = page.waitForEvent('download');
+  await page.getByTestId('collection-india').getByRole('link', { name: 'Download', exact: true }).first().click();
+  expect((await fileDownload).suggestedFilename()).toMatch(/\.json$/);
+  await page.getByText('Provider register and access requirements', { exact: true }).click();
+  await expect(page.getByRole('link', { name: 'API / access docs', exact: true }).first()).toHaveAttribute('href', 'https://wis2box.imd.gov.in/oapi/collections');
+  const catalogue = await (await page.request.get('/api/data/catalog')).json();
+  if (catalogue.collection_enabled) {
+    const collectionResponse = page.waitForResponse(response => response.url().endsWith('/api/data/collections/india') && response.request().method() === 'POST');
+    await page.getByTestId('collection-india').getByRole('button', { name: /^Collect / }).click();
+    expect((await collectionResponse).status()).toBe(202);
+    await expect(page.locator('.collection-jobs').getByText('succeeded', { exact: true }).first()).toBeVisible({ timeout: 30000 });
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+  await page.screenshot({ path: 'artifacts/data-catalog-desktop.png', fullPage: true });
+  await page.setViewportSize({ width: 375, height: 812 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});

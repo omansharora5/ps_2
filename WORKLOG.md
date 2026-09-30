@@ -1,0 +1,62 @@
+# Work plan
+
+- [x] Read both supplied documents and workspace instructions.
+- [x] Ground the problem. This is an empty workspace, with no existing implementation to trace.
+- [x] Research the official requirement, impact, existing products, datasets, and forecasting methods.
+- [x] Frame and compare two architecture candidates, then record the synthesis.
+- [x] Write the complete research and implementation specification with a claim ledger.
+- [x] Implement a runnable prototype with explicit data provenance and baseline verification.
+- [x] Test scientific invariants, failure cases, API behavior, and the browser workflow.
+- [x] Review the final claims against evidence and record remaining operational gaps.
+
+## Architecture comparison rubric
+
+Score each candidate from 1 to 5 for a runnable no-credential demonstration, preservation of forecast causality, defensible evaluation, missing-source behavior, and implementation simplicity. Research agents write separate files. No public notifications or operational forecasts are authorized by this prototype.
+
+## Source documents
+
+The supplied Markdown is a technical interpretation. The DOCX explicitly calls its analysis an interpretation. The 22/500 submission count, rank, and deadline are unverified contextual claims, not implementation requirements. Text extracted from the DOCX is retained in `research/input/problem-analysis-docx.txt` for traceability.
+
+## Completion evidence
+
+`SIH26072_RESEARCH_AND_BLUEPRINT.md` is the main deliverable. Research notes contain primary links and explicit access limitations. `VALIDATION.md` records 17 scientific/API tests, two browser tests, observed radar scores, synthetic model scores and measured execution. A local service is left running at `http://127.0.0.1:8000`. Indian operational training, feed access and field validation remain explicit future gates, not completed claims.
+
+## Friend-note review and website/app iteration, 30 September 2026
+
+- [x] Read both new attachments and compare their claims with the actual implementation.
+- [x] Research TypeSafe Jev's hosted API, offline limitations and possible bounded role.
+- [x] Check newer weather architectures and correct unsupported novelty/calibration claims.
+- [x] Write `PRODUCT_FLOW_AND_ALGORITHMS.md`, `research/FRIEND_NOTES_REVIEW.md` and `research/JEV_ASSESSMENT.md`.
+- [x] Apply ui-ux-pro-max, record design choices and build overview, officer, public-preview and guide flows.
+- [x] Add URL navigation, mobile controls, accessible focus, expandable evidence and recorded-state loading/retry handling.
+- [x] Implement a versioned offline app shell and explicitly saved historical simulation preview.
+- [x] Verify science/API behavior, website journeys, offline recovery, mobile layouts, keyboard skip navigation and manifest installability.
+
+The final validation addendum records the expanded checks. No new trained weather architecture, Indian feed, live public warning, authentication or Jev integration is claimed.
+
+## Structured proposal and evidence library, 30 September 2026
+
+- [x] Define the accepted problem, solution, differentiation, architecture and data flow.
+- [x] Document stack, feasibility, adoption model, risks, impact and sustainability.
+- [x] Collect three primary surveys and three newspaper reports with samples, dates and limits.
+- [x] Curate twelve primary research papers, including verified 2025 and 2026 publications.
+- [x] Check official public-service alternatives, data access and business assumptions.
+- [x] Distinguish historical statistics, working code, proposed experiments and unmeasured outcomes.
+- [x] Review document references and consistency against the current implementation.
+
+Main deliverable: `SIH26072_PROPOSAL_AND_EVIDENCE.md`. Supporting notes: `research/SURVEYS_AND_NEWS_2026.md`, `research/PAPER_REFERENCE_LIBRARY.md` and `research/VIABILITY_AND_SUSTAINABILITY_EVIDENCE.md`. No new field survey, customer validation or operational forecast result is claimed. A fresh MoSPI 2025 PDF download timed out; the proposal retains the earlier directly verified 2022 statistic from MoSPI 2024 and labels its reporting year.
+
+## Detailed architecture and government data collection, 30 September 2026
+
+- [x] Ground: trace the existing forecast and observed-data paths.
+- [x] Sketch: framed two independent designs, read both, cross-judged, selected the regional worker and incorporated stronger causal/recovery contracts.
+- [x] Agree: proceeded within the requested architecture and data-collection scope; no approval checkpoint requested.
+- [x] Implement: wrote the detailed architecture and collected the government data starter pack with source manifests and CSV views.
+- [x] Verify: checked scientific contents, timestamps, units, 22 file hashes, parser behavior, idempotent reruns and document references.
+- [x] Scrap: corrected late-update timing, partial-coverage labels and delayed-probability interpretation; used official wgrib2 when the ecCodes native library was unavailable. No wholesale design restart needed.
+
+Architecture comparison: causal data contracts, Indian access realism, recoverable/idempotent processing, understandable ownership, and single-region cost/operability; score each 1–5. Parent and architecture researcher produce separate candidates; the other researchers collect independent provider subsets. This bounded delegation is requested by the research and architect/arena skills.
+
+Deliverables: `DETAILED_TECHNICAL_ARCHITECTURE.md`, `data/government/README.md`, consolidated `inventory.json`, three provider manifests and collection notes, five collection/preparation/verification scripts, and `artifacts/VAJRA_GOVERNMENT_DATA_STARTER_PACK.zip`. New source content totals 18 files / 11,232,879 bytes, comprising eight weather-data payloads and ten metadata/documentation records. Four derived files add 507,683 bytes. The pack contains actual IMD, NASA and NOAA data with explicitly identified cloud mirrors. It is not a matched Indian training dataset and was not passed to the synthetic model.
+
+Validation evidence: `artifacts/government_data_validation.json` and `artifacts/architecture_document_check.json`. Full scientific parsing, raw/derived checksum verification and malformed/truncated GRIB rejection passed. All local links in the six new main evidence documents resolve and Markdown fences balance. No app behavior changed, so the earlier application tests were not rerun for these standalone acquisition scripts and documents.

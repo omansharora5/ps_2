@@ -1,0 +1,58 @@
+import { test, expect } from '@playwright/test';
+
+test('forecast controls, missing sources, real replay, evidence and mobile layout', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/#/workbench');
+  await expect(page.getByText('Synthetic research demonstration.')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Bihar study area · synthetic event' })).toBeVisible();
+  await page.screenshot({ path: 'artifacts/workbench-desktop.png', fullPage: true });
+  await page.getByLabel('Lead time', { exact: true }).selectOption('60');
+  await expect(page.locator('.map-meta')).toContainText('+60 MIN');
+  await page.getByLabel('Issue time', { exact: true }).selectOption('12');
+  await expect(page.locator('.stats-row')).toContainText('09:00:00 UTC');
+  await page.getByLabel('Forecast target', { exact: true }).selectOption('storm');
+  await expect(page.locator('.map-panel .panel-heading')).toContainText('Reflectivity >=35 dBZ');
+  await page.getByLabel('Forecast target', { exact: true }).selectOption('lightning');
+  await page.getByLabel('Multi-radar availability').selectOption('stale');
+  await expect(page.getByText('45 min old · withheld')).toBeVisible();
+  await page.getByLabel('Satellite IR availability').selectOption('missing');
+  await page.getByLabel('Lightning availability').selectOption('missing');
+  await expect(page.getByText('Forecast unavailable', { exact: true })).toBeVisible();
+  await page.getByLabel('Multi-radar availability').selectOption('available');
+  await expect(page.getByRole('button', { name: 'Save decision receipt' })).toBeEnabled();
+  await page.getByRole('button', { name: 'Save decision receipt' }).click();
+  await expect(page.getByText('Saved locally')).toBeVisible();
+  const downloaded = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export JSON' }).click();
+  expect((await downloaded).suggestedFilename()).toMatch(/^vajra-receipt-/);
+  await page.getByLabel('Data mode', { exact: true }).selectOption('observed');
+  await expect(page.getByRole('heading', { name: 'Southeast France · observed radar' })).toBeVisible({ timeout: 15000 });
+  await expect(page.getByText('No lightning decision from this sample')).toBeVisible();
+  await page.getByRole('button', { name: 'Observed outcome', exact: true }).click();
+  await expect(page.locator('.stats-row')).toContainText('Withheld outcome grid points');
+  await page.screenshot({ path: 'artifacts/observed-radar.png', fullPage: true });
+  await page.getByRole('link', { name: 'Verification lab', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Held-out simulator results' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Export report' })).toBeVisible();
+  await page.getByRole('link', { name: 'Decision receipts', exact: true }).click();
+  await expect(page.locator('tbody tr').first()).toBeVisible();
+  await page.getByRole('link', { name: 'Officer workbench', exact: true }).click();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.getByLabel('Data mode', { exact: true })).toBeVisible();
+  await page.screenshot({ path: 'artifacts/workbench-mobile.png', fullPage: true });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  expect(errors).toEqual([]);
+  const research = await page.request.get('/research/SIH26072_RESEARCH_AND_BLUEPRINT.md');
+  expect(research.ok()).toBe(true);
+  expect(await research.text()).toContain('# SIH26072 research and implementation blueprint');
+});
+
+test('API failure is visible and retry recovers', async ({ page }) => {
+  await page.route('**/api/runs', route => route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ detail: 'Test service unavailable' }) }));
+  await page.goto('/#/workbench');
+  await expect(page.getByRole('alert')).toContainText('Test service unavailable');
+  await page.unroute('**/api/runs');
+  await page.getByRole('button', { name: 'Retry request' }).click();
+  await expect(page.getByRole('heading', { name: 'Bihar study area · synthetic event' })).toBeVisible();
+});

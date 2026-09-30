@@ -1,0 +1,9 @@
+{
+  "path": "artifacts/VAJRA_GOVERNMENT_DATA_STARTER_PACK.zip",
+  "files": 64,
+  "bytes": 10026008,
+  "sha256": "6726fa546cc04b29d37cc5538f835fe7a7fcfc06d868ea910b728435e5b017de",
+  "zip_crc_check": "passed",
+  "all_member_content_comparisons": "passed",
+  "entrypoint": "data/government/README.md"
+}

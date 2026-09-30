@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "data_files_staged_byte_identical": 38,
+  "source_manifest_files_rechecked": 18,
+  "note": "Git index stores the exact local dataset bytes; .gitattributes disables newline conversion for data."
+}
