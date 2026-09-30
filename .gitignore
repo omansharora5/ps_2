@@ -34,3 +34,10 @@ tools/stldm/
 data/operations/
 data/ncr/imerg/
 data/ncr/era5/
+data/community/
+artifacts/regional-heads-smoke/
+# Keep only the final reproducible synthetic run; intermediate runs stay local.
+artifacts/regional-research/*
+!artifacts/regional-research/synthetic_fixture.npz
+!artifacts/regional-research/d95852635db7d3a663ea160588729f78a59c61607c0e300d5d377777bee46cbc/
+artifacts/community-native-failure.txt

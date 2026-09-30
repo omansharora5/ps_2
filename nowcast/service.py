@@ -25,6 +25,7 @@ from .image_processing import METHODS, PREPROCESSING, image_run
 from .decision_policy import POLICY_VERSION, ResearchPolicy, assess_research_decision
 from .operations_api import router as operations_router
 from .ncr_api import router as ncr_router
+from .community_api import router as community_router
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +34,7 @@ CODE_SHA = hashlib.sha256(b"".join(path.read_bytes() for path in sorted((ROOT / 
 app = FastAPI(title="VAJRA research workbench", version="0.1.0")
 app.include_router(operations_router)
 app.include_router(ncr_router)
+app.include_router(community_router)
 CORS_ORIGINS = [origin.strip() for origin in os.environ.get("VAJRA_CORS_ORIGINS", "").split(",") if origin.strip()]
 if not CORS_ORIGINS:
     CORS_ORIGINS = [f"http://{host}:{port}" for host in ("localhost", "127.0.0.1") for port in (8000, 8081, 8082, 5173, 4173)]
@@ -329,7 +331,11 @@ def research_document(document: str):
                "OPERATIONS_GUIDE.md": ROOT / "docs" / "OPERATIONS_GUIDE.md",
                "CALIBRATION_AND_VERIFICATION.md": ROOT / "docs" / "CALIBRATION_AND_VERIFICATION.md",
                "REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md": ROOT / "REGIONAL_DECISIONS_AND_CONTINUOUS_FORECASTS.md",
-               "MOBILE_GUIDE.md": ROOT / "docs" / "MOBILE_GUIDE.md"}
+               "MOBILE_GUIDE.md": ROOT / "docs" / "MOBILE_GUIDE.md",
+               "REGIONAL_FEATURES.md": ROOT / "docs" / "REGIONAL_FEATURES.md",
+               "REGIONAL_SCIENCE_GUIDE.md": ROOT / "docs" / "REGIONAL_SCIENCE_GUIDE.md",
+               "PUBLIC_VERIFICATION_GUIDE.md": ROOT / "docs" / "PUBLIC_VERIFICATION_GUIDE.md",
+               "REGIONAL_FEATURE_EVIDENCE.md": ROOT / "research" / "REGIONAL_FEATURE_EVIDENCE.md"}
     if document not in allowed or not allowed[document].exists():
         raise HTTPException(404, "Research document not found")
     return FileResponse(allowed[document], media_type="text/markdown", filename=document)

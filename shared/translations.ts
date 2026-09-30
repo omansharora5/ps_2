@@ -1,6 +1,7 @@
 import { LOCATION_COPY_KEYS, locationDictionaries } from './location-translations.ts';
 import { REPORT_COPY_KEYS, reportDictionaries } from './report-translations.ts';
 import { OPERATION_COPY_KEYS, operationDictionaries } from './operation-translations.ts';
+import { COMMUNITY_COPY_KEYS, communityDictionaries } from './community-translations.ts';
 
 export const LANGUAGES = [
   { code: 'en', name: 'English', locale: 'en-IN', rtl: false },
@@ -27,7 +28,7 @@ const BASE_COPY_KEYS = [
   'synthetic','probability','readResult','openSource','available','pending','files','preferences','languageSaved',
   'storageFailed','motionReduced','simulationBody','dataScope','close',
 ] as const;
-export const COPY_KEYS = [...BASE_COPY_KEYS, ...LOCATION_COPY_KEYS, ...REPORT_COPY_KEYS, ...OPERATION_COPY_KEYS] as const;
+export const COPY_KEYS = [...BASE_COPY_KEYS, ...LOCATION_COPY_KEYS, ...REPORT_COPY_KEYS, ...OPERATION_COPY_KEYS, ...COMMUNITY_COPY_KEYS] as const;
 export type CopyKey = typeof COPY_KEYS[number];
 
 // Complete draft translations. Native-speaker review is required before operational use.
@@ -141,7 +142,7 @@ ur: [
 export const dictionaries = Object.fromEntries(
   LANGUAGES.map(({ code }) => {
     if (rows[code].length !== BASE_COPY_KEYS.length) throw new Error(`Incomplete locale: ${code}`);
-    return [code, { ...Object.fromEntries(BASE_COPY_KEYS.map((key, index) => [key, rows[code][index]])), ...locationDictionaries[code], ...reportDictionaries[code], ...operationDictionaries[code] }];
+    return [code, { ...Object.fromEntries(BASE_COPY_KEYS.map((key, index) => [key, rows[code][index]])), ...locationDictionaries[code], ...reportDictionaries[code], ...operationDictionaries[code], ...communityDictionaries[code] }];
   }),
 ) as Record<LanguageCode, Record<CopyKey, string>>;
 

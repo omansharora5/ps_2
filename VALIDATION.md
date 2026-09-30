@@ -2,6 +2,24 @@
 
 This record distinguishes software checks from real-weather and physical-device validation. The current delivery extends the original research prototype; the older benchmark results below retain their original scope.
 
+## Regional science and citizen evidence, 30 September 2026
+
+The new [feature guide](docs/REGIONAL_FEATURES.md) distinguishes executable methods from data-dependent operational forecasts. Independent reviews corrected premature feedback admission, public disclosure of vote counts, token-bearing evidence links, duplicate evaluation cases, model-selection leakage, onset inference without eligibility and contradictory censored lightning targets.
+
+- Final regular-Python suite: **229 tests ran, 13 optional-environment skips, no failures**, 85.331 seconds, exit 0. Log: [regional-python-tests.txt](artifacts/regional-python-tests.txt).
+- Regional numerical suite: **21 tests passed in `.venv-ml`**. It covers censored likelihoods, event/no-event mass, at-risk masking at training/inference, missing labels, causal availability, phase fallback, seasonal Z–R fitting and held-out separation, checkpoint reload and repeatable publication.
+- The final 20-step synthetic training run saved and reloaded its checkpoint. [Report](artifacts/regional-research/d95852635db7d3a663ea160588729f78a59c61607c0e300d5d377777bee46cbc/report.json) and checksummed artifacts are retained. Calibrated lightning Brier was **0.236092**, worse than training-climatology Brier **0.215820** (skill **−0.093928**). This small fixture is computation evidence, not weather skill. Hazard probabilities remain uncalibrated. No checkpoint was promoted.
+- Nine ledger/API tests passed, including concurrent retries, strict consent, duplicate installation/window votes, closure/revision checks, public count suppression, operator authorization and rate bounds. A subsequent [live HTTP workflow](artifacts/community-workflow-check.json) passed using an explicitly isolated **synthetic software-test store**, including review/export and four document routes. No citizen weather observation was fabricated in the real data catalogue.
+- Eighteen scorecard/benchmark tests passed, including matched cohorts, undefined scores, exposure leakage, duplicate physical cases, immutable revisions, corruption, source rights, privacy gates, file hashes and chronology. No actual monthly weather scorecard or matched Indian raw benchmark was published.
+- All local links in the four new guides/design documents resolve. The [research register](research/REGIONAL_FEATURE_EVIDENCE.md) records prior art and source-access limitations.
+
+- Website build passed. All **six community browser tests passed** in 10.9 seconds, covering missing evidence, explicit location, persisted identical retries, Urdu mobile layout, fixture scorecards, private revision/closure review and the live API. [Live desktop](artifacts/community-desktop-live.png), [live phone-width website](artifacts/community-mobile-live.png) and clearly named mocked screenshots were visually inspected. The phone-width website screenshot is not a native-device test.
+- All **42 mobile tests passed**, with TypeScript and Expo lint checks passing. `npm run export:all` produced web, iOS and Android bundles successfully. This verifies bundling, not signed installation or physical-device behavior.
+- The first configured native web-preview check exposed an Expo cache retaining the earlier empty API address. The client refused submission as intended; the guide now requires clearing Metro after changing build-time API configuration.
+- After rebuilding the preview with `--clear`, the [rendered native-web workflow passed](artifacts/community-native-preview-check.json): explicit place/presence, failed submission with frozen request, byte-identical retry after reload, persisted receipt, reset and Hindi/Urdu rendering. The state schema came from the local API; report responses were controlled test fixtures. No page errors occurred. This remains a browser rendering of React Native, not an installed Android/iOS app.
+
+Physical-device speech, notification delivery, public identity assurance, matched Indian image/lightning labels and independently measured operational accuracy remain unverified.
+
 ## Supplemental NCR sources, 30 September 2026
 
 Added public collectors for Open-Meteo, IEM, Meteostat, NASA POWER, RainViewer past-frame metadata and IMERG discovery; a separate numeric NCR GFS collector; an optional Earthdata downloader; and an ERA5 request template. The [guide](docs/SUPPLEMENTAL_DATA_GUIDE.md) records sample counts, exact roles, credential boundaries and the proposed training experiment.

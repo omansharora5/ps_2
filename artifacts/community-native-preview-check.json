@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": [
+    "Native form requires explicit pilot cell, presence and answer; failed submission freezes the selected request",
+    "AsyncStorage restores the byte-identical retry and persisted unverified receipt; payload contains no GPS coordinates",
+    "Explicit reset clears presence/answer and Hindi/Urdu reporting copy renders with Urdu text alignment"
+  ],
+  "pageErrors": [],
+  "scope": "Chromium React Native web export; current API schema read from local backend, report responses mocked. No physical Android/iOS device, GPS, SMS delivery or operational forecast claim."
+}

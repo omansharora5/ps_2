@@ -4,6 +4,8 @@ A SIH26072 research project with a React website, a separate Expo/React Native a
 
 The working weather demonstrations use synthetic fusion and historical French radar. The downloaded government starter pack is real, but it is not a matched Indian training corpus. No operational Indian lightning model or public warning dispatch is claimed.
 
+**New: local timing, citizen evidence and public verification.** Open `/#/community` for neutral rain reports, source-age evidence, monthly scorecard status and local operator review. The native app uses the same reporting protocol. Separate research tools now train lightning and first-event timing heads, fit monsoon-phase calibration and seasonal Z–R corrections, and validate benchmark release manifests. Citizen agreement is reviewed weak evidence, never automatic ground truth. See [the feature flow and setup](docs/REGIONAL_FEATURES.md), [numerical training guide](docs/REGIONAL_SCIENCE_GUIDE.md), [scorecard/benchmark guide](docs/PUBLIC_VERIFICATION_GUIDE.md) and [verified prior art](research/REGIONAL_FEATURE_EVIDENCE.md). Set `VAJRA_ENABLE_FEEDBACK=1` on a local server to enable submissions.
+
 **Additional NCR sources are connected for collection and inspection.** Open-Meteo, IEM, Meteostat, NASA POWER, RainViewer past-frame metadata and IMERG catalogue entries now have bounded collectors and read-only backend routes. A separate collector downloaded numeric NCR GFS fields. IMERG scientific downloads require local Earthdata credentials; ERA5 has an account-dependent request template. See the [source setup, real sample counts and training guide](docs/SUPPLEMENTAL_DATA_GUIDE.md). These inputs are not yet fused into the ConvLSTM, and improved accuracy has not been established.
 
 **NCR work now has actual observations and backend access.** The [NCR data guide](data/ncr/README.md) links September IMD station records, separately labelled rain/drizzle reports and reported-zero accumulation intervals, a public satellite-wind sample and an INSAT catalogue query. The [NCR backend and architecture guide](docs/NCR_BACKEND_GUIDE.md) gives runnable collection commands, read-only API routes, provider access requirements and Google model comparisons. The [model guide](docs/NCR_MODEL_GUIDE.md) documents compatible checkpoint fine-tuning and causal inference. This does not establish a trained 30-minute NCR rain/lightning model; calibrated imagery, radar and lightning access remain incomplete.
@@ -24,6 +26,9 @@ The officer workbench now records probability and evidence checks separately, wi
 | Native app | Public/operator views, optional foreground device location or manual city selection, 12 Indian languages plus English, installed-voice text-to-speech and a user-reviewed SMS report draft |
 | Training | Validate episode files, train/evaluate a compact ConvLSTM, optionally calibrate on separate events and report reliability against a climatology baseline |
 | Research operations | Durable jobs, bounded immutable dataset registration, actual recipe execution, explicit retries, verified downloads and controlled daily candidate checks |
+| Citizen evidence | Website/native reports, explicit presence and consent, persistent retries, private local review and weak-label export |
+| Regional science | Separate lightning/onset model heads, causal phase calibration, seasonal Z–R fit and descriptive warm-rain/dust flags |
+| Verification and benchmark | Immutable monthly scorecards, matched comparison rules and metadata-only corpus release checks |
 
 Cloud animation is decorative. Selecting a city moves the geographic view; it does not create a local weather observation. The native app's operator view is a view preference, not authentication.
 

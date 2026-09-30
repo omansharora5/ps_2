@@ -2,3 +2,4 @@
 data/** -text whitespace=cr-at-eol
 public/earth/blue-marble.jpg -text
 artifacts/*.zip -text
+artifacts/regional-research/** -text

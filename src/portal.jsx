@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowDownToLine, ArrowRight, BookOpen, Check, CloudLightning, Database, FileText, FlaskConical, Layers, MapPin, Radio, ShieldCheck, Smartphone, Timer, WifiOff, Zap } from 'lucide-react';
 
 export const pages = {
+  community: { name: 'Local evidence', title: 'What is happening where you are?', description: 'Share a rain observation, inspect the evidence and follow published verification.' },
   operations: { name: 'Research operations', title: 'From data to tested evidence.', description: 'Run durable experiments, inspect model candidates and manage controlled learning.' },
   overview: { name: 'Overview', title: 'Understand the storm. Prepare with evidence.', description: 'A research prototype for short-term thunderstorm and lightning forecasts.' },
   earth: { name: 'Earth explorer', title: 'A planet of perspective.', description: 'Find a place. Explore the observations. Follow the evidence.' },
@@ -130,6 +131,7 @@ function InstallApp() {
 export function PublicPreview({ preview, onClear, online }) {
   const [place, setPlace] = useState('Patna');
   return <>
+    <a className="button secondary" href="#/community">Share a local rain observation<ArrowRight size={17} aria-hidden="true" /></a>
     <div className="scope-banner"><FlaskConical size={19} aria-hidden="true" /><span><strong>Design preview only.</strong> No official warning feed is connected. Every brief shown here is a sample.</span></div>
     <div className="public-grid"><section className="public-brief panel" aria-labelledby="brief-heading">
       <div className="brief-top"><span className="status-pill"><FileText size={15} aria-hidden="true" />{preview ? 'Saved simulation' : 'Example layout'}</span><span>{online ? 'Preview' : 'Stored on this device'}</span></div>

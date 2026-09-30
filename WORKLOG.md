@@ -1,5 +1,18 @@
 # Work plan
 
+## Regional science and citizen evidence, 30 September 2026
+
+- [x] Ground existing source, training, operations and client boundaries; verify requested novelty claims against primary sources.
+- [x] Compare two architecture candidates, obtain an independent judgement, select the separate citizen ledger and pure numerical/publication modules.
+- [x] Implement covered lightning and censored onset heads, phase calibration, seasonal Z–R methods and descriptive warm-rain/dust flags.
+- [x] Implement shared website/native reporting, consent, frozen retries, private local review and weak-evidence export.
+- [x] Implement immutable monthly scorecards, fair matched-cohort comparison and metadata-only benchmark release gates.
+- [x] Review and repair privacy, admission timing, split leakage and onset eligibility/label consistency defects.
+- [x] Verify numerical training/reload, full Python suite, HTTP workflow and documentation links.
+- [x] Verify website journeys, mobile type/lint/tests and all-platform app exports; inspect live and fixture screenshots.
+
+The final feature/flow guide is `docs/REGIONAL_FEATURES.md`. The model and dataset still require real matched Indian observations before operational claims. Public agreement does not automatically retrain or promote a model. Research corrections remove unsupported claims that Damini is observation-only, IMD does no verification, or that a first Indian benchmark/local Z–R contribution has already been established.
+
 ## Supplemental NCR sources, 30 September 2026
 
 Reviewed the supplied training explanation as reference material and verified provider claims against official documentation. Added source-specific public collectors, raw/normalized snapshots, checksum receipts and bounded backend routes. Collected actual Delhi environmental/airport samples and numeric NCR GFS fields. Added Earthdata-gated IMERG file access and an ERA5 request template, with no claim of authenticated downloads.
